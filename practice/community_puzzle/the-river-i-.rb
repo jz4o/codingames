@@ -8,10 +8,8 @@
 # To debug: STDERR.puts "Debug messages..."
 rivers = [@r_1, @r_2]
 until rivers.min.eql? rivers.max do
-  total_each_digit = 0
-  rivers.min.to_s.chars.map { |i| total_each_digit += i.to_i }
-
-  rivers = [rivers.min + total_each_digit, rivers.max]
+  rivers = [rivers.min + rivers.min.digits.sum, rivers.max]
 end
 
 puts rivers.first
+
