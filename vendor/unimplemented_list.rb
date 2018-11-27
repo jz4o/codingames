@@ -18,6 +18,9 @@ LANGUAGES = Dir.glob('**/onboarding.*', base: ROOT_DIR).map { |path| path.sub /\
 # 解答済みのファイル名一覧
 FILE_NAMES = get_file_names LANGUAGES
 
+# 出力用配列
+output_list = []
+
 # 一部言語でのみ解答しているファイル名を各言語ごとに出力
 LANGUAGES.each do |language|
   # 該当言語で解答済みのファイル名一覧
@@ -27,11 +30,16 @@ LANGUAGES.each do |language|
   unimplemented_file_names = FILE_NAMES - implemented_file_names
 
   # 該当言語で未解答のファイルが存在する場合
-  # 言語名とともにファイル名一覧を出力
+  # 言語名とともに出力用配列に追加
   if unimplemented_file_names.any?
-    puts "***** #{language} *****"
-    puts unimplemented_file_names
-    puts # 視認性のための空行出力
+    output_list << [
+      "***** #{language} *****",
+      unimplemented_file_names
+    ].join("\n")
   end
 end
+
+# 出力
+# 視認しやすくするため各言語間に空行を挟む
+puts output_list.join("\n\n")
 
