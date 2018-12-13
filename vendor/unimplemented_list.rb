@@ -21,8 +21,11 @@ FILE_NAMES = get_file_names LANGUAGES
 # 出力用配列
 output_list = []
 
-# 一部言語でのみ解答しているファイルを各言語ごとに出力
-LANGUAGES.each do |language|
+# 出力対象の言語
+TARGET_LANGUAGES = ARGV.any? ? ARGV.sort : LANGUAGES
+
+# 出力対象言語で未解答のファイルを各言語ごとに出力
+TARGET_LANGUAGES.each do |language|
   # 該当言語で解答済みのファイル一覧
   implemented_file_names = get_file_names language
 
