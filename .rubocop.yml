@@ -1,0 +1,5 @@
+AllCops:
+  Exclude:
+    - 'ruby/compete/code_golf/**/*'
+    - 'vendor/ruby/gems/**/*'
+
