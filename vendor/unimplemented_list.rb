@@ -32,10 +32,10 @@ TARGET_LANGUAGES.each do |language|
   # 該当言語で未解答のファイル一覧
   unimplemented_file_names = FILE_NAMES - implemented_file_names
 
-  # 該当言語で未解答のファイルが存在する場合
-  # 言語名とともに出力用配列に追加
+  # 該当言語で未解答のファイルが存在しなければ次のループに進む
   next unless unimplemented_file_names.any?
 
+  # 言語名とともに出力用配列に追加
   output_list << [
     "***** #{language} *****",
     unimplemented_file_names
