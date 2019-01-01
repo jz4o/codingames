@@ -18,4 +18,3 @@ data_rows.each do |cell_rows|
   puts t :tr, cells.transpose.map { |cell| t :td, cell.join(' ').strip }.join
 end
 puts '</table>'
-

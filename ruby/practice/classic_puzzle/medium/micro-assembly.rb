@@ -1,7 +1,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-a, b, c, d = gets.split(" ").collect {|x| x.to_i}
+a, b, c, d = gets.split(' ').collect(&:to_i)
 @n = gets.to_i
 instructions = []
 @n.times do
@@ -30,4 +30,3 @@ while index < instructions.size do
 end
 
 puts [a, b, c, d].join(' ')
-

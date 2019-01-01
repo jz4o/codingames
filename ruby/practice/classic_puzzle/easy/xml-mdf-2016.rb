@@ -26,4 +26,3 @@ depths.transform_values! do |value|
 end
 
 puts depths.max_by(&:last)[0]
-

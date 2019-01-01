@@ -27,9 +27,8 @@ res = ''
 matched_array.each do |m|
   res << '0' * (2 - m[0].to_i)
   res << ' '
-  res << m.gsub('1','0')
+  res << m.tr('1', '0')
   res << ' '
 end
 
 puts res.chop
-

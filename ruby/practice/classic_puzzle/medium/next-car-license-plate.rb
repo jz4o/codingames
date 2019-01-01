@@ -22,4 +22,3 @@ cde = format '%03d', cde.next
 fg = alpha[-2, 2]
 
 puts [ad, cde, fg].join('-')
-

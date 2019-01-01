@@ -19,4 +19,3 @@ end
 (top_step_count..bottom_step_count).each do |step_count|
   puts '*' * step_count
 end
-

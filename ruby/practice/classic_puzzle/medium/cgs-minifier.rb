@@ -42,4 +42,3 @@ characters.each_with_index do |character, index|
 end
 
 puts cgscontents
-

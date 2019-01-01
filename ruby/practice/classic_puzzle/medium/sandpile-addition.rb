@@ -25,4 +25,3 @@ while map.flatten.select { |n| BORDER <= n }.any? do
 end
 
 puts map.map(&:join)
-

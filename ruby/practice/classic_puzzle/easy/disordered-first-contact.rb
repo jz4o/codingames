@@ -12,9 +12,7 @@
 def decode(text)
   result = ''
   turn = 1
-  while (1..turn).sum < text.size
-    turn += 1
-  end
+  turn += 1 while (1..turn).sum < text.size
 
   while turn.positive?
     slice_size = text.size - (1..turn.pred).sum
@@ -47,4 +45,3 @@ end
 decode_or_encode = method(@n.positive? ? :decode : :encode)
 @n.abs.times { @message = decode_or_encode.call(@message) }
 puts @message
-

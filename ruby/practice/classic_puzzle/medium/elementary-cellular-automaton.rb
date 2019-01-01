@@ -11,9 +11,9 @@
 # puts ".....@.@....."
 
 RULE_LENGTH = 8
-rule = (0...RULE_LENGTH).map { |i|
+rule = (0...RULE_LENGTH).map do |i|
   [format('%03d', i.to_s(2)), @r[i].to_i.to_s]
-}.to_h
+end.to_h
 
 @n.times do
   puts @start_pattern.tr('10', '@.')
@@ -24,4 +24,3 @@ rule = (0...RULE_LENGTH).map { |i|
   end
   @start_pattern = result.join.tap { result.clear }
 end
-

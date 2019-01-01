@@ -8,5 +8,4 @@
 
 # puts "sum"
 
-puts (1..@n).map { |n| (@n / n) * n }.sum
-
+puts((1..@n).map { |n| (@n / n) * n }.sum)

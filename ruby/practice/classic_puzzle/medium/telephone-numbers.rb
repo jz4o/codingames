@@ -13,11 +13,10 @@ number_hash = {}
 telephones.each do |telephone|
   target_hash = number_hash
   telephone.split('').each do |number|
-    target_hash[number] = {} unless target_hash.keys.include? number
+    target_hash[number] = {} unless target_hash.key?(number)
     target_hash = target_hash[number]
   end
 end
 
 # The number of elements (referencing a number) stored in the structure.
 puts number_hash.inspect.scan('=>').count
-

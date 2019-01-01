@@ -12,7 +12,7 @@
 
 def balance_to_decimal(balance)
   balance.chars.reverse.map.with_index do |i, index|
-    (i == 'T' ? -1 : i.to_i) * (3 ** index)
+    (i == 'T' ? -1 : i.to_i) * (3**index)
   end.sum
 end
 
@@ -31,8 +31,7 @@ end
 
 @lhs = balance_to_decimal @lhs
 @rhs = balance_to_decimal @rhs
-@rhs = 3 ** @rhs if @op.sub!('<<', '*') || @op.sub!('>>', '/')
-result_decimal = eval [@lhs, @op, @rhs].join
+@rhs = 3**@rhs if @op.sub!('<<', '*') || @op.sub!('>>', '/')
+result_decimal = instance_eval [@lhs, @op, @rhs].join
 
 puts decimal_to_balance(result_decimal)
-

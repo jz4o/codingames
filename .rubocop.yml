@@ -1,0 +1,61 @@
+AllCops:
+  Exclude:
+    - 'ruby/compete/code_golf/**/*'
+    - 'vendor/ruby/gems/**/*'
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Enabled: false
+
+Naming/FileName:
+  Enabled: false
+
+Naming/UncommunicativeMethodParamName:
+  MinNameLength: 1
+
+Style/Alias:
+  Enabled: false
+
+Style/AndOr:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/CommentAnnotation:
+  Enabled: false
+
+Style/Documentation:
+  Exclude:
+    - 'ruby/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/InverseMethods:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/PerlBackrefs:
+  Enabled: false
+
+Style/SymbolProc:
+  Exclude:
+    - 'ruby/practice/classic_puzzle/medium/winamax-battle.rb' # bug in cop
+
+Style/WhileUntilDo:
+  Enabled: false
+

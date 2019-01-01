@@ -10,16 +10,16 @@ incomplete_exprs << @expr
 class Integer
   alias :'origin_>' :'>'
 
-  def >(another)
-    self.send(:'origin_>', another) ? 1 : 0
+  def >(other)
+    send(:'origin_>', other) ? 1 : 0
   end
 end
 
 while incomplete_exprs.any?
-  expr = incomplete_exprs.shift
-  exprs << expr and next unless expr.include? 'd'
+  incomplete_expr = incomplete_exprs.shift
+  exprs << incomplete_expr and next unless incomplete_expr.include? 'd'
 
-  front, possibly, back = expr.partition(/d\d/)
+  front, possibly, back = incomplete_expr.partition(/d\d/)
 
   possibly.delete_prefix!('d')
   (1..possibly.to_i).each do |i|
@@ -27,7 +27,7 @@ while incomplete_exprs.any?
   end
 end
 
-answers = exprs.map { |expr| eval expr }
+answers = exprs.map { |expr| instance_eval expr }
 answers.uniq.sort.each do |answer|
   percentage = Rational(answers.count(answer), answers.size) * 100
   puts [answer, format('%.2f', percentage)].join(' ')

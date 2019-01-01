@@ -9,8 +9,8 @@ inputs = gets.delete(' ')
 
 class << inputs
   def trim_trash
-    self.sub!(/^1+/, '')
-    self.sub!(/0+$/, '')
+    sub!(/^1+/, '')
+    sub!(/0+$/, '')
     self
   end
 

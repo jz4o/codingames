@@ -5,11 +5,12 @@
 @position, *commands = gets.chomp.split(';')
 @position = @position.to_i
 @commands = commands.flat_map do |command|
-  time, comm = command[0..-2], command[-1]
+  time = command[0..-2]
+  comm = command[-1]
   (comm * time.to_i).chars
 end
 
-@n.times do |n|
+@n.times do |_n|
   count, pattern = gets.chomp.split(';')
   count.to_i.times do
     case @commands.shift
@@ -18,7 +19,7 @@ end
     end
 
     output_pattern = pattern.dup
-    output_pattern[@position - 1 ] = '#'
+    output_pattern[@position - 1] = '#'
     puts output_pattern
   end
 end
@@ -27,4 +28,3 @@ end
 # To debug: STDERR.puts "Debug messages..."
 
 # puts "answer"
-

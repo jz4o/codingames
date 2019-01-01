@@ -6,13 +6,13 @@
 
 voters = []
 @n.times do
-  person_name, nb_vote = gets.split(" ")
+  person_name, nb_vote = gets.split(' ')
   voters << [person_name, nb_vote.to_i]
 end
 
 votes = {}
 @m.times do
-  voter_name, vote_value = gets.split(" ")
+  voter_name, vote_value = gets.split(' ')
   votes[voter_name] = [] unless votes[voter_name]
   votes[voter_name] << vote_value
 end
@@ -25,9 +25,9 @@ end
 yes = no = 0
 voters.each do |name, count|
   next unless votes[name] && votes[name].size <= count
+
   yes += votes[name].count 'Yes'
   no  += votes[name].count 'No'
 end
 
 puts "#{yes} #{no}"
-

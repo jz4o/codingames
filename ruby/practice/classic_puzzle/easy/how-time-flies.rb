@@ -29,4 +29,3 @@ formated_month << 's' if month > 1
 formated_days = "total #{days} days"
 
 puts [formated_year, formated_month, formated_days].compact.join(', ')
-

@@ -9,16 +9,14 @@
 # puts "answer"
 
 stage = 0
-while @n >= stage.next
-  @n -= stage += 1
-end
+@n -= stage += 1 while @n >= stage.next
 
 GLASS_PARTS = [
- ' *** ',
- ' * * ',
- ' * * ',
- '*****'
-]
+  ' *** ',
+  ' * * ',
+  ' * * ',
+  '*****'
+].freeze
 WIDTH = stage * GLASS_PARTS.first.size + stage.pred
 
 (1..stage).each do |step|
@@ -26,4 +24,3 @@ WIDTH = stage * GLASS_PARTS.first.size + stage.pred
     puts [glass_part].*(step).join(' ').center(WIDTH)
   end
 end
-

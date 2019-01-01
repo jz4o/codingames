@@ -6,7 +6,7 @@
 # for i in 0..(@n-1)
 #   l = inputs[i].to_i
 # end
-inputs = gets.split(" ").map(&:to_i)
+inputs = gets.split(' ').map(&:to_i)
 
 # Write an action using puts
 # To debug: STDERR.puts "Debug messages..."
@@ -21,8 +21,7 @@ inputs.each do |i|
   lists.push [i]
 end
 
-max_size = lists.map { |list| list.size }.max
+max_size = lists.map(&:size).max
 result = lists.select { |list| list.size == max_size }.last.join(' ')
 
 puts result
-

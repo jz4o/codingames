@@ -1,12 +1,12 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@width, @height = gets.split(" ").collect {|x| x.to_i}
+@width, @height = gets.split(' ').collect(&:to_i)
 @count = gets.to_i
 rasters = []
 @height.times do
-    raster = gets.chomp
-    rasters << raster.chars
+  raster = gets.chomp
+  rasters << raster.chars
 end
 
 # Write an action using puts
@@ -16,7 +16,6 @@ end
 # puts "write ###"
 
 @count.times do
-    rasters = rasters.map(&:sort).transpose.reverse
+  rasters = rasters.map(&:sort).transpose.reverse
 end
 puts rasters.map(&:join)
-

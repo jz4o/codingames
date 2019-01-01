@@ -21,4 +21,3 @@ end
 
 # puts "cash of the target after playing"
 puts @cash
-

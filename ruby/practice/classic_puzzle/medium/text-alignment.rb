@@ -28,10 +28,9 @@ when 'JUSTIFY'
     space_size = width - words.join.size
     each_space_size = space_size / (words.size - 1).to_f
     space_sizes = (1...(words.size)).map do |i|
-      (each_space_size * i).floor - (each_space_size * (i-1)).floor
+      (each_space_size * i).floor - (each_space_size * (i - 1)).floor
     end
 
     puts words.map { |word| "#{word}#{' ' * space_sizes.shift.to_i}" }.join
   end
 end
-

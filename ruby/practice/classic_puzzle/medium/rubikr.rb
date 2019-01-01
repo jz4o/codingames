@@ -8,7 +8,6 @@
 
 # puts "answer"
 
-cube_count = @n ** 3
-invisible_cube_count = [@n - 2, 0].max ** 3
+cube_count = @n**3
+invisible_cube_count = [@n - 2, 0].max**3
 puts cube_count - invisible_cube_count
-

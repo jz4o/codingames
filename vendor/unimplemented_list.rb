@@ -13,7 +13,7 @@ ROOT_DIR = File.expand_path '../', __dir__
 
 # Onboarding に解答済みの言語一覧
 # ※ 初めに Onboarding を解答する想定
-LANGUAGES = Dir.glob('**/onboarding.*', base: ROOT_DIR).map { |path| path.sub /\/.*/, '' }.sort
+LANGUAGES = Dir.glob('**/onboarding.*', base: ROOT_DIR).map { |path| path.sub(%r{/.*}, '') }.sort
 
 # 解答済みのファイル一覧
 FILE_NAMES = get_file_names LANGUAGES
@@ -32,17 +32,16 @@ TARGET_LANGUAGES.each do |language|
   # 該当言語で未解答のファイル一覧
   unimplemented_file_names = FILE_NAMES - implemented_file_names
 
-  # 該当言語で未解答のファイルが存在する場合
+  # 該当言語で未解答のファイルが存在しなければ次のループに進む
+  next unless unimplemented_file_names.any?
+
   # 言語名とともに出力用配列に追加
-  if unimplemented_file_names.any?
-    output_list << [
-      "***** #{language} *****",
-      unimplemented_file_names
-    ].join("\n")
-  end
+  output_list << [
+    "***** #{language} *****",
+    unimplemented_file_names
+  ].join("\n")
 end
 
 # 出力
 # 視認しやすくするため各言語間に空行を挟む
 puts output_list.join("\n\n")
-

@@ -7,15 +7,14 @@
 # Write an action using puts
 # To debug: STDERR.puts "Debug messages..."
 
-@temps = @temps.split.map{|n| n.to_i}
-min = @temps.map{|n| n.abs}.min
+@temps = @temps.split.map(&:to_i)
+min = @temps.map(&:abs).min
 
-#chekc all minus?
+# chekc all minus?
 if @n.zero?
   puts '0'
-elsif @temps.all? {|n| n < 0}
+elsif @temps.all? { |n| n < 0 }
   puts "-#{min}"
 else
   puts min
 end
-

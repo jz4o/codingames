@@ -20,13 +20,14 @@ score_board = names.map { |name| [name, 0] }.to_h
 
 throw_datas.each do |throw_data|
   name, x, y = throw_data.split
-  x, y = x.to_i, y.to_i
+  x = x.to_i
+  y = y.to_i
 
-  distance_with_center = Math.sqrt(x ** 2 + y ** 2)
-  distance_with_edge   = Math.sqrt((HALF_SIZE - x.abs) ** 2 + (HALF_SIZE - y.abs) ** 2)
+  distance_with_center = Math.sqrt(x**2 + y**2)
+  distance_with_edge   = Math.sqrt((HALF_SIZE - x.abs)**2 + (HALF_SIZE - y.abs)**2)
 
-  in_square_horizontal = (-HALF_SIZE..HALF_SIZE).include? x
-  in_square_vertical   = (-HALF_SIZE..HALF_SIZE).include? y
+  in_square_horizontal = (-HALF_SIZE..HALF_SIZE).cover? x
+  in_square_vertical   = (-HALF_SIZE..HALF_SIZE).cover? y
 
   in_square  = in_square_horizontal && in_square_vertical
   in_circle  = distance_with_center <= HALF_SIZE
@@ -46,5 +47,4 @@ score_board = score_board.to_a.sort do |l, r|
     (names.index(l.first) <=> names.index(r.first))
 end
 
-puts score_board.map { |score| score.join(' ') }
-
+puts(score_board.map { |score| score.join(' ') })

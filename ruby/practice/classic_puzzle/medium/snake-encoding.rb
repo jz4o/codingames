@@ -20,7 +20,7 @@ char_map.map!.with_index { |line, index| index.even? ? line.reverse : line }
 chars = char_map.join
 
 # rotate char(s)
-chars = (chars * 2)[(@n**2)-@x, chars.length]
+chars = (chars * 2)[(@n**2) - @x, chars.length]
 
 # string to array
 char_map = chars.scan(/.{#{@n}}/)
@@ -31,4 +31,3 @@ char_map = char_map.transpose
 char_map.each do |line|
   puts line.join
 end
-

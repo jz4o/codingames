@@ -21,7 +21,6 @@ loop do
   # Write an action using puts
   # To debug: STDERR.puts "Debug messages
 
-  #puts target_id # The index of the mountain to fire on.
+  # puts target_id # The index of the mountain to fire on.
   puts target_id
 end
-

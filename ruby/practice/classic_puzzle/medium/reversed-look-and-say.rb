@@ -9,17 +9,17 @@ class String
   end
 
   def encode
-    return unless self.size.even?
+    return unless size.even?
 
     result = ''
-    self.chars.each_slice(2) do |count, value|
+    chars.each_slice(2) do |count, value|
       result += value * count.to_i
     end
     decodable?(result) ? result : nil
   end
 
   def encode!
-    self.replace self.encode
+    replace encode
   end
 
   private
@@ -38,8 +38,8 @@ end
 
 loop do
   break unless @s.encodable?
+
   @s.encode!
 end
 
 puts @s
-

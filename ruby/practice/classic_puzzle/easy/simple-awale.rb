@@ -24,6 +24,5 @@ while seeds.positive? do
 end
 
 puts "#{bowls.first[0..-2].join(' ')} [#{bowls.first.last}]"
-puts "#{bowls.last[0..-2].join(' ') } [#{bowls.last.last }]"
+puts "#{bowls.last[0..-2].join(' ')} [#{bowls.last.last}]"
 puts 'REPLAY' if (index % BOWLS_SIZE).zero?
-

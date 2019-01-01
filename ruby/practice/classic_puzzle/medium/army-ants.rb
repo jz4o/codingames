@@ -1,7 +1,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@n1, @n2 = gets.split(" ").collect {|x| x.to_i}
+@n1, @n2 = gets.split(' ').collect(&:to_i)
 @s1 = gets.chomp
 @s2 = gets.chomp
 @t = gets.to_i
@@ -23,4 +23,3 @@ s2_not_move_part = @s2[@t..-1].to_s.chars
 s_moved_part = s2_move_part.zip s1_move_part
 
 puts [s1_not_move_part, s_moved_part, s2_not_move_part].join
-
