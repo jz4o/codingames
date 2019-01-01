@@ -9,7 +9,6 @@ POINTS = {
   'n' => 1,
   'r' => 1,
   't' => 1,
-  'n' => 1,
   'l' => 1,
   's' => 1,
   'u' => 1,
@@ -63,4 +62,3 @@ words.each do |word|
 end
 
 puts best_word
-

@@ -10,8 +10,9 @@
 # puts "answer"
 
 result = [@r]
-(@l-1).times do |n|
-  temp, result = result, []
+(@l - 1).times do |_n|
+  temp = result
+  result = []
   until temp.empty? do
     first_element, another_element = temp.uniq.shift(2)
     delete_size = another_element ? temp.index(another_element) : temp.size
@@ -21,4 +22,3 @@ result = [@r]
 end
 
 puts result.join(' ')
-

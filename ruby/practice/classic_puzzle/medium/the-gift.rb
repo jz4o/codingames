@@ -25,4 +25,3 @@ else
     puts pay
   end
 end
-

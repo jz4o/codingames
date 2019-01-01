@@ -8,11 +8,11 @@ STDOUT.sync = true # DO NOT REMOVE
 # light_y: the Y position of the light of power
 # initial_tx: Thor's starting X position
 # initial_ty: Thor's starting Y position
-@light_x, @light_y, @initial_tx, @initial_ty = gets.split(" ").collect {|x| x.to_i}
+@light_x, @light_y, @initial_tx, @initial_ty = gets.split(' ').collect(&:to_i)
 
 # game loop
 loop do
-  remaining_turns = gets.to_i # The remaining amount of turns Thor can move. Do not remove this line.
+  _remaining_turns = gets.to_i # The remaining amount of turns Thor can move. Do not remove this line.
 
   # Write an action using puts
   # To debug: STDERR.puts "Debug messages..."
@@ -42,4 +42,3 @@ loop do
   # A single line providing the move to be made: N NE E SE S SW W or NW
   puts move_y + move_x
 end
-

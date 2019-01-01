@@ -17,4 +17,3 @@ MAX_BASE = 36
 
   puts base if result
 end
-

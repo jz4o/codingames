@@ -30,4 +30,3 @@ end
 # puts "YES or NO"
 
 puts results
-

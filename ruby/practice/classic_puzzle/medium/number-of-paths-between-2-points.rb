@@ -28,4 +28,3 @@ map[1][1] = path_map[1][1] = 1
 end
 
 puts path_map.last.last
-

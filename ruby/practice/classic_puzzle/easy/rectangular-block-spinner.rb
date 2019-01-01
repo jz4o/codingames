@@ -36,4 +36,3 @@ end
 diamond_map.each do |line|
   puts line.join(' ').center(DIAGONAL_SIZE)
 end
-

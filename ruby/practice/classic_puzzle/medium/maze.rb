@@ -1,8 +1,8 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@w, @h = gets.split(" ").collect {|x| x.to_i}
-@x, @y = gets.split(" ").collect {|x| x.to_i}
+@w, @h = gets.split(' ').collect(&:to_i)
+@x, @y = gets.split(' ').collect(&:to_i)
 map = []
 map << Array.new(@w, nil)
 @h.times do
@@ -21,9 +21,11 @@ be_check_maths = [[@y + 1, @x + 1]]
 exit_maths = []
 while be_check_maths.any?
   check_math = be_check_maths.pop
-  y, x = check_math.first, check_math.last
+  y = check_math.first
+  x = check_math.last
 
   next if checked_maths.include?([y, x])
+
   checked_maths << [y, x]
 
   near_maths = [
@@ -44,5 +46,4 @@ while be_check_maths.any?
 end
 
 puts exit_maths.size
-puts exit_maths.sort.map { |math| math.join(' ') }
-
+puts(exit_maths.sort.map { |math| math.join(' ') })

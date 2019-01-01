@@ -5,30 +5,30 @@
 @chars = gets.chomp
 
 # hangman ascii
-BEAM     = '+--+'
-NO_HEAD  = '|'
-HEAD     = '|  o'
-NO_BODY  = '|'
-BODY     = '|  |'
-ONE_ARM  = '| /|'
-BOTH_ARM = '| /|\\'
-NO_LEG   = '|\\'
-ONE_LEG  = '|\\/'
-BOTH_LEG = '|\\/ \\'
+BEAM     = '+--+'.freeze
+NO_HEAD  = '|'.freeze
+HEAD     = '|  o'.freeze
+NO_BODY  = '|'.freeze
+BODY     = '|  |'.freeze
+ONE_ARM  = '| /|'.freeze
+BOTH_ARM = '| /|\\'.freeze
+NO_LEG   = '|\\'.freeze
+ONE_LEG  = '|\\/'.freeze
+BOTH_LEG = '|\\/ \\'.freeze
 HANGMAN_STATUS = [
-  [BEAM, NO_HEAD, NO_BODY,  NO_LEG  ],
-  [BEAM, HEAD,  NO_BODY,  NO_LEG  ],
-  [BEAM, HEAD,  BODY,   NO_LEG  ],
-  [BEAM, HEAD,  ONE_ARM,  NO_LEG  ],
-  [BEAM, HEAD,  BOTH_ARM, NO_LEG  ],
-  [BEAM, HEAD,  BOTH_ARM, ONE_LEG ],
-  [BEAM, HEAD,  BOTH_ARM, BOTH_LEG]
-]
+  [BEAM, NO_HEAD, NO_BODY, NO_LEG],
+  [BEAM, HEAD, NO_BODY, NO_LEG],
+  [BEAM, HEAD, BODY, NO_LEG],
+  [BEAM, HEAD, ONE_ARM, NO_LEG],
+  [BEAM, HEAD, BOTH_ARM, NO_LEG],
+  [BEAM, HEAD, BOTH_ARM, ONE_LEG],
+  [BEAM, HEAD, BOTH_ARM, BOTH_LEG]
+].freeze
 
 # answer to guess
-result = @word.chars.map { |char|
+result = @word.chars.map do |char|
   @chars.include?(char.downcase) ? char : '_'
-}.join
+end.join
 
 # counting errors of guess
 lower_word = @word.downcase
@@ -39,4 +39,3 @@ end
 
 # answer
 puts HANGMAN_STATUS[errors], result
-

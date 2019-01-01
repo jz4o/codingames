@@ -34,4 +34,3 @@ end
 # puts "x y"
 
 puts treasure_index
-

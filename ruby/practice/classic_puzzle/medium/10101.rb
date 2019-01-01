@@ -24,7 +24,7 @@ end
 scores = []
 scores << get_completed_row_or_column_count(grid)
 grid.each_with_index do |row, row_index|
-  row.each_with_index do |column, column_index|
+  row.each_with_index do |_column, column_index|
     # check block can placed?
     next unless grid.dig(row_index, column_index)           == '.' # target math
     next unless grid.dig(row_index, column_index.next)      == '.' # right math
@@ -44,4 +44,3 @@ grid.each_with_index do |row, row_index|
 end
 
 puts scores.max
-

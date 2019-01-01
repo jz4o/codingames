@@ -5,8 +5,8 @@
 @v = gets.to_i
 robbers = Array.new(@r, 0)
 @v.times do
-  c, n = gets.split(" ").collect {|x| x.to_i}
-  vault_time = (10 ** n) * (5 ** (c - n))
+  c, n = gets.split(' ').collect(&:to_i)
+  vault_time = (10**n) * (5**(c - n))
   robbers[robbers.index(robbers.min)] += vault_time
 end
 
@@ -15,4 +15,3 @@ end
 
 # puts "1"
 puts robbers.max
-

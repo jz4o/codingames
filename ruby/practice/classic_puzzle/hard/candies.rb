@@ -1,7 +1,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@n, @k = gets.split(" ").collect {|x| x.to_i}
+@n, @k = gets.split(' ').collect(&:to_i)
 
 # Write an action using puts
 # To debug: STDERR.puts "Debug messages..."
@@ -21,7 +21,6 @@ while temps.any?
   end
 end
 
-results.reverse_each do |temp|
-  puts temp.join(' ')
+results.reverse_each do |result|
+  puts result.join(' ')
 end
-

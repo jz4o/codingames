@@ -1,7 +1,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@w, @h = gets.split(" ").collect {|x| x.to_i}
+@w, @h = gets.split(' ').collect(&:to_i)
 map = []
 @h.times do
   line = gets.chomp.squeeze.chars
@@ -16,11 +16,9 @@ end
 top = map.shift
 bottom = map.pop
 
-map.reverse.each do |line|
+map.reverse_each do |line|
   line.each_with_index do |char, index|
-    if char == '-'
-      bottom[index.pred..index.next] = bottom[index.pred..index.next].reverse
-    end
+    bottom[index.pred..index.next] = bottom[index.pred..index.next].reverse if char == '-'
   end
 end
 
@@ -28,4 +26,3 @@ top.delete(' ')
 bottom.delete(' ')
 
 puts top.zip(bottom).map(&:join)
-

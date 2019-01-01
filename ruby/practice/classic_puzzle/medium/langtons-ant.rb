@@ -1,20 +1,19 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-MARKS = { black: '#', white: '.' }
+MARKS = { black: '#', white: '.' }.freeze
 directions = %w[N E S W]
 
-@w, @h = gets.split(" ").collect {|x| x.to_i}
-@x, @y = gets.split(" ").collect {|x| x.to_i}
+@w, @h = gets.split(' ').collect(&:to_i)
+@x, @y = gets.split(' ').collect(&:to_i)
 @direction = gets.chomp
-directions.rotate! (directions.index @direction)
+directions.rotate!(directions.index(@direction))
 @t = gets.to_i
 map = []
 @h.times do
   map << gets.chomp.chars
 end
 @t.times do
-
   # Write an action using puts
   # To debug: STDERR.puts "Debug messages..."
 

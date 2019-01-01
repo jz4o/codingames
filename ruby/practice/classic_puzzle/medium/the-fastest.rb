@@ -10,5 +10,4 @@ end
 # Write an action using puts
 # To debug: STDERR.puts "Debug messages..."
 
-puts results.sort.first
-
+puts results.min

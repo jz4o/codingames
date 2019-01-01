@@ -4,7 +4,7 @@
 @n = gets.to_i
 strengths = []
 @n.times do
-  v, e = gets.split(" ").collect {|x| x.to_i}
+  v, e = gets.split(' ').collect(&:to_i)
   strengths << { v: v, e: e }
 end
 
@@ -18,4 +18,3 @@ puts strengths.flat_map.with_index(1) { |left, index|
     (right[:v] - left[:v]).abs + (right[:e] - left[:e]).abs
   end
 }.reject(&:negative?).min
-

@@ -11,7 +11,7 @@
 
   rational = Rational(x, y)
   int = rational.to_i
-  rat = rational-int
+  rat = rational - int
   rat = -rat if int.negative?
   int = '' if int.zero?
   rat = '' if rat.numerator.zero?
@@ -27,4 +27,3 @@ end
 #
 #   puts "answer"
 # end
-

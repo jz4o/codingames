@@ -11,11 +11,11 @@ max_diff  = 0
 inputs.each.with_index do |input, index|
   break if index >= inputs.length - 1
   next if max_value >= input
+
   max_value = input
 
-  diff = inputs[(index+1)..-1].min - input
+  diff = inputs[(index + 1)..-1].min - input
   max_diff = diff if max_diff > diff
 end
 
 puts max_diff
-

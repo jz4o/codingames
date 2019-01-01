@@ -11,9 +11,7 @@
 invalid_flag = false
 binaries = ''
 @encrypt.split(' ').each_slice(2) do |binary, count|
-  unless ['0', '00'].include?(binary) && count
-    invalid_flag = true and break
-  end
+  invalid_flag = true and break unless %w[0 00].include?(binary) && count
   binaries += (binary == '0' ? '1' : '0') * count.size
 end
 
@@ -22,4 +20,3 @@ if invalid_flag || (binaries.size % 7) != 0
 else
   puts binaries.scan(/.{7}/).map { |binary| binary.to_i(2).chr }.join
 end
-

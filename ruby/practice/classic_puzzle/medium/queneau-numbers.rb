@@ -21,4 +21,3 @@ progress_log  = []
 end
 
 puts array == INITIAL_ARRAY ? progress_log : :IMPOSSIBLE
-

@@ -5,14 +5,13 @@
 relation_map = {}
 @n.times do
   # x: a relationship of influence between two people (x influences y)
-  parent, child = gets.split(" ").collect {|x| x.to_i}
+  parent, child = gets.split(' ').collect(&:to_i)
   relation_map[parent] = [] unless relation_map[parent]
   relation_map[parent] << child
 end
 
 # Write an action using puts
 # To debug: STDERR.puts "Debug messages..."
-
 
 # The number of people involved in the longest succession of influences
 # puts "2"
@@ -26,4 +25,3 @@ until targets.empty? do
 end
 
 puts deep_level
-

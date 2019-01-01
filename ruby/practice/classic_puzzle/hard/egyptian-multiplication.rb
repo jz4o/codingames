@@ -1,7 +1,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@a, @b = gets.split(" ").collect {|x| x.to_i}
+@a, @b = gets.split(' ').collect(&:to_i)
 
 # Write an action using puts
 # To debug: STDERR.puts "Debug messages..."
@@ -14,7 +14,7 @@ low = @a + @b - high
 # initial formula
 puts "#{high} * #{low}"
 
-add_nums = ""
+add_nums = ''
 until low.zero? do
   if low.even?
     high *= 2
@@ -30,4 +30,3 @@ end
 
 # answer
 puts "= #{@a * @b}"
-

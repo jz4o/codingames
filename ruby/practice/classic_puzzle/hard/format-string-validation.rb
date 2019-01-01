@@ -6,8 +6,7 @@
 
 @format.gsub! '\\', '\\\\\\'
 %w|^ * ( ) [ ] $|.each { |c| @format.gsub! c, "\\#{c}" }
-@format.gsub! '?', '.'
+@format.tr! '?', '.'
 @format.gsub! '~', '.*'
 
-puts @text.match?(Regexp.new @format) ? 'MATCH' : 'FAIL'
-
+puts @text.match?(Regexp.new(@format)) ? 'MATCH' : 'FAIL'

@@ -8,7 +8,8 @@ max_money = 0
   number, money, access1, access2 = gets.chomp.split.map(&:to_i)
   prev_rooms = rooms.select { |room| room[:accesses].include? number }
   next if prev_rooms.size.zero? && !number.zero?
-  sum_money = money + prev_rooms.map{ |room| room[:sum_money]}.max.to_i
+
+  sum_money = money + prev_rooms.map { |room| room[:sum_money] }.max.to_i
 
   rooms << {
     number: number,
@@ -24,4 +25,3 @@ end
 
 # puts "answer"
 puts max_money
-

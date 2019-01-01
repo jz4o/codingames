@@ -22,9 +22,9 @@ chars = []
 @expression.split('').each do |char|
   next chars << char if BRACKETS[char]
   next if BRACKETS[chars.pop] == char
+
   break collect_flag = false
 end
 collect_flag = false unless chars.empty?
 
 puts collect_flag
-

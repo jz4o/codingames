@@ -1,7 +1,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@l, @c = gets.split(" ").collect {|x| x.to_i}
+@l, @c = gets.split(' ').collect(&:to_i)
 map = []
 @l.times do
   map << gets.chomp.split('')
@@ -13,24 +13,28 @@ end
 # puts "answer"
 
 class Bender
+  class << self
+    attr_accessor :direction_priorities
+  end
+
   LOOP_BORDER = 10
   DIRECTIONS = {
     'S' => 'SOUTH',
     'E' => 'EAST',
     'N' => 'NORTH',
     'W' => 'WEST'
-  }
+  }.freeze
 
-  @@direction_priorities = DIRECTIONS.values
+  @direction_priorities = DIRECTIONS.values
 
   def initialize(map)
-    @map    = map
-    @direction  = @@direction_priorities.first
-    @break_mode = false
-    @position   = nil
+    @map                    = map
+    @direction              = self.class.direction_priorities.first
+    @break_mode             = false
+    @position               = nil
     @reached_position_count = {}
-    @teleporters  = []
-    @history = []
+    @teleporters            = []
+    @history                = []
 
     map.each_with_index do |line_chars, line_index|
       line_chars.each_with_index do |char, char_index|
@@ -77,9 +81,9 @@ class Bender
   def change_direction(direction = nil)
     return @direction = direction if direction
 
-    @@direction_priorities.each do |direction|
-      unless ['#', 'X'].include? kind_of_position ahead_position(direction)
-        return @direction = direction
+    self.class.direction_priorities.each do |direction_priority|
+      unless ['#', 'X'].include? kind_of_position ahead_position(direction_priority)
+        return @direction = direction_priority
       end
     end
   end
@@ -89,7 +93,7 @@ class Bender
   end
 
   def reverse_direction_priorities
-    @@direction_priorities.reverse!
+    self.class.direction_priorities.reverse!
   end
 
   def teleport
@@ -117,7 +121,6 @@ class Bender
     @history.map { |log| log[:direction] }
   end
 
-
   class Position
     attr_accessor :x, :y
 
@@ -130,8 +133,8 @@ class Bender
       "x:#{@x} , y:#{@y}"
     end
 
-    def eql?(another)
-      @x.eql?(another.x) && @y.eql?(another.y)
+    def eql?(other)
+      @x.eql?(other.x) && @y.eql?(other.y)
     end
 
     def hash
@@ -177,4 +180,3 @@ until bender.standup_at_goal? do
 end
 
 puts loop_flag ? 'LOOP' : bender.direction_historys
-

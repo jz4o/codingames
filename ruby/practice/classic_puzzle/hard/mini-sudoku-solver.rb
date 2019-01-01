@@ -1,15 +1,15 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@line_1 = gets.chomp
-@line_2 = gets.chomp
-@line_3 = gets.chomp
-@line_4 = gets.chomp
+@line1 = gets.chomp
+@line2 = gets.chomp
+@line3 = gets.chomp
+@line4 = gets.chomp
 
 # Write an action using puts
 # To debug: STDERR.puts "Debug messages..."
 
-lines = [@line_1, @line_2, @line_3, @line_4]
+lines = [@line1, @line2, @line3, @line4]
 square = lines.map { |line| line.chars.map(&:to_i) }
 
 def optimize(square)
@@ -17,9 +17,9 @@ def optimize(square)
     row.each_with_index do |column, column_index|
       next unless column.zero?
 
-      candidate = [1,2,3,4]
+      candidate = [1, 2, 3, 4]
       candidate -= row
-      candidate -= square.map { |row| row[column_index] }
+      candidate -= square.transpose[column_index]
 
       little_square_rows = row_index < square.length / 2 ? [0, 1] : [2, 3]
       little_square_columns = column_index < row.length / 2 ? [0, 1] : [2, 3]
@@ -32,9 +32,6 @@ def optimize(square)
 end
 
 sum = (1..square.length).sum * square.length
-until square.flatten.sum == sum do
-  optimize square
-end
+optimize square until square.flatten.sum == sum
 
 puts square.map(&:join)
-

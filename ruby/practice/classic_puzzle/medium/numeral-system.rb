@@ -8,7 +8,7 @@
 
 # puts "answer"
 
-NUMERALS = [*'0'..'9', *'A'..'Z']
+NUMERALS = [*'0'..'9', *'A'..'Z'].freeze
 
 x, y, z = @equality.split(/[\+=]/)
 
@@ -19,4 +19,3 @@ minimum_n   = NUMERALS.index(max_numeral).next
 (minimum_n..NUMERALS.size).each do |i|
   p i and break if x.to_i(i) + y.to_i(i) == z.to_i(i)
 end
-

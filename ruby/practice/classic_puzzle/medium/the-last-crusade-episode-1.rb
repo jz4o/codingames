@@ -4,10 +4,11 @@ STDOUT.sync = true # DO NOT REMOVE
 
 # w: number of columns.
 # h: number of rows.
-@w, @h = gets.split(" ").collect {|x| x.to_i}
+@w, @h = gets.split(' ').collect(&:to_i)
 lines = []
 @h.times do
-  lines << gets.chomp # represents a line in the grid and contains W integers. Each integer represents one room of a given type.
+  # represents a line in the grid and contains W integers. Each integer represents one room of a given type.
+  lines << gets.chomp
 end
 lines.map!(&:split)
 @ex = gets.to_i # the coordinate along the X axis of the exit (not useful for this first mission, but must be read).
@@ -22,14 +23,14 @@ NONE   = nil
 # Key   : 入口の方向
 # Value : 出口の方向(index:パネルのタイプ)
 PANEL_DESTINATION = {
-  TOP:   [NONE, BOTTOM, NONE, BOTTOM, LEFT,   RIGHT,  NONE,  BOTTOM, NONE,   BOTTOM, LEFT, RIGHT, NONE,   NONE],
-  LEFT:  [NONE, BOTTOM, RIGHT, NONE,  NONE,   BOTTOM, RIGHT, NONE,   BOTTOM, BOTTOM, NONE, NONE,  NONE,   BOTTOM],
-  RIGHT: [NONE, BOTTOM, LEFT, NONE,   BOTTOM, NONE,   LEFT,  BOTTOM, BOTTOM, NONE,   NONE, NONE,  BOTTOM, NONE]
-}
+  TOP: [NONE, BOTTOM, NONE, BOTTOM, LEFT, RIGHT, NONE, BOTTOM, NONE, BOTTOM, LEFT, RIGHT, NONE, NONE],
+  LEFT: [NONE, BOTTOM, RIGHT, NONE, NONE, BOTTOM, RIGHT, NONE, BOTTOM, BOTTOM, NONE, NONE, NONE, BOTTOM],
+  RIGHT: [NONE, BOTTOM, LEFT, NONE, BOTTOM, NONE, LEFT, BOTTOM, BOTTOM, NONE, NONE, NONE, BOTTOM, NONE]
+}.freeze
 
 # game loop
 loop do
-  xi, yi, pos = gets.split(" ")
+  xi, yi, pos = gets.split(' ')
   xi = xi.to_i
   yi = yi.to_i
 

@@ -10,10 +10,13 @@
 distances = [@m - 1, @n - 1]
 
 # one way city
-(puts 1; return) if distances.min <= 0
+if distances.min <= 0
+  puts 1
+  return
+end
 
 mole_combination = ((distances.max + 1)..distances.sum).inject { |n, sum| sum * n }
-deno_combination = (1..distances.min).inject{ |n, sum| sum * n }
+deno_combination = (1..distances.min).inject { |n, sum| sum * n }
 
 movable_combination = mole_combination / deno_combination
 significant_digits  = movable_combination.to_s.[](0...1000)

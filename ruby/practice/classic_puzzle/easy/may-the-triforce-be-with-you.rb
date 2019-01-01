@@ -22,4 +22,3 @@ end
 upper_part[0][0] = '.'
 
 puts upper_part + lower_part
-

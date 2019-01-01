@@ -18,7 +18,7 @@ end
 
     res = "#{w} #{h} "
 
-    ((w+1)..@width).each do |r|
+    ((w + 1)..@width).each do |r|
       right = lines[h] && lines[h][r]
       if right.nil?
         res << '-1 -1 '
@@ -31,7 +31,7 @@ end
       end
     end
 
-    ((h+1)..@height).each do |b|
+    ((h + 1)..@height).each do |b|
       below = lines[b] && lines[b][w]
       if below.nil?
         res << '-1 -1'
@@ -49,4 +49,3 @@ end
 end
 
 # Three coordinates: a node, its right neighbor, its bottom neighbor
-

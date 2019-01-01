@@ -4,13 +4,13 @@
 MODULUS_WEIGHTS = {
   10 => [1, 3] * 6,
   11 => 10.downto(1).to_a
-}
+}.freeze
 
 @n = gets.to_i
 invalids = []
 @n.times do
   isbn = gets.chomp
-  invalids << isbn and next unless isbn.match? /^\d+X?$/
+  invalids << isbn and next unless isbn.match?(/^\d+X?$/)
 
   modulus = nil
   case isbn.size
@@ -36,4 +36,3 @@ end
 # puts "answer"
 
 puts "#{invalids.size} invalid:", invalids
-
