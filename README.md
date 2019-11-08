@@ -1,3 +1,3 @@
 # codingames
 
-[CodinGame](https://www.codingame.com) にて作成した各種ソースコードを管理するリポジトリです。
+This repository is manage for source code created by jz4o with [CodinGame](https://www.codingame.com/).
