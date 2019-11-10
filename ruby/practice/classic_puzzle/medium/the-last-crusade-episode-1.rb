@@ -13,15 +13,15 @@ end
 lines.map!(&:split)
 @ex = gets.to_i # the coordinate along the X axis of the exit (not useful for this first mission, but must be read).
 
-# 方向を表す定数
+# direction
 TOP    = 0
 LEFT   = 1
 RIGHT  = 2
 BOTTOM = 3
 NONE   = nil
 
-# Key   : 入口の方向
-# Value : 出口の方向(index:パネルのタイプ)
+# Key   : direction of entrance
+# Value : direction of exit(index: type of panel)
 PANEL_DESTINATION = {
   TOP: [NONE, BOTTOM, NONE, BOTTOM, LEFT, RIGHT, NONE, BOTTOM, NONE, BOTTOM, LEFT, RIGHT, NONE, NONE],
   LEFT: [NONE, BOTTOM, RIGHT, NONE, NONE, BOTTOM, RIGHT, NONE, BOTTOM, BOTTOM, NONE, NONE, NONE, BOTTOM],

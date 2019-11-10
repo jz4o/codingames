@@ -17,7 +17,7 @@ index = 0
 while index < instructions.size do
   operator, *args = instructions[index].split
 
-  # 加算による減算を行うため正負反転
+  # convert positive and negative for substract by addition
   args[2].prepend '-' if operator == 'SUB'
 
   if operator == 'JNE'

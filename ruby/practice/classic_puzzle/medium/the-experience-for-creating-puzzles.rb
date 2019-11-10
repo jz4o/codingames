@@ -12,15 +12,15 @@
 
 EXP_OF_PUZZLE = 300
 
-# 経験値を反映します
+# reflect experience value
 #
-# @param Integer level       現在のレベル
-# @param Integer exp         経験値
-# @param Integer levelup_exp レベルアップまでに必要な経験値
+# @param Integer level       current level
+# @param Integer exp         experience value
+# @param Integer levelup_exp necessary experience value for level up
 #
 # @return Array(level, exp)
-#           level  経験値反映後のレベル
-#           exp    次のレベルアップまでに必要な経験値
+#           level  level after reflect experience value
+#           exp    necessary experience value for next level up
 def reflect_exp(level, exp, levelup_exp = nil)
   exp -= (levelup_exp || get_exp_for_levelup(level))
   exp.negative? ? [level, -exp] : reflect_exp(level + 1, exp)

@@ -6,16 +6,16 @@
 # Write an action using puts
 # To debug: STDERR.puts "Debug messages..."
 
-# 与えられた数値を7bitの2進数(String)に変換
+# convert decimal to 7 bit binary string
 binary = ''
 @message.split('').each do |s|
   binary << s.ord.to_s(2).rjust(7, '0')
 end
 
-# 同じ文字をグルーピングして配列化
+# grouping same char and convert to array
 matched_array = []
 until binary.empty? do
-  # binary の先頭から、同じ文字が連続する部分を取得
+  # get continuous same character from beginning of binary string
   matched = binary.match(/#{binary[0]}+/)[0]
 
   matched_array << matched

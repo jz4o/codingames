@@ -25,15 +25,15 @@ echo $level."\n";
 echo $exp."\n";
 
 /**
- * 経験値を反映します
+ * reflect experience value
  *
- * @param Integer level       現在のレベル
- * @param Integer exp         経験値
- * @param Integer levelup_exp レベルアップまでに必要な経験値
+ * @param Integer level       current level
+ * @param Integer exp         experience value
+ * @param Integer levelup_exp necessary experience value for level up
  *
  * @return Array(level, exp)
- *           level  経験値反映後のレベル
- *           exp    次のレベルアップまでに必要な経験値
+ *           level  level after reflect experience value
+ *           exp    necessary experience value for next level up
  */
 function reflect_exp($level, $exp, $levelup_exp = null) {
     $exp -= $levelup_exp ?? get_exp_for_levelup($level);
