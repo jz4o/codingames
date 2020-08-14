@@ -1,7 +1,16 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+
 AllCops:
   Exclude:
     - 'ruby/compete/code_golf/**/*'
     - 'vendor/ruby/gems/**/*'
+  NewCops: enable
+
+Layout/LineLength:
+  Max: 120
 
 Lint/AssignmentInCondition:
   Enabled: false
@@ -12,16 +21,13 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Enabled: false
 
-Metrics/LineLength:
-  Max: 120
-
 Metrics/MethodLength:
   Enabled: false
 
 Naming/FileName:
   Enabled: false
 
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   MinNameLength: 1
 
 Style/Alias:
