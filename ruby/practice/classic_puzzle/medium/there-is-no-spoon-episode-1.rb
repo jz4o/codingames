@@ -1,4 +1,4 @@
-STDOUT.sync = true # DO NOT REMOVE
+$stdout.sync = true # DO NOT REMOVE
 # Don't let the machines win. You are humanity's last hope...
 
 lines = []

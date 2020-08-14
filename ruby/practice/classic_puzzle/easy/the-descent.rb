@@ -1,4 +1,4 @@
-STDOUT.sync = true # DO NOT REMOVE
+$stdout.sync = true # DO NOT REMOVE
 # The while loop represents the game.
 # Each iteration represents a turn of the game
 # where you are given inputs (the heights of the mountains)

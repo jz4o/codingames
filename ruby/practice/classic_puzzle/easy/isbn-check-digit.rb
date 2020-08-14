@@ -18,6 +18,7 @@ invalids = []
     modulus = 11
   when 13
     invalids << isbn and next if isbn[-1] == 'X'
+
     modulus = 10
   else
     invalids << isbn and next

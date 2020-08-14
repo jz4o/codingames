@@ -1,4 +1,4 @@
-STDOUT.sync = true # DO NOT REMOVE
+$stdout.sync = true # DO NOT REMOVE
 
 # game loop
 loop do

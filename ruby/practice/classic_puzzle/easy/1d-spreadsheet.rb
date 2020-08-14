@@ -8,7 +8,7 @@ class << @cells
   end
 
   def arg_value(arg)
-    arg.include?('$') ? value(arg[1..-1].to_i) : arg.to_i
+    arg.include?('$') ? value(arg[1..].to_i) : arg.to_i
   end
 
   def calc(cell_index)

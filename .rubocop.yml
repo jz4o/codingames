@@ -21,6 +21,9 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Enabled: false
 
+Metrics/CyclomaticComplexity:
+  Max: 8
+
 Metrics/MethodLength:
   Enabled: false
 
@@ -45,6 +48,9 @@ Style/CommentAnnotation:
 Style/Documentation:
   Exclude:
     - 'ruby/**/*'
+
+Style/FormatStringToken:
+  Enabled: false
 
 Style/FrozenStringLiteralComment:
   Enabled: false

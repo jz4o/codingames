@@ -25,4 +25,4 @@ digits << digit_map.map { |row| combination_digits row }
 digits << digit_map.transpose.map { |row| combination_digits row }
 digits.flatten!.uniq!
 
-puts digits.select(&:prime?).size
+puts digits.count(&:prime?)

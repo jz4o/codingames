@@ -14,7 +14,7 @@ inputs.each.with_index do |input, index|
 
   max_value = input
 
-  diff = inputs[(index + 1)..-1].min - input
+  diff = inputs[(index + 1)..].min - input
   max_diff = diff if max_diff > diff
 end
 

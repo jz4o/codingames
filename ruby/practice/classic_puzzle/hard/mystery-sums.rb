@@ -5,7 +5,7 @@
 
 # Write an action using puts
 # To debug: STDERR.puts "Debug messages..."
-factors = @expression.partition('=')
+factors       = @expression.partition('=')
 left_formula  = factors.first
 right_formula = factors.last.strip
 

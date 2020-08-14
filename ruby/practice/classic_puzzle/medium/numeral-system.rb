@@ -10,10 +10,10 @@
 
 NUMERALS = [*'0'..'9', *'A'..'Z'].freeze
 
-x, y, z = @equality.split(/[\+=]/)
+x, y, z = @equality.split(/[+=]/)
 
 equality_chars = @equality.chars
-max_numeral = NUMERALS.select { |n| equality_chars.include? n }.last
+max_numeral = NUMERALS.reverse.find { |n| equality_chars.include? n }
 minimum_n   = NUMERALS.index(max_numeral).next
 
 (minimum_n..NUMERALS.size).each do |i|

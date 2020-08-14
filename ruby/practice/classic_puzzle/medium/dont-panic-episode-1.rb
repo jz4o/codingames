@@ -1,4 +1,4 @@
-STDOUT.sync = true # DO NOT REMOVE
+$stdout.sync = true # DO NOT REMOVE
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
@@ -10,7 +10,7 @@ STDOUT.sync = true # DO NOT REMOVE
 # nb_total_clones:         number of generated clones
 # nb_additional_elevators: ignore (always zero)
 # nb_elevators:            number of elevators
-inputs = gets.split(' ').collect(&:to_i)
+inputs                   = gets.split(' ').collect(&:to_i)
 @nb_floors               = inputs[0]
 @width                   = inputs[1]
 @nb_rounds               = inputs[2]

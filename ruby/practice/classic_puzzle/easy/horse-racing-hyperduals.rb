@@ -14,7 +14,7 @@ end
 # puts "42"
 
 puts strengths.flat_map.with_index(1) { |left, index|
-  strengths[index..-1].map do |right|
+  strengths[index..].map do |right|
     (right[:v] - left[:v]).abs + (right[:e] - left[:e]).abs
   end
 }.reject(&:negative?).min

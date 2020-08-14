@@ -27,7 +27,7 @@ distance = 10_000
 defibs.each do |defib|
   x = (@lon - defib[:longitude]) * Math.cos((defib[:latitude] + @lat) / 2)
   y = @lat - defib[:latitude]
-  d = Math.sqrt(x * x + y * y) * 6371
+  d = Math.sqrt(x**2 + y**2) * 6371
 
   if distance > d
     distance = d

@@ -15,7 +15,7 @@ progress_log  = []
 
 @n.times do
   front_half = array[0...CENTER_INDEX]
-  back_half  = array[CENTER_INDEX..-1]
+  back_half  = array[CENTER_INDEX..]
   array      = back_half.reverse.zip(front_half).flatten.compact
   progress_log << array.join(',')
 end

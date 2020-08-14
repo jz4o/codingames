@@ -12,6 +12,7 @@ invalid_flag = false
 binaries = ''
 @encrypt.split(' ').each_slice(2) do |binary, count|
   invalid_flag = true and break unless %w[0 00].include?(binary) && count
+
   binaries += (binary == '0' ? '1' : '0') * count.size
 end
 

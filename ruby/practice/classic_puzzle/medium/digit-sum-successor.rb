@@ -14,7 +14,7 @@ digits[decrement_index] -= 1
 increment_index = digits[0...decrement_index].rindex { |digit| digit != 9 }
 digits[increment_index] += 1
 
-digits[increment_index.next..-1] = digits[increment_index.next..-1].sort
+digits[increment_index.next..] = digits[increment_index.next..].sort
 
 # puts "11"
 puts digits.join.to_i

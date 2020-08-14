@@ -1,4 +1,4 @@
-STDOUT.sync = true # DO NOT REMOVE
+$stdout.sync = true # DO NOT REMOVE
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 # ---

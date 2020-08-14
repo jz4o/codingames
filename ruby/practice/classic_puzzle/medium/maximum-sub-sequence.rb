@@ -22,6 +22,6 @@ inputs.each do |i|
 end
 
 max_size = lists.map(&:size).max
-result = lists.select { |list| list.size == max_size }.last.join(' ')
+result = lists.reverse.find { |list| list.size == max_size }.join(' ')
 
 puts result

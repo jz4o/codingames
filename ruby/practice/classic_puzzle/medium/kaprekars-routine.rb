@@ -17,4 +17,4 @@ until answers.include? @n1 do
   @n1 = format("%0#{DIGITS_SIZE}d", answer)
 end
 
-puts answers[answers.index(@n1)..-1].join(' ')
+puts answers[answers.index(@n1)..].join(' ')

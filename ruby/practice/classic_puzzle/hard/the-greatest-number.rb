@@ -14,7 +14,7 @@ if minus
   @input = @input.sort.join
   @input.insert(1, dot) if dot
   @input.insert(0, minus)
-  @input = 0 if @input.match?(/\A\-0\.0+\Z/)
+  @input = 0 if @input.match?(/\A-0\.0+\Z/)
 else
   @input = @input.sort.reverse.join
   @input.insert(-2, dot) if dot

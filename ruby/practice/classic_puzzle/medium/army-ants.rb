@@ -17,8 +17,8 @@ s2_move_part = @s2[0...@t].chars
 (@t - s1_move_part.size).times { s1_move_part.unshift nil }
 (@t - s2_move_part.size).times { s2_move_part.push    nil }
 
-s1_not_move_part = @s1[@t..-1].to_s.chars.reverse
-s2_not_move_part = @s2[@t..-1].to_s.chars
+s1_not_move_part = @s1[@t..].to_s.chars.reverse
+s2_not_move_part = @s2[@t..].to_s.chars
 
 s_moved_part = s2_move_part.zip s1_move_part
 
