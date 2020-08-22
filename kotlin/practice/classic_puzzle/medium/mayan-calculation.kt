@@ -63,18 +63,6 @@ fun <T> transpose(list: List<List<T>>): List<List<T>> =
         list.map { row -> row[index] }
     }
 
-fun <T> sliceN(list: List<T>, sliceSize: Int): List<List<T>> {
-    val result: MutableList<List<T>> = mutableListOf()
-
-    var startIndex: Int = 0
-    while (startIndex < list.size) {
-        result.add(list.subList(startIndex, startIndex + sliceSize))
-        startIndex += sliceSize
-    }
-
-    return result.toList()
-}
-
 class Mayan {
     companion object {
         var h: Int = 0
@@ -82,7 +70,7 @@ class Mayan {
         var asciiMayans: List<String> = listOf()
 
         fun toNum(mayans: List<String>): Long {
-            val mayanIndexes: List<Int> = sliceN(mayans, h).map { mayan ->
+            val mayanIndexes: List<Int> = mayans.chunked(h).map { mayan ->
                 asciiMayans.indexOf(mayan.joinToString(""))
             }.reversed()
 
