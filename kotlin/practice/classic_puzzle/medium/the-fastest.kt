@@ -9,7 +9,7 @@ import java.math.*
 fun main(args : Array<String>) {
     val input = Scanner(System.`in`)
     val N = input.nextInt()
-    val ts: ArrayList<String> = arrayListOf()
+    val ts: MutableList<String> = mutableListOf()
     for (i in 0 until N) {
         val t = input.next()
 
@@ -19,8 +19,9 @@ fun main(args : Array<String>) {
     // Write an answer using println()
     // To debug: System.err.println("Debug messages...");
 
-    val fastest: String = ts.reduce { fastest, t -> if (t < fastest) t else fastest }
+    val fastest: String? = ts.min()
 
     // println("answer")
     println(fastest)
 }
+
