@@ -14,28 +14,22 @@ fun main(args : Array<String>) {
 
     // game loop
     while (true) {
-        var mountainHeights: Array<Int?> = arrayOfNulls(8)
+        val mountainHeights: MutableList<Int> = mutableListOf()
 
         for (i in 0 until 8) {
             val mountainH = input.nextInt() // represents the height of one mountain.
-            mountainHeights[i] = mountainH
+
+            mountainHeights.add(mountainH)
         }
 
         // Write an action using println()
         // To debug: System.err.println("Debug messages...");
 
-        var targetHeight  = 0
-        var targetId      = 0
-
-        for (i in 0 until mountainHeights.size) {
-            val mountainHeight = mountainHeights[i] ?: 0
-            if (targetHeight < mountainHeight) {
-                targetHeight = mountainHeight
-                targetId = i
-            }
-        }
+        val targetHeight: Int = mountainHeights.maxBy { it }!!
+        val targetId: Int = mountainHeights.indexOf(targetHeight)
 
         // println("4") // The index of the mountain to fire on.
         println(targetId)
     }
 }
+
