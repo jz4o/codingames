@@ -16,7 +16,7 @@ for (let i = 0; i < N; i++) {
 
 let totalCost: number = 0
 while (xs.length >= 2) {
-    xs.sort(function(a: number, b: number) { return a < b ? -1 : 1 });
+    xs.sort((a: number, b: number): number => a - b);
 
     const cost: number = xs.shift() + xs.shift();
     totalCost += cost;
@@ -25,3 +25,4 @@ while (xs.length >= 2) {
 
 // console.log('0');
 console.log(totalCost);
+
