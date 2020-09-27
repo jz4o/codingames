@@ -26,10 +26,11 @@ for (let i = 0; i < V; i++) {
 let robbers: number[] = Array(R).fill(0);
 for (const vault of vaults) {
     const vaultTime: number = (10 ** vault.n) * (5 ** (vault.c - vault.n));
-    const minimumVaultTime: number = robbers.reduce((a, b) => Math.min(a, b));
+    const minimumVaultTime: number = Math.min(...robbers);
     robbers[robbers.indexOf(minimumVaultTime)] += vaultTime;
 }
 
 // console.log('1');
-const maximumVaultTime: number = robbers.reduce((a, b) => Math.max(a, b));
+const maximumVaultTime: number = Math.max(...robbers);
 console.log(maximumVaultTime);
+
