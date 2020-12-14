@@ -13,6 +13,7 @@ end
 class Robot
   def initialize
     @directions = %w[N E S W]
+    @logs = []
   end
 
   def set_place(x, y)
@@ -24,8 +25,8 @@ class Robot
     "#{@x} #{@y}"
   end
 
-  def initial_place?
-    @x == @initial_x && @y == @initial_y && direction == 'N'
+  def place_with_direction
+    "#{place} #{direction}"
   end
 
   def direction
@@ -61,6 +62,21 @@ class Robot
   def turn_right
     @directions.rotate!
   end
+
+  def log
+    @logs << place_with_direction
+  end
+
+  def logged_place?
+    @logs.include? place_with_direction
+  end
+
+  def skiped_turn(n, turn)
+    loop_begin_turn = @logs.index place_with_direction
+    loop_size = turn - loop_begin_turn
+
+    n - ((n - loop_begin_turn) % loop_size)
+  end
 end
 
 robot = Robot.new
@@ -75,13 +91,15 @@ end
 
 turn = 0
 while turn < n do
+  robot.log
+
   turn += 1
 
   robot.forward
-  robot.turn_right if map.dig(*robot.ahead_mass_index) == '#'
+  robot.turn_right while map.dig(*robot.ahead_mass_index) == '#'
 
   # omit to loop turn
-  turn = n - (n % turn) if robot.initial_place?
+  turn = robot.skiped_turn(n, turn) if robot.logged_place?
 end
 
 puts robot.place
