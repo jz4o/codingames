@@ -2,6 +2,8 @@ version: '3.8'
 volumes:
   ruby_gems:
     driver: local
+  java_libraries:
+    driver: local
 services:
   ruby:
     build:
@@ -17,4 +19,19 @@ services:
       LANG: en_US.UTF-8
     working_dir: /usr/src
     tty: true
+  java:
+    build:
+      context: ./
+      dockerfile: dockerfiles/java/Dockerfile
+    volumes:
+      - .:/usr/src
+
+      # not sync directories
+      - java_libraries:/usr/src/vendor/java/libraries
+    environment:
+      TZ: Asia/Tokyo
+        # LANG: en_US.UTF-8
+    working_dir: /usr/src
+    tty: true
+    # command: ["tail", '-f', '/dev/null']
 
