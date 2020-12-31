@@ -1,0 +1,20 @@
+version: '3.8'
+volumes:
+  ruby_gems:
+    driver: local
+services:
+  ruby:
+    build:
+      context: ./
+      dockerfile: dockerfiles/ruby/Dockerfile
+    volumes:
+      - .:/usr/src
+
+      # not sync directories
+      - ruby_gems:/usr/src/vendor/ruby/gems
+    environment:
+      TZ: Asia/Tokyo
+      LANG: en_US.UTF-8
+    working_dir: /usr/src
+    tty: true
+
