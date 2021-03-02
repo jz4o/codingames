@@ -1,0 +1,1 @@
+use List::Util qw(min max);my $a=<STDIN>;my @b=split(/ /,<STDIN>);my @c=grep{$_<0}@b;my @d=grep{$_>0}@b;my $e,$f;if(grep{$_==0}@b){$e=$f=0;}else{$e=max @c if @c;$f=min @d if @d;}print $a==0?0:!@c?$f:!@d?$e:$e+$f<=0?$f:$e;
