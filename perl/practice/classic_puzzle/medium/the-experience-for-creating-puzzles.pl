@@ -17,42 +17,50 @@ chomp(my $n = <STDIN>);
 
 my $EXP_OF_PUZZLE = 300;
 
-my %blitz_prog = (
+my $blitz_prog = BlitzProg->new(
     'level' => $level,
     'exp' => $EXP_OF_PUZZLE * $n,
     'require_level_up_exp' => $xp
 );
-
-%blitz_prog = level_up(\%blitz_prog);
+$blitz_prog->level_up;
 
 # print "answer\n";
-print "$blitz_prog{'level'}\n";
-print "$blitz_prog{'require_level_up_exp'}\n";
+print "$blitz_prog->{'level'}\n";
+print "$blitz_prog->{'require_level_up_exp'}\n";
 
-sub level_up {
-    my ($scalar_blitz_prog) = @_;
-    my %blitz_prog = %{$scalar_blitz_prog};
+package BlitzProg {
+    sub new {
+        my ($class, @args) = @_;
+        my %args = @args;
+        my $self = {%args};
 
-    # failure level up
-    if ($blitz_prog{'exp'} < $blitz_prog{'require_level_up_exp'}) {
-        $blitz_prog{'require_level_up_exp'} -= $blitz_prog{'exp'};
-        $blitz_prog{'exp'} = 0;
-
-        return %blitz_prog;
+        return bless $self, $class;
     }
 
-    # level up
-    $blitz_prog{'exp'} -= $blitz_prog{'require_level_up_exp'};
-    $blitz_prog{'level'}++;
-    $blitz_prog{'require_level_up_exp'} = get_exp_for_level_up($blitz_prog{'level'});
+    sub level_up {
+        my $self = shift;
 
-    # challenge next level up
-    return level_up(\%blitz_prog);
-}
+        # failure level up
+        if ($self->{'exp'} < $self->{'require_level_up_exp'}) {
+            $self->{'require_level_up_exp'} -= $self->{'exp'};
+            $self->{'exp'} = 0;
 
-sub get_exp_for_level_up {
-    my ($level) = @_;
+            return;
+        }
 
-    return int($level * sqrt($level) * 10);
+        # level up
+        $self->{'exp'} -= $self->{'require_level_up_exp'};
+        $self->{'level'}++;
+        $self->{'require_level_up_exp'} = $self->get_exp_for_level_up;
+
+        # challenge next level up
+        $self->level_up;
+    }
+
+    sub get_exp_for_level_up {
+        my $self = shift;
+
+        return int($self->{'level'} * sqrt($self->{'level'}) * 10);
+    }
 }
 
