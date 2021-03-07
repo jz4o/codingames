@@ -1,0 +1,1 @@
+$|=1;my($z,$z,$z,$z,$a,$z,$z,$b,@c,@d)=split' ',<STDIN>;for my $i(0..$b-1){my($e, $f)=split/ /,<STDIN>;push @c,$e;push @d,$f;}while(1){chomp($g=<STDIN>);my($h,$i,$j)=split(/ /,$g);my($k)=grep{$c[$_]==$h}0..$#c;my $l=defined$k?$d[$k]:$a;print $l<$i&&$j eq'LEFT'||$i<$l&&$j eq'RIGHT'||$l==$i?"WAIT\n":"BLOCK\n";}
