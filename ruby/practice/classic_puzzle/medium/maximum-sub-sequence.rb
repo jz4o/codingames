@@ -6,7 +6,7 @@
 # for i in 0..(@n-1)
 #   l = inputs[i].to_i
 # end
-inputs = gets.split(' ').map(&:to_i)
+inputs = gets.split.map(&:to_i)
 
 # Write an action using puts
 # To debug: STDERR.puts "Debug messages..."

@@ -1,7 +1,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-_w, h = gets.split(' ').collect(&:to_i)
+_w, h = gets.split.collect(&:to_i)
 n = gets.to_i
 map = []
 h.times do

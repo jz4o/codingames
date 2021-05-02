@@ -46,7 +46,7 @@ words.each do |word|
   point = 0
   can_chars = String.new(@letters)
 
-  word.split('').each do |w|
+  word.chars.each do |w|
     unless can_chars.slice! w
       made_flg = false
       point = 0

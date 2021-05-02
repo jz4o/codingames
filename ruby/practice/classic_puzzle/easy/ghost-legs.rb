@@ -1,7 +1,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@w, @h = gets.split(' ').collect(&:to_i)
+@w, @h = gets.split.collect(&:to_i)
 map = []
 @h.times do
   line = gets.chomp.squeeze.chars

@@ -2,7 +2,7 @@
 @y = gets.to_i
 cages = []
 @n.times do
-  s, h, a = gets.split(' ').collect(&:to_i)
+  s, h, a = gets.split.collect(&:to_i)
   cages << [s, h, a]
 end
 

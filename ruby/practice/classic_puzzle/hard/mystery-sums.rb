@@ -9,8 +9,8 @@ factors       = @expression.partition('=')
 left_formula  = factors.first
 right_formula = factors.last.strip
 
-left_factors = left_formula.split(' ')
-right_factors = right_formula.split(' ')
+left_factors = left_formula.split
+right_factors = right_formula.split
 
 # optimize for /
 while index = left_factors.index('/') do
@@ -33,10 +33,10 @@ end
 mistery_num = instance_eval(left_factors.join) - instance_eval(right_factors.join)
 
 # facotrs reset
-left_factors = left_formula.split(' ')
+left_factors = left_formula.split
 
 # reasoning
-mistery_num.to_s.split('').reverse_each.with_index do |num, num_index|
+mistery_num.to_s.chars.reverse_each.with_index do |num, num_index|
   target = left_factors.index { |n| n =~ /\?.{#{num_index}}\Z/ }
   left_factors[target][-1 - num_index, 1] = num if target
 end
@@ -44,11 +44,11 @@ end
 # check
 surplus = instance_eval(right_formula) - instance_eval(left_factors.join)
 unless surplus.zero?
-  surplus.to_s.split('').reverse_each.with_index do |num, num_index|
+  surplus.to_s.chars.reverse_each.with_index do |num, num_index|
     num = num.to_i
     next if num.zero?
 
-    target_index = left_formula.split(' ').index { |n| n =~ /\?.{#{num_index}}\Z/ }
+    target_index = left_formula.split.index { |n| n =~ /\?.{#{num_index}}\Z/ }
     left_factors[target_index] = left_factors[target_index].to_i + 10**num_index * num if target_index
   end
 end

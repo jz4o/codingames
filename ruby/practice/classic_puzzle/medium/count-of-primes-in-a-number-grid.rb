@@ -1,7 +1,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@r, @c = gets.split(' ').collect(&:to_i)
+@r, @c = gets.split.collect(&:to_i)
 digit_map = []
 @r.times do
   digit_map << gets.chomp.split

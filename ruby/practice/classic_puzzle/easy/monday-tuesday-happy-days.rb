@@ -2,9 +2,9 @@
 # the standard input according to the problem statement.
 
 @leap_year = gets.to_i
-@source_day_of_week, @source_month, @source_day_of_month = gets.split(' ')
+@source_day_of_week, @source_month, @source_day_of_month = gets.split
 @source_day_of_month = @source_day_of_month.to_i
-@target_month, @target_day_of_month = gets.split(' ')
+@target_month, @target_day_of_month = gets.split
 @target_day_of_month = @target_day_of_month.to_i
 
 # Write an action using puts

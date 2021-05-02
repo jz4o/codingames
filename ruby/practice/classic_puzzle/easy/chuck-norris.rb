@@ -8,7 +8,7 @@
 
 # convert decimal to 7 bit binary string
 binary = ''
-@message.split('').each do |s|
+@message.chars.each do |s|
   binary << s.ord.to_s(2).rjust(7, '0')
 end
 

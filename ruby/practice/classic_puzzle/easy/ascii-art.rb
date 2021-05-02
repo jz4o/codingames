@@ -12,7 +12,7 @@ end
 ALPHAS = ('A'..'Z').to_a << '?'
 res = Array.new(@h, '')
 
-@t.upcase.split(//).each do |s|
+@t.upcase.chars.each do |s|
   str_i = ALPHAS.index(s) || ALPHAS.length - 1
   @h.times do |r|
     res[r] += row[r][@l * str_i, @l]

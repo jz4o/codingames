@@ -24,7 +24,7 @@ when 'JUSTIFY'
   text.each do |line|
     next puts line if width == line.size
 
-    words = line.split(' ')
+    words = line.split
     space_size = width - words.join.size
     each_space_size = space_size / (words.size - 1).to_f
     space_sizes = (1...(words.size)).map do |i|

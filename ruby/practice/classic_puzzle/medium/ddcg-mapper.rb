@@ -6,7 +6,7 @@
 patterns = []
 tempos   = []
 @n.times do
-  tmp = gets.split(' ')
+  tmp = gets.split
   patterns << tmp[0].tr('X', '1').to_i(2)
   tempos   << tmp[1].to_i
 end

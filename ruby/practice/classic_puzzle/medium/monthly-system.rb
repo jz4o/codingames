@@ -23,5 +23,5 @@ module MonthBaseNumber
 end
 
 @n = gets.to_i
-sum = (1..@n).map { MonthBaseNumber.to_i gets.chomp }.sum
+sum = (1..@n).sum { MonthBaseNumber.to_i gets.chomp }
 puts MonthBaseNumber.from_i sum

@@ -1,8 +1,8 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@w, @h = gets.split(' ').collect(&:to_i)
-@x, @y = gets.split(' ').collect(&:to_i)
+@w, @h = gets.split.collect(&:to_i)
+@x, @y = gets.split.collect(&:to_i)
 map = []
 map << Array.new(@w, nil)
 @h.times do

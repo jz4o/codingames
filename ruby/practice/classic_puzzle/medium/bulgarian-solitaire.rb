@@ -2,7 +2,7 @@
 # the standard input according to the problem statement.
 
 n = gets.to_i
-inputs = gets.split(' ')
+inputs = gets.split
 piles = []
 (0...n).each do |i|
   c = inputs[i].to_i

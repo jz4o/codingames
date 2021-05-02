@@ -19,7 +19,7 @@ BRACKETS = {
 collect_flag = true
 chars = []
 
-@expression.split('').each do |char|
+@expression.chars.each do |char|
   next chars << char if BRACKETS[char]
   next if BRACKETS[chars.pop] == char
 

@@ -4,7 +4,7 @@
 @n = gets.to_i
 map = []
 @n.times do
-  map << gets.split(' ').map(&:to_i)
+  map << gets.split.map(&:to_i)
 end
 
 # Write an action using puts

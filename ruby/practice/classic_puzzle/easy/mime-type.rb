@@ -8,7 +8,7 @@ mts  = []
 @n.times do
   # ext: file extension
   # mt: MIME type.
-  v = gets.split(' ')
+  v = gets.split
   exts << v[0].downcase
   mts  << v[1]
 end

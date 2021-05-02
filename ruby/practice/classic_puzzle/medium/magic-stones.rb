@@ -2,7 +2,7 @@
 # the standard input according to the problem statement.
 
 @n = gets.to_i
-inputs = gets.split(' ')
+inputs = gets.split
 stones = []
 (0..(@n - 1)).each do |i|
   stones << inputs[i].to_i

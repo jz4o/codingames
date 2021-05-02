@@ -4,7 +4,7 @@ $stdout.sync = true # DO NOT REMOVE
 
 # w: number of columns.
 # h: number of rows.
-@w, @h = gets.split(' ').collect(&:to_i)
+@w, @h = gets.split.collect(&:to_i)
 lines = []
 @h.times do
   # represents a line in the grid and contains W integers. Each integer represents one room of a given type.
@@ -30,7 +30,7 @@ PANEL_DESTINATION = {
 
 # game loop
 loop do
-  xi, yi, pos = gets.split(' ')
+  xi, yi, pos = gets.split
   xi = xi.to_i
   yi = yi.to_i
 

@@ -5,11 +5,11 @@ $stdout.sync = true # DO NOT REMOVE
 # n: the total number of nodes in the level, including the gateways
 # l: the number of links
 # e: the number of exit gateways
-@n, @l, @e = gets.split(' ').collect(&:to_i)
+@n, @l, @e = gets.split.collect(&:to_i)
 links = []
 @l.times do
   # n1: N1 and N2 defines a link between these nodes
-  links << gets.split(' ').collect(&:to_i)
+  links << gets.split.collect(&:to_i)
 end
 gateway_indices = []
 @e.times do

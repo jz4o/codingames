@@ -12,8 +12,8 @@ end
 number_hash = {}
 telephones.each do |telephone|
   target_hash = number_hash
-  telephone.split('').each do |number|
-    target_hash[number] = {} unless target_hash.key?(number)
+  telephone.chars.each do |number|
+    target_hash[number] = {} unless target_hash.key? number
     target_hash = target_hash[number]
   end
 end

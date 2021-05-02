@@ -1,10 +1,10 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@l, @c = gets.split(' ').collect(&:to_i)
+@l, @c = gets.split.collect(&:to_i)
 map = []
 @l.times do
-  map << gets.chomp.split('')
+  map << gets.chomp.chars
 end
 
 # Write an action using puts
@@ -24,6 +24,7 @@ class Bender
     'N' => 'NORTH',
     'W' => 'WEST'
   }.freeze
+  OBSTACLES = ['#', 'X'].freeze
 
   @direction_priorities = DIRECTIONS.values
 
@@ -62,7 +63,7 @@ class Bender
   end
 
   def ahead_is_obstacle?
-    ['#', 'X'].include? kind_of_position(ahead_position)
+    OBSTACLES.include? kind_of_position(ahead_position)
   end
 
   def forward
@@ -82,7 +83,7 @@ class Bender
     return @direction = direction if direction
 
     self.class.direction_priorities.each do |direction_priority|
-      unless ['#', 'X'].include? kind_of_position ahead_position(direction_priority)
+      unless OBSTACLES.include? kind_of_position ahead_position(direction_priority)
         return @direction = direction_priority
       end
     end

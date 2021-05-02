@@ -1,7 +1,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@n1, @n2 = gets.split(' ').collect(&:to_i)
+@n1, @n2 = gets.split.collect(&:to_i)
 @s1 = gets.chomp
 @s2 = gets.chomp
 @t = gets.to_i

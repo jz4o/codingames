@@ -10,7 +10,7 @@ $stdout.sync = true # DO NOT REMOVE
 # nb_total_clones:         number of generated clones
 # nb_additional_elevators: ignore (always zero)
 # nb_elevators:            number of elevators
-inputs                   = gets.split(' ').collect(&:to_i)
+inputs                   = gets.split.collect(&:to_i)
 @nb_floors               = inputs[0]
 @width                   = inputs[1]
 @nb_rounds               = inputs[2]
@@ -25,7 +25,7 @@ elevator_positions = []
 @nb_elevators.times do
   # elevator_floor: floor on which this elevator is found
   # elevator_pos:   position of the elevator on its floor
-  tmp = gets.split(' ').collect(&:to_i)
+  tmp = gets.split.collect(&:to_i)
   elevator_floors    << tmp[0]
   elevator_positions << tmp[1]
 end
@@ -35,7 +35,7 @@ loop do
   # clone_floor: floor of the leading clone
   # clone_pos: position of the leading clone on its floor
   # direction: direction of the leading clone: LEFT or RIGHT
-  clone_floor, clone_pos, direction = gets.split(' ')
+  clone_floor, clone_pos, direction = gets.split
   clone_floor = clone_floor.to_i
   clone_pos   = clone_pos.to_i
 

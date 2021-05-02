@@ -16,8 +16,8 @@ end
 
 def get_completed_row_or_column_count(grid)
   [
-    grid.map           { |row| row.all? { |column| column == '#' } },
-    grid.transpose.map { |row| row.all? { |column| column == '#' } }
+    grid.map           { |row| row.all? '#' },
+    grid.transpose.map { |row| row.all? '#' }
   ].flatten.count(true)
 end
 

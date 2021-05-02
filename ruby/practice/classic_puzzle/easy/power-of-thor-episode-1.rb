@@ -8,7 +8,7 @@ $stdout.sync = true # DO NOT REMOVE
 # light_y: the Y position of the light of power
 # initial_tx: Thor's starting X position
 # initial_ty: Thor's starting Y position
-@light_x, @light_y, @initial_tx, @initial_ty = gets.split(' ').collect(&:to_i)
+@light_x, @light_y, @initial_tx, @initial_ty = gets.split.collect(&:to_i)
 
 # game loop
 loop do

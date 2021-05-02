@@ -1,7 +1,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@start, @n = gets.split(' ').collect(&:to_i)
+@start, @n = gets.split.collect(&:to_i)
 
 # Write an action using puts
 # To debug: STDERR.puts "Debug messages..."

@@ -2,7 +2,7 @@
 # the standard input according to the problem statement.
 
 @ascii_mayans = []
-@l, @h = gets.split(' ').collect(&:to_i)
+@l, @h = gets.split.collect(&:to_i)
 @h.times do |_i|
   @ascii_mayans << gets.chomp.scan(/.{#{@l}}/)
 end
@@ -42,7 +42,17 @@ end
 num1 = mayans_to_num mayans1
 num2 = mayans_to_num mayans2
 
-result = instance_eval "#{num1} #{@operation} #{num2}", __FILE__, __LINE__
+result = case @operation
+         when '+'
+           num1 + num2
+         when '-'
+           num1 - num2
+         when '*'
+           num1 * num2
+         when '/'
+           num1 / num2
+         end
+
 result.to_s(@ascii_mayans.length).each_char do |char|
   puts @ascii_mayans[char.to_i(@ascii_mayans.length)]
 end

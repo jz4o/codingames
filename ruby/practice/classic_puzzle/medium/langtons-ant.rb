@@ -4,8 +4,8 @@
 MARKS = { black: '#', white: '.' }.freeze
 directions = %w[N E S W]
 
-@w, @h = gets.split(' ').collect(&:to_i)
-@x, @y = gets.split(' ').collect(&:to_i)
+@w, @h = gets.split.collect(&:to_i)
+@x, @y = gets.split.collect(&:to_i)
 @direction = gets.chomp
 directions.rotate!(directions.index(@direction))
 @t = gets.to_i

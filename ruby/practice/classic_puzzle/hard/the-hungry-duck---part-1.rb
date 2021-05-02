@@ -1,10 +1,10 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@w, @h = gets.split(' ').collect(&:to_i)
+@w, @h = gets.split.collect(&:to_i)
 map = Array.new(@h) { Array.new(@w) { nil } }
 @h.times do |h|
-  inputs = gets.split(' ')
+  inputs = gets.split
   (0..(@w - 1)).each do |j|
     food = inputs[j].to_i
     map[h][j] = food

@@ -27,7 +27,7 @@ begin
     winner.push(*decks.first.shift(index + 1), *decks.last.shift(index + 1))
   end
 
-  puts "#{decks.index(decks.max { |card| card.length }) + 1} #{turn}"
+  puts "#{decks.index(decks.max_by(&:length)) + 1} #{turn}"
 rescue StandardError
   puts 'PAT'
 end

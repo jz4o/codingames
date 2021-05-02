@@ -1,7 +1,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@width, @height = gets.split(' ').collect(&:to_i)
+@width, @height = gets.split.collect(&:to_i)
 @count = gets.to_i
 rasters = []
 @height.times do

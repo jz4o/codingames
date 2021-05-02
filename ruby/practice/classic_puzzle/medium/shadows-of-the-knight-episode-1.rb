@@ -4,9 +4,9 @@ $stdout.sync = true # DO NOT REMOVE
 
 # w: width of the building.
 # h: height of the building.
-@w, @h = gets.split(' ').collect(&:to_i)
+@w, @h = gets.split.collect(&:to_i)
 @n = gets.to_i # maximum number of turns before game over.
-@x0, @y0 = gets.split(' ').collect(&:to_i)
+@x0, @y0 = gets.split.collect(&:to_i)
 
 bomb_min_height = @h
 bomb_max_height = 0

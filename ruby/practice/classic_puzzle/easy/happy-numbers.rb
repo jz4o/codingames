@@ -22,7 +22,7 @@ xs.each do |x|
   exit_numbers = [HAPPY_NUMBER]
   until exit_numbers.include? temp do
     exit_numbers << temp
-    temp = temp.digits.map { |t| t**2 }.sum
+    temp = temp.digits.sum { |t| t.to_i**2 }
   end
   result_face = temp == HAPPY_NUMBER ? HAPPY_FACE : UNHAPPY_FACE
 

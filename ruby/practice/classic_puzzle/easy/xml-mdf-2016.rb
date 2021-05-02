@@ -22,7 +22,7 @@ until @sequence.empty?
 end
 
 depths.transform_values! do |value|
-  value.map { |v| Rational(1, v) }.sum
+  value.sum { |v| Rational(1, v) }
 end
 
 puts depths.max_by(&:last)[0]

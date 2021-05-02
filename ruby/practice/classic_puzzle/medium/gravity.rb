@@ -2,9 +2,9 @@
 # the standard input according to the problem statement.
 
 map = []
-@width, @height = gets.split(' ').collect(&:to_i)
+@width, @height = gets.split.collect(&:to_i)
 @height.times do
-  map << gets.chomp.split('')
+  map << gets.chomp.chars
 end
 
 # Write an action using puts

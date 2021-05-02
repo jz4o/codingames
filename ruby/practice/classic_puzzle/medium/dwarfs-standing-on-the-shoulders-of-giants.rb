@@ -5,7 +5,7 @@
 relation_map = {}
 @n.times do
   # x: a relationship of influence between two people (x influences y)
-  parent, child = gets.split(' ').collect(&:to_i)
+  parent, child = gets.split.collect(&:to_i)
   relation_map[parent] = [] unless relation_map[parent]
   relation_map[parent] << child
 end
