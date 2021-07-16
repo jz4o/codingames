@@ -16,15 +16,12 @@ class String
     result = ''
     int = to_i
     while int > 0 do
-      i = int % ALPHAS.size
-      if i == 0
-        i = ALPHAS.size
-        int -= 1
-      end
+      int, i = int.divmod ALPHAS.size
+      int -= 1 if i == 0
 
-      int = int > ALPHAS.size ? int / ALPHAS.size : 0
       result = ALPHAS[i - 1] + result
     end
+
     result
   end
 
@@ -33,6 +30,7 @@ class String
     chars.reverse.each_with_index do |i, index|
       result += (ALPHAS.size**index) * (ALPHAS.index(i) + 1)
     end
+
     result
   end
 end
