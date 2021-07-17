@@ -48,15 +48,10 @@ func intLabelToAlphaLabel(intLabel string) string {
     result := ""
     for bigIntLabel.Cmp(big.NewInt(0)) == 1 {
         i := bigInt.Mod(bigIntLabel, alphaBase).Int64()
+        bigIntLabel.Div(bigIntLabel, alphaBase)
         if i == 0 {
             i = int64(len(alphas))
             bigIntLabel.Sub(bigIntLabel, big.NewInt(1))
-        }
-
-        if bigIntLabel.Cmp(alphaBase) == 1 {
-            bigIntLabel.Div(bigIntLabel, alphaBase)
-        } else {
-            bigIntLabel = big.NewInt(0)
         }
 
         result = alphas[i - 1] + result
