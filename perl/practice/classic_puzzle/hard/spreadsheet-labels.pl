@@ -34,12 +34,9 @@ sub int_label_to_alpha_label {
     my $result = '';
     while ($int_label > 0) {
         my $i = $int_label % scalar(@ALPHAS);
-        if ($i == 0) {
-            $i = scalar(@ALPHAS);
-            $int_label--;
-        }
+        $int_label = int($int_label / scalar(@ALPHAS));
+        $int_label-- if $i == 0;
 
-        $int_label = $int_label > scalar(@ALPHAS) ? int($int_label / scalar(@ALPHAS)) : 0;
         $result = "$ALPHAS[$i - 1]$result";
     }
 
