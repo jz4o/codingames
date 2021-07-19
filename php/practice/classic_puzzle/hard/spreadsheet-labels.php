@@ -40,11 +40,12 @@ function int_label_to_alpha_label($int_label) {
     $result = '';
     while ($int_label > 0) {
         $i = intval(bcmod(strval($int_label), strval(count(ALPHAS))));
+        $int_label = intval(bcdiv(strval($int_label), strval(count(ALPHAS))));
         if ($i === 0) {
             $i = count(ALPHAS);
             $int_label--;
         }
-        $int_label = $int_label > count(ALPHAS) ? intval(bcdiv(strval($int_label), strval(count(ALPHAS)))) : 0;
+
         $result = ALPHAS[$i - 1].$result;
     }
 
