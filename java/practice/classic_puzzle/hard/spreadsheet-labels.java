@@ -39,12 +39,12 @@ class Solution {
         String result = "";
         while (intLabel > 0) {
             long i = intLabel % ALPHAS.length;
+            intLabel = intLabel / ALPHAS.length;
             if (i == 0) {
                 i = ALPHAS.length;
                 intLabel--;
             }
 
-            intLabel = intLabel > ALPHAS.length ? intLabel / ALPHAS.length : 0;
             result = ALPHAS[(int)i - 1] + result;
         }
 
