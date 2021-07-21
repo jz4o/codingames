@@ -36,13 +36,13 @@ class SpreadsheetLabel(val label: String) {
         var tmpLabel: Long = label.toLong()
         while (tmpLabel > 0) {
             var alphaIndex: Int = (tmpLabel % ALPHAS.size).toInt()
+            tmpLabel = tmpLabel / ALPHAS.size
 
             if (alphaIndex == 0) {
                 alphaIndex = ALPHAS.size
                 tmpLabel--
             }
 
-            tmpLabel = if (tmpLabel > ALPHAS.size) tmpLabel / ALPHAS.size else 0
             result = ALPHAS[alphaIndex - 1] + result
         }
 
