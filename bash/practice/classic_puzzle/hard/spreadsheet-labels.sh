@@ -21,15 +21,9 @@ int_label_to_alpha_label() {
     result=''
     while [ $int_label -gt 0 ]; do
         i=`echo "$int_label % ${#alphas[@]}" | bc`
+        int_label=`echo "$int_label / ${#alphas[@]}" | bc`
         if [ $i -eq 0 ]; then
-            i=${#alphas[@]}
             let int_label--
-        fi
-
-        if [ $int_label -gt ${#alphas[@]} ]; then
-            int_label=`echo "$int_label / ${#alphas[@]}" | bc`
-        else
-            int_label=0
         fi
 
         result="${alphas[$(( $i - 1 ))]}$result"
