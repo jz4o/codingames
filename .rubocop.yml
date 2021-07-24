@@ -28,7 +28,7 @@ Metrics/MethodLength:
   Enabled: false
 
 Metrics/PerceivedComplexity:
-  Max: 9
+  Enabled: false
 
 Naming/FileName:
   Enabled: false
