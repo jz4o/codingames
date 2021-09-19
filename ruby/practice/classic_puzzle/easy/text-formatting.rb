@@ -14,7 +14,7 @@ require_period = @intext[-1] == '.'
 @intext.squeeze!(' ')
 
 @intext = @intext.split('.')
-@intext = @intext.map { |line| line.strip.capitalize! }.compact.join('. ')
+@intext = @intext.filter_map { |line| line.strip.capitalize! }.join('. ')
 
 @intext.gsub!(' ,', ',')
 @intext.squeeze!(',')

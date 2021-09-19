@@ -15,7 +15,7 @@ until packet.empty?
   packet_length = packet[3..6]
   decimal_packet_length = packet_length.to_i(2)
   packet_info = packet[7, decimal_packet_length]
-  packet = packet[7 + decimal_packet_length..] || ''
+  packet = packet[(7 + decimal_packet_length)..] || ''
 
   packets << Packet.new(instruction_id, packet_length, packet_info)
 end
