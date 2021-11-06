@@ -12,6 +12,9 @@ AllCops:
 Layout/LineLength:
   Max: 120
 
+Lint/AmbiguousOperatorPrecedence:
+  Enabled: false
+
 Lint/AssignmentInCondition:
   Enabled: false
 
