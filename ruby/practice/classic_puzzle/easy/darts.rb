@@ -16,7 +16,7 @@ throw_datas = []
 end
 
 HALF_SIZE = @size / 2
-score_board = names.map { |name| [name, 0] }.to_h
+score_board = names.to_h { |name| [name, 0] }
 
 throw_datas.each do |throw_data|
   name, x, y = throw_data.split
