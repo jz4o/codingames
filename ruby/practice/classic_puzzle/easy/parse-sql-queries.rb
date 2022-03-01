@@ -21,7 +21,7 @@ sql_regexp = '(SELECT)\s(.*)\s(FROM)\s(.*)'
 sql_regexp.concat '\s(WHERE)\s(.*)' if sql_query.include? 'WHERE'
 sql_regexp.concat '\s(ORDER BY)\s(.*)' if sql_query.include? 'ORDER BY'
 
-query = sql_query.scan(Regexp.new(sql_regexp)).flatten.map(&:strip).each_slice(2).to_h
+query = sql_query.scan(Regexp.new(sql_regexp)).flatten.each_slice(2).to_h
 
 if query.key? 'WHERE'
   column, value = query['WHERE'].split(' = ')
