@@ -139,7 +139,7 @@ class Bender
     end
 
     def hash
-      @x.hash * @y.hash
+      [@x, @y].hash
     end
   end
 end
