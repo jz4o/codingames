@@ -5,7 +5,7 @@
 strengths = []
 @n.times do
   v, e = gets.split.collect(&:to_i)
-  strengths << { v: v, e: e }
+  strengths << { v:, e: }
 end
 
 # Write an action using puts

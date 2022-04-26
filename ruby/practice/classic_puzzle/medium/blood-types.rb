@@ -6,7 +6,7 @@ families = []
 n.times do
   parent1, parent2, child = gets.split
 
-  families << { parent1: parent1, parent2: parent2, child: child }
+  families << { parent1:, parent2:, child: }
 end
 
 # Write an answer using puts

@@ -31,11 +31,7 @@ end
 n = gets.to_i
 n.times do
   operation, arg1, arg2 = gets.split
-  @cells << {
-    operation: operation,
-    arg1: arg1,
-    arg2: arg2
-  }
+  @cells << { operation:, arg1:, arg2: }
 end
 n.times do |i|
   # Write an action using puts

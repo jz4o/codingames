@@ -12,8 +12,8 @@ max_money = 0
   sum_money = money + prev_rooms.map { |room| room[:sum_money] }.max.to_i
 
   rooms << {
-    number: number,
-    sum_money: sum_money,
+    number:,
+    sum_money:,
     accesses: [access1, access2]
   }
 
