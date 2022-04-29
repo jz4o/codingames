@@ -1,34 +1,15 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-@message = gets.chomp
+message = gets.chomp
 
-# Write an action using puts
+# Write an answer using puts
 # To debug: STDERR.puts "Debug messages..."
 
-# convert decimal to 7 bit binary string
-binary = ''
-@message.chars.each do |s|
-  binary << s.ord.to_s(2).rjust(7, '0')
-end
+binary = message.chars.map { |char| char.ord.to_s(2).rjust(7, '0') }.join
+binary_groups = binary.chars.chunk(&:to_i).map(&:last)
 
-# grouping same char and convert to array
-matched_array = []
-until binary.empty? do
-  # get continuous same character from beginning of binary string
-  matched = binary.match(/#{binary[0]}+/)[0]
+result = binary_groups.flat_map { |group| [2 - group.first.to_i, group.size] }.map { |count| '0' * count }.join(' ')
 
-  matched_array << matched
-
-  binary.sub!(matched, '')
-end
-
-res = ''
-matched_array.each do |m|
-  res << '0' * (2 - m[0].to_i)
-  res << ' '
-  res << m.tr('1', '0')
-  res << ' '
-end
-
-puts res.chop
+# puts "answer"
+puts result
