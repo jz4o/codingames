@@ -32,7 +32,7 @@ end
 
 results = gymnasts.map do |gymnast|
   score = scores[gymnast]
-  categories.map { |category| score[category].to_s.sub(/\.0+$/, '') }.join(',')
+  categories.map { |category| score[category].to_s.sub(/\.?0+$/, '') }.join(',')
 end
 
 # puts "0.00"
