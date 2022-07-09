@@ -34,4 +34,14 @@ services:
     working_dir: /usr/src
     tty: true
     # command: ["tail", '-f', '/dev/null']
+  python:
+    build:
+      context: ./
+      dockerfile: dockerfiles/python/Dockerfile
+    volumes:
+      - .:/usr/src
+    environment:
+      TZ: Asia/Tokyo
+    working_dir: /usr/src
+    tty: true
 
