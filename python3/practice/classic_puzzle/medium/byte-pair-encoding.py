@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -28,7 +28,13 @@ while True:
     group_sizes = [[char_group, len(re.findall(char_group, replaced_string))] for char_group in char_groups]
 
     max_group_size = max([group_size for _, group_size in group_sizes])
-    target_char, target_size = [[char_group, group_size] for char_group, group_size in group_sizes if group_size == max_group_size][0]
+    target_char = None
+    target_size = None
+    for char_group, group_size in group_sizes:
+        if group_size == max_group_size:
+            target_char = char_group
+            target_size = group_size
+            break
 
     if target_size < 2:
         break

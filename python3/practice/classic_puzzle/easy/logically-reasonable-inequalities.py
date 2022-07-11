@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -28,7 +28,7 @@ while len(temps) > 0:
     temp = temps.pop()
 
     if temp[-1] in inheritances:
-        for  inheritance_child in inheritances[temp[-1]]:
+        for inheritance_child in inheritances[temp[-1]]:
             temps.append(temp + inheritance_child)
 
             if inheritance_child in temp:

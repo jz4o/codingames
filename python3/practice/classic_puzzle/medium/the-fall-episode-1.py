@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -9,7 +9,8 @@ import math
 w, h = [int(i) for i in input().split()]
 lines = []
 for i in range(h):
-    line = input()  # represents a line in the grid and contains W integers. Each integer represents one room of a given type.
+    # represents a line in the grid and contains W integers. Each integer represents one room of a given type.
+    line = input()
     lines.append(line)
 ex = int(input())  # the coordinate along the X axis of the exit (not useful for this first mission, but must be read).
 

@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -18,10 +18,12 @@ for i in range(c):
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
+
 class Point:
     def __init__(self, y, x):
         self.y = y
         self.x = x
+
 
 object_parts_points = []
 for line_index, object_line in enumerate(object_lines):

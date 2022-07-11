@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -15,6 +15,7 @@ for i in range(n):
 
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
+
 
 class Mass:
     def __init__(self, y, x, value):

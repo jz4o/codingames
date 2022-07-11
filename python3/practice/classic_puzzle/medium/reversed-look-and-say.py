@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -12,7 +12,7 @@ s = input()
 def is_encodable(text):
     encoded_text = encode(text)
 
-    return encoded_text != None and encoded_text != text
+    return encoded_text is not None and encoded_text != text
 
 
 def encode(text):

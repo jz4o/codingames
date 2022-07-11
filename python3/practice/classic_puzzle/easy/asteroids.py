@@ -1,4 +1,4 @@
-import sys
+# import sys
 import math
 
 # Auto-generated code below aims at helping you parse
@@ -23,14 +23,14 @@ for row_index, row in enumerate(first_picture_rows):
         if char == '.':
             continue
 
-        position_dict[char]['first'] = { 'y': row_index, 'x': char_index }
+        position_dict[char]['first'] = {'y': row_index, 'x': char_index}
 
 for row_index, row in enumerate(second_picture_rows):
     for char_index, char in enumerate(row):
         if char == '.':
             continue
 
-        position_dict[char]['second'] = { 'y': row_index, 'x': char_index }
+        position_dict[char]['second'] = {'y': row_index, 'x': char_index}
 
 for position in position_dict.values():
     y_speed = (position['second']['y'] - position['first']['y']) / (t2 - t1)
@@ -39,7 +39,7 @@ for position in position_dict.values():
     third_y = position['second']['y'] + math.floor(y_speed * (t3 - t2))
     third_x = position['second']['x'] + math.floor(x_speed * (t3 - t2))
 
-    position['third'] = { 'y': None, 'x': None }
+    position['third'] = {'y': None, 'x': None}
     if 0 <= third_y <= h - 1:
         position['third']['y'] = third_y
     if 0 <= third_x <= w - 1:

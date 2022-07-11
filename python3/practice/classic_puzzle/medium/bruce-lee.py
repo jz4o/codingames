@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -24,7 +24,7 @@ else:
         binary = encrypts[i]
         count = encrypts[i + 1]
 
-        if not binary in KIND_OF_FIRST_SEQUENCE:
+        if binary not in KIND_OF_FIRST_SEQUENCE:
             invalid_flag = True
             break
 

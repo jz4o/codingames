@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import pandas as pd
 
@@ -33,7 +33,7 @@ results = []
 for h in range(len(df_pixel.index) - len(df_weight.index) + 1):
     result = []
     for w in range(len(df_pixel.columns) - len(df_weight.columns) + 1):
-        pixel_values = df_pixel.iloc[h:h+len(df_weight.index), w:w+len(df_weight.columns)].values
+        pixel_values = df_pixel.iloc[h:h + len(df_weight.index), w:w + len(df_weight.columns)].values
         convolution_value = (pixel_values * df_weight.values).sum()
 
         result.append(convolution_value)

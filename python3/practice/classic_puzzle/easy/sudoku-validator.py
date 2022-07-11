@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import numpy as np
 
@@ -17,7 +17,7 @@ for i in range(9):
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
-groups= []
+groups = []
 groups.extend(grid)
 groups.extend([list(row) for row in np.array(grid).T])
 

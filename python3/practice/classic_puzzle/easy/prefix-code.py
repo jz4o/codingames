@@ -1,13 +1,15 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
+
 
 class PrefixCode:
     def __init__(self, binary, char):
         self.binary = binary
         self.char = char
+
 
 n = int(input())
 prefix_codes = []
@@ -22,7 +24,7 @@ s = input()
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
-prefix_codes.sort(key=lambda prefix_code: len(prefix_code.binary), reverse = True)
+prefix_codes.sort(key=lambda prefix_code: len(prefix_code.binary), reverse=True)
 
 temp_s = s
 

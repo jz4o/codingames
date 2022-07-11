@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -13,7 +13,7 @@ equality = input()
 
 NUMERALS = list(map(str, range(10))) + [chr(i + ord('A')) for i in range(26)]
 
-x, y, z = re.findall('(.+)\+(.+)=(.+)', equality)[0]
+x, y, z = re.findall(r'(.+)\+(.+)=(.+)', equality)[0]
 
 max_numeral = next(filter(lambda n: n in equality, reversed(NUMERALS)))
 minimum_n = NUMERALS.index(max_numeral) + 1

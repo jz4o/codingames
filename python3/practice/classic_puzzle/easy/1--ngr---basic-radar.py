@@ -1,8 +1,9 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
+
 
 class ScanResult:
     def __init__(self, plate, radarname, radarpoint, timestamp):
@@ -10,6 +11,7 @@ class ScanResult:
         self.radarname = radarname
         self.radarpoint = radarpoint
         self.timestamp = timestamp
+
 
 n = int(input())
 scan_results = []

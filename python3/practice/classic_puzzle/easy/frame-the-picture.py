@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -17,12 +17,14 @@ for i in range(h):
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
+
 def surround(grid, char):
     return [
         [char] * (len(grid[0]) + 2),
         *[[char, *row, char] for row in grid],
         [char] * (len(grid[0]) + 2)
     ]
+
 
 grid = [list(line.ljust(w)) for line in lines]
 for frame_char in reversed(frame_pattern + ' '):

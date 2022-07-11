@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -11,9 +11,10 @@ expr = input()
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
+
 def calc(expr):
     while '(' in expr:
-        bracket_expr = next(re.finditer('\(.*?\)', expr)).group()
+        bracket_expr = next(re.finditer(r'\(.*?\)', expr)).group()
         answer = calc(bracket_expr[1:-1])
 
         expr = expr.replace(bracket_expr, str(answer))
@@ -36,7 +37,7 @@ def calc(expr):
             index = expr_elements.index(operation)
             left, _, right = expr_elements[index - 1:index + 2]
             answer = exec_operation[operation](left, right)
-            expr_elements[index-1:index+2] = [str(answer)]
+            expr_elements[index - 1:index + 2] = [str(answer)]
 
     return int(expr_elements[0])
 
@@ -50,7 +51,7 @@ while len(incomplete_exprs) > 0:
         exprs.append(incomplete_expr)
         continue
 
-    dice = next(re.finditer('d\d', incomplete_expr)).group()
+    dice = next(re.finditer(r'd\d', incomplete_expr)).group()
     front, back = incomplete_expr.split(dice, 1)
 
     dice_number = int(dice[1:])

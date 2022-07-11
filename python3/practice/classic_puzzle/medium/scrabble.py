@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -15,19 +15,28 @@ letters = input()
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
+
 class Result:
     def __init__(self, word, point):
         self.word = word
         self.point = point
 
+
 points = {}
-for c in 'eaionrtlsu': points[c] = 1
-for c in 'dg': points[c] = 2
-for c in 'bcmp': points[c] = 3
-for c in 'fhvwy': points[c] = 4
-for c in 'k': points[c] = 5
-for c in 'jx': points[c] = 8
-for c in 'qz': points[c] = 10
+for c in 'eaionrtlsu':
+    points[c] = 1
+for c in 'dg':
+    points[c] = 2
+for c in 'bcmp':
+    points[c] = 3
+for c in 'fhvwy':
+    points[c] = 4
+for c in 'k':
+    points[c] = 5
+for c in 'jx':
+    points[c] = 8
+for c in 'qz':
+    points[c] = 10
 
 result = Result('', 0)
 for word in words:
@@ -35,7 +44,7 @@ for word in words:
 
     made_flag = True
     for w in word:
-        if not w in chars:
+        if w not in chars:
             made_flag = False
             break
 

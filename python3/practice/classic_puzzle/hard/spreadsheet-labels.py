@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -11,6 +11,7 @@ labels = []
 for label in input().split():
     # pass
     labels.append(label)
+
 
 def to_alpha_label(alpha):
     alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -39,7 +40,7 @@ def to_int_label(alpha):
 
 results = []
 for label in labels:
-    if re.fullmatch('^\d+$', label):
+    if re.fullmatch(r'^\d+$', label):
         results.append(to_alpha_label(label))
     else:
         results.append(to_int_label(label))

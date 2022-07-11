@@ -1,15 +1,17 @@
-import sys
-import math
+# import sys
+# import math
 
 import numpy as np
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
+
 class Line:
     def __init__(self, pattern, tempo):
         self.pattern = pattern
         self.tempo = tempo
+
 
 l = int(input())
 n = int(input())

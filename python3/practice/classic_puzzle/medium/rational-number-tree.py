@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 from fractions import Fraction
 import re
@@ -16,6 +16,7 @@ for i in range(n):
 
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
+
 
 class MimicryFraction:
     def __init__(self, numerator, denominator):

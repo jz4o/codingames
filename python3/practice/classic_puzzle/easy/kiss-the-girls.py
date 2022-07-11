@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -12,6 +12,7 @@ for i in range(h):
 
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
+
 
 class Girl:
     def __init__(self, y, x, probability):
@@ -32,7 +33,7 @@ for line_index, line in enumerate(lines):
 girls = sorted(girls, key=lambda girl: girl.probability)
 
 not_catching_probability = 1
-CATCHING_BORDER= 0.6
+CATCHING_BORDER = 0.6
 
 girl_count = 0
 while len(girls) > 0:

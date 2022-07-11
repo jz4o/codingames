@@ -1,13 +1,15 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
+
 
 class Voter:
     def __init__(self, name, vote_count):
         self.name = name
         self.vote_count = vote_count
+
 
 n = int(input())
 m = int(input())
@@ -23,7 +25,7 @@ votes = {}
 for i in range(m):
     voter_name, vote_value = input().split()
 
-    if not voter_name in votes.keys():
+    if voter_name not in votes.keys():
         votes[voter_name] = []
     votes[voter_name].append(vote_value)
 
@@ -33,7 +35,7 @@ for i in range(m):
 yes = 0
 no = 0
 for voter in voters:
-    if not voter.name in votes.keys() or voter.vote_count < len(votes[voter.name]):
+    if voter.name not in votes.keys() or voter.vote_count < len(votes[voter.name]):
         continue
 
     yes += len(list(filter(lambda vote: vote == 'Yes', votes[voter.name])))

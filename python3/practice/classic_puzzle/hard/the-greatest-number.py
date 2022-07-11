@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -21,10 +21,10 @@ if minus_flag:
     if dot_flag:
         _input = _input[0] + '.' + _input[1:]
     _input = '-' + _input
-    if re.match('^-0\.0+$', _input):
+    if re.match(r'^-0\.0+$', _input):
         _input = '0'
 else:
-    _input = ''.join(sorted(list(_input), reverse = True))
+    _input = ''.join(sorted(list(_input), reverse=True))
     if dot_flag:
         _input = _input[:-1] + '.' + _input[-1]
     if _input.endswith('.0'):

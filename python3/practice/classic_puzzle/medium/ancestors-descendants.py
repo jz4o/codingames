@@ -1,13 +1,15 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
+
 
 class Generation:
     def __init__(self, level, name):
         self.level = level
         self.name = name
+
 
 count = int(input())
 generations = []

@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import pandas as pd
 
@@ -22,7 +22,7 @@ player_numbers = []
 lines = []
 
 for i in range(0, len(rows), BINGO_ROWS):
-    player_rows = rows[i:i+BINGO_ROWS]
+    player_rows = rows[i:i + BINGO_ROWS]
 
     grid = pd.DataFrame([map(int, row.split()) for row in player_rows])
 

@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -12,7 +12,8 @@ import math
 # nb_total_clones: number of generated clones
 # nb_additional_elevators: ignore (always zero)
 # nb_elevators: number of elevators
-nb_floors, width, nb_rounds, exit_floor, exit_pos, nb_total_clones, nb_additional_elevators, nb_elevators = [int(i) for i in input().split()]
+inputs = [int(i) for i in input().split()]
+nb_floors, width, nb_rounds, exit_floor, exit_pos, nb_total_clones, nb_additional_elevators, nb_elevators = inputs
 elevator_floors = []
 elevator_positions = []
 for i in range(nb_elevators):

@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -21,10 +21,11 @@ for i in range(n):
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
+
 class BrainFack:
     @classmethod
     def exec(cls, program, array_size, inputs):
-        program = re.sub('[^><+-.,\[\]]', '', program)
+        program = re.sub(r'[^><+-.,\[\]]', '', program)
 
         array = [0] * array_size
         pointer = 0
@@ -86,6 +87,7 @@ class BrainFack:
             raise Exception('SYNTAX ERROR')
 
         return jump_index_pairs
+
 
 result = BrainFack.exec(program, s, inputs)
 

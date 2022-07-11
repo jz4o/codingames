@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -23,10 +23,10 @@ for row_index, row in enumerate(grid):
             continue
 
         for h in range(1, height - row_index + 1):
-            h_rows = grid[row_index:row_index+h]
+            h_rows = grid[row_index:row_index + h]
 
             for w in range(1, width - cell_index + 1):
-                binary_rows = [h_row[cell_index:cell_index+w] for h_row in h_rows]
+                binary_rows = [h_row[cell_index:cell_index + w] for h_row in h_rows]
                 if all([0 not in binary_row for binary_row in binary_rows]):
                     rectangle_sizes.append(sum([len(binary_row) for binary_row in binary_rows]))
 

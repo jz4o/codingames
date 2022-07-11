@@ -1,8 +1,9 @@
-import sys
+# import sys
 import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
+
 
 class Defib:
     def __init__(self, id, name, address, phone, longitude, latitude):
@@ -12,6 +13,7 @@ class Defib:
         self.phone = phone
         self.longitude = float(longitude.replace(',', '.'))
         self.latitude = float(latitude.replace(',', '.'))
+
 
 lon = float(input().replace(',', '.'))
 lat = float(input().replace(',', '.'))

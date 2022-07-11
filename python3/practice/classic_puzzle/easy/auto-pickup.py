@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -10,11 +10,13 @@ packet = input()
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
+
 class Packet:
     def __init__(self, instruction_id, packet_length, packet_info):
         self.instruction_id = instruction_id
         self.packet_length = packet_length
         self.packet_info = packet_info
+
 
 packets = []
 while any(packet):

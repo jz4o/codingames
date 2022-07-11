@@ -1,4 +1,4 @@
-import sys
+# import sys
 import math
 
 import re
@@ -16,12 +16,14 @@ for i in range(n):
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
+
 def gcd(numbers):
     result = max(numbers)
     for number in numbers:
         result = math.gcd(result, number)
 
     return result
+
 
 number_indexes = [index for index, line in enumerate(lines) if re.fullmatch('^\\d+$', line)]
 base_number = 1 if len(number_indexes) == 0 else int(lines[number_indexes[0]]) - number_indexes[0]

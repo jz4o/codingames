@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -18,7 +18,8 @@ x = input()
 
 assignment_dict = {}
 for assignment in assignments:
-    array_name, range_begin, range_end, values = re.findall('([A-Z]+)\\[([\\-\\d]+)\\.\\.([\\-\\d]+)\\] = ([\\-\\s\\d]+)', assignment)[0]
+    pattern = '([A-Z]+)\\[([\\-\\d]+)\\.\\.([\\-\\d]+)\\] = ([\\-\\s\\d]+)'
+    array_name, range_begin, range_end, values = re.findall(pattern, assignment)[0]
 
     if array_name not in assignment_dict:
         assignment_dict[array_name] = {}

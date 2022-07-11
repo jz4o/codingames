@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -22,14 +22,22 @@ for row_index in range(1, h + 1):
         if grid[row_index][column_index] != 9:
             continue
 
-        if grid[row_index - 1][column_index - 1] != 9: grid[row_index - 1][column_index - 1] += 1
-        if grid[row_index - 1][column_index] != 9:     grid[row_index - 1][column_index] += 1
-        if grid[row_index - 1][column_index + 1] != 9: grid[row_index - 1][column_index + 1] += 1
-        if grid[row_index][column_index - 1] != 9:     grid[row_index][column_index - 1] += 1
-        if grid[row_index][column_index + 1] != 9:     grid[row_index][column_index + 1] += 1
-        if grid[row_index + 1][column_index - 1] != 9: grid[row_index + 1][column_index - 1] += 1
-        if grid[row_index + 1][column_index] != 9:     grid[row_index + 1][column_index] += 1
-        if grid[row_index + 1][column_index + 1] != 9: grid[row_index + 1][column_index + 1] += 1
+        if grid[row_index - 1][column_index - 1] != 9:
+            grid[row_index - 1][column_index - 1] += 1
+        if grid[row_index - 1][column_index] != 9:
+            grid[row_index - 1][column_index] += 1
+        if grid[row_index - 1][column_index + 1] != 9:
+            grid[row_index - 1][column_index + 1] += 1
+        if grid[row_index][column_index - 1] != 9:
+            grid[row_index][column_index - 1] += 1
+        if grid[row_index][column_index + 1] != 9:
+            grid[row_index][column_index + 1] += 1
+        if grid[row_index + 1][column_index - 1] != 9:
+            grid[row_index + 1][column_index - 1] += 1
+        if grid[row_index + 1][column_index] != 9:
+            grid[row_index + 1][column_index] += 1
+        if grid[row_index + 1][column_index + 1] != 9:
+            grid[row_index + 1][column_index + 1] += 1
 
 results = []
 for row in grid[1:-1]:

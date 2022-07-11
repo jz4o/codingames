@@ -1,8 +1,9 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
+
 
 class Player:
     DECISION_TABLE = {
@@ -69,7 +70,7 @@ while len(players) > 1:
     for index in range(0, len(players), 2):
         left, right = players[index:index + 2]
 
-        winner, loser = Player(0, 'R'), Player(0, 'R') # dummy players
+        winner, loser = Player(0, 'R'), Player(0, 'R')  # dummy players
         compete = left.compete(right)
         if compete == 'win':
             winner, loser = left, right

@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import pandas as pd
 
@@ -13,18 +13,19 @@ s = int(input())
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
+
 def get_segment_char(num, pos, c):
     SEGMENTS = [
-        ["t", "tl", "tr",      "bl", "br", "b"],
-        [           "tr",            "br"],
-        ["t",       "tr", "c", "bl",     "b"],
-        ["t",       "tr", "c",       "br", "b"],
-        [     "tl", "tr", "c",       "br"],
-        ["t", "tl",       "c",       "br", "b"],
-        ["t", "tl",       "c", "bl", "br", "b"],
-        ["t",       "tr",            "br"],
+        ["t", "tl", "tr", "bl", "br", "b"],
+        ["tr", "br"],
+        ["t", "tr", "c", "bl", "b"],
+        ["t", "tr", "c", "br", "b"],
+        ["tl", "tr", "c", "br"],
+        ["t", "tl", "c", "br", "b"],
+        ["t", "tl", "c", "bl", "br", "b"],
+        ["t", "tr", "br"],
         ["t", "tl", "tr", "c", "bl", "br", "b"],
-        ["t", "tl", "tr", "c",       "br", "b"]
+        ["t", "tl", "tr", "c", "br", "b"]
     ]
 
     return c if pos in SEGMENTS[num] else ' '

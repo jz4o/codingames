@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import numpy as np
 
@@ -15,6 +15,7 @@ for i in range(h):
 
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
+
 
 def get_completed_row_or_column_count(grid):
     return list(map(lambda row: all(row == '#'), [*grid, *grid.T])).count(True)

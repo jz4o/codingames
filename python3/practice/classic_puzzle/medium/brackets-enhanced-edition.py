@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -19,7 +19,7 @@ for i in range(n):
 
     expression = expressions[i]
 
-    expression = ''.join(re.findall('[()\[\]{}<>]', expression))
+    expression = ''.join(re.findall(r'[()\[\]{}<>]', expression))
     expression = expression.replace('(', ')').replace('[', ']').replace('{', '}').replace('<', '>')
 
     brackets = []

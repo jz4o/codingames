@@ -1,4 +1,4 @@
-import sys
+# import sys
 import math
 
 # Auto-generated code below aims at helping you parse
@@ -11,10 +11,12 @@ n = int(input())
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
+
 class BlitzProg:
     def __init__(self, level, exp_to_level_up):
         self.level = level
         self.exp_to_level_up = exp_to_level_up
+
 
 def reflect_exp(current_level, exp, level_up_exp):
     temp_exp = exp
@@ -27,6 +29,7 @@ def reflect_exp(current_level, exp, level_up_exp):
         return BlitzProg(current_level, temp_exp * -1)
     else:
         return reflect_exp(current_level + 1, temp_exp, -1)
+
 
 def get_exp_for_level_up(current_level):
     return int(current_level * math.sqrt(current_level) * 10)

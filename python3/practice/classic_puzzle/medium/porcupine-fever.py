@@ -1,14 +1,16 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
+
 
 class Cage:
     def __init__(self, sick, healthy, alive):
         self.sick = sick
         self.healthy = healthy
         self.alive = alive
+
 
 n = int(input())
 y = int(input())

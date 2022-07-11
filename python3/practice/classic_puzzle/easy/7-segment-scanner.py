@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import pandas as pd
 
@@ -30,7 +30,7 @@ transposed_lines = pd.DataFrame([list(line_1), list(line_2), list(line_3)]).T
 
 results = []
 for index in range(0, len(transposed_lines), 3):
-    num = DIGIT_NUMS.index(''.join(transposed_lines.values[index:index+3].flatten()))
+    num = DIGIT_NUMS.index(''.join(transposed_lines.values[index:index + 3].flatten()))
     results.append(num)
 
 result = ''.join(map(str, results))

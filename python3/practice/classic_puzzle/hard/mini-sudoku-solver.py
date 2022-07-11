@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import itertools
 import pandas as pd
@@ -14,6 +14,7 @@ line_4 = input()
 
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
+
 
 def optimaze(square):
     for row_index, row in enumerate(square):

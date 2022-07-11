@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -25,10 +25,12 @@ for i in range(m):
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
+
 class FightResult:
     def __init__(self, winner, index):
         self.winner = winner
         self.index = index
+
 
 def fight(deck1, deck2, index):
     if len(deck1) <= index or len(deck2) <= index:
@@ -50,7 +52,7 @@ while len(deck1) > 0 and len(deck2) > 0:
     turn += 1
 
     fight_result = fight(deck1, deck2, 0)
-    if fight_result.winner == None:
+    if fight_result.winner is None:
         deck1 = []
         deck2 = []
 

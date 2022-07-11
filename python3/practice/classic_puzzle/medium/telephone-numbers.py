@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -18,7 +18,7 @@ number_tree = {}
 for telephone in telephones:
     target_tree = number_tree
     for num in telephone:
-        if not num in target_tree.keys():
+        if num not in target_tree.keys():
             target_tree[num] = {}
 
         target_tree = target_tree[num]

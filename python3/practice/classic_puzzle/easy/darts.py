@@ -1,8 +1,9 @@
-import sys
+# import sys
 import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
+
 
 class ThrowData:
     def __init__(self, name, x, y):

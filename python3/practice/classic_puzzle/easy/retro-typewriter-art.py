@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -22,7 +22,7 @@ t = t.replace('nl', '1nl')
 
 chars = []
 for chunk in t.split():
-    count, char = re.findall('^(\d+)(.+?)$', chunk)[0]
+    count, char = re.findall(r'^(\d+)(.+?)$', chunk)[0]
     chars.append((ABBREVIATIONS[char] if char in ABBREVIATIONS else char) * int(count))
 
 result = ''.join(chars)

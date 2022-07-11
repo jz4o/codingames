@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import pandas as pd
 import re
@@ -29,7 +29,7 @@ if 'ORDER BY' in sql_query:
     sql_regexp += '\\s(ORDER BY)\\s(.*)'
 
 matched = re.findall(sql_regexp, sql_query)[0]
-query = {matched[index]: matched[index+1] for index in range(0, len(matched), 2)}
+query = {matched[index]: matched[index + 1] for index in range(0, len(matched), 2)}
 
 if 'WHERE' in query:
     column, value = query['WHERE'].split(' = ')
@@ -40,9 +40,9 @@ if 'ORDER BY' in query:
 
     if all(re.fullmatch('-?\\d+\\.?\\d*', value) for value in records[column]):
         records['for_sort'] = records[column].apply(float)
-        records = records.sort_values('for_sort', ascending=direction=='ASC')
+        records = records.sort_values('for_sort', ascending=direction == 'ASC')
     else:
-        records = records.sort_values(column, ascending=direction=='ASC')
+        records = records.sort_values(column, ascending=direction == 'ASC')
 
 if query['SELECT'] != '*':
     columns = query['SELECT'].split(', ')

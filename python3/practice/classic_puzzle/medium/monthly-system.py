@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import numpy as np
 import re
@@ -15,6 +15,7 @@ for i in range(n):
 
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
+
 
 class MonthBaseNumber:
     MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -37,6 +38,7 @@ class MonthBaseNumber:
             result += self.MONTHS[self.NUMS.index(char)]
 
         return result
+
 
 month_base_number = sum(map(lambda m: MonthBaseNumber.to_i(m), ms))
 result = MonthBaseNumber.from_i(month_base_number)

@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -23,10 +23,11 @@ grid.append([1] * (w + 2))
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
+
 def find_pirates_treasure_indexes(grid):
-    for row_index, row in enumerate(grid[1:-1], start = 1):
-        for column_index, column in enumerate(row[1:-1], start = 1):
-            if 0 in grid[row_index - 1][column_index-1:column_index+2]:
+    for row_index, row in enumerate(grid[1:-1], start=1):
+        for column_index, column in enumerate(row[1:-1], start=1):
+            if 0 in grid[row_index - 1][column_index - 1:column_index + 2]:
                 continue
             if row[column_index - 1] == 0:
                 continue
@@ -38,6 +39,7 @@ def find_pirates_treasure_indexes(grid):
                 continue
 
             return f'{column_index - 1} {row_index - 1}'
+
 
 result = find_pirates_treasure_indexes(grid)
 

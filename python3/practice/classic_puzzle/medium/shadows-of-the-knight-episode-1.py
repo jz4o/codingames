@@ -1,4 +1,4 @@
-import sys
+# import sys
 import math
 
 # Auto-generated code below aims at helping you parse
@@ -12,8 +12,8 @@ x0, y0 = [int(i) for i in input().split()]
 
 bomb_min_height = h
 bomb_max_height = 0
-bomb_min_width = 0 # to left
-bomb_max_width = w # to right
+bomb_min_width = 0  # to left
+bomb_max_width = w  # to right
 
 # game loop
 while True:

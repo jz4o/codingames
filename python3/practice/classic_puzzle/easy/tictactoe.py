@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import numpy as np
 
@@ -10,7 +10,7 @@ grid = np.empty((0, 3), int)
 for i in range(3):
     line = input()
 
-    grid = np.append(grid, np.array([list(line)]), axis = 0)
+    grid = np.append(grid, np.array([list(line)]), axis=0)
 
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
@@ -19,14 +19,14 @@ origin_grid = grid.copy()
 
 # check row
 for index in range(3):
-    if sorted(grid[index,:]) == list('.OO'):
-        grid[index,:] = list('OOO')
+    if sorted(grid[index, :]) == list('.OO'):
+        grid[index, :] = list('OOO')
 
 # check column
 if (origin_grid == grid).all():
     for index in range(3):
-        if sorted(grid[:,index]) == list('.OO'):
-            grid[:,index] = list('OOO')
+        if sorted(grid[:, index]) == list('.OO'):
+            grid[:, index] = list('OOO')
 
 # check diagonal
 if (origin_grid == grid).all() and sorted(map(lambda index: grid[index, index], range(3))) == list('.OO'):

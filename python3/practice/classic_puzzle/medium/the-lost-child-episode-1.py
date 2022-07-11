@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -16,6 +16,7 @@ grid.append(list('#' * len(grid[0])))
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
+
 class Position:
     def __init__(self, y, x):
         self.y = y
@@ -24,7 +25,7 @@ class Position:
 
 mother_position = None
 for row_index, row in enumerate(grid):
-    if not 'M' in row:
+    if 'M' not in row:
         continue
 
     column_index = row.index('M')

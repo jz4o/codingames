@@ -1,10 +1,11 @@
-import sys
-import math
+# import sys
+# import math
 
 import numpy as np
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
+
 
 def is_polydivisible(number):
     str_number = str(number)

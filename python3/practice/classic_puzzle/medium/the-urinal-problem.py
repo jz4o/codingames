@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -16,8 +16,8 @@ go_right_indexes = [index for index, char in enumerate(b) if char == '!']
 go_left_indexes = [index for index, char in enumerate(b) if char == '!']
 
 while len(free_indexes) >= 2:
-    free_indexes = [e for e in free_indexes if not e in go_right_indexes]
-    free_indexes = [e for e in free_indexes if not e in go_left_indexes]
+    free_indexes = [e for e in free_indexes if e not in go_right_indexes]
+    free_indexes = [e for e in free_indexes if e not in go_left_indexes]
 
     go_right_indexes = list(map(lambda index: index + 1, go_right_indexes))
     go_left_indexes = list(map(lambda index: index - 1, go_left_indexes))

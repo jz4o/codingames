@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import numpy as np
 
@@ -33,7 +33,7 @@ for i in range(n):
 
     temp = ''
     for j in range(temp_length):
-        temp += rule[new_temp[j:j+3]]
+        temp += rule[new_temp[j:j + 3]]
 
 # print(".....@.@.....")
 for result in results:

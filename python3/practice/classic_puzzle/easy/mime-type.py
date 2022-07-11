@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -36,7 +36,8 @@ for fname in fnames:
     else:
         results.append('UNKNOWN')
 
-# For each of the Q filenames, display on a line the corresponding MIME type. If there is no corresponding type, then display UNKNOWN.
+# For each of the Q filenames, display on a line the corresponding MIME type.
+# If there is no corresponding type, then display UNKNOWN.
 # print("UNKNOWN")
 for result in results:
     print(result)

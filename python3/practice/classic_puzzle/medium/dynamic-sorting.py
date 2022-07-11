@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 import re
 
@@ -30,7 +30,7 @@ for row in rows:
 
 objects = sorted(objects, key=lambda x: x['id'])
 for express in reversed(expressions):
-    objects = sorted(objects, key=lambda x: x[express[1:]], reverse=express[0]=='-')
+    objects = sorted(objects, key=lambda x: x[express[1:]], reverse=express[0] == '-')
 
 results = [obj['id'] for obj in objects]
 

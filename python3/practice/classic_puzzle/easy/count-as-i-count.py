@@ -1,5 +1,5 @@
-import sys
-import math
+# import sys
+# import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -9,11 +9,13 @@ n = int(input())
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
+
 class Pattern:
     def __init__(self, numbers, count, score):
         self.numbers = numbers
         self.count = count
         self.score = score
+
 
 TARGET_SCORE = 50
 POSSIBLE_ROUNDS = 4
