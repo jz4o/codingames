@@ -24,11 +24,17 @@ bottom_rows = []
     inner_square_last_value = (i + (j - 1) * 2)**2
     outer_square_last_value = (i + (j * 2))**2
 
-    top_row.push inner_square_last_value + j + i
-    top_row.unshift outer_square_last_value - i * 2 - j * 3 + 1
+    bottom_row_left_value = outer_square_last_value - i - j * 3 + 1
+    bottom_row_right_value = inner_square_last_value + j
 
-    bottom_row.push inner_square_last_value + j
-    bottom_row.unshift outer_square_last_value - i - j * 3 + 1
+    top_row_left_value = bottom_row_left_value - i
+    top_row_right_value = bottom_row_right_value + i
+
+    top_row.push top_row_right_value
+    top_row.unshift top_row_left_value
+
+    bottom_row.push bottom_row_right_value
+    bottom_row.unshift bottom_row_left_value
   end
 
   top_rows.unshift top_row
