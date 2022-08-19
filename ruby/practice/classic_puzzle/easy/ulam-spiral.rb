@@ -46,7 +46,6 @@ top_rows.shift
 
 number_grid = top_rows + bottom_rows
 
-# results = number_grid.map { |row| row.join(' ') }
 results = number_grid.map do |number_row|
   number_row.map { |number| number.prime? ? '#' : ' ' }.join(' ')
 end
