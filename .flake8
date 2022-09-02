@@ -1,4 +1,4 @@
 [flake8]
 exclude=python3/compete/code_golf/*
-ignore=E741
+ignore=E741,W503
 max-line-length = 120
