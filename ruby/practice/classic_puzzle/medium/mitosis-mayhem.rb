@@ -28,7 +28,7 @@ cycles.times do |cycle_index|
     power_cells = power_cell_hash[power_cell_hash.keys.max]
 
     power_cells.each do |power_cell|
-      robbery_count = (power_cell.territory_count * 0.1).to_i
+      robbery_count = power_cell.territory_count / 10
 
       sorted_cells = all_cells.sort_by { |c| [c.power, c.territory_count] }
       robbery_cell = sorted_cells.find { |c| c.power < power_cell.power && robbery_count <= c.territory_count }
