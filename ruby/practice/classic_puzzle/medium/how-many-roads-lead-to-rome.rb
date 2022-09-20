@@ -6,7 +6,7 @@ css = []
 n.times do
   inputs = gets.split
   cs = []
-  (0..1).each do |j|
+  2.times do |j|
     c = inputs[j].to_i
     cs << c
   end
