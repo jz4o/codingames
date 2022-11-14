@@ -70,10 +70,6 @@ Style/NumericPredicate:
 Style/PerlBackrefs:
   Enabled: false
 
-Style/SymbolProc:
-  Exclude:
-    - 'ruby/practice/classic_puzzle/medium/winamax-battle.rb' # bug in cop
-
 Style/WhileUntilDo:
   Enabled: false
 
