@@ -15,7 +15,7 @@ x = gets.chomp
 
 assignment_hash = {}
 assignments.each do |assignment|
-  _, array_name, range_begin, range_end, values = */([A-Z]+)\[([\-\d]+)\.\.([\-\d]+)\] = ([\-\s\d]+)/.match(assignment)
+  _, array_name, range_begin, range_end, values = */([A-Z]+)\[([-\d]+)\.\.([-\d]+)\] = ([-\s\d]+)/.match(assignment)
   values = values.split
 
   assignment_hash[array_name] ||= {}
@@ -26,8 +26,8 @@ assignments.each do |assignment|
 end
 
 answer = x.dup
-while /([A-Z]+)\[([\-\d]+)\]/.match? answer do
-  _, array_name, key = */([A-Z]+)\[([\-\d]+)\]/.match(answer)
+while /([A-Z]+)\[([-\d]+)\]/.match? answer do
+  _, array_name, key = */([A-Z]+)\[([-\d]+)\]/.match(answer)
 
   answer.sub! "#{array_name}[#{key}]", assignment_hash[array_name][key]
 end
