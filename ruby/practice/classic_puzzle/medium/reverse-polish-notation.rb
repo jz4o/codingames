@@ -41,7 +41,7 @@ inputs.each do |input|
     l, r = stack.pop 2
     stack.push 'ERROR' and break unless l && r
 
-    stack.concat [r, l]
+    stack.push r, l
   when 'ROL'
     last = stack.pop.to_i
     stack.push 'ERROR' and break unless last
