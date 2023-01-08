@@ -73,3 +73,6 @@ Style/PerlBackrefs:
 Style/WhileUntilDo:
   Enabled: false
 
+Style/YodaExpression:
+  Enabled: false
+
