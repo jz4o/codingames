@@ -20,7 +20,7 @@ class << inputs
 end
 
 turn = 0
-until inputs.trim_trash.size.zero? do
+until inputs.trim_trash.empty? do
   turn += 1
   inputs.swap 0, -1
 end

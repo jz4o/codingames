@@ -45,7 +45,7 @@ end
 after_tree_size = positions.count { |position| position.value == TREE }
 
 result =
-  if fire_positions.size.zero?
+  if fire_positions.empty?
     'RELAX'
   elsif after_tree_size.zero?
     'JUST RUN'

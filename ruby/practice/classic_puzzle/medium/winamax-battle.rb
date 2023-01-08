@@ -20,7 +20,7 @@ end
 
 begin
   turn = 0
-  until decks.any? { |card| card.length.zero? } do
+  until decks.any?(&:empty?) do
     turn += 1
 
     winner, index = fight decks.first, decks.last
