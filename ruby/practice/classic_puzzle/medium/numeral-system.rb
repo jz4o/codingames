@@ -16,6 +16,6 @@ equality_chars = @equality.chars
 max_numeral = NUMERALS.reverse.find { |n| equality_chars.include? n }
 minimum_n   = NUMERALS.index(max_numeral).next
 
-(minimum_n..NUMERALS.size).each do |i|
-  p i and break if x.to_i(i) + y.to_i(i) == z.to_i(i)
-end
+n = (minimum_n..NUMERALS.size).find { |i| x.to_i(i) + y.to_i(i) == z.to_i(i) }
+
+puts n
