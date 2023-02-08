@@ -73,6 +73,9 @@ Style/PerlBackrefs:
 Style/WhileUntilDo:
   Enabled: false
 
+Style/YodaCondition:
+  EnforcedStyle: forbid_for_equality_operators_only
+
 Style/YodaExpression:
   Enabled: false
 
