@@ -10,7 +10,7 @@ map = Array.new(@n) { Array.new(@n, 0) }
 end
 
 BORDER = 4
-while map.flatten.select { |n| BORDER <= n }.any? do
+while map.flatten.any? { |n| BORDER <= n } do
   map.each_with_index do |row, row_index|
     row.each_with_index do |column, column_index|
       next if column < BORDER
