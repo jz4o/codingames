@@ -24,24 +24,6 @@ type Position = {
     x: number
 };
 
-const toNbaseStr: Function = (digit: number, base: number): string => {
-    let result: string = '';
-
-    let d: number = digit;
-    while (d > 0) {
-        const mod: number = d % base;
-
-        result = `${mod.toString(base)}${result}`;
-        d = Math.floor(d / base);
-    }
-
-    if (result === '') {
-        result = '0';
-    }
-
-    return result;
-};
-
 const REPLACEABLE_CHARS: [string, string] = ['S', '.'];
 const BASE_NUM: number = 36;
 
@@ -55,12 +37,14 @@ let arivePositions: Position[] = [startPosition];
 
 let step: number = 0;
 while (arivePositions.length > 0) {
-    const tempArivePositions: Position[] = [];
+    const strStep: string = step.toString(BASE_NUM).toUpperCase();
 
-    arivePositions.forEach(position => {
-        if (REPLACEABLE_CHARS.includes(grid[position.y][position.x])) {
-            grid[position.y][position.x] = toNbaseStr(step, BASE_NUM).toUpperCase();
+    arivePositions = arivePositions.flatMap(position => {
+        if (!REPLACEABLE_CHARS.includes(grid[position.y][position.x])) {
+            return [];
         }
+
+        grid[position.y][position.x] = strStep;
 
         const aroundPositions: [Position, Position, Position, Position] = [
             { y: (position.y === 0 ? h - 1 : position.y - 1), x: position.x },
@@ -69,14 +53,9 @@ while (arivePositions.length > 0) {
             { y: ((position.y + 1) % h), x: position.x }
         ];
 
-        aroundPositions.forEach(aroundPosition => {
-            if (grid[aroundPosition.y][aroundPosition.x] === '.') {
-                tempArivePositions.push(aroundPosition);
-            }
-        });
+        return aroundPositions.filter(aroundPosition => grid[aroundPosition.y][aroundPosition.x] === '.');
     });
 
-    arivePositions = tempArivePositions;
     step++;
 }
 
