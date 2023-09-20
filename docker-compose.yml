@@ -4,6 +4,8 @@ volumes:
     driver: local
   java_libraries:
     driver: local
+  javascript_modules:
+    driver: local
 services:
   ruby:
     build:
@@ -34,6 +36,21 @@ services:
     working_dir: /usr/src
     tty: true
     # command: ["tail", '-f', '/dev/null']
+  javascript:
+    build:
+      context: ./
+      dockerfile: dockerfiles/javascript/Dockerfile
+    environment:
+      TZ: Asia/Tokyo
+      LANG: en_US.UTF-8
+    tty: true
+    volumes:
+      - ./typescript:/usr/src/typescript
+      - ./vendor/javascript:/usr/src/vendor/javascript
+
+      # not sync directories
+      - javascript_modules:/usr/src/vendor/javascript/node_modules
+    working_dir: /usr/src
   python:
     build:
       context: ./
