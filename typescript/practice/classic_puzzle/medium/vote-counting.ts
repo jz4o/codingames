@@ -7,7 +7,7 @@ const N: number = parseInt(readline());
 const M: number = parseInt(readline());
 const voters: {[key: string]: number} = {};
 for (let i = 0; i < N; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const personName: string = inputs[0];
     const nbVote: number = parseInt(inputs[1]);
 
@@ -15,7 +15,7 @@ for (let i = 0; i < N; i++) {
 }
 const votes: {[key: string]: string[]} = {}
 for (let i = 0; i < M; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const voterName: string = inputs[0];
     const voteValue: string = inputs[1];
 
@@ -42,3 +42,4 @@ Object.keys(voters).forEach(voterName => {
 
 // console.log('output');
 console.log(`${yes} ${no}`);
+

@@ -17,7 +17,7 @@ for (let i = 0; i < H; i++) {
 // To debug: console.error('Debug messages...');
 
 const ALPHAS: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ?'.split('');
-let result: string[] = Array(H).fill('');
+const result: string[] = Array(H).fill('');
 
 T.toUpperCase().split('').forEach(t => {
     let alphaIndex = ALPHAS.indexOf(t);
@@ -30,3 +30,4 @@ T.toUpperCase().split('').forEach(t => {
 
 // console.log('answer');
 result.forEach(resultRow => console.log(resultRow));
+

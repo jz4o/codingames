@@ -9,12 +9,12 @@ const MARKS: {[key: string]: string} = {
 };
 const directions: string[] = ['N', 'E', 'S', 'W'];
 
-var inputs: string[] = readline().split(' ');
-const W: number = parseInt(inputs[0]);
-const H: number = parseInt(inputs[1]);
-var inputs: string[] = readline().split(' ');
-const x: number = parseInt(inputs[0]);
-const y: number = parseInt(inputs[1]);
+const inputs1: string[] = readline().split(' ');
+const _W: number = parseInt(inputs1[0]);
+const H: number = parseInt(inputs1[1]);
+const inputs2: string[] = readline().split(' ');
+const x: number = parseInt(inputs2[0]);
+const y: number = parseInt(inputs2[1]);
 let xTmp: number = x;
 let yTmp: number = y;
 const direction: string = readline();
@@ -57,3 +57,4 @@ for (let i = 0; i < T; i++) {
 grid.forEach(row => {
     console.log(row.join(''));
 });
+

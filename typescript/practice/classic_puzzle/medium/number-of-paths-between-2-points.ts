@@ -20,7 +20,7 @@ const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
 }
 
-const pathGrid: number[][] = [...Array(M + 1)].map(_ => Array(N + 1).fill(0));
+const pathGrid: number[][] = [...Array(M + 1)].map(() => Array(N + 1).fill(0));
 grid[1][1] = pathGrid[1][1] = 1;
 rangeArrayFromTo(1, M).forEach(row => {
     rangeArrayFromTo(1, N).forEach(column => {
@@ -36,3 +36,4 @@ rangeArrayFromTo(1, M).forEach(row => {
 
 // console.log('answer');
 console.log(pathGrid[M][N]);
+

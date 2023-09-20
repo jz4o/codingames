@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const N1: number = parseInt(inputs[0]);
-const N2: number = parseInt(inputs[1]);
+const inputs: string[] = readline().split(' ');
+const _N1: number = parseInt(inputs[0]);
+const _N2: number = parseInt(inputs[1]);
 const S1: string = readline();
 const S2: string = readline();
 const T: number = parseInt(readline());
@@ -32,3 +32,4 @@ const sMovedPart: string = s2MovePart.map((value, index) => {
 
 // console.log('answer');
 console.log(`${s1NotMovePart}${sMovedPart}${s2NotMovePart}`);
+

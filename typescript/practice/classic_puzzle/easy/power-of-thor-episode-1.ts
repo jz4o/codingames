@@ -5,7 +5,7 @@
  * Hint: You can use the debug stream to print initialTX and initialTY, if Thor seems not follow your orders.
  **/
 
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 const lightX: number = parseInt(inputs[0]); // the X position of the light of power
 const lightY: number = parseInt(inputs[1]); // the Y position of the light of power
 const initialTx: number = parseInt(inputs[2]); // Thor's starting X position
@@ -15,9 +15,8 @@ let tx: number = initialTx;
 let ty: number = initialTy;
 
 // game loop
-while (true) {
-    const remainingTurns: number = parseInt(readline()); // The remaining amount of turns Thor can move. Do not remove this line.
-
+let _remainingTurns: number; // The remaining amount of turns Thor can move. Do not remove this line.
+while ((_remainingTurns = parseInt(readline() || '-1')) !== -1) {
     // Write an action using console.log()
     // To debug: console.error('Debug messages...');
 
@@ -47,3 +46,4 @@ while (true) {
     // console.log('SE');
     console.log(`${moveY}${moveX}`);
 }
+

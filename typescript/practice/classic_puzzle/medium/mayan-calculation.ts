@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 const L: number = parseInt(inputs[0]);
 const H: number = parseInt(inputs[1]);
 const transposeAsciiMayans: string[][] = [];
@@ -50,7 +50,7 @@ const mayansToNum = (mayans: string[]): number => {
         return asciiMayans.indexOf(mayan.join(''));
     }).reverse();
 
-    let num: number = mayanIndexes.reduce((sum, mayanIndex, index) => {
+    const num: number = mayanIndexes.reduce((sum, mayanIndex, index) => {
         const radix: number = Math.pow(asciiMayans.length, index);
         return sum + radix * mayanIndex;
     }, 0);

@@ -8,8 +8,9 @@
 
 
 // game loop
-while (true) {
-    let mountainHs: number[] = [];
+let targetId: number;
+do {
+    const mountainHs: number[] = [];
     for (let i = 0; i < 8; i++) {
         const mountainH: number = parseInt(readline()); // represents the height of one mountain.
 
@@ -20,7 +21,7 @@ while (true) {
     // To debug: console.error('Debug messages...');
 
     let targetH: number = 0;
-    let targetId: number = 0;
+    targetId = null;
     for (let i: number = 0; i < mountainHs.length; i++) {
         if (targetH < mountainHs[i]) {
             targetH = mountainHs[i];
@@ -30,4 +31,5 @@ while (true) {
 
     // console.log('4');     // The index of the mountain to fire on.
     console.log(targetId);
-}
+} while (targetId !== null);
+

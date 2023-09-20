@@ -3,19 +3,19 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const nbFloors: number = parseInt(inputs[0]); // number of floors
-const width: number = parseInt(inputs[1]); // width of the area
-const nbRounds: number = parseInt(inputs[2]); // maximum number of rounds
-const exitFloor: number = parseInt(inputs[3]); // floor on which the exit is found
+const inputs: string[] = readline().split(' ');
+const _nbFloors: number = parseInt(inputs[0]); // number of floors
+const _width: number = parseInt(inputs[1]); // width of the area
+const _nbRounds: number = parseInt(inputs[2]); // maximum number of rounds
+const _exitFloor: number = parseInt(inputs[3]); // floor on which the exit is found
 const exitPos: number = parseInt(inputs[4]); // position of the exit on its floor
-const nbTotalClones: number = parseInt(inputs[5]); // number of generated clones
-const nbAdditionalElevators: number = parseInt(inputs[6]); // ignore (always zero)
+const _nbTotalClones: number = parseInt(inputs[5]); // number of generated clones
+const _nbAdditionalElevators: number = parseInt(inputs[6]); // ignore (always zero)
 const nbElevators: number = parseInt(inputs[7]); // number of elevators
 const elevatorFloors: number[] = [];
 const elevatorPositions: number[] = [];
 for (let i = 0; i < nbElevators; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const elevatorFloor: number = parseInt(inputs[0]); // floor on which this elevator is found
     const elevatorPos: number = parseInt(inputs[1]); // position of the elevator on its floor
 
@@ -24,11 +24,11 @@ for (let i = 0; i < nbElevators; i++) {
 }
 
 // game loop
-while (true) {
-    var inputs: string[] = readline().split(' ');
-    const cloneFloor: number = parseInt(inputs[0]); // floor of the leading clone
-    const clonePos: number = parseInt(inputs[1]); // position of the leading clone on its floor
-    const direction: string = inputs[2]; // direction of the leading clone: LEFT or RIGHT
+let loopInputs: string[];
+while ((loopInputs = readline().split(' ')).length !== 0) {
+    const cloneFloor: number = parseInt(loopInputs[0]); // floor of the leading clone
+    const clonePos: number = parseInt(loopInputs[1]); // position of the leading clone on its floor
+    const direction: string = loopInputs[2]; // direction of the leading clone: LEFT or RIGHT
 
     // Write an action using console.log()
     // To debug: console.error('Debug messages...');
@@ -46,3 +46,4 @@ while (true) {
         console.log('BLOCK')
     }
 }
+

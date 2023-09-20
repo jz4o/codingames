@@ -4,7 +4,7 @@
  **/
 
 const n: number = parseInt(readline());
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 const vs: number[] = [];
 for (let i = 0; i < n; i++) {
     const v: number = parseInt(inputs[i]);
@@ -31,3 +31,4 @@ for (const v of vs.reverse()) {
 
 // console.log('answer');
 console.log(maxDiff);
+

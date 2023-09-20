@@ -12,7 +12,7 @@ const TRY_POINT:       number = 5;
 const TRANSFORM_POINT: number = 2;
 const PENA_DROP_POINT: number = 3;
 
-let results: string[] = [];
+const results: string[] = [];
 
 const possibleTryTimes: number = Math.floor(N / TRY_POINT);
 for (let tryTimes = possibleTryTimes; tryTimes >= 0; tryTimes--) {
@@ -34,3 +34,4 @@ for (let tryTimes = possibleTryTimes; tryTimes >= 0; tryTimes--) {
 for (const result of results) {
     console.log(result);
 }
+

@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const _N: number = parseInt(readline());
 const input: string = readline();
 
 // Write an answer using console.log()
@@ -34,3 +34,4 @@ if (minusFlag) {
 
 // console.log('greatest');
 console.log(temp);
+

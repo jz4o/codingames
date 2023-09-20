@@ -6,7 +6,7 @@
 const n: number = parseInt(readline()); // the number of relationships of influence
 const relationMap: {[key: number]: number[]} = {};
 for (let i = 0; i < n; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const x: number = parseInt(inputs[0]); // a relationship of influence between two people (x influences y)
     const y: number = parseInt(inputs[1]);
 
@@ -35,3 +35,4 @@ while (targets.length > 0) {
 // The number of people involved in the longest succession of influences
 // console.log('2');
 console.log(deepLevel);
+

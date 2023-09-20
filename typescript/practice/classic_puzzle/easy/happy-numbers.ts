@@ -4,7 +4,7 @@
  **/
 
 const N: number = parseInt(readline());
-let xs: string[] = []
+const xs: string[] = []
 for (let i = 0; i < N; i++) {
     const x: string = readline();
 
@@ -18,11 +18,11 @@ const HAPPY_NUMBER: string = '1';
 const HAPPY_FACE: string = ':)';
 const UNHAPPY_FACE: string = ':(';
 
-let results: string[] = []
+const results: string[] = []
 for (const x of xs) {
     let temp: string = x;
 
-    let exitNumbers: string[] = [HAPPY_NUMBER];
+    const exitNumbers: string[] = [HAPPY_NUMBER];
     while (!exitNumbers.includes(temp)) {
         exitNumbers.push(temp);
         temp = temp.split('').map(d => parseInt(d) ** 2).reduce((sum, d) => sum + d, 0).toString();
@@ -36,3 +36,4 @@ for (const x of xs) {
 for (const result of results) {
     console.log(result);
 }
+

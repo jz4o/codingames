@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 const w: number = parseInt(inputs[0]);
 const h: number = parseInt(inputs[1]);
 const rows: string[] = [];

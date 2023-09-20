@@ -1,4 +1,5 @@
 // game loop
+// eslint-disable-next-line no-constant-condition
 while (true) {
     const enemy1: string = readline(); // name of enemy 1
     const dist1: number = parseInt(readline()); // distance to enemy 1

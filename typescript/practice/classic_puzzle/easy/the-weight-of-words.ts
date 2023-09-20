@@ -23,7 +23,7 @@ const transpose = <T>(array: T[][]): T[][] => array[0].map((_value, index) => ar
 const sum = (array: number[]): number => array.reduce((sum, elm) => sum + elm);
 
 let grid: number[][] = rows.map(row => row.split('').map(c => c.charCodeAt(0)));
-[...Array(steps).keys()].forEach(_ => {
+[...Array(steps).keys()].forEach(() => {
     // move to down
     grid = transpose(grid);
     grid = grid.map(row => {

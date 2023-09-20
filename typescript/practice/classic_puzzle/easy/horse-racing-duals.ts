@@ -4,7 +4,7 @@
  **/
 
 const N: number = parseInt(readline());
-let pis: number[] = [];
+const pis: number[] = [];
 for (let i = 0; i < N; i++) {
     const pi: number = parseInt(readline());
     pis.push(pi);
@@ -24,3 +24,4 @@ for (let i = 0; i < pis.length - 1; i++) {
 
 // console.log('answer');
 console.log(minimumDiff);
+

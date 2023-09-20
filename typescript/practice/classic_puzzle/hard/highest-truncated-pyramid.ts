@@ -9,18 +9,17 @@ let partCount: number = 1;
 let topStepCount: number = 1;
 let bottomStepCount: number = 1;
 
-while (true) {
+while (partCount !== N) {
     if (partCount < N) {
         bottomStepCount++;
         partCount += bottomStepCount;
     } else if (N < partCount) {
         partCount -= topStepCount;
         topStepCount++;
-    } else {
-        break;
     }
 }
 
 for (let i = topStepCount; i <= bottomStepCount; i++) {
     console.log('*'.repeat(i));
 }
+

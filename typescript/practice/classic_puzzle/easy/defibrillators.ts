@@ -16,12 +16,12 @@ interface Defib {
     latitude:  number;
 }
 
-let defibs: Defib[] = [];
+const defibs: Defib[] = [];
 for (let i = 0; i < N; i++) {
     const DEFIB: string = readline();
 
     const defibElements: string[] = DEFIB.split(';');
-    let defib: Defib = {
+    const defib: Defib = {
         id:        defibElements[0],
         name:      defibElements[1],
         address:   defibElements[2],
@@ -44,7 +44,7 @@ let distance: number = 10000;
 for (const defib of defibs) {
     const x: number = (floatLon - defib.longitude) * Math.cos((defib.latitude + floatLat) / 2);
     const y: number = floatLat - defib.latitude;
-    const d: number = Math.sqrt(x * x + y * y) * 6371;
+    const d: number = Math.sqrt(x**2 + y**2) * 6371;
 
     if (d < distance) {
         distance = d;
@@ -54,3 +54,4 @@ for (const defib of defibs) {
 
 // console.log('answer');
 console.log(nearDefib.name);
+

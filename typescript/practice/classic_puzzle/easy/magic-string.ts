@@ -13,7 +13,7 @@ for (let i = 0; i < N; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const intToAlpha: Function = (num: number): string => {
+const intToAlpha: (num: number) => string = (num: number): string => {
     const ALPHABETS: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
     let result: string = '';
@@ -32,7 +32,7 @@ const intToAlpha: Function = (num: number): string => {
     return result;
 };
 
-const alphaToInt: Function = (alpha: string): number => {
+const alphaToInt: (alpha: string) => number = (alpha: string): number => {
     const ALPHABETS: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
     const result: number = alpha
@@ -44,7 +44,7 @@ const alphaToInt: Function = (alpha: string): number => {
     return result;
 };
 
-const nextString: Function = (s: string): string => {
+const nextString: (s: string) => string = (s: string): string => {
     return intToAlpha(alphaToInt(s) + 1);
 };
 

@@ -10,7 +10,7 @@ map.push(Array(W + 2).fill(1));
 for (let i = 0; i < H; i++) {
     const line: number[] = [];
 
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     for (let j = 0; j < W; j++) {
         const v: number = parseInt(inputs[j]);
 
@@ -58,3 +58,4 @@ try {
 
 // console.log('x y');
 console.log(result);
+

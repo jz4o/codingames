@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const W: number = parseInt(inputs[0]); // number of columns.
+const inputs: string[] = readline().split(' ');
+const _W: number = parseInt(inputs[0]); // number of columns.
 const H: number = parseInt(inputs[1]); // number of rows.
 const grid: number[][] = [];
 for (let i = 0; i < H; i++) {
@@ -12,10 +12,10 @@ for (let i = 0; i < H; i++) {
 
     grid.push(LINE.split(' ').map(i => parseInt(i)));
 }
-const EX: number = parseInt(readline()); // the coordinate along the X axis of the exit (not useful for this first mission, but must be read).
+const _EX: number = parseInt(readline()); // the coordinate along the X axis of the exit (not useful for this first mission, but must be read).
 
 // direction
-const TOP:    number = 0;
+const _TOP:   number = 0;
 const LEFT:   number = 1;
 const RIGHT:  number = 2;
 const BOTTOM: number = 3;
@@ -29,12 +29,13 @@ const PANEL_DESTINATION: {[key: string]: number[]} = {
     'RIGHT': [NONE, BOTTOM, LEFT,  NONE,   BOTTOM, NONE,   LEFT,  BOTTOM, BOTTOM, NONE,   NONE, NONE,  BOTTOM, NONE]
 };
 
+
 // game loop
-while (true) {
-    var inputs: string[] = readline().split(' ');
-    const XI: number = parseInt(inputs[0]);
-    const YI: number = parseInt(inputs[1]);
-    const POS: string = inputs[2];
+let loopInputs;
+while ((loopInputs = readline().split(' ')).length !== 0) {
+    const XI: number = parseInt(loopInputs[0]);
+    const YI: number = parseInt(loopInputs[1]);
+    const POS: string = loopInputs[2];
 
     // Write an action using console.log()
     // To debug: console.error('Debug messages...');
@@ -56,3 +57,4 @@ while (true) {
     // console.log('0 0');
     console.log(`${nextXi} ${nextYi}`);
 }
+

@@ -20,10 +20,6 @@ const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
 }
 
-const repeatStr = (str: string, count: number): string => {
-    return Array(count + 1).join(str);
-}
-
 const DIAGONAL_SIZE: number = size * 2 - 1;
 
 const rotateCount: number = Math.trunc(((angle - 45) % 360) / 90);
@@ -52,3 +48,4 @@ rangeArrayFromTo(1, DIAGONAL_SIZE).forEach(time => {
 diamondGrid.forEach(diamondRow => {
     console.log(diamondRow);
 });
+

@@ -4,7 +4,7 @@
  **/
 
 const framePattern: string = readline(); // the ASCII art pattern to use to frame the picture
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 const h: number = parseInt(inputs[0]); // the height of the picture
 const w: number = parseInt(inputs[1]); // the width  of the picture
 const lines: string[] = [];
@@ -16,7 +16,7 @@ for (let i = 0; i < h; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const surround: Function = (grid: string[][], frameChar: string): string[][] => {
+const surround: (grid: string[][], frameChar: string) => string[][] = (grid: string[][], frameChar: string): string[][] => {
     [...Array(grid.length).keys()].forEach(i => {
         grid[i].unshift(frameChar);
         grid[i].push(frameChar);

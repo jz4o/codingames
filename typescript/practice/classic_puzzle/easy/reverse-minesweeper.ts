@@ -14,7 +14,7 @@ for (let i = 0; i < h; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const rangeArrayFromTo: Function = (from: number, to: number): number[] => {
+const rangeArrayFromTo: (from: number, to: number) => number[] = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
 }
 

@@ -3,17 +3,17 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const wallyWidth: number = parseInt(inputs[0]);
-const wallyHeight: number = parseInt(inputs[1]);
+const inputs1: string[] = readline().split(' ');
+const wallyWidth: number = parseInt(inputs1[0]);
+const wallyHeight: number = parseInt(inputs1[1]);
 const wallyRows: string[] = [];
 for (let i = 0; i < wallyHeight; i++) {
     const wallyRow: string = readline();
     wallyRows.push(wallyRow);
 }
-var inputs: string[] = readline().split(' ');
-const pictureWidth: number = parseInt(inputs[0]);
-const pictureHeight: number = parseInt(inputs[1]);
+const inputs2: string[] = readline().split(' ');
+const pictureWidth: number = parseInt(inputs2[0]);
+const pictureHeight: number = parseInt(inputs2[1]);
 const pictureRows: string[] = [];
 for (let i = 0; i < pictureHeight; i++) {
     const pictureRow: string = readline();

@@ -6,7 +6,7 @@
 const n: number = parseInt(readline());
 const inputRows: number[][] = [];
 for (let i = 0; i < n; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const row: number = parseInt(inputs[0]);
     const col: number = parseInt(inputs[1]);
     const isWhite: number = parseInt(inputs[2]);
@@ -24,7 +24,7 @@ const results: number[] = inputRows.map(inputRow => {
 
     const patternSize: number = rowPatternSize * colPatternSize;
 
-    const roundFunction: Function = isWhite == 0 ? Math.floor : Math.ceil;
+    const roundFunction: (n: number) => number = isWhite == 0 ? Math.floor : Math.ceil;
 
     return roundFunction(patternSize / 2);
 });

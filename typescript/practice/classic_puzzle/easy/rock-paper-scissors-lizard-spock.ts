@@ -6,7 +6,7 @@
 const N: number = parseInt(readline());
 const inputRows: [number, string][] = [];
 for (let i = 0; i < N; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const NUMPLAYER: number = parseInt(inputs[0]);
     const SIGNPLAYER: string = inputs[1];
 

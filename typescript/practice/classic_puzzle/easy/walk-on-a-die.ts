@@ -25,37 +25,35 @@ class Dice {
         [this.front, this.left, this.on, this.right, this.opposite, this.behind] = diceNumbers;
     }
 
-    walk: Function = (commands: string) => {
-        const walkToFunctions: { [key: string]: Function } = {
+    walk = (commands: string) => {
+        const walkToFunctions: { [key: string]: () => void } = {
             'U': this.walkToForward,
             'D': this.walkToBackward,
             'L': this.walkToLeft,
             'R': this.walkToRight,
         };
-        const dummyFunction: Function = () => {};
 
         commands.split('').forEach(command => {
-            const walkToFunction: Function = walkToFunctions[command] || dummyFunction;
-            walkToFunction();
+            walkToFunctions[command]();
         });
     };
 
-    walkToForward: Function = () => {
+    walkToForward = () => {
         [this.front, this.on, this.opposite, this.behind]
             = [this.opposite, this.front, this.behind, this.on];
     };
 
-    walkToBackward: Function = () => {
+    walkToBackward = () => {
         [this.front, this.left, this.on, this.right, this.opposite, this.behind]
             = [this.opposite, this.right, this.behind, this.left, this.front, this.on];
     };
 
-    walkToLeft: Function = () => {
+    walkToLeft = () => {
         [this.front, this.left, this.on, this.right, this.opposite, this.behind]
             = [this.opposite, this.behind, this.left, this.front, this.right, this.on];
     };
 
-    walkToRight: Function = () => {
+    walkToRight = () => {
         [this.front, this.left, this.on, this.right, this.opposite, this.behind]
             = [this.opposite, this.front, this.right, this.behind, this.left, this.on];
     };
