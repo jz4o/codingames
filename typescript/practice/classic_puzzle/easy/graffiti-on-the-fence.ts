@@ -7,7 +7,7 @@ const L: number = parseInt(readline());
 const N: number = parseInt(readline());
 const inputRows: number[][] = [];
 for (let i = 0; i < N; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const st: number = parseInt(inputs[0]);
     const ed: number = parseInt(inputs[1]);
 

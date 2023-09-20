@@ -4,7 +4,7 @@
  **/
 
 const N: number = parseInt(readline());
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 let stones: number[] = [];
 for (let i = 0; i < N; i++) {
     const level: number = parseInt(inputs[i]);
@@ -15,8 +15,7 @@ for (let i = 0; i < N; i++) {
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
 
-let stoneCount: number = 0;
-let levels: number[] = stones.reduce((levels, stone) => {
+const levels: number[] = stones.reduce((levels, stone) => {
     if (!levels.includes(stone)) {
         levels.push(stone);
     }
@@ -24,6 +23,7 @@ let levels: number[] = stones.reduce((levels, stone) => {
     return levels;
 }, []).sort();
 
+let stoneCount: number = 0;
 while (levels.length > 0) {
     const level: number = levels.shift();
     const targetLevelStones: number[] = stones.filter(stone => stone === level);
@@ -42,3 +42,4 @@ while (levels.length > 0) {
 
 // console.log('1');
 console.log(stoneCount);
+

@@ -14,7 +14,7 @@ const rangeArrayFromTo = (from: number, to: number): number[] => {
 
 const NUMERALS: string[] = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-const [x, y, z]: string[] = equality.split(/[\+=]/);
+const [x, y, z]: string[] = equality.split(/[+=]/);
 
 const minimumBase: number = equality.split('')
                                     .map(n => NUMERALS.indexOf(n))

@@ -5,7 +5,7 @@
 
 const X: number = parseInt(readline());
 const N: number = parseInt(readline());
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 const ms: number[] = [];
 for (let i = 0; i < N; i++) {
     const m: number = parseInt(inputs[i]);

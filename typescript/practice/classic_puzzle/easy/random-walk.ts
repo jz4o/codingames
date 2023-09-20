@@ -18,7 +18,7 @@ let d: number = 0;
 let u: number = 0;
 let r: number = 0;
 let step: number = 0;
-while (true) {
+do {
     step++;
 
     d = (a * d + b) % m;
@@ -33,11 +33,7 @@ while (true) {
     } else if (direction === RIGHT) {
         r++;
     }
-
-    if (u === 0 && r === 0) {
-        break;
-    }
-}
+} while (u !== 0 || r !== 0);
 
 const result: string = step.toString();
 

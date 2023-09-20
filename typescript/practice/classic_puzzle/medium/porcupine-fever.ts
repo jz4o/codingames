@@ -13,7 +13,7 @@ const N: number = parseInt(readline());
 const Y: number = parseInt(readline());
 const cages: Cage[] = [];
 for (let i = 0; i < N; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const S: number = parseInt(inputs[0]);
     const H: number = parseInt(inputs[1]);
     const A: number = parseInt(inputs[2]);
@@ -39,3 +39,4 @@ for (let i = 0; i < Y; i++) {
         break;
     }
 }
+

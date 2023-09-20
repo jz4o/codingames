@@ -4,7 +4,7 @@
  **/
 
 // @a, @b = gets.split(" ").collect {|x| x.to_i}
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 const a: number = parseInt(inputs[0]);
 const b: number = parseInt(inputs[1]);
 

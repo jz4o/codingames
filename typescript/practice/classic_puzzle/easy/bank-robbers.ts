@@ -11,9 +11,9 @@ interface Vault {
 const R: number = parseInt(readline());
 const V: number = parseInt(readline());
 
-let vaults: Vault[] = []
+const vaults: Vault[] = []
 for (let i = 0; i < V; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const C: number = parseInt(inputs[0]);
     const N: number = parseInt(inputs[1]);
 
@@ -23,7 +23,7 @@ for (let i = 0; i < V; i++) {
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
 
-let robbers: number[] = Array(R).fill(0);
+const robbers: number[] = Array(R).fill(0);
 for (const vault of vaults) {
     const vaultTime: number = (10 ** vault.n) * (5 ** (vault.c - vault.n));
     const minimumVaultTime: number = Math.min(...robbers);

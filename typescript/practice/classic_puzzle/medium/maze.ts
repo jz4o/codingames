@@ -3,12 +3,12 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const W: number = parseInt(inputs[0]);
-const H: number = parseInt(inputs[1]);
-var inputs: string[] = readline().split(' ');
-const X: number = parseInt(inputs[0]);
-const Y: number = parseInt(inputs[1]);
+const inputs1: string[] = readline().split(' ');
+const W: number = parseInt(inputs1[0]);
+const H: number = parseInt(inputs1[1]);
+const inputs2: string[] = readline().split(' ');
+const X: number = parseInt(inputs2[0]);
+const Y: number = parseInt(inputs2[1]);
 const grid: string[][] = [];
 grid.push(Array(W + 2).fill(null));
 for (let i = 0; i < H; i++) {
@@ -69,3 +69,4 @@ console.log(exitMasses.length);
 sortedExitMasses.forEach(exitMass => {
     console.log(`${exitMass.x} ${exitMass.y}`);
 });
+

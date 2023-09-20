@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 const R: number = parseInt(inputs[0]);
-const C: number = parseInt(inputs[1]);
+const _C: number = parseInt(inputs[1]);
 const grid: string[][] = [];
 for (let i = 0; i < R; i++) {
     const row: string = readline();
@@ -47,3 +47,4 @@ const transposeGrid: string[][] = grid[0].map((_value, index) => grid.map(row =>
 // console.log('answer');
 const result: number = digits.filter(digit => isPrime(digit)).length;
 console.log(result);
+

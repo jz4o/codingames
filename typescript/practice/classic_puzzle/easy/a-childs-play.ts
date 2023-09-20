@@ -3,78 +3,125 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const w: number = parseInt(inputs[0]);
+const inputs: string[] = readline().split(' ');
+const _w: number = parseInt(inputs[0]);
 const h: number = parseInt(inputs[1]);
 const n: number = parseInt(readline());
-const map: string[][] = []
+const lines: string[] = [];
 for (let i = 0; i < h; i++) {
     const line: string = readline();
-
-    map.push(line.split(''));
+    lines.push(line);
 }
 
-const directions: string[] = ['N', 'E', 'S', 'W'];
-let directionIndex: number = 0;
+// Write an answer using console.log()
+// To debug: console.error('Debug messages...');
 
-let yIndex: number;
-let xIndex: number;
-map.forEach((line, index) => {
-    if (line.includes('O')) {
-        yIndex = index;
-        xIndex = line.indexOf('O');
-        return;
+class Robot {
+    directions: string[];
+    logs: string[];
+    y: number;
+    x: number;
+
+    constructor(y: number, x: number) {
+        this.directions = ['N', 'E', 'S', 'W'];
+        this.logs = [];
+        this.y = y;
+        this.x = x;
     }
-});
 
-const initialY: number = yIndex;
-const initialX: number = xIndex;
+    place: () => string = (): string => {
+        return `${this.x} ${this.y}`;
+    }
+
+    placeWithDirection: () => string = (): string => {
+        return `${this.place()} ${this.direction()}`;
+    }
+
+    direction: () => string = (): string => {
+        return this.directions[0];
+    }
+
+    forward: () => void = (): void => {
+        const direction: string = this.direction();
+        if (direction === 'N') {
+            this.y--;
+        } else if (direction === 'E') {
+            this.x++;
+        } else if (direction === 'S') {
+            this.y++;
+        } else if (direction === 'W') {
+            this.x--;
+        }
+    }
+
+    aheadMassIndex: () => [number, number] = (): [number, number] => {
+        const direction: string = this.direction();
+        if (direction === 'N') {
+            return [this.y - 1, this.x];
+        } else if (direction === 'E') {
+            return [this.y, this.x + 1];
+        } else if (direction === 'S') {
+            return [this.y + 1, this.x];
+        } else if (direction === 'W') {
+            return [this.y, this.x - 1];
+        }
+    }
+
+    aheadMass: (grid: string[][]) => string = (grid: string[][]): string => {
+        const [y, x]: [number, number] = this.aheadMassIndex();
+        if (grid.length <= y || grid[0].length <= x) {
+            return null;
+        }
+
+        return grid[y][x];
+    }
+
+    turnRight: () => void = (): void => {
+        const direction: string = this.directions.shift();
+        this.directions.push(direction);
+    }
+
+    log: () => void = (): void => {
+        this.logs.push(this.placeWithDirection());
+    }
+
+    isLoggedPlace: () => boolean = (): boolean => {
+        return this.logs.includes(this.placeWithDirection());
+    }
+
+    skipedTurn: (n: number, turn: number) => number = (n: number, turn: number): number => {
+        const loopBeginTurn: number = this.logs.indexOf(this.placeWithDirection());
+        const loopSize: number = turn - loopBeginTurn;
+
+        return n - ((n - loopBeginTurn) % loopSize);
+    }
+}
+
+const grid: string[][] = lines.map(line => line.split(''));
+
+const robotY: number = grid.findIndex(row => row.includes('O'));
+const robotX: number = grid[robotY].indexOf('O');
+const robot: Robot = new Robot(robotY, robotX);
 
 let turn: number = 0;
 while (turn < n) {
     turn++;
 
-    let direction: string = directions[directionIndex];
+    robot.log();
 
-    // forward
-    switch (direction) {
-        case 'N':
-            yIndex--;
-            break;
-        case 'E':
-            xIndex++;
-            break;
-        case 'W':
-            xIndex--;
-            break;
-        case 'S':
-            yIndex++;
-            break;
-    }
+    robot.forward();
 
-    // get ahead mass
-    let aheadMass: string;
-    if (direction === 'N' && yIndex > 0) {
-        aheadMass = map[yIndex - 1][xIndex];
-    } else if (direction === 'E' && xIndex < w - 1) {
-        aheadMass = map[yIndex][xIndex + 1];
-    } else if (direction === 'W' && xIndex > 0) {
-        aheadMass = map[yIndex][xIndex - 1];
-    } else if (direction === 'S' && yIndex < h - 1) {
-        aheadMass = map[yIndex + 1][xIndex];
-    }
-
-    // turn right if obstacle in ahead mass
-    if (aheadMass === '#' || aheadMass === undefined) {
-        directionIndex = (directionIndex + 1) % directions.length;
-        direction = directions[directionIndex];
+    while (robot.aheadMass(grid) === '#') {
+        robot.turnRight();
     }
 
     // omit to loop turn
-    if (xIndex === initialX && yIndex === initialY && direction === 'N') {
-        turn = n - (n % turn);
+    if (robot.isLoggedPlace()) {
+        turn = robot.skipedTurn(n, turn);
     }
 }
 
-// echo "$x $y"
-console.log(`${xIndex} ${yIndex}`);
+const result: string = robot.place();
+
+// console.log('answer');
+console.log(result);

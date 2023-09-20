@@ -12,7 +12,7 @@ function buildAddItems(array: number[]): string {
     return array.length >= 3 ? `${array.shift()}-${array.pop()}` : array.join(',')
 }
 
-const numbers: number[] = N.replace(/[\[\]]/g, '')
+const numbers: number[] = N.replace(/[[\]]/g, '')
                            .split(',')
                            .map(n => parseInt(n))
                            .sort((n1, n2) => n1 < n2 ? -1 : 1);
@@ -34,3 +34,4 @@ if (temp.length > 0) {
 
 // console.log('answer');
 console.log(result.join(','));
+

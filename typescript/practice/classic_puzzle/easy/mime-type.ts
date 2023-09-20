@@ -5,15 +5,15 @@
 
 const N: number = parseInt(readline()); // Number of elements which make up the association table.
 const Q: number = parseInt(readline()); // Number Q of file names to be analyzed.
-let extMimes: { [key: string]: string; } = {}
+const extMimes: { [key: string]: string; } = {}
 for (let i = 0; i < N; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const EXT: string = inputs[0]; // file extension
     const MT: string = inputs[1]; // MIME type.
 
     extMimes[EXT.toLowerCase()] = MT;
 }
-let fnames: string[] = [];
+const fnames: string[] = [];
 for (let i = 0; i < Q; i++) {
     const FNAME: string = readline(); // One file name per line.
 
@@ -23,10 +23,10 @@ for (let i = 0; i < Q; i++) {
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
 
-let mimeTypes: string[] = [];
+const mimeTypes: string[] = [];
 for (const fname of fnames) {
     const fnameElements: string[] = fname.split('.');
-    let ext: string = fnameElements.length == 0 ? '' : fnameElements[fnameElements.length - 1];
+    const ext: string = fnameElements.length == 0 ? '' : fnameElements[fnameElements.length - 1];
 
     const mimeType: string = extMimes[ext];
 
@@ -42,3 +42,4 @@ for (const fname of fnames) {
 for (const mimeType of mimeTypes) {
     console.log(mimeType);
 }
+

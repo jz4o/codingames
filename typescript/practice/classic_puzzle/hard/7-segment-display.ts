@@ -41,7 +41,7 @@ N.toString().split('').forEach(n => {
     const c: string = getSegmentChar(digit, 'c');
     const b: string = getSegmentChar(digit, 'b');
     const tcb: string = [t, c, b].join(' '.repeat(S));
-    Array(S).fill(null).forEach(_ => results.push(tcb.split('')));
+    Array(S).fill(null).forEach(() => results.push(tcb.split('')));
 
     const tr: string = getSegmentChar(digit, 'tr').repeat(S);
     const br: string = getSegmentChar(digit, 'br').repeat(S);

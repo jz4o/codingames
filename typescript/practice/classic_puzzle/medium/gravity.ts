@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const width: number = parseInt(inputs[0]);
+const inputs: string[] = readline().split(' ');
+const _width: number = parseInt(inputs[0]);
 const height: number = parseInt(inputs[1]);
 const grid: string[][] = [];
 for (let i = 0; i < height; i++) {

@@ -8,21 +8,21 @@ class SpreadSheet {
 
     constructor() {
         this.cells = [];
-    };
+    }
 
-    addCell(cell: Cell) {
+    addCell(cell: Cell): void {
         this.cells.push(cell);
     }
 
-    getValue(cellIndex: number) {
+    getValue(cellIndex: number): number {
         return this.cells[cellIndex].value || this.calcValue(cellIndex);
     }
 
-    getArgValue(arg: string) {
+    getArgValue(arg: string): number {
         return arg.includes('$') ? this.getValue(parseInt(arg.slice(1))) : parseInt(arg);
     }
 
-    calcValue(cellIndex: number) {
+    calcValue(cellIndex: number): number {
         const cell: Cell = this.cells[cellIndex];
         const arg1: number = this.getArgValue(cell.arg1);
         const arg2: number = this.getArgValue(cell.arg2);
@@ -48,8 +48,8 @@ class SpreadSheet {
 
 interface Cell {
     operation: string;
-    arg1: any;         // string or number.
-    arg2: any;         // string or number.
+    arg1: string;
+    arg2: string;
     value: number;
 }
 
@@ -57,7 +57,7 @@ const spreadSheet: SpreadSheet = new SpreadSheet();
 
 const N: number = parseInt(readline());
 for (let i = 0; i < N; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const operation: string = inputs[0];
     const arg1: string = inputs[1];
     const arg2: string = inputs[2];
@@ -79,3 +79,4 @@ for (let i = 0; i < N; i++) {
     // console.log('1');
     console.log(spreadSheet.getValue(i));
 }
+

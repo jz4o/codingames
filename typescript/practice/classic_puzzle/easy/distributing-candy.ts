@@ -3,13 +3,13 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const n: number = parseInt(inputs[0]);
-const m: number = parseInt(inputs[1]);
-var inputs: string[] = readline().split(' ');
+const inputs1: string[] = readline().split(' ');
+const n: number = parseInt(inputs1[0]);
+const m: number = parseInt(inputs1[1]);
+const inputs2: string[] = readline().split(' ');
 const xs: number[] = [];
 for (let i = 0; i < n; i++) {
-    const x: number = parseInt(inputs[i]);
+    const x: number = parseInt(inputs2[i]);
     xs.push(x);
 }
 

@@ -4,13 +4,13 @@
  **/
 
 const leapYear: number = parseInt(readline());
-var inputs: string[] = readline().split(' ');
-const sourceDayOfWeek: string = inputs[0];
-const sourceMonth: string = inputs[1];
-const sourceDayOfMonth: number = parseInt(inputs[2]);
-var inputs: string[] = readline().split(' ');
-const targetMonth: string = inputs[0];
-const targetDayOfMonth: number = parseInt(inputs[1]);
+const inputs1: string[] = readline().split(' ');
+const sourceDayOfWeek: string = inputs1[0];
+const sourceMonth: string = inputs1[1];
+const sourceDayOfMonth: number = parseInt(inputs1[2]);
+const inputs2: string[] = readline().split(' ');
+const targetMonth: string = inputs2[0];
+const targetDayOfMonth: number = parseInt(inputs2[1]);
 
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
@@ -30,3 +30,4 @@ const targetDayOfWeekIndex: number = (sourceDayOfWeekIndex + diffDays + Math.abs
 
 // console.log('day of week');
 console.log(DAY_OF_WEEK[targetDayOfWeekIndex]);
+

@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 const height: number = parseInt(inputs[0]);
-const width: number = parseInt(inputs[1]);
+const _width: number = parseInt(inputs[1]);
 const lines1: string[] = [];
 for (let i = 0; i < height; i++) {
     const line: string = readline();

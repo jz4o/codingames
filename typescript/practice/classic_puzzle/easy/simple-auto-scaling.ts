@@ -3,18 +3,18 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const S: number = parseInt(inputs[0]);
-const M: number = parseInt(inputs[1]);
-var inputs: string[] = readline().split(' ');
+const inputs1: string[] = readline().split(' ');
+const S: number = parseInt(inputs1[0]);
+const M: number = parseInt(inputs1[1]);
+const inputs2: string[] = readline().split(' ');
 const serviceMaxclients: number[] = [];
 for (let i = 0; i < S; i++) {
-    const maxclients: number = parseInt(inputs[i]);
+    const maxclients: number = parseInt(inputs2[i]);
     serviceMaxclients.push(maxclients);
 }
 const serviceClients: number[][] = [];
 for (let i = 0; i < M; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const serviceClientsRow: number[] = [];
     for (let j = 0; j < S; j++) {
         const clients: number = parseInt(inputs[j]);

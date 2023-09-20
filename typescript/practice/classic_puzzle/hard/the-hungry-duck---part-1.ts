@@ -3,14 +3,14 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 const W: number = parseInt(inputs[0]);
 const H: number = parseInt(inputs[1]);
 const map: number[][] = [];
 for (let i = 0; i < H; i++) {
     map.push([]);
 
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     for (let j = 0; j < W; j++) {
         const food: number = parseInt(inputs[j]);
 
@@ -32,3 +32,4 @@ for (let height = 0; height < H; height++) {
 
 // console.log('answer');
 console.log(map[H - 1][W - 1]);
+

@@ -11,7 +11,7 @@ interface Strength {
 const N: number = parseInt(readline());
 const strengths: Strength[] = [];
 for (let i = 0; i < N; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const V: number = parseInt(inputs[0]);
     const E: number = parseInt(inputs[1]);
 
@@ -35,3 +35,4 @@ strengths.forEach((left, lIndex) => {
 // console.log('42');
 const result: number = results.reduce((min, result) => Math.min(min, result), results[0]);
 console.log(result);
+

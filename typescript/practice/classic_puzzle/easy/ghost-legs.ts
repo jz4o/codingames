@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const W: number = parseInt(inputs[0]);
+const inputs: string[] = readline().split(' ');
+const _W: number = parseInt(inputs[0]);
 const H: number = parseInt(inputs[1]);
 const grid: string[][] = [];
 for (let i = 0; i < H; i++) {
@@ -39,3 +39,4 @@ const results:string[] = topLine.reduce((result, char, index) => {
 for (const result of results) {
     console.log(result);
 }
+

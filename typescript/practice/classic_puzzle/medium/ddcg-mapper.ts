@@ -8,7 +8,7 @@ const N: number = parseInt(readline());
 const patterns: number[] = [];
 const tempos: number[] = [];
 for (let i = 0; i < N; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const pattern: string = inputs[0];
     const tempo: number = parseInt(inputs[1]);
 
@@ -48,3 +48,4 @@ rangeArrayFromTo(1, L).forEach(l => {
 results.forEach(result => {
     console.log(result);
 });
+

@@ -4,7 +4,7 @@
  **/
 
 const n: number = parseInt(readline());
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 const xs: number[] = [];
 for (let i = 0; i < n; i++) {
     const x: number = parseInt(inputs[i]);
@@ -34,3 +34,4 @@ while (lIndex < rIndex) {
 
 // console.log('answer');
 console.log(turn - 1);
+

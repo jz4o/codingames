@@ -25,7 +25,7 @@ for (let i = 0; i < N; i++) {
 const T: number = parseInt(readline());
 const throwDatas: ThrowData[] = [];
 for (let i = 0; i < T; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const throwName: string = inputs[0];
     const throwX: number = parseInt(inputs[1]);
     const throwY: number = parseInt(inputs[2]);
@@ -43,6 +43,7 @@ for (let i = 0; i < T; i++) {
 const HALF_SIZE: number = Math.floor(SIZE / 2);
 const scoreBoard: {[key: string]: number} = {};
 names.forEach(name => { scoreBoard[name] = 0 });
+
 
 throwDatas.forEach(throwData => {
     const name: string = throwData['name']
@@ -86,3 +87,4 @@ scoreRanking.sort((s1, s2) => {
 scoreRanking.forEach(score => {
     console.log(`${score['name']} ${score['score']}`);
 });
+

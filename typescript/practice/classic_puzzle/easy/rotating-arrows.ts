@@ -3,12 +3,12 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const W: number = parseInt(inputs[0]);
-const H: number = parseInt(inputs[1]);
-var inputs: string[] = readline().split(' ');
-const x: number = parseInt(inputs[0]);
-const y: number = parseInt(inputs[1]);
+const inputs1: string[] = readline().split(' ');
+const W: number = parseInt(inputs1[0]);
+const H: number = parseInt(inputs1[1]);
+const inputs2: string[] = readline().split(' ');
+const x: number = parseInt(inputs2[0]);
+const y: number = parseInt(inputs2[1]);
 const lines: string[] = [];
 for (let i = 0; i < H; i++) {
     const line: string = readline(); // The line of w arrows represented by ascii char ^v<>
@@ -29,7 +29,7 @@ class Position {
         this.value = value;
     }
 
-    arrowPosition: Function = (): [number, number] => {
+    arrowPosition: () => [number, number] = (): [number, number] => {
         if (this.value === '^') {
             return [this.y - 1, this.x];
         } else if (this.value === '>') {
@@ -43,7 +43,7 @@ class Position {
         }
     };
 
-    rotateArrow: Function = () => {
+    rotateArrow: () => void = () => {
         const arrows: string[] = ['^', '>', 'v', '<'];
         const arrowIndex: number = arrows.indexOf(this.value);
         const nextArrow: string = arrows[(arrowIndex + 1) % arrows.length];
@@ -51,11 +51,11 @@ class Position {
         this.value = nextArrow;
     };
 
-    isEqualPosition: Function = (y: number, x: number): boolean => {
+    isEqualPosition: (y: number, x: number) => boolean = (y: number, x: number): boolean => {
         return this.y === y && this.x === x;
     };
 
-    isOverFlow: Function = (): boolean => {
+    isOverFlow: () => boolean = (): boolean => {
         return this.value === 'X';
     };
 }
@@ -70,18 +70,14 @@ const grid: Position[][] = charGrid.map((charRow, rowIndex) => {
 
 let times: number = 0;
 let currentPosition: Position = grid[y + 1][x + 1];
-while (true) {
+do {
     times++;
 
     currentPosition.rotateArrow();
     const [arrowY, arrowX]: number[] = currentPosition.arrowPosition();
 
     currentPosition = grid[arrowY][arrowX];
-
-    if (currentPosition.isEqualPosition(y + 1, x + 1) || currentPosition.isOverFlow()) {
-        break;
-    }
-}
+} while (!currentPosition.isEqualPosition(y + 1, x + 1) && !currentPosition.isOverFlow());
 
 const result: string = times.toString();
 

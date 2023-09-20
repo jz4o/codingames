@@ -11,10 +11,10 @@ for (let i = 0; i < ROUNDS; i++) {
     result -= bet;
 
     const PLAY: string = readline();
-    const playElements: any[] = PLAY.split(' ');
-    const ball: number = playElements[0];
+    const playElements: string[] = PLAY.split(' ');
+    const ball: number = parseInt(playElements[0]);
     const call: string = playElements[1];
-    const target: number = playElements[2];
+    const target: number = parseInt(playElements[2]);
 
     switch (call) {
         case 'PLAIN':
@@ -40,3 +40,4 @@ for (let i = 0; i < ROUNDS; i++) {
 
 // console.log('cash of the target after playing');
 console.log(result);
+

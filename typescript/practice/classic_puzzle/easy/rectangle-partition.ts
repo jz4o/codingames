@@ -3,23 +3,23 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const w: number = parseInt(inputs[0]);
-const h: number = parseInt(inputs[1]);
-const countX: number = parseInt(inputs[2]);
-const countY: number = parseInt(inputs[3]);
-var inputs: string[] = readline().split(' ');
+const inputs1: string[] = readline().split(' ');
+const w: number = parseInt(inputs1[0]);
+const h: number = parseInt(inputs1[1]);
+const countX: number = parseInt(inputs1[2]);
+const countY: number = parseInt(inputs1[3]);
+const inputs2: string[] = readline().split(' ');
 const widthMeasurements: number[] = [0];
 for (let i = 0; i < countX; i++) {
-    const x: number = parseInt(inputs[i]);
+    const x: number = parseInt(inputs2[i]);
 
     widthMeasurements.push(x);
 }
 widthMeasurements.push(w);
-var inputs: string[] = readline().split(' ');
+const inputs3: string[] = readline().split(' ');
 const heightMeasurements: number[] = [0];
 for (let i = 0; i < countY; i++) {
-    const y: number = parseInt(inputs[i]);
+    const y: number = parseInt(inputs3[i]);
 
     heightMeasurements.push(y);
 }

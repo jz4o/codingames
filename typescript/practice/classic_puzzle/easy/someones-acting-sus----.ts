@@ -3,11 +3,11 @@
  * the standard input according to the problem statement.
  **/
 
-const L: number = parseInt(readline());
+const _L: number = parseInt(readline());
 const F: string = readline();
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 const N: number = parseInt(inputs[0]);
-const K: number = parseInt(inputs[1]);
+const _K: number = parseInt(inputs[1]);
 const crewmates: string[] = [];
 for (let i = 0; i < N; i++) {
     const crewmate: string = readline();

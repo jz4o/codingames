@@ -4,8 +4,8 @@
  **/
 
 const n: number = parseInt(readline()); // the number of temperatures to analyse
-let ts: number[] = [];
-var inputs: string[] = readline().split(' ');
+const ts: number[] = [];
+const inputs: string[] = readline().split(' ');
 for (let i = 0; i < n; i++) {
     const t: number = parseInt(inputs[i]);// a temperature expressed as an integer ranging from -273 to 5526
     ts.push(t);
@@ -41,3 +41,4 @@ if (n === 0) {
 
 // console.log('result');
 console.log(result);
+

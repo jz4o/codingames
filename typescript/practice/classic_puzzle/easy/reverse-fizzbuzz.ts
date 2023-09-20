@@ -13,11 +13,11 @@ for (let i = 0; i < n; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const gcdFromArray: Function = (numbers: number[]): number => {
+const gcdFromArray: (numbers: number[]) => number = (numbers: number[]): number => {
     return numbers.reduce((result, number) => gcd(result, number));
 };
 
-const gcd: Function = (a: number, b: number): number => {
+const gcd: (a: number, b: number) => number = (a: number, b: number): number => {
     const min: number = Math.min(a, b);
     const max: number = Math.max(a, b);
 

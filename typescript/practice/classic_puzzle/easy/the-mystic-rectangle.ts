@@ -3,12 +3,12 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const x: number = parseInt(inputs[0]);
-const y: number = parseInt(inputs[1]);
-var inputs: string[] = readline().split(' ');
-const u: number = parseInt(inputs[0]);
-const v: number = parseInt(inputs[1]);
+const inputs1: string[] = readline().split(' ');
+const x: number = parseInt(inputs1[0]);
+const y: number = parseInt(inputs1[1]);
+const inputs2: string[] = readline().split(' ');
+const u: number = parseInt(inputs2[0]);
+const v: number = parseInt(inputs2[1]);
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
@@ -28,7 +28,7 @@ const cardinalDistance: number = Math.abs(yDistance - xDistance);
 const cardinalMoveSpeed: number = (xDistance < yDistance ? Y_MOVE_SPEED : X_MOVE_SPEED);
 const cardinalMoveTime: number = cardinalDistance * cardinalMoveSpeed;
 
-let moveTime: number = diagonalMoveTime + cardinalMoveTime;
+const moveTime: number = diagonalMoveTime + cardinalMoveTime;
 
 const result: string = moveTime.toFixed(1);
 

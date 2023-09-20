@@ -4,7 +4,7 @@
  **/
 
 const N: number = parseInt(readline());
-var inputs: string[] = readline().split(' ');
+const inputs: string[] = readline().split(' ');
 let piles: number[] = [];
 for (let i = 0; i < N; i++) {
     const C: number = parseInt(inputs[i]);
@@ -17,10 +17,10 @@ for (let i = 0; i < N; i++) {
 
 piles = piles.filter(pile => pile !== 0);
 
-let sameConfigurationIndex: number = 0;
+let sameConfigurationIndex: number;
 const configurations: string[] = [];
 
-while (true) {
+while (sameConfigurationIndex === undefined) {
     configurations.push(piles.sort().join(' '));
 
     const pilesSize: number = piles.length;
@@ -30,7 +30,6 @@ while (true) {
 
     if (configurations.includes(configuration)) {
         sameConfigurationIndex = configurations.indexOf(configuration);
-        break;
     }
 }
 

@@ -4,8 +4,8 @@
  **/
 
 const N: number = parseInt(readline());
-var inputs: string[] = readline().split(' ');
-let xs: number[] = [];
+const inputs: string[] = readline().split(' ');
+const xs: number[] = [];
 for (let i = 0; i < N; i++) {
     const x: number = parseInt(inputs[i]);
     xs.push(x);

@@ -17,18 +17,18 @@ class Grid {
         this.rows = [];
     }
 
-    addRow: Function = (row: Row): void => {
+    addRow: (row: Row) => void = (row: Row): void => {
         this.rows.push(row);
     };
 
-    checkReachableCells: Function = (threshold: number): void => {
+    checkReachableCells: (threshold: number) => void = (threshold: number): void => {
         const bottomRow: Row = this.rows[this.rows.length - 1];
         const bottomRightCell: Cell = bottomRow.cells[bottomRow.cells.length - 1];
 
         this.checkReachableCell(bottomRightCell.y, bottomRightCell.x, threshold);
     };
 
-    checkReachableCell: Function = (targetY: number, targetX: number, threshold: number): boolean => {
+    checkReachableCell: (targetY: number, targetX: number, threshold: number) => boolean = (targetY: number, targetX: number, threshold: number): boolean => {
         const targetCell: Cell = this.rows[targetY].cells[targetX];
 
         if (targetCell.isReachable !== undefined) {
@@ -46,7 +46,7 @@ class Grid {
         return this.rows[targetY].cells[targetX].isReachable;
     };
 
-    countReachableCell: Function = (): number => {
+    countReachableCell: () => number = (): number => {
         return this.rows.flatMap(row => row.cells).filter(cell => cell.isReachable).length;
     };
 }
@@ -58,7 +58,7 @@ class Row {
         this.cells = [];
     }
 
-    addCell: Function = (cell: Cell): void => {
+    addCell: (cell: Cell) => void = (cell: Cell): void => {
         this.cells.push(cell);
     }
 }

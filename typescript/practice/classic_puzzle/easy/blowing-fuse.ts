@@ -3,20 +3,20 @@
  * the standard input according to the problem statement.
  **/
 
-var inputs: string[] = readline().split(' ');
-const n: number = parseInt(inputs[0]);
-const m: number = parseInt(inputs[1]);
-const c: number = parseInt(inputs[2]);
-var inputs: string[] = readline().split(' ');
+const inputs1: string[] = readline().split(' ');
+const n: number = parseInt(inputs1[0]);
+const m: number = parseInt(inputs1[1]);
+const c: number = parseInt(inputs1[2]);
+const inputs2: string[] = readline().split(' ');
 const nxs: number[] = [];
 for (let i = 0; i < n; i++) {
-    const nx: number = parseInt(inputs[i]);
+    const nx: number = parseInt(inputs2[i]);
     nxs.push(nx);
 }
-var inputs: string[] = readline().split(' ');
+const inputs3: string[] = readline().split(' ');
 const mxs: number[] = [];
 for (let i = 0; i < m; i++) {
-    const mx: number = parseInt(inputs[i]);
+    const mx: number = parseInt(inputs3[i]);
     mxs.push(mx);
 }
 

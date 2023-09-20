@@ -10,7 +10,7 @@ for (let i = 0; i < numberSnails; i++) {
     speedSnails.push(speedSnail);
 }
 const mapHeight: number = parseInt(readline());
-const mapWidth: number = parseInt(readline());
+const _mapWidth: number = parseInt(readline());
 const rows: string[] = [];
 for (let i = 0; i < mapHeight; i++) {
     const ROW: string = readline();

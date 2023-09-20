@@ -14,18 +14,24 @@ for (let i = 0; i < N; i++) {
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
 
-const numberHash: {[key: string]: {}} = {};
+type TelephoneNumber = {
+    childlen: { [key: string]: TelephoneNumber }
+};
+
+const telephoneNumber: TelephoneNumber = { childlen: {} };
 telephones.forEach(telephone => {
-    let targetHash: {[key: string]: {}} = numberHash;
+    let targetTelephoneNumber: TelephoneNumber = telephoneNumber;
     telephone.split('').forEach(num => {
-        if (!(num in targetHash)) {
-            targetHash[num] = {};
+        if (!(num in targetTelephoneNumber.childlen)) {
+            targetTelephoneNumber.childlen[num] = { childlen: {} };
         }
 
-        targetHash = targetHash[num];
+        targetTelephoneNumber = targetTelephoneNumber.childlen[num];
     });
 });
 
+const result: number = JSON.stringify(telephoneNumber.childlen).replace(/"childlen":/g, '').match(/:/g).length;
+
 // The number of elements (referencing a number) stored in the structure.
 // console.log('number');
-console.log(JSON.stringify(numberHash).match(/:/g).length);
+console.log(result);

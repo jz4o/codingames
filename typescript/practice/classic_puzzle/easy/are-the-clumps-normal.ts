@@ -12,13 +12,8 @@ const digits: number[] = N.split('').map(c => parseInt(c));
 const maxDigit: number = digits.reduce((max, digit) => Math.max(max, digit));
 
 let chunkSize: number = 1;
-let base: number = 1;
-while (true) {
-    base++;
-    if (maxDigit < base) {
-        break;
-    }
-
+let base: number = 2;
+while (base <= maxDigit) {
     const tempChunk: number[] = [];
     digits.forEach(digit => {
         const mod: number = digit % base;
@@ -33,6 +28,8 @@ while (true) {
     }
 
     chunkSize = tempChunkSize;
+
+    base++;
 }
 
 const result: string = maxDigit < base ? 'Normal' : base.toString();

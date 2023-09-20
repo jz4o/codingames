@@ -49,11 +49,7 @@ const isDecodable = (encodedStr: string, originalStr: string): boolean => {
 }
 
 let result: string = s;
-while (true) {
-    if (!isEncodable(result)) {
-        break;
-    }
-
+while (isEncodable(result)) {
     result = encode(result);
 }
 

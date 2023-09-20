@@ -12,7 +12,7 @@ const rookPosition: string = readline();
 const nbPieces: number = parseInt(readline());
 const inputRows: InputRow[] = [];
 for (let i = 0; i < nbPieces; i++) {
-    var inputs: string[] = readline().split(' ');
+    const inputs: string[] = readline().split(' ');
     const colour: number = parseInt(inputs[0]);
     const onePiece: string = inputs[1];
 

@@ -18,7 +18,7 @@ class MetricUnit {
     constructor(value: number, unit: string) {
         this.value = value;
         this.unit = unit;
-    };
+    }
 
     isUnitGreaterThan = (other: MetricUnit): boolean => {
         const selfUnitIndex: number = MetricUnit.UNITS.indexOf(this.unit);
