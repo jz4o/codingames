@@ -46,10 +46,10 @@ services:
     tty: true
     volumes:
       - ./typescript:/usr/src/typescript
-      - ./vendor/javascript:/usr/src/vendor/javascript
+      - ./vendor/javascript:/usr/src/
 
       # not sync directories
-      - javascript_modules:/usr/src/vendor/javascript/node_modules
+      - javascript_modules:/usr/src/node_modules
     working_dir: /usr/src
   python:
     build:

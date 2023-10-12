@@ -3,6 +3,6 @@
 ```
 docker-compose build javascript
 docker-compose up -d javascript
-docker-compose exec javascript npx --prefix ./vendor/javascript eslint -c ./vendor/javascript/.eslintrc.cjs .
+docker-compose exec javascript npx eslint .
 ```
 
