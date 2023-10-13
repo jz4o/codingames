@@ -56,7 +56,8 @@ services:
       context: ./
       dockerfile: dockerfiles/python/Dockerfile
     volumes:
-      - .:/usr/src
+      - ./python3:/usr/src/python3
+      - ./vendor/python:/usr/src/
     environment:
       TZ: Asia/Tokyo
     working_dir: /usr/src
