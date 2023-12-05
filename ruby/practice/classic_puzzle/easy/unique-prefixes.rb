@@ -15,8 +15,9 @@ n.times do |i|
   prefix_length = word.length.times.to_a.find do |length|
     words.count { |w| w.start_with? word[..length] } == 1
   end
+  prefix_length ||= word.length
 
-  result = word[..(prefix_length || word.length)]
+  result = word[..prefix_length]
 
   # puts "<word_prefix>"
   puts result
