@@ -35,9 +35,8 @@ class String
   end
 end
 
-results = []
-labels.each do |label|
-  results.push label.to_i.zero? ? label.to_int_label : label.to_alpha_label
+results = labels.map do |label|
+  label.to_i.zero? ? label.to_int_label : label.to_alpha_label
 end
 
 puts results.join(' ')

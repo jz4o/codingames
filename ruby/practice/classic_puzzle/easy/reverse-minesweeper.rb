@@ -27,9 +27,8 @@ grid << Array.new(w + 2, 0)
   end
 end
 
-results = []
-grid[1..-2].each do |row|
-  results << row[1..-2].join.tr('09', '..')
+results = grid[1..-2].map do |row|
+  row[1..-2].join.tr('09', '..')
 end
 
 results.each do |result|

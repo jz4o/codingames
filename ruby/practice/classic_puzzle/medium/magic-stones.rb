@@ -3,10 +3,7 @@
 
 @n = gets.to_i
 inputs = gets.split
-stones = []
-(0..(@n - 1)).each do |i|
-  stones << inputs[i].to_i
-end
+stones = (0...@n).map { |i| inputs[i].to_i }
 
 # Write an action using puts
 # To debug: STDERR.puts "Debug messages..."
