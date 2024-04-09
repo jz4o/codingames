@@ -8,7 +8,7 @@ const angle: number = parseInt(readline());
 const grid: string[][] = [];
 for (let i = 0; i < size; i++) {
     const line: string = readline();
-    grid.push(line.split(' '))
+    grid.push(line.split(' '));
 }
 
 // Write an answer using console.log()
@@ -18,7 +18,7 @@ const transpose = array => array[0].map((_value, index) => array.map(row => row[
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const DIAGONAL_SIZE: number = size * 2 - 1;
 

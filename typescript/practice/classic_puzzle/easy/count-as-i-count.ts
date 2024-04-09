@@ -16,7 +16,7 @@ interface Pattern {
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const TARGET_SCORE: number = 50;
 const POSSIBLE_ROUNDS: number = 4;

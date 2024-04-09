@@ -22,7 +22,7 @@ type Mass = {
 
 const rangeArrayFromTo: (from: number, to: number) => number[] = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const explosionABomb: (grid: Mass[][], bombMass: Mass) => void = (grid: Mass[][], bombMass: Mass): void => {
     rangeArrayFromTo(bombMass.y - 3, bombMass.y + 3).forEach(y => {
@@ -84,7 +84,7 @@ const grid: Mass[][] = lines
     .map((row, rowIndex) => {
         return row.map((value, columnIndex) => {
             return { y: rowIndex, x: columnIndex, value: value, explosion: false };
-        })
+        });
     });
 
 const flatMasses: Mass[] = grid.flat();

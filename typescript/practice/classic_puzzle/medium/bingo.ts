@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const BINGO_ROWS = 5
+const BINGO_ROWS = 5;
 
 const n: number = parseInt(readline());
 const rows: string[] = [];

@@ -27,7 +27,7 @@ ts.forEach(function(t) {
     }
 });
 
-const npBalance = (closestZeroNegative || 0) + (closestZeroPositive || 0)
+const npBalance = (closestZeroNegative || 0) + (closestZeroPositive || 0);
 let result: number;
 if (n === 0) {
     result = 0;

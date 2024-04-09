@@ -98,7 +98,7 @@ class Calculator {
             .replace(/\.0$/, '');
 
         return this.num1;
-    }
+    };
 }
 
 const calculator: Calculator = new Calculator();

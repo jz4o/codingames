@@ -43,7 +43,7 @@ while ((loopInputs = readline().split(' ')).length !== 0) {
     if (isAlreadyFacingLeftTarget || isAlreadyFacingRightTarget || target === clonePos) {
         console.log('WAIT');
     } else {
-        console.log('BLOCK')
+        console.log('BLOCK');
     }
 }
 

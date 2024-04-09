@@ -10,7 +10,7 @@ const N: number = parseInt(readline());
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const INITIAL_ARRAY: number[] = rangeArrayFromTo(1, N);
 const CENTER_INDEX: number = Math.trunc(N / 2);

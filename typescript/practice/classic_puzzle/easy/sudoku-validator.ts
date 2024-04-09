@@ -29,7 +29,7 @@ const grid: number[][] = [...Array(KIND_OF_NUMBERS).keys()].map(i => ns.slice(KI
 const subGrids: number[][] = [...Array(KIND_OF_NUMBERS).keys()].map(() => []);
 [...Array(KIND_OF_NUMBERS).keys()].forEach(rowIndex => {
     [...Array(KIND_OF_NUMBERS).keys()].forEach(columnIndex => {
-        const subGridIndex: number = (Math.floor(rowIndex / 3) * 3) + Math.floor(columnIndex / 3)
+        const subGridIndex: number = (Math.floor(rowIndex / 3) * 3) + Math.floor(columnIndex / 3);
         subGrids[subGridIndex].push(grid[rowIndex][columnIndex]);
     });
 });

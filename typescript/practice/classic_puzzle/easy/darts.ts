@@ -34,7 +34,7 @@ for (let i = 0; i < T; i++) {
         name: throwName,
         x: throwX,
         y: throwY
-    })
+    });
 }
 
 // Write an action using console.log()
@@ -42,11 +42,10 @@ for (let i = 0; i < T; i++) {
 
 const HALF_SIZE: number = Math.floor(SIZE / 2);
 const scoreBoard: {[key: string]: number} = {};
-names.forEach(name => { scoreBoard[name] = 0 });
-
+names.forEach(name => scoreBoard[name] = 0);
 
 throwDatas.forEach(throwData => {
-    const name: string = throwData['name']
+    const name: string = throwData['name'];
     const x: number = throwData['x'];
     const y: number = throwData['y'];
 

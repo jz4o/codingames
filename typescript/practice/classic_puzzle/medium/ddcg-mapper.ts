@@ -21,15 +21,15 @@ for (let i = 0; i < N; i++) {
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const repeatStr = (str: string, count: number): string => {
     return Array(count + 1).join(str);
-}
+};
 
 const zeroPadLeft = (str: string, length: number): string => {
     return `${repeatStr('0', length)}${str}`.substr(length * -1);
-}
+};
 
 const results: string[] = [];
 rangeArrayFromTo(1, L).forEach(l => {

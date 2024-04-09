@@ -10,8 +10,8 @@ const k: number = parseInt(inputs[1]);
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
 
-const results: number[][] = []
-const temps: number[][] = []
+const results: number[][] = [];
+const temps: number[][] = [];
 for (let i = 1; i <= k; i++) {
     temps.push([i]);
 }

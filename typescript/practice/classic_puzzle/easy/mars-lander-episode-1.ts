@@ -9,7 +9,7 @@ interface Land {
 }
 
 const surfaceN: number = parseInt(readline()); // the number of points used to draw the surface of Mars.
-const lands: Land[] = []
+const lands: Land[] = [];
 for (let i = 0; i < surfaceN; i++) {
     const inputs: string[] = readline().split(' ');
     const landX: number = parseInt(inputs[0]); // X coordinate of a surface point. (0 to 6999)

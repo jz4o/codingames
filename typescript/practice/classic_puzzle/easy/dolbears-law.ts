@@ -15,12 +15,12 @@ for (let i = 0; i < M; i++) {
 
 const rangeArrayFromTo: (from: number, to: number, step?: number) => number[] = (from: number, to: number, step: number = 1): number[] => {
     return [...Array(Math.floor((to - from + step) / step)).keys()].map(i => from + i * step);
-}
+};
 
 const grid: number[][] = lines.map(line => line.split(' ').map(s => parseInt(s)));
 
 const tcN60: number = grid.reduce((sum, row) => {
-    return sum + 10 + (row.reduce((sum, value) => sum + value) - 40) / 7
+    return sum + 10 + (row.reduce((sum, value) => sum + value) - 40) / 7;
 }, 0) / grid.length;
 
 let tcN8: number;

@@ -23,7 +23,7 @@ for (let i = 0; i < n; i++) {
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const transpose = array => array[0].map((_value, index) => array.map(row => row[index]));
 

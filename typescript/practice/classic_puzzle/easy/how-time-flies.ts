@@ -9,8 +9,8 @@ const END: string = readline();
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
 
-const [beginDay, beginMonth, beginYear] = BEGIN.split('.')
-const [endDay, endMonth, endYear] = END.split('.')
+const [beginDay, beginMonth, beginYear] = BEGIN.split('.');
+const [endDay, endMonth, endYear] = END.split('.');
 
 const beginDate: Date = new Date(`${beginYear}/${beginMonth}/${beginDay}`);
 const endDate: Date = new Date(`${endYear}/${endMonth}/${endDay}`);

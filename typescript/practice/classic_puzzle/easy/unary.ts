@@ -18,7 +18,7 @@ const binaries: number[] = MESSAGE.split('').reduce((binaries, char) => {
     return binaries;
 }, []);
 
-const groupedBinaries: number[][] = []
+const groupedBinaries: number[][] = [];
 while (binaries.length > 0) {
     const firstBinary: number = binaries[0];
     const searchTargetBinary: number = firstBinary * -1 + 1;

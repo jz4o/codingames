@@ -32,7 +32,7 @@ const TREASURE: string = 'T';
 const maps: string[][][] = [...Array(n).keys()].map(i => {
     const map: string[][] = mapRows.slice(i * h, (i + 1) * h).map(row => {
         return [EMPTY, ...row.split(''), EMPTY];
-    })
+    });
     map.unshift(Array(w + 2).fill(EMPTY));
     map.push(Array(w + 2).fill(EMPTY));
 

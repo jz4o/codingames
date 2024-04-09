@@ -22,7 +22,7 @@ type PrefixCode = {
 };
 
 const prefixCodes: PrefixCode[] = inputRows
-    .map(([b, c]) => { return { binary: b, char: String.fromCharCode(c) } })
+    .map(([b, c]) => { return { binary: b, char: String.fromCharCode(c) }; })
     .sort((a, b) => b.binary.length - a.binary.length);
 
 let tempS: string = s;

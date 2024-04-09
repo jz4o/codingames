@@ -43,7 +43,7 @@ const sliceN = <T>(array: T[], sliceSize: number): T[][] => {
     }
 
     return result;
-}
+};
 
 const mayansToNum = (mayans: string[]): number => {
     const mayanIndexes: number[] = sliceN(mayans, H).map(mayan => {
@@ -56,7 +56,7 @@ const mayansToNum = (mayans: string[]): number => {
     }, 0);
 
     return num;
-}
+};
 
 const asciiMayans: string[] = transpose(transposeAsciiMayans).map(line => line.join(''));
 

@@ -16,7 +16,7 @@ for (let i = 0; i < H; i++) {
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const LEFT_PART: string = '/';
 const RIGHT_PART: string = '\\';

@@ -4,7 +4,7 @@
  **/
 
 const N: number = parseInt(readline());
-const xs: string[] = []
+const xs: string[] = [];
 for (let i = 0; i < N; i++) {
     const x: string = readline();
 
@@ -18,7 +18,7 @@ const HAPPY_NUMBER: string = '1';
 const HAPPY_FACE: string = ':)';
 const UNHAPPY_FACE: string = ':(';
 
-const results: string[] = []
+const results: string[] = [];
 for (const x of xs) {
     let temp: string = x;
 

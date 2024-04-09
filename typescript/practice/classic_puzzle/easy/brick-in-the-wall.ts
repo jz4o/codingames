@@ -17,11 +17,11 @@ for (let i = 0; i < N; i++) {
 
 const w = (l: number, m: number): number => {
     return (l - 1) * 6.5 / 100 * 10 * m;
-}
+};
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const sortedMs: number[] = ms.sort((a, b) => b - a);
 

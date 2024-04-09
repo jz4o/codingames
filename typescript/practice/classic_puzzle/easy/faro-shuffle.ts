@@ -29,7 +29,7 @@ const faroShuffle = (deck: string): string => {
     .join(' ');
 
     return result;
-}
+};
 
 const result: string = [...Array(n)].reduce(faroShuffle, deck);
 

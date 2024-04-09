@@ -29,7 +29,7 @@ class Hand {
             point += 10;
         }
         if (point > 21) {
-            point = 0
+            point = 0;
         }
 
         this.cardPoints = cardPoints;
@@ -37,7 +37,7 @@ class Hand {
     }
 
     isBurst: () => boolean = (): boolean => {
-        return this.point === 0
+        return this.point === 0;
     };
 
     isBlackJack: () => boolean = (): boolean => {

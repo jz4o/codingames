@@ -27,7 +27,7 @@ const collectFlag: boolean = !expression.replace(/[^[\](){}]/g, '')
                                             }
 
                                             return true;
-                                        })
+                                        });
 
 // console.log('true/false');
 console.log(collectFlag && chars.length === 0);

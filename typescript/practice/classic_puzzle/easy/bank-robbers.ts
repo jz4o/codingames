@@ -11,7 +11,7 @@ interface Vault {
 const R: number = parseInt(readline());
 const V: number = parseInt(readline());
 
-const vaults: Vault[] = []
+const vaults: Vault[] = [];
 for (let i = 0; i < V; i++) {
     const inputs: string[] = readline().split(' ');
     const C: number = parseInt(inputs[0]);

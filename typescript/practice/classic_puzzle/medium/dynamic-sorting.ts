@@ -78,4 +78,4 @@ const results: string[] = objects.map(object => object['id']);
 // console.log('answer');
 results.forEach(result => {
     console.log(result);
-})
+});

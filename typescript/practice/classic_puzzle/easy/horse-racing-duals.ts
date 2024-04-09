@@ -14,9 +14,9 @@ for (let i = 0; i < N; i++) {
 // To debug: console.error('Debug messages...');
 
 let minimumDiff = 10000000 - 0;
-pis.sort(function(a: number, b: number) { return a < b ? -1 : 1 });
+pis.sort(function(a: number, b: number) { return a < b ? -1 : 1; });
 for (let i = 0; i < pis.length - 1; i++) {
-    const diff = pis[i + 1] - pis[i]
+    const diff = pis[i + 1] - pis[i];
     if (diff < minimumDiff) {
         minimumDiff = diff;
     }

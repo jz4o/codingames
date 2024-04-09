@@ -22,7 +22,7 @@ class Packet {
 }
 
 const packets = [];
-let tempPacket: string = packet
+let tempPacket: string = packet;
 while (tempPacket.length > 0) {
     const instructionId: string = tempPacket.substring(0, 3);
     const packetLength: string = tempPacket.substring(3, 7);

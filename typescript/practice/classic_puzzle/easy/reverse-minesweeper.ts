@@ -16,7 +16,7 @@ for (let i = 0; i < h; i++) {
 
 const rangeArrayFromTo: (from: number, to: number) => number[] = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 type Position = {
     rowIndex: number,

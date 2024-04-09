@@ -25,7 +25,7 @@ const SEGMENTS: string[][] = [
 
 const getSegmentChar = (num: number, pos: string): string => {
     return SEGMENTS[num].indexOf(pos) !== -1 ? C : ' ';
-}
+};
 
 const transpose = array => array[0].map((_value, index) => array.map(row => row[index]));
 
@@ -48,7 +48,7 @@ N.toString().split('').forEach(n => {
     results.push(` ${tr} ${br} `.split(''));
 
     results.push(' '.repeat(S * 2 + 3).split(''));
-})
+});
 
 // console.log('answer');
 transpose(results)

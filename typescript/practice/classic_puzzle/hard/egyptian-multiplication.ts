@@ -39,4 +39,4 @@ results.push(`= ${a * b}`);
 // console.log('answer');
 results.forEach(result => {
     console.log(result);
-})
+});

@@ -21,12 +21,12 @@ const toBigInt: (baseNumber: string, base: number) => bigint = (baseNumber: stri
         .split('')
         .reverse()
         .reduce((sum, digit, index) => sum + BigInt(parseInt(digit, base)) * bigIntPow(base, index), BigInt(0));
-}
+};
 
 const bigIntPow: (x: number, y: number) => bigint = (x: number, y: number): bigint => {
     const bigIntX: bigint = BigInt(x);
     return [...Array(y).keys()].reduce((result) => result * bigIntX, BigInt(1));
-}
+};
 
 const MAX_BASE: number = 36;
 

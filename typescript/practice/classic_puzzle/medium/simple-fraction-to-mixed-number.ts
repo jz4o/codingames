@@ -11,7 +11,7 @@ const gcd = (x: number, y: number): number => {
     }
 
     return y;
-}
+};
 
 const N: number = parseInt(readline());
 const xys: string[] = [];

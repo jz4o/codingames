@@ -35,5 +35,5 @@ if (budgetsSum < C) {
 
 // console.log('IMPOSSIBLE');
 results.forEach(result => {
-    console.log(result)
+    console.log(result);
 });

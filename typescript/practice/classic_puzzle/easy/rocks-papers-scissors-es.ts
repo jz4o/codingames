@@ -44,7 +44,7 @@ const playResults: PlayResult[] = as.map((a, index) => {
     const hand: string = RULE[a].losesTo;
 
     const targetAs: string[] = doubleAs.slice(index, index + n);
-    const loseIndex: number = targetAs.indexOf(RULE[hand].losesTo)
+    const loseIndex: number = targetAs.indexOf(RULE[hand].losesTo);
 
     const winCount: number = targetAs.slice(0, loseIndex).filter(a => a === RULE[hand].beats).length;
 

@@ -23,7 +23,7 @@ const zip: <T, U>(a: T[], b: U[]) => [T, U][] = <T, U>(a: T[], b: U[]): [T, U][]
 
 const rangeArrayFromTo: (from: number, to: number) => number[] = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const assignmentRegexp: RegExp = /([A-Z]+)\[([-\d]+)\.\.([-\d]+)\]\s=\s([-\s\d]+)/;
 const assignmentObject: { [key: string]: { [key: string]: string } } = {};

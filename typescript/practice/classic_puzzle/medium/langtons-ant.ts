@@ -25,7 +25,7 @@ const T: number = parseInt(readline());
 const grid: string[][] = [];
 for (let i = 0; i < H; i++) {
     const C: string = readline();
-    grid.push(C.split(''))
+    grid.push(C.split(''));
 }
 for (let i = 0; i < T; i++) {
 

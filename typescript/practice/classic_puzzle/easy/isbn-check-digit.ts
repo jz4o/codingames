@@ -60,5 +60,5 @@ isbns.forEach(isbn => {
 // console.log('answer');
 console.log(`${invalids.length} invalid:`);
 invalids.forEach(invalid => {
-    console.log(invalid)
+    console.log(invalid);
 });

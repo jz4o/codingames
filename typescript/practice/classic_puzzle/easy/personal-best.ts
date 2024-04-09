@@ -30,7 +30,7 @@ class Score {
         this.bars = Math.max(this.bars, bars);
         this.beam = Math.max(this.beam, beam);
         this.floor = Math.max(this.floor, floor);
-    }
+    };
 }
 
 const gymnastArray: string[] = gymnasts.split(',');

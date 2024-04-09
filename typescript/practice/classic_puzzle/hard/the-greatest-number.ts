@@ -17,9 +17,9 @@ temp = temp.replace('-', '').replace('.', '').replace(/\s/g, '');
 
 const digits: number[] = temp.split('').map(i => parseInt(i));
 if (minusFlag) {
-    temp = digits.sort().join('')
+    temp = digits.sort().join('');
     temp = dotFlag ? temp.replace(temp[0], `${temp[0]}.`) : temp;
-    temp = `-${temp}`
+    temp = `-${temp}`;
     temp = /^-0\.0+$/.test(temp) ? '0' : temp;
 } else {
     temp = digits.sort().reverse().join('');

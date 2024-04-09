@@ -25,4 +25,4 @@ while (r1Temp !== r2Temp) {
 }
 
 // console.log('42');
-console.log(r1Temp)
+console.log(r1Temp);

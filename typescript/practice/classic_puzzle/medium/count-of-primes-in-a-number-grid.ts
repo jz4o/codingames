@@ -28,7 +28,7 @@ const isPrime = (digit: number): boolean => {
     }
 
     return true;
-}
+};
 
 const digits: number[] = [];
 const transposeGrid: string[][] = grid[0].map((_value, index) => grid.map(row => row[index]));

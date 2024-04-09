@@ -11,7 +11,7 @@ const N: number = parseInt(readline());
 
 const rangeArrayFromTo = (from: number, to: number): bigint[] => {
     return [...Array(to - from + 1).keys()].map(i => BigInt(i + from));
-}
+};
 
 const minDistance: number = Math.min(M - 1, N - 1);
 const maxDistance: number = Math.max(M - 1, N - 1);

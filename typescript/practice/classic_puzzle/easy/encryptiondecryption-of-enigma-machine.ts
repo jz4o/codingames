@@ -28,13 +28,13 @@ if (operation === 'ENCODE') {
 
     const encodedMessageChars = rotors.reduce((message, rotor) => message.map(messageChar => {
         return rotor.split('')[alphabet.indexOf(messageChar)];
-    }), messageChars)
+    }), messageChars);
 
     result = encodedMessageChars.join('');
 } else {
     const messageChars: string[] = rotors.reverse().reduce((messageChars, rotor) => {
         return messageChars.map(messageChar => alphabet[rotor.split('').indexOf(messageChar)]);
-    }, message.split(''))
+    }, message.split(''));
 
     const decodedMessageChars: string[] = messageChars.map((char, index) => {
         let alphabetIndex: number = alphabet.indexOf(char);

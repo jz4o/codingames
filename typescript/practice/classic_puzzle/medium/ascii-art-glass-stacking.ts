@@ -10,7 +10,7 @@ const N: number = parseInt(readline());
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 let stage: number = 0;
 let glassCount: number = 0;
@@ -25,7 +25,7 @@ const GLASS_PARTS: string[] = [
     '*****'
 ];
 
-const WIDTH: number = stage * GLASS_PARTS[0].length + stage - 1
+const WIDTH: number = stage * GLASS_PARTS[0].length + stage - 1;
 
 const results: string[] = [];
 rangeArrayFromTo(1, stage).forEach(step => {
@@ -34,7 +34,7 @@ rangeArrayFromTo(1, stage).forEach(step => {
         const leftSpace: string = ' '.repeat(Math.trunc((WIDTH - result.length) / 2));
         const rightSpace: string = ' '.repeat(WIDTH - result.length - leftSpace.length);
 
-        results.push(`${leftSpace}${result}${rightSpace}`)
+        results.push(`${leftSpace}${result}${rightSpace}`);
     });
 });
 

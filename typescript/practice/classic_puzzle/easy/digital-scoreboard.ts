@@ -21,11 +21,11 @@ class DigitalNumber {
 
     subtractScore: (scoreRows: string[]) => void = (scoreRows: string[]): void => {
         this.bitsArray = zip(this.bitsArray, this.#toBitsArray(scoreRows)).map(([s1, s2]) => s1 & (s2 ^ parseInt('1111111', 2)));
-    }
+    };
 
     addScore: (scoreRows: string[]) => void = (scoreRows: string[]): void => {
         this.bitsArray = zip(this.bitsArray, this.#toBitsArray(scoreRows)).map(([s1, s2]) => s1 | s2);
-    }
+    };
 
     toString: () => string = (): string => {
         const DIGIT_BITS: string[] = [
@@ -34,7 +34,7 @@ class DigitalNumber {
         ];
 
         return [...this.bitsArray].reverse().map(s => DIGIT_BITS.indexOf(s.toString(2).padStart(7, '0'))).join('');
-    }
+    };
 
     #toBitsArray: (scoreRows: string[]) => number[] = (scoreRows: string[]): number[] => {
         const ROW_SIZE: number = 8;
@@ -60,7 +60,7 @@ class DigitalNumber {
         }).filter(bits => bits !== null).reverse();
 
         return bitsArray;
-    }
+    };
 }
 
 const zip: <T, U>(a: T[], b: U[]) => [T, U][] = <T, U>(a: T[], b: U[]): [T, U][] => {

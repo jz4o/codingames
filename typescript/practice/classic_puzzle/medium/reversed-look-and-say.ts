@@ -15,11 +15,11 @@ const sliceN = <T>(array: T[], sliceSize: number): T[][] => {
     }
 
     return result;
-}
+};
 
 const isEncodable = (str: string): boolean => {
     return encode(str) && encode(str) !== str;
-}
+};
 
 const encode = (str: string): string => {
     if (str.length % 2 !== 0) {
@@ -34,7 +34,7 @@ const encode = (str: string): string => {
     }, '');
 
     return isDecodable(result, str) ? result : null;
-}
+};
 
 const isDecodable = (encodedStr: string, originalStr: string): boolean => {
     let result: string = '';
@@ -46,7 +46,7 @@ const isDecodable = (encodedStr: string, originalStr: string): boolean => {
     }
 
     return result === originalStr;
-}
+};
 
 let result: string = s;
 while (isEncodable(result)) {

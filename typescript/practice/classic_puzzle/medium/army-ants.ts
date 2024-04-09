@@ -27,7 +27,7 @@ const s1NotMovePart: string = S1.substring(T).split('').reverse().join('');
 const s2NotMovePart: string = S2.substring(T);
 
 const sMovedPart: string = s2MovePart.map((value, index) => {
-    return `${value || ''}${s1MovePart[index] || ''}`
+    return `${value || ''}${s1MovePart[index] || ''}`;
 }).join('');
 
 // console.log('answer');

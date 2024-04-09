@@ -17,11 +17,11 @@ for (let i = 0; i < N; i++) {
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const repeatStr = (str: string, count: number): string => {
     return Array(count + 1).join(str);
-}
+};
 
 const width: number = texts.map(i => i.length).reduce((max, i) => Math.max(max, i) , 0);
 

@@ -22,7 +22,7 @@ while ((_remainingTurns = parseInt(readline() || '-1')) !== -1) {
 
     // Direction Initialize
     let moveX: string = '';
-    let moveY: string = ''
+    let moveY: string = '';
 
     // duguage X
     if (lightX < tx) {

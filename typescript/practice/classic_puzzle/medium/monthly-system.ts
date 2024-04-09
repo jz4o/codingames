@@ -24,7 +24,7 @@ const monthlyToNumber = (monthlyStr: string): number => {
 
         return sum + (monthNum * base);
     }, 0);
-}
+};
 
 const numberToMonthly = (num: number): string => {
     const monthlies: string[] = num.toString(NUMS.length).split('').map(char => {
@@ -32,7 +32,7 @@ const numberToMonthly = (num: number): string => {
     });
 
     return monthlies.join('');
-}
+};
 
 const sum: number = ms.reduce((sum, m) => sum + monthlyToNumber(m), 0);
 const result: string = numberToMonthly(sum);

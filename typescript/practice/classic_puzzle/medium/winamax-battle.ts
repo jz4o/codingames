@@ -46,7 +46,7 @@ const fight = (deck1: number[], deck2: number[], index: number = 0): FigthResult
         winner: deck1Card < deck2Card ? 'deck2' : 'deck1',
         index: index
     };
-}
+};
 
 let result: string;
 try {

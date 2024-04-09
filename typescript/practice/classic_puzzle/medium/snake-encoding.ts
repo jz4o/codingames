@@ -29,7 +29,7 @@ const rotateEndIndex: number = rotateBeginIndex + charStr.length;
 charStr = charStr.repeat(2).substring(rotateBeginIndex, rotateEndIndex);
 
 // string to array
-charGrid = charStr.match(new RegExp(`.{${N}}`, 'g')).map(row => row.split(''))
+charGrid = charStr.match(new RegExp(`.{${N}}`, 'g')).map(row => row.split(''));
 charGrid = charGrid.map((row, index) => index % 2 === 0 ? row.reverse() : row);
 charGrid = transpose(charGrid);
 

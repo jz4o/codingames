@@ -10,7 +10,7 @@ const equality: string = readline();
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const NUMERALS: string[] = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 

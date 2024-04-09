@@ -18,7 +18,7 @@ for (const card of cards) {
     const sum: number = card.replace(/ /g, '')
                             .split('')
                             .map((d, index) => {
-                                let result: number = parseInt(d)
+                                let result: number = parseInt(d);
                                 if (index % 2 === 0) {
                                     result *= 2;
                                     if (result >= 10) {

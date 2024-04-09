@@ -28,7 +28,7 @@ const parent2Elements: string[] = parent2.slice(0, 2).split('').flatMap(frontCha
 
 const childCandidates: string[] = parent1Elements.flatMap(parent1Element => {
     return parent2Elements.map(parent2Element => {
-        const childCandidate: string[] =  `${parent1Element}${parent2Element}`.split('')
+        const childCandidate: string[] =  `${parent1Element}${parent2Element}`.split('');
 
         return childCandidate.sort().join('');
     });

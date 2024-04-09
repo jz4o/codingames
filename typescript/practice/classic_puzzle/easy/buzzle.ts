@@ -21,7 +21,7 @@ for (let i = 0; i < k; i++) {
 
 const rangeArrayFromTo: (from: number, to: number, step?: number) => number[] = (from: number, to: number, step: number = 1): number[] => {
     return [...Array(Math.floor((to - from + step) / step)).keys()].map(i => from + i * step);
-}
+};
 
 const results: string[] = rangeArrayFromTo(a, b).map(i => {
     let isBuzzle: boolean = false;

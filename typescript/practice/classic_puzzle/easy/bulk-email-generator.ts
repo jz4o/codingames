@@ -35,4 +35,4 @@ const results: string[] = replacers.reduce((result, replacer) => result.replace(
 // console.log('42');
 results.forEach(result => {
     console.log(result);
-})
+});

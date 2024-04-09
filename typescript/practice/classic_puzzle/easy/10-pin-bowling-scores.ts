@@ -31,7 +31,7 @@ const results: string[] = games.map(game => {
     const scores: Score[] = game.split(' ').flatMap((score, frame) => {
         return score.split('').map(s => {
             return new Score(frame, s);
-        })
+        });
     });
 
     [...Array(scores.length).keys()].forEach(index => {
@@ -65,7 +65,7 @@ const results: string[] = games.map(game => {
     const maxFrame: number = Object.keys(scoreObject).reduce((max, frame) => Math.max(max, parseInt(frame)), 0);
     const frameSumPoints: number[] = [];
     [...Array(maxFrame + 1).keys()].forEach(index => {
-        const lastSumPoint = frameSumPoints[frameSumPoints.length - 1] || 0
+        const lastSumPoint = frameSumPoints[frameSumPoints.length - 1] || 0;
         frameSumPoints.push(lastSumPoint + scoreObject[index]);
     });
 

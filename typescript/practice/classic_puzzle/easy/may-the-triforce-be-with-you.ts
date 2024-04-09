@@ -16,10 +16,10 @@ for (let i = 1; i <= N; i++) {
     const part: string = '*'.repeat(i * 2 - 1);
 
     const upperLeftSpacePart: string = ' '.repeat((width - part.length) / 2);
-    upperPart += `${upperLeftSpacePart}${part}\n`
+    upperPart += `${upperLeftSpacePart}${part}\n`;
 
     const lowerSpacePart: string = ' '.repeat((N - i + 1) * 2 - 1);
-    const lowerLine: string = `${part}${lowerSpacePart}${part}`
+    const lowerLine: string = `${part}${lowerSpacePart}${part}`;
     const lowerLeftSpacePart: string = ' '.repeat((width - lowerLine.length) / 2);
     lowerPart += `${lowerLeftSpacePart}${lowerLine}\n`;
 }

@@ -63,7 +63,7 @@ const powerCellObject: { [key: number]: Cell[] } = {};
             if (remain < sumCountPowerCells) {
                 powerCells.forEach(powerCell => {
                     powerCell.territoryCount += Math.floor(remain / powerCells.length);
-                })
+                });
                 remain = 0;
             } else if (sumCountPowerCells <= remain) {
                 powerCells.forEach(powerCell => {

@@ -27,4 +27,4 @@ const results: string[] = fs.map(f => {
 // console.log('DEFEAT');
 results.forEach(result => {
     console.log(result);
-})
+});

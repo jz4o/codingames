@@ -10,11 +10,11 @@ const n1: string = readline();
 
 const repeatStr = (str: string, count: number): string => {
     return Array(count + 1).join(str);
-}
+};
 
 const zeroPadLeft = (str: string, length: number): string => {
     return `${repeatStr('0', length)}${str}`.substr(length * -1);
-}
+};
 
 const DIGITS_SIZE: number = n1.length;
 const answers: string[] = [];

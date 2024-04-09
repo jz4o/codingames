@@ -19,7 +19,7 @@ let squareSum: number = square.reduce((sum, row) => {
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const optimize = (square: number[][]) => {
     square.forEach((row, rowIndex) => {
@@ -48,7 +48,7 @@ const optimize = (square: number[][]) => {
             }
         });
     });
-}
+};
 
 const expectSum: number = rangeArrayFromTo(1, square.length).reduce((sum, i) => sum + i) * square.length;
 while (expectSum !== squareSum) {
@@ -58,4 +58,4 @@ while (expectSum !== squareSum) {
 // console.log('answer');
 square.forEach(line => {
     console.log(line.join(''));
-})
+});

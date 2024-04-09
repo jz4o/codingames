@@ -26,7 +26,7 @@ class Fraction {
         const [numerator, denominator]: number[] = num.split('/').map(n => parseInt(n));
 
         return new Fraction(numerator, denominator);
-    }
+    };
 
     static fromDirections: (directions: string) => Fraction = (directions: string): Fraction => {
         let minFraction: Fraction = new Fraction(0, 1);
@@ -45,7 +45,7 @@ class Fraction {
         });
 
         return targetFraction;
-    }
+    };
 
     toDirections: () => string = (): string => {
         let minFraction: Fraction = new Fraction(0, 1);
@@ -69,27 +69,27 @@ class Fraction {
         const result: string = results.join('');
 
         return result;
-    }
+    };
 
     isNotEqual: (other: Fraction) => boolean = (other: Fraction): boolean => {
         return this.toFloat() !== other.toFloat();
-    }
+    };
 
     isLessThan: (other: Fraction) => boolean = (other: Fraction): boolean => {
         return this.toFloat() < other.toFloat();
-    }
+    };
 
     toFloat: () => number = (): number => {
         return this.numerator / this.denominator;
-    }
+    };
 
     copy: () => Fraction = (): Fraction => {
         return new Fraction(this.numerator, this.denominator);
-    }
+    };
 
     toString: () => string = (): string => {
         return `${this.numerator}/${this.denominator}`;
-    }
+    };
 }
 
 const fractionRegexp: RegExp = /^\d+\/\d+$/;

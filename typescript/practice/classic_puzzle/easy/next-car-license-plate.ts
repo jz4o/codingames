@@ -16,7 +16,7 @@ const alphaToInt = (alpha: string): number => {
         const alphaInt = Math.pow(ALPHAS.length, index) * (ALPHAS.indexOf(value) + 1);
         return alphaIntSum + alphaInt;
     }, 0);
-}
+};
 
 const intToAlpha = (alphaInt: number): string => {
     let result: string = '';
@@ -32,15 +32,15 @@ const intToAlpha = (alphaInt: number): string => {
     }
 
     return result;
-}
+};
 
 const repeatStr = (str: string, count: number): string => {
     return Array(count + 1).join(str);
-}
+};
 
 const zeroPadLeft = (str: string, length: number): string => {
     return `${repeatStr('0', length)}${str}`.substr(length * -1);
-}
+};
 
 const xElements: string[] = x.split('-');
 const ad: string = xElements[0];

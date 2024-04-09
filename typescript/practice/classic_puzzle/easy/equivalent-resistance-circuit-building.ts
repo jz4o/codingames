@@ -18,11 +18,11 @@ const circuit: string = readline();
 
 const calcSeries: (rs: string[]) => number = (rs: string[]): number => {
     return rs.reduce((sum, r) => sum + parseFloat(r), 0);
-}
+};
 
 const calcParallel: (rs: string[]) => number = (rs: string[]): number => {
     return 1 / rs.reduce((sum, r) => sum + (1 / parseFloat(r)), 0);
-}
+};
 
 const LEFT_PARTS: string = '[(';
 const RIGHT_PARTS: string = '])';

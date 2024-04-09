@@ -35,7 +35,7 @@ class NumberSpiral {
         }
 
         return numberSpiral;
-    }
+    };
 
     // create spiral by below condition
     //
@@ -106,11 +106,11 @@ class NumberSpiral {
         }
 
         return numberSpiral;
-    }
+    };
 
     static counterClock: (numberSpiral: number[][]) => number[][] = (numberSpiral: number[][]): number[][] => {
         return transpose(numberSpiral).reverse();
-    }
+    };
 
     static reverseOrder: (numberSpiral: number[][]) => number[][] = (numberSpiral: number[][]): number[][] => {
         const spiralSize: number = numberSpiral.length;
@@ -121,7 +121,7 @@ class NumberSpiral {
         const diffNumbers: number[] = numbers.map(num => sumNumber - num);
 
         return [...Array(spiralSize).keys()].map(i => diffNumbers.slice(i * spiralSize, (i + 1) * spiralSize));
-    }
+    };
 
     static reverseDirection: (numberSpiral: number[][]) => number[][] = (numberSpiral: number[][]): number[][] => {
         const numbers: number[] = numberSpiral.flat();
@@ -133,12 +133,12 @@ class NumberSpiral {
         } else {
             return transpose([...numberSpiral].reverse()).reverse();
         }
-    }
+    };
 }
 
 const rangeArrayFromTo: (from: number, to: number, step?: number) => number[] = (from: number, to: number, step: number = 1): number[] => {
     return [...Array(Math.floor((to - from + step) / step)).keys()].map(i => from + i * step);
-}
+};
 
 const transpose: <T>(array: T[][]) => T[][] = <T>(array: T[][]): T[][] => {
     return array[0].map((_value, index) => array.map(row => row[index]));
@@ -151,4 +151,4 @@ const results: string[] = numberSpiral.map(row => row.join('\t'));
 // console.log('spiral');
 results.forEach(result => {
     console.log(result);
-})
+});

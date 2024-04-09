@@ -1,4 +1,3 @@
-
 /**
  * Auto-generated code below aims at helping you parse
  * the standard input according to the problem statement.
@@ -31,7 +30,7 @@ while (i > 0) {
 }
 
 lis = lis.sort((a, b) => a - b);
-const [min, max]: [number, number] = [lis[0], lis[lis.length - 1]]
+const [min, max]: [number, number] = [lis[0], lis[lis.length - 1]];
 
 const result: number = max - min;
 

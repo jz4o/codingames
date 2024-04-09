@@ -12,13 +12,13 @@ const ALPHABETS: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 const getAlphabetsEveryBy = (num: number): string[] => {
     return ALPHABETS.filter((_, index) => (index + 1) % num === 0);
-}
+};
 
 const getIndexes = (str: string, searchArray: string[]): number[] => {
     return str.split('').map((char, index) => {
         return searchArray.indexOf(char) !== -1 ? index : null;
     }).filter(index => index !== null);
-}
+};
 
 const partShift = (str: string, indexes: number[]): string => {
     indexes.forEach((indexInStr, index) => {
@@ -34,11 +34,11 @@ const partShift = (str: string, indexes: number[]): string => {
     });
 
     return str;
-}
+};
 
 const partUnshift = (str: string, indexes: number[]): string => {
     return partShift(str, indexes.reverse());
-}
+};
 
 const partReverse = (str: string, indexes: number[]): string => {
     while (indexes.length >= 2) {
@@ -52,7 +52,7 @@ const partReverse = (str: string, indexes: number[]): string => {
     }
 
     return str;
-}
+};
 
 // # reverse word length
 const sizeOfWords: number[] = phrase.split(' ').map(word => word.length);

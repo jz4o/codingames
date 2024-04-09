@@ -71,7 +71,7 @@ const howToRead = (numberStr: string) => {
     }
 
     return result.trim();
-}
+};
 
 const results: string[] = numbers.map(number => howToRead(number));
 

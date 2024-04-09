@@ -22,7 +22,7 @@ class TileFloor {
             .map(patternRow => `|${patternRow}|${patternRow}|`);
 
         return [borderRow, patternRows, borderRow, patternRows, borderRow].flat();
-    }
+    };
 
     private static reverseHorizontal = (patternPartsRows: string[]): string[] => {
         return patternPartsRows.map(patternPartsRow => {
@@ -47,7 +47,7 @@ class TileFloor {
 
             return [patternPartsRow, reversePatternPartsRow.slice(1)].join('');
         });
-    }
+    };
 
     private static reverseVertical = (patternPartsRows: string[]): string[] => {
         const replaceMap: { [key: string]: string } = {
@@ -70,7 +70,7 @@ class TileFloor {
         });
 
         return patternPartsRows.concat(reversePatternPartsRows.slice(1));
-    }
+    };
 }
 
 const results: string[] = TileFloor.create(rows);

@@ -76,14 +76,14 @@ class Blood {
         const parent2TypeElements: string[] = parent2.getTypeElements();
         const inefficientCandidateTypes: string[] = parent1TypeElements.flatMap(parent1Type => {
             return parent2TypeElements.map(parent2Type => Blood.getCommonFormatType(`${parent1Type}${parent2Type}`));
-        })
+        });
         const candidateBloodTypes: string[] = uniq(inefficientCandidateTypes);
 
         const candidateBloods: Blood[] = candidateBloodTypes
             .flatMap(bloodType => candidateRhs.map(rh => new Blood(`${bloodType}${rh}`)))
             .sort((a, b) => {
                 if (a.type !== b.type) {
-                    return a.type > b.type ? 1 : -1
+                    return a.type > b.type ? 1 : -1;
                 }
 
                 return a.rh > b.rh ? 1 : -1;
@@ -105,7 +105,7 @@ const results: string[] = inputRows.map(([parent1, parent2, child]) => {
 
     let predictedBloodTypes: string[] = [];
     if (childBlood === null) {
-        predictedBloodTypes = Blood.predictChildBloodStrings(parentBlood1, parentBlood2)
+        predictedBloodTypes = Blood.predictChildBloodStrings(parentBlood1, parentBlood2);
     } else {
         const parentBlood: Blood = parentBlood1 || parentBlood2;
         predictedBloodTypes = Blood.predictParentBloodStrings(parentBlood, childBlood);

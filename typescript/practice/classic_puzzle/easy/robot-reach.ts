@@ -60,7 +60,7 @@ class Row {
 
     addCell: (cell: Cell) => void = (cell: Cell): void => {
         this.cells.push(cell);
-    }
+    };
 }
 
 class Cell {

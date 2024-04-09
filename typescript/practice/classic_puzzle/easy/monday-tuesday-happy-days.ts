@@ -21,8 +21,8 @@ const DAY_OF_WEEK: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Fr
 // year is 0000 if leap is 1 (0000 year is leap year)
 const year: string = `000${leapYear === 0 ? 1 : 0}`;
 
-const targetDateTime: number = Date.parse(`${targetMonth} ${targetDayOfMonth}, ${year}`)
-const sourceDateTime: number = Date.parse(`${sourceMonth} ${sourceDayOfMonth}, ${year}`)
+const targetDateTime: number = Date.parse(`${targetMonth} ${targetDayOfMonth}, ${year}`);
+const sourceDateTime: number = Date.parse(`${sourceMonth} ${sourceDayOfMonth}, ${year}`);
 const diffDays: number = Math.floor((targetDateTime - sourceDateTime) / 1000 / 60 / 60 / 24);
 
 const sourceDayOfWeekIndex: number = DAY_OF_WEEK.indexOf(sourceDayOfWeek);

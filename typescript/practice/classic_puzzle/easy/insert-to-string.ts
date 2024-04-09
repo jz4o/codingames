@@ -36,7 +36,7 @@ changes.sort((a, b) => {
     return b.columnIndex - a.columnIndex;
 });
 
-const sRows: string[] = s.split('\\n')
+const sRows: string[] = s.split('\\n');
 changes.forEach(change => {
     const sRow: string = sRows[change.rowIndex];
 

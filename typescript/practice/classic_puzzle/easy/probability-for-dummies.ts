@@ -45,7 +45,7 @@ class Probability {
 
 const rangeArrayFromTo: (from: number, to: number) => number[] = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const floatResult: number = rangeArrayFromTo(m, n).reduce((sum, i) => sum + Probability.calc(i, n), 0);
 const result: string = `${Math.round(floatResult * 100)}%`;

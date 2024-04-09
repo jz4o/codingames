@@ -5,7 +5,7 @@
 
 const N: number = parseInt(readline()); // Number of elements which make up the association table.
 const Q: number = parseInt(readline()); // Number Q of file names to be analyzed.
-const extMimes: { [key: string]: string; } = {}
+const extMimes: { [key: string]: string; } = {};
 for (let i = 0; i < N; i++) {
     const inputs: string[] = readline().split(' ');
     const EXT: string = inputs[0]; // file extension

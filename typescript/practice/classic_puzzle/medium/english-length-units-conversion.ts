@@ -37,7 +37,7 @@ class Fraction {
         denominator /= gcd;
 
         return new Fraction(numerator, denominator);
-    }
+    };
 
     static #gcd: (a: number, b: number) => number = (a: number, b: number): number => {
         const min: number = Math.min(a, b);

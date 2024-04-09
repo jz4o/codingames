@@ -11,7 +11,7 @@ const MESSAGE: string = readline();
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const decode = (text: string): string => {
     let result: string = '';
@@ -38,7 +38,7 @@ const decode = (text: string): string => {
     }
 
     return result;
-}
+};
 
 const encode = (text: string): string => {
     let result: string = '';
@@ -60,7 +60,7 @@ const encode = (text: string): string => {
     }
 
     return result;
-}
+};
 
 const decodeOrEncode = N > 0 ? decode : encode;
 const result: string = rangeArrayFromTo(1, Math.abs(N)).reduce(result => {

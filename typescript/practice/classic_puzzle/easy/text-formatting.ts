@@ -18,7 +18,7 @@ const result: string = intext.toLowerCase()
                              .map(s => s.charAt(0).toUpperCase() + s.slice(1))
                              .join('. ')
                              .replace(/ ,/g, ',')
-                             .replace(/,+/g, ',')
+                             .replace(/,+/g, ',');
 
 // console.log('solution');
 console.log(result + (intext.endsWith('.') ? '.' : ''));

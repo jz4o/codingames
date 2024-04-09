@@ -31,15 +31,15 @@ class Robot {
 
     place: () => string = (): string => {
         return `${this.x} ${this.y}`;
-    }
+    };
 
     placeWithDirection: () => string = (): string => {
         return `${this.place()} ${this.direction()}`;
-    }
+    };
 
     direction: () => string = (): string => {
         return this.directions[0];
-    }
+    };
 
     forward: () => void = (): void => {
         const direction: string = this.direction();
@@ -52,7 +52,7 @@ class Robot {
         } else if (direction === 'W') {
             this.x--;
         }
-    }
+    };
 
     aheadMassIndex: () => [number, number] = (): [number, number] => {
         const direction: string = this.direction();
@@ -65,7 +65,7 @@ class Robot {
         } else if (direction === 'W') {
             return [this.y, this.x - 1];
         }
-    }
+    };
 
     aheadMass: (grid: string[][]) => string = (grid: string[][]): string => {
         const [y, x]: [number, number] = this.aheadMassIndex();
@@ -74,27 +74,27 @@ class Robot {
         }
 
         return grid[y][x];
-    }
+    };
 
     turnRight: () => void = (): void => {
         const direction: string = this.directions.shift();
         this.directions.push(direction);
-    }
+    };
 
     log: () => void = (): void => {
         this.logs.push(this.placeWithDirection());
-    }
+    };
 
     isLoggedPlace: () => boolean = (): boolean => {
         return this.logs.includes(this.placeWithDirection());
-    }
+    };
 
     skipedTurn: (n: number, turn: number) => number = (n: number, turn: number): number => {
         const loopBeginTurn: number = this.logs.indexOf(this.placeWithDirection());
         const loopSize: number = turn - loopBeginTurn;
 
         return n - ((n - loopBeginTurn) % loopSize);
-    }
+    };
 }
 
 const grid: string[][] = lines.map(line => line.split(''));

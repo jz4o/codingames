@@ -17,7 +17,7 @@ for (let i = 0; i < H; i++) {
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const transpose = <T>(array: T[][]): T[][] => {
     const rowSize: number = array.length;

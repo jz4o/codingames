@@ -16,7 +16,7 @@ for (let i = 0; i < height; i++) {
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const results: string[] = [];
 rangeArrayFromTo(0, height - 1).forEach(h => {

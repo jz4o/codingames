@@ -28,7 +28,7 @@ const register: { [key: string]: number } = {
 
 let index: number = 0;
 while (index < instructions.length) {
-    const args: string[] = instructions[index].split(' ')
+    const args: string[] = instructions[index].split(' ');
     const operator: string = args[0];
     const arg0: string = args[1];
     const arg1: number = register[args[2]] !== undefined ? register[args[2]] : parseInt(args[2]);

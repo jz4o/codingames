@@ -6,7 +6,7 @@
 const M: number = parseInt(readline());
 const N: number = parseInt(readline());
 const grid: number[][] = [];
-grid.push(Array(N + 1).fill(1))
+grid.push(Array(N + 1).fill(1));
 for (let i = 0; i < M; i++) {
     const ROW: string = readline();
 
@@ -18,7 +18,7 @@ for (let i = 0; i < M; i++) {
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const pathGrid: number[][] = [...Array(M + 1)].map(() => Array(N + 1).fill(0));
 grid[1][1] = pathGrid[1][1] = 1;

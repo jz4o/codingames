@@ -77,4 +77,4 @@ const results: string[] = testAnswers.map(answer => {
 // console.log('answer');
 results.forEach(result => {
     console.log(result);
-})
+});

@@ -49,7 +49,7 @@ const result: Result = words.reduce((result, word) => {
         result.maxPoint = point;
     }
 
-    return result
+    return result;
 }, {bestWord: '', maxPoint: 0});
 
 // console.log('invalid word');

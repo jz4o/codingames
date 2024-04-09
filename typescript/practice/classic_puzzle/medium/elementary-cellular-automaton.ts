@@ -12,15 +12,15 @@ const startPattern: string = readline();
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const repeatStr = (str: string, count: number): string => {
     return Array(count + 1).join(str);
-}
+};
 
 const zeroPadLeft = (str: string, length: number): string => {
     return `${repeatStr('0', length)}${str}`.substr(length * -1);
-}
+};
 
 const RULE_LENGTH: number = 8;
 
@@ -42,7 +42,7 @@ rangeArrayFromTo(1, N).reduce(temp => {
         }
 
         result.push(RULE[array.slice(index, index + 3).join('')]);
-    })
+    });
 
     return result.join('');
 }, startPattern.replace(/\./g, '0').replace(/@/g, '1'));

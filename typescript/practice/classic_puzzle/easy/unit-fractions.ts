@@ -10,7 +10,7 @@ const n: number = parseInt(readline());
 
 const rangeArrayFromTo = (from: number, to: number): number[] => {
     return [...Array(to - from + 1).keys()].map(i => i + from);
-}
+};
 
 const gcd = (a: number, b: number): number => {
     const min: number = Math.min(a, b);

@@ -13,7 +13,7 @@ for (let i = 0; i < N; i++) {
 
     voters[personName] = nbVote;
 }
-const votes: {[key: string]: string[]} = {}
+const votes: {[key: string]: string[]} = {};
 for (let i = 0; i < M; i++) {
     const inputs: string[] = readline().split(' ');
     const voterName: string = inputs[0];

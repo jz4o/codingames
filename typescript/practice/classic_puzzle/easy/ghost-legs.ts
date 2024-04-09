@@ -22,7 +22,7 @@ const bottomLine: string[] = grid.pop();
 for (const line of grid.reverse()) {
     line.forEach((char, index) => {
         if (char === '-') {
-            [bottomLine[index - 1], bottomLine[index + 1]] = [bottomLine[index + 1], bottomLine[index - 1]]
+            [bottomLine[index - 1], bottomLine[index + 1]] = [bottomLine[index + 1], bottomLine[index - 1]];
         }
     });
 }

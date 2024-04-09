@@ -18,7 +18,7 @@ const sliceN = <T>(array: T[], sliceSize: number): T[][] => {
     }
 
     return result;
-}
+};
 
 let binaries: string = '';
 const validFlag = sliceN(ENCRYPT.split(' '), 2).every(array => {

@@ -9,7 +9,7 @@ const N: string = readline();
 // To debug: console.error('Debug messages...');
 
 function buildAddItems(array: number[]): string {
-    return array.length >= 3 ? `${array.shift()}-${array.pop()}` : array.join(',')
+    return array.length >= 3 ? `${array.shift()}-${array.pop()}` : array.join(',');
 }
 
 const numbers: number[] = N.replace(/[[\]]/g, '')

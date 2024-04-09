@@ -51,7 +51,7 @@ while (tempHistories.length > 0) {
     ];
 
     const aroundMovablePositions: Position[] = aroundPositions.filter(position => {
-        return !tempHistory.includes(position) && position.value !== WALL
+        return !tempHistory.includes(position) && position.value !== WALL;
     });
 
     if (aroundMovablePositions.length === 0) {

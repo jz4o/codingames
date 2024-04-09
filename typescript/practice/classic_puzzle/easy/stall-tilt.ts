@@ -28,7 +28,7 @@ const ALPHABETS: string = 'abcdefghijklmnopqrstuvwxyz';
 const BORDER_TAN: number = Math.tan(60 * Math.PI / 180);
 const G: number = 9.81;
 
-let motorcycles: Motorcycle[] = speeds.map((speed, index) => { return { name: ALPHABETS[index], speed } });
+let motorcycles: Motorcycle[] = speeds.map((speed, index) => { return { name: ALPHABETS[index], speed }; });
 const staledMotorcycles: Motorcycle[] = [];
 
 const borderSpeeds: number[] = bends.map(bend => Math.sqrt(BORDER_TAN * bend * G));

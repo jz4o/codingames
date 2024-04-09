@@ -5,7 +5,7 @@
 
 const ROUNDS: number = parseInt(readline());
 const CASH: number = parseInt(readline());
-let result: number = CASH
+let result: number = CASH;
 for (let i = 0; i < ROUNDS; i++) {
     const bet = Math.ceil(result / 4);
     result -= bet;

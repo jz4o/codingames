@@ -37,7 +37,7 @@ function isPrime(num: number) {
 }
 
 function primeDivision(num) {
-    const divisions: number[] = []
+    const divisions: number[] = [];
 
     while (num % 2 === 0) {
         divisions.push(2);

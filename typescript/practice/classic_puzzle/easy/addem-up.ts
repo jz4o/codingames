@@ -14,7 +14,7 @@ for (let i = 0; i < N; i++) {
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
 
-let totalCost: number = 0
+let totalCost: number = 0;
 while (xs.length >= 2) {
     xs.sort((a: number, b: number): number => a - b);
 
@@ -25,4 +25,3 @@ while (xs.length >= 2) {
 
 // console.log('0');
 console.log(totalCost);
-

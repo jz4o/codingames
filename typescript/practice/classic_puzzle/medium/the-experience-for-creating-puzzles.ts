@@ -24,11 +24,11 @@ const reflectExp = (currentLevel: number, exp: number, levelUpExp: number = null
     } else {
         return reflectExp(currentLevel + 1, exp);
     }
-}
+};
 
 const getExpForLevelUp = (currentLevel: number): number => {
     return Math.floor(currentLevel * Math.sqrt(currentLevel) * 10);
-}
+};
 
 // console.log('answer');
 const result: BlitzProg = reflectExp(level, EXP_OF_PUZZLE * N, xp);
