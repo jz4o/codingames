@@ -14,6 +14,7 @@ module.exports = {
         'argsIgnorePattern': "^_",
         'varsIgnorePattern': "^_"
       }
-    ]
+    ],
+    'semi': ['error', 'always']
   }
 };
