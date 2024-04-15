@@ -12,7 +12,7 @@ const beerVol: number = parseFloat(inputs[3]);
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const round: (num: number, ndigits: number) => number = (num: number, ndigits: number = 0): number => {
+const round: (num: number, ndigits?: number) => number = (num: number, ndigits: number = 0): number => {
     const adjust: number = Math.pow(10, ndigits);
 
     return Math.round(num * adjust) / adjust;
