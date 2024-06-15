@@ -3,7 +3,7 @@
 ```
 docker-compose build python
 docker-compose up -d python
-docker-compose exec python flake8 .
+docker-compose exec python ruff check .
 ```
 
 ## How to update packages
