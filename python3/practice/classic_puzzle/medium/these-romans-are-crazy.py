@@ -15,7 +15,7 @@ class Roman:
             50: 'L',
             10: 'X',
             5: 'V',
-            1: 'I'
+            1: 'I',
         }
 
         subtractive_notation = {
@@ -24,7 +24,7 @@ class Roman:
             'LXXXX': 'XC',
             'XXXX': 'XL',
             'VIIII': 'IX',
-            'IIII': 'IV'
+            'IIII': 'IV',
         }
 
         result = ''
@@ -48,7 +48,7 @@ class Roman:
             'L': 50,
             'C': 100,
             'D': 500,
-            'M': 1000
+            'M': 1000,
         }
 
         subtractive_notation = {
@@ -57,13 +57,13 @@ class Roman:
             'XC': 'LXXXX',
             'XL': 'XXXX',
             'IX': 'VIIII',
-            'IV': 'IIII'
+            'IV': 'IIII',
         }
 
         for subtractive, variant in subtractive_notation.items():
             roman = roman.replace(subtractive, variant)
 
-        return sum(map(lambda c: values[c], roman))
+        return sum([values[r] for r in roman])
 
 
 rom_1 = input()

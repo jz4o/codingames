@@ -6,7 +6,7 @@
 
 n = int(input())
 words = []
-for i in range(n):
+for _ in range(n):
     w = input()
 
     words.append(w)
@@ -53,7 +53,7 @@ for word in words:
     if not made_flag:
         continue
 
-    point = sum(map(lambda w: points[w], word))
+    point = sum(points[w] for w in word)
 
     if result.point < point:
         result = Result(word, point)

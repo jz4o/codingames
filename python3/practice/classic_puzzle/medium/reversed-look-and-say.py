@@ -32,7 +32,7 @@ def is_decodable(encoded_text, original_text):
     result = ''
     while len(encoded_text) > 0:
         char = encoded_text[0]
-        match_length = len(re.match(f"{char}+", encoded_text).group())
+        match_length = len(re.match(f'{char}+', encoded_text).group())
 
         encoded_text = encoded_text[match_length:]
         result += f'{match_length}{char}'

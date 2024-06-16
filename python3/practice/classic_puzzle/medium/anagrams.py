@@ -37,8 +37,8 @@ def part_shift(string, indexes):
     return result
 
 
-def part_unshift(str, indexes):
-    return part_shift(str, list(reversed(indexes)))
+def part_unshift(str_value, indexes):
+    return part_shift(str_value, list(reversed(indexes)))
 
 
 def part_reverse(string, indexes):
@@ -56,7 +56,7 @@ def part_reverse(string, indexes):
     return result
 
 
-size_of_words = list(map(lambda word: len(word), phrase.split(' ')))
+size_of_words = [len(word) for word in phrase.split(' ')]
 phrase_chars = [c for c in phrase if c.strip() != '']
 
 words = []

@@ -5,7 +5,7 @@
 # the standard input according to the problem statement.
 
 grid = []
-for i in range(10):
+for _ in range(10):
     row = input()
 
     grid.append(['#', *list(row), '#'])

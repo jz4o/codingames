@@ -7,7 +7,7 @@
 alignment = input()
 n = int(input())
 texts = []
-for i in range(n):
+for _ in range(n):
     text = input()
 
     texts.append(text)
@@ -29,17 +29,17 @@ def justify(text, width):
     return ''.join([f'{words[i]}{" " * space_sizes[i]}' for i in range(len(words))])
 
 
-width = max(map(lambda text: len(text), texts))
+width = max(map(len, texts))
 
 results = []
 if alignment == 'LEFT':
     results = texts
 elif alignment == 'RIGHT':
-    results = map(lambda text: text.rjust(width), texts)
+    results = [text.rjust(width) for text in texts]
 elif alignment == 'CENTER':
-    results = map(lambda text: text.center(width).rstrip(), texts)
+    results = [text.center(width).rstrip() for text in texts]
 elif alignment == 'JUSTIFY':
-    results = map(lambda text: justify(text, width), texts)
+    results = [justify(text, width) for text in texts]
 
 # print("answer")
 for result in results:

@@ -14,7 +14,7 @@ center_index = n // 2
 temp_list = initial_list
 progress_logs = []
 
-for i in range(n):
+for _ in range(n):
     front_half = temp_list[:center_index]
     back_half = temp_list[center_index:]
 

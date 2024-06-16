@@ -6,9 +6,9 @@ import pandas as pd
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-r, c = [int(i) for i in input().split()]
+r, c = (int(i) for i in input().split())
 digit_grid = []
-for i in range(r):
+for _ in range(r):
     row = input()
     digit_grid.append(row.split(' '))
 
@@ -19,8 +19,7 @@ for i in range(r):
 def combination_digits(row):
     result = []
     for size in range(2, len(row) + 1):
-        for index in range(len(row) - size + 1):
-            result.append(int(''.join(row[index:index + size])))
+        result.extend(int(''.join(row[index:index + size])) for index in range(len(row) - size + 1))
 
     return result
 
@@ -43,7 +42,7 @@ digits = []
 for row in digit_grid:
     digits.extend([int(i) for i in row])
     digits.extend(combination_digits(row))
-for row in pd.DataFrame(digit_grid).T.values:
+for row in pd.DataFrame(digit_grid).T.to_numpy():
     digits.extend(combination_digits(row))
 
 result = len([digit for digit in set(digits) if is_prime(digit)])

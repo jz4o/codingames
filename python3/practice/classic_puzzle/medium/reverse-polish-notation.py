@@ -5,10 +5,8 @@
 # the standard input according to the problem statement.
 
 n = int(input())
-instructions = []
-for instruction in input().split():
-    # pass
-    instructions.append(instruction)
+instructions = input().split()
+
 
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)

@@ -16,10 +16,10 @@ inputs = [int(i) for i in input().split()]
 nb_floors, width, nb_rounds, exit_floor, exit_pos, nb_total_clones, nb_additional_elevators, nb_elevators = inputs
 elevator_floors = []
 elevator_positions = []
-for i in range(nb_elevators):
+for _ in range(nb_elevators):
     # elevator_floor: floor on which this elevator is found
     # elevator_pos: position of the elevator on its floor
-    elevator_floor, elevator_pos = [int(j) for j in input().split()]
+    elevator_floor, elevator_pos = (int(j) for j in input().split())
 
     elevator_floors.append(elevator_floor)
     elevator_positions.append(elevator_pos)

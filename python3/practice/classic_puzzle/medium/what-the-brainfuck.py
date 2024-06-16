@@ -6,14 +6,14 @@ import re
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-l, s, n = [int(i) for i in input().split()]
+l, s, n = (int(i) for i in input().split())
 program = ''
-for i in range(l):
+for _ in range(l):
     r = input()
 
     program += r
 inputs = []
-for i in range(n):
+for _ in range(n):
     c = int(input())
 
     inputs.append(c)
@@ -54,17 +54,18 @@ class BrainFack:
                     carriage = jump_index_pairs[carriage]
 
                 if pointer < 0 or len(array) <= pointer:
-                    raise Exception('POINTER OUT OF BOUNDS')
+                    return 'POINTER OUT OF BOUNDS'
 
-                if array[pointer] < 0 or 255 < array[pointer]:
-                    raise Exception('INCORRECT VALUE')
+                if not 0 <= array[pointer] <= 255:
+                    return 'INCORRECT VALUE'
 
                 carriage += 1
 
-            return output
-
-        except Exception as e:
+        except RuntimeError as e:
             return str(e)
+
+        else:
+            return output
 
     @staticmethod
     def get_jump_index_pairs(program):
@@ -76,7 +77,7 @@ class BrainFack:
                 jump_index_pair_stack.append(index)
             elif command == ']':
                 if len(jump_index_pair_stack) <= 0:
-                    raise Exception('SYNTAX ERROR')
+                    raise RuntimeError('SYNTAX ERROR')
 
                 pair_index = jump_index_pair_stack.pop(-1)
 
@@ -84,7 +85,7 @@ class BrainFack:
                 jump_index_pairs[index] = pair_index
 
         if len(jump_index_pair_stack) > 0:
-            raise Exception('SYNTAX ERROR')
+            raise RuntimeError('SYNTAX ERROR')
 
         return jump_index_pairs
 

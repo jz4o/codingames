@@ -1,6 +1,8 @@
 # import sys
 # import math
 
+import itertools
+
 import pandas as pd
 
 # Auto-generated code below aims at helping you parse
@@ -101,13 +103,13 @@ class NumberSpiral:
 
     @classmethod
     def __counter_clock(cls, number_spiral):
-        return pd.DataFrame(number_spiral).T.iloc[::-1].values.tolist()
+        return pd.DataFrame(number_spiral).T.iloc[::-1].to_numpy().tolist()
 
     @classmethod
     def __reverse_order(cls, number_spiral):
         spiral_size = len(number_spiral)
 
-        numbers = sum(number_spiral, [])
+        numbers: list[int] = list(itertools.chain.from_iterable(number_spiral))
         sum_number = min(numbers) + max(numbers)
 
         numbers = [sum_number - number for number in numbers]
@@ -116,13 +118,13 @@ class NumberSpiral:
 
     @classmethod
     def __reverse_direction(cls, number_spiral):
-        numbers = sum(number_spiral, [])
+        numbers = list(itertools.chain.from_iterable(number_spiral))
         is_start_tl_or_br = max(numbers) in [numbers[0], numbers[-1]]
 
         if is_start_tl_or_br:
-            return pd.DataFrame(number_spiral).T.values.tolist()
-        else:
-            return pd.DataFrame(number_spiral).iloc[::-1].T.iloc[::-1].values.tolist()
+            return pd.DataFrame(number_spiral).T.to_numpy().tolist()
+
+        return pd.DataFrame(number_spiral).iloc[::-1].T.iloc[::-1].to_numpy().tolist()
 
 
 number_spiral = NumberSpiral.create(n, vert_pos, hor_pos, order, direction)

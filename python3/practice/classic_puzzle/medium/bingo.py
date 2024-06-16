@@ -10,7 +10,7 @@ BINGO_ROWS = 5
 
 n = int(input())
 rows = []
-for i in range(n * BINGO_ROWS):
+for _ in range(n * BINGO_ROWS):
     row = input()
     rows.append(row)
 calls = input()
@@ -26,32 +26,28 @@ for i in range(0, len(rows), BINGO_ROWS):
 
     grid = pd.DataFrame([map(int, row.split()) for row in player_rows])
 
-    player_numbers.append(set(grid.values.ravel()))
+    player_numbers.append(set(grid.to_numpy().ravel()))
 
     lines.extend(map(set, grid.values))
     lines.extend(map(set, grid.T.values))
 
-    lines.append(set([grid.iloc[i, i] for i in range(0, BINGO_ROWS)]))
-    lines.append(set([grid.iloc[i, BINGO_ROWS - i - 1] for i in range(0, BINGO_ROWS)]))
+    lines.append({grid.iloc[i, i] for i in range(BINGO_ROWS)})
+    lines.append({grid.iloc[i, BINGO_ROWS - i - 1] for i in range(BINGO_ROWS)})
 
-for numbers in player_numbers:
-    numbers -= set([0])
-for line in lines:
-    line -= set([0])
+player_numbers = [numbers - {0} for numbers in player_numbers]
+lines = [line - {0} for line in lines]
 
 call_numbers = map(int, calls.split())
 
 complete_index = None
 full_house_index = None
 for index, number in enumerate(call_numbers, start=1):
-    for line in lines:
-        line -= set([number])
-    if complete_index is None and any([len(line) == 0 for line in lines]):
+    lines = [line - {number} for line in lines]
+    if complete_index is None and any(len(line) == 0 for line in lines):
         complete_index = index
 
-    for numbers in player_numbers:
-        numbers -= set([number])
-    if full_house_index is None and any([len(numbers) == 0 for numbers in player_numbers]):
+    player_numbers = [numbers - {number} for numbers in player_numbers]
+    if full_house_index is None and any(len(numbers) == 0 for numbers in player_numbers):
         full_house_index = index
         break
 

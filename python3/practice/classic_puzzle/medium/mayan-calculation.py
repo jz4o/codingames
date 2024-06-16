@@ -8,20 +8,20 @@ import re
 
 mayan_base = 20
 
-l, h = [int(i) for i in input().split()]
+l, h = (int(i) for i in input().split())
 ascii_mayans = [''] * mayan_base
-for i in range(h):
+for _ in range(h):
     numeral = input()
     for index, mayan in enumerate(re.findall(f'.{{{l}}}', numeral)):
         ascii_mayans[index] += mayan
 s1 = int(input())
 mayan_1 = ''
-for i in range(s1):
+for _ in range(s1):
     num_1line = input()
     mayan_1 += num_1line
 s2 = int(input())
 mayan_2 = ''
-for i in range(s2):
+for _ in range(s2):
     num_2line = input()
     mayan_2 += num_2line
 operation = input()

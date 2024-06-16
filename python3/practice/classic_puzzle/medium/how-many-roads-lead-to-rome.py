@@ -6,7 +6,7 @@
 
 n = int(input())
 css = []
-for i in range(n):
+for _ in range(n):
     cs = []
     for j in input().split():
         c = int(j)
@@ -40,10 +40,10 @@ while len(temp_route_patterns) > 0:
             continue
 
         if next_city_label == ROME_LABEL:
-            route_patterns.append(temp_route_pattern + [next_city_label])
+            route_patterns.append([*temp_route_pattern, next_city_label])
             continue
 
-        temp_route_patterns.append(temp_route_pattern + [next_city_label])
+        temp_route_patterns.append([*temp_route_pattern, next_city_label])
 
 result = len(route_patterns)
 

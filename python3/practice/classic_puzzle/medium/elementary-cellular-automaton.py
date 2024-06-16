@@ -24,7 +24,7 @@ for i in range(RULE_LENGTH):
 results = []
 temp = start_pattern.replace('.', '0').replace('@', '1')
 
-for i in range(n):
+for _ in range(n):
     result = temp.replace('0', '.').replace('1', '@')
     results.append(result)
 

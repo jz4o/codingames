@@ -13,7 +13,7 @@ class Generation:
 
 count = int(input())
 generations = []
-for i in range(count):
+for _ in range(count):
     line = input()
 
     level = line.count('.')

@@ -6,9 +6,9 @@ import re
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-n, m = [int(i) for i in input().split()]
+n, m = (int(i) for i in input().split())
 lines = []
-for i in range(n):
+for _ in range(n):
     line = input()
     lines.append(line)
 
@@ -44,7 +44,7 @@ while True:
 
     replace_char = chr(ord(replace_char) - 1)
 
-results = [replaced_string] + replace_list
+results = [replaced_string, *replace_list]
 
 # print("answer")
 for result in results:

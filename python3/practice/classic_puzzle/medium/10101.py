@@ -9,7 +9,7 @@ import numpy as np
 w = int(input())
 h = int(input())
 grid = []
-for i in range(h):
+for _ in range(h):
     row = input()
     grid.append(list(row))
 
@@ -18,7 +18,7 @@ for i in range(h):
 
 
 def get_completed_row_or_column_count(grid):
-    return list(map(lambda row: all(row == '#'), [*grid, *grid.T])).count(True)
+    return [all(row == '#') for row in [*grid, *grid.T]].count(True)
 
 
 grid = np.array(grid)

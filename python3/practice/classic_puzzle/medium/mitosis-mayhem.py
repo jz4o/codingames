@@ -1,14 +1,15 @@
 # import sys
 # import math
 
+import itertools
 from collections import defaultdict
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-_max, cycles = [int(i) for i in input().split()]
+_max, cycles = (int(i) for i in input().split())
 rows = []
-for i in range(cycles):
+for _ in range(cycles):
     inputs = input().split()
     name = inputs[0]
     initial_count = int(inputs[1])
@@ -30,7 +31,7 @@ class Cell:
 
 power_cell_dict = defaultdict(list)
 for cycle_index in range(cycles):
-    all_cells = sum(power_cell_dict.values(), [])
+    all_cells = list(itertools.chain.from_iterable(power_cell_dict.values()))
 
     remain = _max - sum([cell.territory_count for cell in all_cells])
     is_conflict_territory = remain == 0
@@ -74,7 +75,7 @@ for cycle_index in range(cycles):
     cell = Cell(name, initial_count, power, cycle_index)
     power_cell_dict[cell.power].append(cell)
 
-all_cells = sum(power_cell_dict.values(), [])
+all_cells = list(itertools.chain.from_iterable(power_cell_dict.values()))
 cells = [cell for cell in sorted(all_cells, key=lambda cell: cell.index) if cell.territory_count > 0]
 sum_territory_count = sum([cell.territory_count for cell in cells])
 

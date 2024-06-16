@@ -15,8 +15,8 @@ class Cage:
 n = int(input())
 y = int(input())
 cages = []
-for i in range(n):
-    s, h, a = [int(j) for j in input().split()]
+for _ in range(n):
+    s, h, a = (int(j) for j in input().split())
 
     cages.append(Cage(s, h, a))
 for i in range(y):

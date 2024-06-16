@@ -4,11 +4,11 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-w, h = [int(i) for i in input().split()]
-x, y = [int(i) for i in input().split()]
+w, h = (int(i) for i in input().split())
+x, y = (int(i) for i in input().split())
 grid = []
 grid.append([None] * (w + 2))
-for i in range(h):
+for _ in range(h):
     r = input()
 
     grid.append([None, *list(r), None])
@@ -47,7 +47,7 @@ while len(be_check_masses) > 0:
         Mass(mass_y, mass_x - 1),
         Mass(mass_y - 1, mass_x),
         Mass(mass_y, mass_x + 1),
-        Mass(mass_y + 1, mass_x)
+        Mass(mass_y + 1, mass_x),
     ]
 
     for near_mass in near_masses:

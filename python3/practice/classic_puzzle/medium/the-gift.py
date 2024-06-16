@@ -7,7 +7,7 @@ import math
 n = int(input())
 c = int(input())
 budgets = []
-for i in range(n):
+for _ in range(n):
     b = int(input())
 
     budgets.append(b)

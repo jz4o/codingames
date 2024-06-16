@@ -8,7 +8,7 @@ CARD_LANKS = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 
 n = int(input())  # the number of cards for player 1
 deck1 = []
-for i in range(n):
+for _ in range(n):
     cardp_1 = input()  # the n cards of player 1
 
     card_lank = CARD_LANKS.index(cardp_1[:-1])
@@ -16,7 +16,7 @@ for i in range(n):
 
 m = int(input())  # the number of cards for player 2
 deck2 = []
-for i in range(m):
+for _ in range(m):
     cardp_2 = input()  # the m cards of player 2
 
     card_lank = CARD_LANKS.index(cardp_2[:-1])
@@ -41,10 +41,11 @@ def fight(deck1, deck2, index):
 
     if deck2_card < deck1_card:
         return FightResult('deck1', index)
-    elif deck1_card < deck2_card:
+
+    if deck1_card < deck2_card:
         return FightResult('deck2', index)
-    else:
-        return fight(deck1, deck2, index + 4)
+
+    return fight(deck1, deck2, index + 4)
 
 
 turn = 0

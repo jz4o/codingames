@@ -1,8 +1,8 @@
 # import sys
 # import math
 
-from fractions import Fraction
 import re
+from fractions import Fraction
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -10,7 +10,7 @@ import re
 toconvert = input()
 n = int(input())
 relations = []
-for i in range(n):
+for _ in range(n):
     relation = input()
     relations.append(relation)
 

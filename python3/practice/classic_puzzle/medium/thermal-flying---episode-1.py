@@ -10,7 +10,7 @@ width = int(input())
 height = int(input())
 t = int(input())
 lines = []
-for i in range(height):
+for _ in range(height):
     line = input()
     lines.append(line)
 
@@ -19,7 +19,7 @@ for i in range(height):
 
 grid = list(reversed([re.findall(r'\.|V|-?\d', line) for line in lines]))
 
-v_row = [row for row in grid if 'V' in row][0]
+v_row = next(iter([row for row in grid if 'V' in row]))
 v_y = grid.index(v_row)
 v_x = v_row.index('V')
 

@@ -6,7 +6,7 @@
 
 n = int(input())
 ts = []
-for i in range(n):
+for _ in range(n):
     t = input()
 
     ts.append(t)

@@ -8,7 +8,7 @@ m = int(input())
 n = int(input())
 grid = []
 grid.append([1] * (n + 1))
-for i in range(m):
+for _ in range(m):
     row = input()
 
     grid.append([1, *map(int, row)])

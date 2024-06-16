@@ -15,8 +15,8 @@ n = int(input())
 points = []
 xs = [0]
 ys = [0]
-for i in range(n):
-    x, y = [int(j) for j in input().split()]
+for _ in range(n):
+    x, y = (int(j) for j in input().split())
 
     points.append(Point(x, y))
     xs.append(x)

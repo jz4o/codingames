@@ -45,7 +45,7 @@ for prime_factor in prime_division(n):
         is_carmichael = False
         break
 
-result = "YES" if is_carmichael else "NO"
+result = 'YES' if is_carmichael else 'NO'
 
 # print("YES|NO")
 print(result)

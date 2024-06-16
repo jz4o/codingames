@@ -1,8 +1,9 @@
 # import sys
 # import math
 
-import pandas as pd
 import re
+
+import pandas as pd
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -10,7 +11,7 @@ import re
 n = int(input())
 x = int(input())
 char_grid = []
-for i in range(n):
+for _ in range(n):
     line = input()
     char_grid.append(list(line))
 
@@ -31,7 +32,7 @@ chars = (chars * 2)[start_index:start_index + len(chars)]
 char_grid = [list(reversed(row) if index % 2 == 0 else row) for index, row in enumerate(re.findall(f'.{{{n}}}', chars))]
 char_grid = pd.DataFrame(char_grid).T
 
-results = [''.join(row) for row in char_grid.values]
+results = [''.join(row) for row in char_grid.to_numpy()]
 
 # print("answer")
 for result in results:

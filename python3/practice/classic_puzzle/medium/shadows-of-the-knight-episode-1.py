@@ -6,9 +6,9 @@ import math
 
 # w: width of the building.
 # h: height of the building.
-w, h = [int(i) for i in input().split()]
+w, h = (int(i) for i in input().split())
 n = int(input())  # maximum number of turns before game over.
-x0, y0 = [int(i) for i in input().split()]
+x0, y0 = (int(i) for i in input().split())
 
 bomb_min_height = h
 bomb_max_height = 0

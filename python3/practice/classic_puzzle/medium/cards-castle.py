@@ -6,7 +6,7 @@
 
 h = int(input())
 grid = []
-for i in range(h):
+for _ in range(h):
     s = input()
     grid.append(list(s))
 

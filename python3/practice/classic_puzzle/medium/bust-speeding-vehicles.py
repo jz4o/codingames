@@ -7,7 +7,7 @@
 l = int(input())
 n = int(input())
 rs = []
-for i in range(n):
+for _ in range(n):
     r = input()
     rs.append(r)
 

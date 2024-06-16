@@ -9,11 +9,8 @@ import numpy as np
 
 def is_polydivisible(number):
     str_number = str(number)
-    for i in range(1, len(str_number) + 1):
-        if int(str_number[0:i]) % i != 0:
-            return False
 
-    return True
+    return all(int(str_number[:i]) % i == 0 for i in range(1, len(str_number) + 1))
 
 
 number = input()
@@ -30,7 +27,7 @@ for i in range(nbanswer):
     if i <= max(numbers):
         continue
 
-    base_number = ''.join(map(lambda n: np.base_repr(n, i), numbers))
+    base_number = ''.join(np.base_repr(n, i) for n in numbers)
 
     if is_polydivisible(int(base_number, i)):
         results.append(i)

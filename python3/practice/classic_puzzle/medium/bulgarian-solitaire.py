@@ -22,7 +22,7 @@ while True:
     configurations.append(' '.join(map(str, sorted(piles))))
 
     piles_size = len(piles)
-    piles = list(filter(lambda c: c != 0, map(lambda c: c - 1, piles)))
+    piles = [pile - 1 for pile in piles if pile > 1]
     piles.append(piles_size)
 
     configuration = ' '.join(map(str, sorted(piles)))

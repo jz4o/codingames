@@ -18,7 +18,7 @@ GLASS_PARTS = [
     ' *** ',
     ' * * ',
     ' * * ',
-    '*****'
+    '*****',
 ]
 WIDTH = stage * len(GLASS_PARTS[0]) + stage - 1
 

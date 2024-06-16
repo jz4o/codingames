@@ -6,7 +6,7 @@
 width = int(input())  # the number of cells on the X axis
 height = int(input())  # the number of cells on the Y axis
 lines = []
-for i in range(height):
+for _ in range(height):
     line = input()  # width characters, each either 0 or .
 
     lines.append(line)

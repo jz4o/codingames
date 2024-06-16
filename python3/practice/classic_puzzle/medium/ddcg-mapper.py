@@ -16,7 +16,7 @@ class Line:
 l = int(input())
 n = int(input())
 lines = []
-for i in range(n):
+for _ in range(n):
     inputs = input().split()
     pattern = inputs[0]
     tempo = int(inputs[1])

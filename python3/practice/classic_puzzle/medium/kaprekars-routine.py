@@ -16,7 +16,7 @@ temp = n_1
 while temp not in answers:
     answers.append(temp)
 
-    biggest = int(''.join(reversed(sorted(temp))))
+    biggest = int(''.join(sorted(temp, reverse=True)))
     smallest = int(''.join(sorted(temp)))
 
     answer = biggest - smallest

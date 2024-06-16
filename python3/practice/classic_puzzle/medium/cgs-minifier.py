@@ -8,7 +8,7 @@ import re
 
 n = int(input())
 cgs_contents = []
-for i in range(n):
+for _ in range(n):
     cgscontent = input()
 
     cgs_contents.append(cgscontent)
@@ -21,7 +21,9 @@ characters = []
 replace_char = 'a'
 
 replaced_cgs_contents = []
-for cgs_content in cgs_contents:
+for temp_cgs_content in cgs_contents:
+    cgs_content = temp_cgs_content
+
     # replace variable part
     for matched_variable in re.findall('\\$.+?\\$', cgs_content):
         if matched_variable not in variables:

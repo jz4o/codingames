@@ -14,7 +14,7 @@ class Voter:
 n = int(input())
 m = int(input())
 voters = []
-for i in range(n):
+for _ in range(n):
     inputs = input().split()
     person_name = inputs[0]
     nb_vote = int(inputs[1])
@@ -22,10 +22,10 @@ for i in range(n):
     voters.append(Voter(person_name, nb_vote))
 
 votes = {}
-for i in range(m):
+for _ in range(m):
     voter_name, vote_value = input().split()
 
-    if voter_name not in votes.keys():
+    if voter_name not in votes:
         votes[voter_name] = []
     votes[voter_name].append(vote_value)
 
@@ -35,7 +35,7 @@ for i in range(m):
 yes = 0
 no = 0
 for voter in voters:
-    if voter.name not in votes.keys() or voter.vote_count < len(votes[voter.name]):
+    if voter.name not in votes or voter.vote_count < len(votes[voter.name]):
         continue
 
     yes += len(list(filter(lambda vote: vote == 'Yes', votes[voter.name])))

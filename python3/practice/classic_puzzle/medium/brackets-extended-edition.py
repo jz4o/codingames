@@ -8,7 +8,7 @@ import re
 
 n = int(input())
 expressions = []
-for i in range(n):
+for _ in range(n):
     expression = input()
     expressions.append(expression)
 for i in range(n):

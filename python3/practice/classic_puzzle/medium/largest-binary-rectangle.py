@@ -4,9 +4,9 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-width, height = [int(i) for i in input().split()]
+width, height = (int(i) for i in input().split())
 grid = []
-for i in range(height):
+for _ in range(height):
     row = []
     for j in input().split():
         cell = int(j)
@@ -27,7 +27,7 @@ for row_index, row in enumerate(grid):
 
             for w in range(1, width - cell_index + 1):
                 binary_rows = [h_row[cell_index:cell_index + w] for h_row in h_rows]
-                if all([0 not in binary_row for binary_row in binary_rows]):
+                if all(0 not in binary_row for binary_row in binary_rows):
                     rectangle_sizes.append(sum([len(binary_row) for binary_row in binary_rows]))
 
 result = max(rectangle_sizes)

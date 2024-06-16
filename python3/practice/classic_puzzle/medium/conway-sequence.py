@@ -11,7 +11,7 @@ l = int(input())
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
 results = [r]
-for n in range(l - 1):
+for _ in range(l - 1):
     temp, results = results, []
     while len(temp) > 0:
         uniq_temp = []

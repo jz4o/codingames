@@ -6,7 +6,7 @@
 
 n = int(input())
 telephones = []
-for i in range(n):
+for _ in range(n):
     telephone = input()
 
     telephones.append(telephone)
@@ -18,7 +18,7 @@ number_tree = {}
 for telephone in telephones:
     target_tree = number_tree
     for num in telephone:
-        if num not in target_tree.keys():
+        if num not in target_tree:
             target_tree[num] = {}
 
         target_tree = target_tree[num]

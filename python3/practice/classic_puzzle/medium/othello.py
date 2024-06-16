@@ -1,11 +1,13 @@
 # import sys
 # import math
 
+import itertools
+
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
 rows = []
-for i in range(8):
+for _ in range(8):
     row = input()
     rows.append(row)
 colour, move = input().split()
@@ -78,7 +80,7 @@ def reverse_stones(line_positions, move_value):
     reversed_value = BLACK if move_value == WHITE else WHITE
 
     reverse_target_positions = line_positions[:nearest_same_color_index]
-    if any([position.value != reversed_value for position in reverse_target_positions]):
+    if any(position.value != reversed_value for position in reverse_target_positions):
         return
 
     for position in reverse_target_positions:
@@ -105,13 +107,13 @@ move_position = Position(move_row, move_column, colour)
 
 result = ''
 if grid[move_row][move_column].value == EMPTY:
-    before_white_count = len([position for position in sum(grid, []) if position.value == WHITE])
-    before_black_count = len([position for position in sum(grid, []) if position.value == BLACK])
+    before_white_count = len([position for position in itertools.chain.from_iterable(grid) if position.value == WHITE])
+    before_black_count = len([position for position in itertools.chain.from_iterable(grid) if position.value == BLACK])
 
     move_stone(grid, move_position)
 
-    after_white_count = len([position for position in sum(grid, []) if position.value == WHITE])
-    after_black_count = len([position for position in sum(grid, []) if position.value == BLACK])
+    after_white_count = len([position for position in itertools.chain.from_iterable(grid) if position.value == WHITE])
+    after_black_count = len([position for position in itertools.chain.from_iterable(grid) if position.value == BLACK])
 
     is_legal_move = before_white_count != after_white_count and before_black_count != after_black_count
     result = f'{after_white_count} {after_black_count}' if is_legal_move else 'NULL'

@@ -8,7 +8,7 @@ import itertools
 
 n = int(input())
 families = []
-for i in range(n):
+for _ in range(n):
     parent_1, parent_2, child = input().split()
 
     families.append({'parent_1': parent_1, 'parent_2': parent_2, 'child': child})
@@ -29,8 +29,8 @@ class Blood:
         return f'{self.type}{self.rh}'
 
     @classmethod
-    def get_common_format_type(klass, blood_type):
-        blood_type = ''.join(sorted(set(list(blood_type))))
+    def get_common_format_type(cls, blood_type):
+        blood_type = ''.join(sorted(set(blood_type)))
 
         return blood_type[0] if blood_type[-1] == 'O' else blood_type
 

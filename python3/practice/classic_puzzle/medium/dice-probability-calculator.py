@@ -19,17 +19,17 @@ def calc(expr):
 
         expr = expr.replace(bracket_expr, str(answer))
 
-    expr = expr.replace("*", " * ")
-    expr = expr.replace("+", " + ")
-    expr = expr.replace("-", " - ")
-    expr = expr.replace(">", " > ")
-    expr_elements = expr.split(" ")
+    expr = expr.replace('*', ' * ')
+    expr = expr.replace('+', ' + ')
+    expr = expr.replace('-', ' - ')
+    expr = expr.replace('>', ' > ')
+    expr_elements = expr.split(' ')
 
     exec_operation = {
         '*': lambda a, b: int(a) * int(b),
         '+': lambda a, b: int(a) + int(b),
         '-': lambda a, b: int(a) - int(b),
-        '>': lambda a, b: 1 if int(a) > int(b) else 0
+        '>': lambda a, b: 1 if int(a) > int(b) else 0,
     }
 
     for operation in '*+->':
@@ -55,21 +55,19 @@ while len(incomplete_exprs) > 0:
     front, back = incomplete_expr.split(dice, 1)
 
     dice_number = int(dice[1:])
-    for i in range(1, dice_number + 1):
-        incomplete_exprs.append(f'{front}{i}{back}')
+    incomplete_exprs.extend(f'{front}{i}{back}' for i in range(1, dice_number + 1))
 
-answers = []
-for expr in exprs:
-    answers.append(calc(expr))
 
-uniq_answers = sorted(list(set(answers)))
+answers = [calc(expr) for expr in exprs]
+
+uniq_answers = sorted(set(answers))
 
 results = []
 for answer in uniq_answers:
     count = answers.count(answer)
 
     percentage = count / len(answers) * 100
-    formatted_percentage = '{:.2f}'.format(percentage)
+    formatted_percentage = f'{percentage:.2f}'
 
     results.append(f'{answer} {formatted_percentage}')
 

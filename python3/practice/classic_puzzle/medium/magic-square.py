@@ -9,7 +9,7 @@ import pandas as pd
 
 n = int(input())
 grid = []
-for i in range(n):
+for _ in range(n):
     row = []
     for j in input().split():
         c = int(j)
@@ -26,10 +26,10 @@ grid = pd.DataFrame(grid)
 check_all_sum = np.ravel(grid).sum() == sum(range(1, n**2 + 1))
 
 line_sums = []
-line_sums.extend([sum(row) for row in grid.values])
-line_sums.extend([sum(row) for row in grid.T.values])
-line_sums.append(sum([row[index] for index, row in enumerate(grid.values)]))
-line_sums.append(sum([row[-index] for index, row in enumerate(grid.values, start=1)]))
+line_sums.extend(sum(row) for row in grid.to_numpy())
+line_sums.extend(sum(row) for row in grid.T.to_numpy())
+line_sums.append(sum([row[index] for index, row in enumerate(grid.to_numpy())]))
+line_sums.append(sum([row[-index] for index, row in enumerate(grid.to_numpy(), start=1)]))
 
 result = 'MAGIC' if check_all_sum and len(set(line_sums)) == 1 else 'MUGGLE'
 

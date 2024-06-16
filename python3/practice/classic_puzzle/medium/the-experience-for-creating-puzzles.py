@@ -27,8 +27,8 @@ def reflect_exp(current_level, exp, level_up_exp):
 
     if temp_exp < 0:
         return BlitzProg(current_level, temp_exp * -1)
-    else:
-        return reflect_exp(current_level + 1, temp_exp, -1)
+
+    return reflect_exp(current_level + 1, temp_exp, -1)
 
 
 def get_exp_for_level_up(current_level):

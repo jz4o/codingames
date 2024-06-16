@@ -6,9 +6,9 @@
 
 # w: number of columns.
 # h: number of rows.
-w, h = [int(i) for i in input().split()]
+w, h = (int(i) for i in input().split())
 lines = []
-for i in range(h):
+for _ in range(h):
     # represents a line in the grid and contains W integers. Each integer represents one room of a given type.
     line = input()
     lines.append(line)
@@ -22,7 +22,7 @@ BOTTOM = 3
 PANEL_DESTINATION = {
     'TOP': [None, BOTTOM, None, BOTTOM, LEFT, RIGHT, None, BOTTOM, None, BOTTOM, LEFT, RIGHT, None, None],
     'LEFT': [None, BOTTOM, RIGHT, None, None, BOTTOM, RIGHT, None, BOTTOM, BOTTOM, None, None, None, BOTTOM],
-    'RIGHT': [None, BOTTOM, LEFT, None, BOTTOM, None, LEFT, BOTTOM, BOTTOM, None, None, None, BOTTOM, None]
+    'RIGHT': [None, BOTTOM, LEFT, None, BOTTOM, None, LEFT, BOTTOM, BOTTOM, None, None, None, BOTTOM, None],
 }
 
 grid = [line.split() for line in lines]
