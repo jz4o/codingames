@@ -6,12 +6,12 @@
 
 n = int(input())
 actions = []
-for i in range(n):
+for _ in range(n):
     action = input()
     actions.append(action)
 nb_orders = int(input())
 orders = []
-for i in range(nb_orders):
+for _ in range(nb_orders):
     order = input()
     orders.append(order)
 
@@ -33,7 +33,7 @@ temp_actions = actions
 
 results = []
 while len(temp_actions) > 0:
-    action = [action for action in temp_actions if action in available_actions][0]
+    action = next(iter([action for action in temp_actions if action in available_actions]))
 
     available_actions.remove(action)
     temp_actions.remove(action)

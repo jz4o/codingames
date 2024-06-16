@@ -7,10 +7,7 @@ import re
 # the standard input according to the problem statement.
 
 n = int(input())
-labels = []
-for label in input().split():
-    # pass
-    labels.append(label)
+labels = input().split()
 
 
 def to_alpha_label(alpha):

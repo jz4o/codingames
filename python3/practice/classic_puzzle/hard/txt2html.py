@@ -8,7 +8,7 @@ import pandas as pd
 
 n = int(input())
 rows = []
-for i in range(n):
+for _ in range(n):
     s = input()
     rows.append(s)
 
@@ -38,7 +38,7 @@ for cell_rows in data_rows:
     cells = [[cell.strip() for cell in row[1:-1].split('|')] for row in cell_rows]
 
     element = ''
-    for cell in pd.DataFrame(cells).T.values:
+    for cell in pd.DataFrame(cells).T.to_numpy():
         element += t('td', ' '.join(cell).strip())
 
     results.append(t('tr', element))

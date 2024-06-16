@@ -17,14 +17,14 @@ dot_flag = '.' in _input
 _input = _input.replace('-', '').replace('.', '').replace(' ', '')
 
 if minus_flag:
-    _input = ''.join(sorted(list(_input)))
+    _input = ''.join(sorted(_input))
     if dot_flag:
         _input = _input[0] + '.' + _input[1:]
     _input = '-' + _input
     if re.match(r'^-0\.0+$', _input):
         _input = '0'
 else:
-    _input = ''.join(sorted(list(_input), reverse=True))
+    _input = ''.join(sorted(_input, reverse=True))
     if dot_flag:
         _input = _input[:-1] + '.' + _input[-1]
     if _input.endswith('.0'):

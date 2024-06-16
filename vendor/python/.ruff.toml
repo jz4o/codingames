@@ -1,18 +1,5 @@
 exclude = [
     'python3/compete/code_golf/*',
-    '/usr/src/python3/practice/classic_puzzle/hard/7-segment-display.py',
-    '/usr/src/python3/practice/classic_puzzle/hard/blunder-episode-2.py',
-    '/usr/src/python3/practice/classic_puzzle/hard/candies.py',
-    '/usr/src/python3/practice/classic_puzzle/hard/egyptian-multiplication.py',
-    '/usr/src/python3/practice/classic_puzzle/hard/hangman.py',
-    '/usr/src/python3/practice/classic_puzzle/hard/highest-truncated-pyramid.py',
-    '/usr/src/python3/practice/classic_puzzle/hard/mini-sudoku-solver.py',
-    '/usr/src/python3/practice/classic_puzzle/hard/simplify-selection-ranges.py',
-    '/usr/src/python3/practice/classic_puzzle/hard/spreadsheet-labels.py',
-    '/usr/src/python3/practice/classic_puzzle/hard/test-before-validate.py',
-    '/usr/src/python3/practice/classic_puzzle/hard/the-greatest-number.py',
-    '/usr/src/python3/practice/classic_puzzle/hard/the-hungry-duck---part-1.py',
-    '/usr/src/python3/practice/classic_puzzle/hard/txt2html.py',
 ]
 
 line-length = 120

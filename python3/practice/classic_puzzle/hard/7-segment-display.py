@@ -15,20 +15,20 @@ s = int(input())
 
 
 def get_segment_char(num, pos, c):
-    SEGMENTS = [
-        ["t", "tl", "tr", "bl", "br", "b"],
-        ["tr", "br"],
-        ["t", "tr", "c", "bl", "b"],
-        ["t", "tr", "c", "br", "b"],
-        ["tl", "tr", "c", "br"],
-        ["t", "tl", "c", "br", "b"],
-        ["t", "tl", "c", "bl", "br", "b"],
-        ["t", "tr", "br"],
-        ["t", "tl", "tr", "c", "bl", "br", "b"],
-        ["t", "tl", "tr", "c", "br", "b"]
+    segments = [
+        ['t', 'tl', 'tr', 'bl', 'br', 'b'],
+        ['tr', 'br'],
+        ['t', 'tr', 'c', 'bl', 'b'],
+        ['t', 'tr', 'c', 'br', 'b'],
+        ['tl', 'tr', 'c', 'br'],
+        ['t', 'tl', 'c', 'br', 'b'],
+        ['t', 'tl', 'c', 'bl', 'br', 'b'],
+        ['t', 'tr', 'br'],
+        ['t', 'tl', 'tr', 'c', 'bl', 'br', 'b'],
+        ['t', 'tl', 'tr', 'c', 'br', 'b'],
     ]
 
-    return c if pos in SEGMENTS[num] else ' '
+    return c if pos in segments[num] else ' '
 
 
 results = []
@@ -49,7 +49,7 @@ for digit in map(int, str(n)):
 
     results.append(' ' * (s * 2 + 3))
 
-results = pd.DataFrame(map(list, results)).T.values
+results = pd.DataFrame(map(list, results)).T.to_numpy()
 results = [''.join(result).rstrip() for result in results]
 
 # print("answer")

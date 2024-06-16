@@ -27,7 +27,7 @@ HANGMAN_STATUS = [
     [BEAM, HEAD, ONE_ARM, NO_LEG],
     [BEAM, HEAD, BOTH_ARM, NO_LEG],
     [BEAM, HEAD, BOTH_ARM, ONE_LEG],
-    [BEAM, HEAD, BOTH_ARM, BOTH_LEG]
+    [BEAM, HEAD, BOTH_ARM, BOTH_LEG],
 ]
 
 guessed = ''.join([char if char.lower() in chars else '_' for char in word])

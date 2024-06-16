@@ -6,7 +6,7 @@
 
 n = int(input())
 rooms = []
-for i in range(n):
+for _ in range(n):
     room = input()
     rooms.append(room)
 
@@ -18,9 +18,11 @@ def get_sum_money(room_dict, number):
     if room_dict[number]['sum_money']:
         return room_dict[number]['sum_money']
 
-    prev_room_sum_moneys = []
-    for prev_room_number in room_dict[number]['prev_rooms']:
-        prev_room_sum_moneys.append(get_sum_money(room_dict, prev_room_number))
+    prev_room_sum_moneys = [
+        get_sum_money(room_dict, prev_room_number)
+        for prev_room_number
+        in room_dict[number]['prev_rooms']
+    ]
 
     # 0 when unreachable from room 0
     if len(prev_room_sum_moneys) > 0:

@@ -2,6 +2,7 @@
 # import math
 
 import itertools
+
 import pandas as pd
 
 # Auto-generated code below aims at helping you parse
@@ -37,7 +38,7 @@ def little_square_values(square, row_index, column_index):
     little_square_columns = [0, 1] if column_index < len(square[row_index]) / 2 else [2, 3]
     little_square_indexes = list(itertools.product(little_square_rows, little_square_columns))
 
-    return list(map(lambda lsi: square[lsi[0]][lsi[1]], little_square_indexes))
+    return [square[lsi[0]][lsi[1]] for lsi in little_square_indexes]
 
 
 lines = [line_1, line_2, line_3, line_4]
@@ -49,9 +50,7 @@ sum_value = sum(range(1, len(square) + 1)) * len(square)
 while sum(map(sum, square)) != sum_value:
     optimaze(square)
 
-results = []
-for line in square:
-    results.append(''.join(map(str, line)))
+results = [''.join(map(str, line)) for line in square]
 
 # print("answer")
 for result in results:
