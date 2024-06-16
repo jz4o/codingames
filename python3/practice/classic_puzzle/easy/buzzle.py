@@ -6,7 +6,7 @@ import numpy as np
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-n, a, b = [int(i) for i in input().split()]
+n, a, b = (int(i) for i in input().split())
 k = int(input())
 nums = []
 for i in input().split():
@@ -53,8 +53,8 @@ for i in range(a, b + 1):
     temp_i = i
     while True:
         str_temp_i = np.base_repr(temp_i, n)
-        is_buzzle |= any([str_temp_i.endswith(np.base_repr(num, n)) for num in nums])
-        is_buzzle |= any([temp_i % num == 0 for num in nums])
+        is_buzzle |= any(str_temp_i.endswith(np.base_repr(num, n)) for num in nums)
+        is_buzzle |= any(temp_i % num == 0 for num in nums)
 
         t = temp_i
         temp_i = sum([int(num, n) for num in str_temp_i])

@@ -1,4 +1,5 @@
 # import sys
+import itertools
 import math
 
 # Auto-generated code below aims at helping you parse
@@ -20,7 +21,7 @@ def faro_shuffle(deck):
         back_half.append('')
 
     result = zip(front_half, back_half)
-    result = sum(list(map(list, result)), [])      # flatten
+    result = itertools.chain.from_iterable(map(list, result))
     result = [elm for elm in result if elm != '']  # remove empty string
     result = ' '.join(result)
 
@@ -28,7 +29,7 @@ def faro_shuffle(deck):
 
 
 result = deck
-for i in range(n):
+for _ in range(n):
     result = faro_shuffle(result)
 
 # print("answer")

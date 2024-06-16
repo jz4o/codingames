@@ -8,7 +8,7 @@ import pandas as pd
 # the standard input according to the problem statement.
 
 rows = []
-for i in range(23):
+for _ in range(23):
     row = input()
     rows.append(row)
 
@@ -31,21 +31,21 @@ class DigitalNumber:
         self.bits_list = [s1 | s2 for s1, s2 in zip(self.bits_list, self._to_bits_list(score_rows))]
 
     def __str__(self):
-        DIGIT_BITS = [
+        digit_bits = [
             '1110111', '0000011', '0111110', '0011111', '1001011',
-            '1011101', '1111101', '0010011', '1111111', '1011111'
+            '1011101', '1111101', '0010011', '1111111', '1011111',
         ]
 
-        return ''.join([str(DIGIT_BITS.index(np.base_repr(s, 2).rjust(7, '0'))) for s in reversed(self.bits_list)])
+        return ''.join([str(digit_bits.index(np.base_repr(s, 2).rjust(7, '0'))) for s in reversed(self.bits_list)])
 
     def _to_bits_list(self, score_rows):
-        ROW_SIZE = 8
+        row_size = 8
 
         score_grid = pd.DataFrame(map(list, score_rows)).T
         bits_list = []
         for i in range(math.ceil(len(score_grid) / 8)):
-            digit_rows = score_grid[i * ROW_SIZE:(i + 1) * ROW_SIZE]
-            if len(digit_rows) != ROW_SIZE:
+            digit_rows = score_grid[i * row_size:(i + 1) * row_size]
+            if len(digit_rows) != row_size:
                 continue
 
             bits = ''.join([
@@ -55,7 +55,7 @@ class DigitalNumber:
                 '1' if digit_rows.iloc[4, 3] == '~' else '0',  # center
                 '1' if digit_rows.iloc[4, 5] == '~' else '0',  # center bottom
                 '1' if digit_rows.iloc[6, 2] == '|' else '0',  # right top
-                '1' if digit_rows.iloc[6, 4] == '|' else '0'   # right bottom
+                '1' if digit_rows.iloc[6, 4] == '|' else '0',  # right bottom
             ])
 
             bits_list.append(int(bits, 2))
@@ -66,7 +66,7 @@ class DigitalNumber:
 
 
 ROW_SIZE = 8
-digital_rows1, digital_rows2, digital_rows3 = [rows[i * ROW_SIZE:(i + 1) * ROW_SIZE] for i in range(3)]
+digital_rows1, digital_rows2, digital_rows3 = (rows[i * ROW_SIZE:(i + 1) * ROW_SIZE] for i in range(3))
 
 digital_number = DigitalNumber(digital_rows1)
 digital_number.subtract_score(digital_rows2)

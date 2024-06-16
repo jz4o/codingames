@@ -4,9 +4,9 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-w, h = [int(i) for i in input().split()]
+w, h = (int(i) for i in input().split())
 grid = []
-for i in range(h):
+for _ in range(h):
     line = input()
 
     grid.append([' ', *line.replace('--', '-').replace('  ', ' ')])

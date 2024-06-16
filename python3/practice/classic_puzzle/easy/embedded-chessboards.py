@@ -6,8 +6,8 @@ import math
 
 n = int(input())
 input_rows = []
-for i in range(n):
-    row, col, is_white = [int(j) for j in input().split()]
+for _ in range(n):
+    row, col, is_white = (int(j) for j in input().split())
     input_rows.append([row, col, is_white])
 
 # Write an answer using print
@@ -20,9 +20,9 @@ for row, col, is_white in input_rows:
 
     pattern_size = row_pattern_size * col_pattern_size
 
-    round = math.floor if is_white == 0 else math.ceil
+    round_function = math.floor if is_white == 0 else math.ceil
 
-    results.append(round(pattern_size / 2))
+    results.append(round_function(pattern_size / 2))
 
 # print("answer")
 for result in results:

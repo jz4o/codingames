@@ -7,7 +7,7 @@
 operation = input()
 pseudo_random_number = int(input())
 rotors = []
-for i in range(3):
+for _ in range(3):
     rotor = input()
     rotors.append(rotor)
 message = input()

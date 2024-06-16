@@ -21,13 +21,10 @@ max_height = max(heights)
 
 transposed_map = []
 for height in heights:
-    for h in range(height):
-        transposed_map.append(list(f'{" " * (max_height - h - 1)}/{" " * h}'))
+    transposed_map.extend(list(f'{" " * (max_height - h - 1)}/{" " * h}') for h in range(height))
+    transposed_map.extend(list(f'{" " * (max_height - height + h)}\\{" " * (height - h -1)}') for h in range(height))
 
-    for h in range(height):
-        transposed_map.append(list(f'{" " * (max_height - height + h)}\\{" " * (height - h -1)}'))
-
-mountain_map = pd.DataFrame(transposed_map).T.values
+mountain_map = pd.DataFrame(transposed_map).T.to_numpy()
 
 results = [''.join(row).rstrip() for row in mountain_map]
 

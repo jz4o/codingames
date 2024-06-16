@@ -6,7 +6,7 @@
 
 n = int(input())
 fs = []
-for i in range(n):
+for _ in range(n):
     f = int(input())
     fs.append(f)
 
@@ -14,7 +14,8 @@ for i in range(n):
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
 results = []
-for f in fs:
+for temp_f in fs:
+    f = temp_f
     for i in [5, 3, 2]:
         while f % i == 0:
             f /= i

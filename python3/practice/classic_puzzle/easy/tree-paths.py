@@ -25,8 +25,8 @@ n = int(input())
 v = int(input())
 m = int(input())
 nodes = []
-for i in range(m):
-    p, l, r = [int(j) for j in input().split()]
+for _ in range(m):
+    p, l, r = (int(j) for j in input().split())
     nodes.append(Node(p, l, r))
 
 # Write an answer using print

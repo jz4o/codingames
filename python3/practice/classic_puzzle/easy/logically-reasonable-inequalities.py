@@ -6,7 +6,7 @@
 
 n = int(input())
 rows = []
-for i in range(n):
+for _ in range(n):
     row = input()
     rows.append(row)
 

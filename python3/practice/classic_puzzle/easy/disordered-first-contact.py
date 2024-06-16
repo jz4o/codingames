@@ -54,7 +54,7 @@ def encode(text):
 
 function = decode if n > 0 else encode
 result = message
-for i in range(abs(n)):
+for _ in range(abs(n)):
     result = function(result)
 
 # print("answer")

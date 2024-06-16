@@ -27,9 +27,11 @@ class Bishop:
 
         ascii_art_grid = []
         for y in range(cls.ART_MAX_WEIGHT + 1):
-            row = []
-            for x in range(cls.ART_MAX_WIDTH + 1):
-                row.append(cls.SYMBOLS[cls.counter.get(f'{y}:{x}', 0)])
+            row = [
+                cls.SYMBOLS[cls.counter.get(f'{y}:{x}', 0)]
+                for x
+                in range(cls.ART_MAX_WIDTH + 1)
+            ]
             ascii_art_grid.append(row)
 
         ascii_art_grid[cls.start_y][cls.start_x] = 'S'

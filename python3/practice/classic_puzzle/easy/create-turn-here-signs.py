@@ -16,7 +16,7 @@ direction = input_elements.pop(0)
     height_of_arrows,
     stroke_thickness_of_arrows,
     spacing_between_arrows,
-    additional_indent_of_each_line
+    additional_indent_of_each_line,
 ] = map(int, input_elements)
 
 results = []

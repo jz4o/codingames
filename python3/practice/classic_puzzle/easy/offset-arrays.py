@@ -8,7 +8,7 @@ import re
 
 n = int(input())
 assignments = []
-for i in range(n):
+for _ in range(n):
     assignment = input()
     assignments.append(assignment)
 x = input()

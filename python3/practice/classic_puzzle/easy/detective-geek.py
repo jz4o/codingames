@@ -1,8 +1,9 @@
 # import sys
 # import math
 
-import numpy as np
 import re
+
+import numpy as np
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.

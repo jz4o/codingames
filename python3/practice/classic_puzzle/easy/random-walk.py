@@ -33,7 +33,7 @@ while True:
     elif mod == 3:
         r += 1
 
-    if all([i == 0 for i in [u, r]]):
+    if all(i == 0 for i in [u, r]):
         break
 
 result = step

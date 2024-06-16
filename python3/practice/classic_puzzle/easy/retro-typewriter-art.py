@@ -15,7 +15,7 @@ ABBREVIATIONS = {
     'sp': ' ',
     'bS': '\\',
     'sQ': "'",
-    'nl': "\n"
+    'nl': '\n',
 }
 
 t = t.replace('nl', '1nl')
@@ -23,7 +23,7 @@ t = t.replace('nl', '1nl')
 chars = []
 for chunk in t.split():
     count, char = re.findall(r'^(\d+)(.+?)$', chunk)[0]
-    chars.append((ABBREVIATIONS[char] if char in ABBREVIATIONS else char) * int(count))
+    chars.append(ABBREVIATIONS.get(char, char) * int(count))
 
 result = ''.join(chars)
 

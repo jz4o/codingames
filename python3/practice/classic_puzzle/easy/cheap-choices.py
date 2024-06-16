@@ -9,11 +9,11 @@ from collections import defaultdict
 c = int(input())
 p = int(input())
 items = []
-for i in range(c):
+for _ in range(c):
     item = input()
     items.append(item)
 orders = []
-for i in range(p):
+for _ in range(p):
     order = input()
     orders.append(order)
 
@@ -28,7 +28,7 @@ for item in items:
     key = f'{category} {size}'
     inventory[key].append(price)
 
-for key in inventory.keys():
+for key in inventory:
     inventory[key].sort()
 
 results = []

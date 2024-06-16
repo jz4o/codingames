@@ -30,7 +30,7 @@ if key_index is not None:
         f'{key_index % 10}',
         f'{(len(sorted_words) - key_index - 1) % 10}',
         f'{sum([len(word) for word in sorted_words[:key_index]], 0) % 10}',
-        f'{sum([len(word) for word in sorted_words[key_index + 1:]], 0) % 10}'
+        f'{sum([len(word) for word in sorted_words[key_index + 1:]], 0) % 10}',
     ])
 else:
     results.append('IMPOSSIBLE')

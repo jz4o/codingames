@@ -6,13 +6,13 @@
 
 n = int(input())
 corner_inputs = []
-for i in range(n):
-    x, y = [int(j) for j in input().split()]
+for _ in range(n):
+    x, y = (int(j) for j in input().split())
     corner_inputs.append((x, y))
 m = int(input())
 shot_inputs = []
-for i in range(m):
-    x, y = [int(j) for j in input().split()]
+for _ in range(m):
+    x, y = (int(j) for j in input().split())
     shot_inputs.append((x, y))
 
 # Write an answer using print

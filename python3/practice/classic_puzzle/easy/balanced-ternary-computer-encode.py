@@ -35,7 +35,7 @@ for index, num in enumerate(map(int, reversed(np.base_repr(abs(n), BASE_NUM)))):
 if n < 0:
     reverse_results = [-num for num in reverse_results]
 
-result = ''.join(map(lambda num: 'T' if num < 0 else str(num), reversed(reverse_results)))
+result = ''.join(['T' if num < 0 else str(num) for num in reversed(reverse_results)])
 
 # print("42")
 print(result)

@@ -52,7 +52,7 @@ next_ab = alpha[:2]
 next_cde = str(cde + 1).zfill(3)
 next_fg = alpha[-2:]
 
-result = '-'.join([next_ab, next_cde, next_fg])
+result = f'{next_ab}-{next_cde}-{next_fg}'
 
 # print("AA-000-AA")
 print(result)

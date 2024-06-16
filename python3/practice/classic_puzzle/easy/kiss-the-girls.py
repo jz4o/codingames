@@ -4,9 +4,9 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-h, w = [int(i) for i in input().split()]
+h, w = (int(i) for i in input().split())
 lines = []
-for i in range(h):
+for _ in range(h):
     line = input()
     lines.append(line)
 

@@ -7,7 +7,7 @@ import math
 rounds = int(input())
 cash = int(input())
 plays = []
-for i in range(rounds):
+for _ in range(rounds):
     play = input()
 
     plays.append(play)

@@ -1,6 +1,7 @@
 # import sys
 # import math
 
+import itertools
 import re
 
 # Auto-generated code below aims at helping you parse
@@ -13,7 +14,7 @@ ip = input()
 
 temp_ip = ip
 
-ommit = sum(map(list, re.findall('(0000(:0000)+)', temp_ip)), [])
+ommit = list(itertools.chain.from_iterable(map(list, re.findall('(0000(:0000)+)', temp_ip))))
 if len(ommit) > 0:
     ommit = sorted(ommit, key=len)[-1]
     temp_ip = temp_ip.replace(ommit, ':', 1).replace(':::', '::')

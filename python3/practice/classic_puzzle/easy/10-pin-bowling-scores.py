@@ -6,7 +6,7 @@
 
 n = int(input())
 games = []
-for i in range(n):
+for _ in range(n):
     game = input()
     games.append(game)
 
@@ -24,8 +24,7 @@ results = []
 for game in games:
     scores = []
     for frame, score in enumerate(game.split()):
-        for s in score:
-            scores.append(Score(s, frame))
+        scores.extend(Score(s, frame) for s in score)
 
     for index, score in enumerate(scores):
         if score.point == '-':

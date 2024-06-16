@@ -31,7 +31,7 @@ while any(packet):
 
 packets = list(filter(lambda packet: packet.instruction_id == '101', packets))
 
-result = ''.join(map(lambda packet: f'001{packet.packet_length}{packet.packet_info}', packets))
+result = ''.join(f'001{packet.packet_length}{packet.packet_info}' for packet in packets)
 
 # print("001[length][item id]")
 print(result)

@@ -4,10 +4,10 @@ import math
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-w, h, t1, t2, t3 = [int(i) for i in input().split()]
+w, h, t1, t2, t3 = (int(i) for i in input().split())
 first_picture_rows = []
 second_picture_rows = []
-for i in range(h):
+for _ in range(h):
     first_picture_row, second_picture_row = input().split()
 
     first_picture_rows.append(first_picture_row)
@@ -46,7 +46,7 @@ for position in position_dict.values():
         position['third']['x'] = third_x
 
 third_picture_rows = [['.'] * w for _ in range(h)]
-for mark in reversed(sorted(position_dict)):
+for mark in sorted(position_dict, reverse=True):
     position = position_dict[mark]
 
     if position['third']['y'] is None or position['third']['x'] is None:

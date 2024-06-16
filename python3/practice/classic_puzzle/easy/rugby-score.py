@@ -16,11 +16,11 @@ PENA_DROP_POINT = 3
 combinations = []
 
 possible_try_times = int(n / TRY_POINT)
-for try_times in reversed(range(0, possible_try_times + 1)):
+for try_times in reversed(range(possible_try_times + 1)):
     try_points = TRY_POINT * try_times
 
     possible_transformation_times = min(int((n - try_points) / TRANSFORM_POINT), try_times)
-    for transformation_times in reversed(range(0, possible_transformation_times + 1)):
+    for transformation_times in reversed(range(possible_transformation_times + 1)):
         transform_points = TRANSFORM_POINT * transformation_times
 
         remining_points = n - try_points - transform_points

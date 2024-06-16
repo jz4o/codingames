@@ -8,7 +8,7 @@ import re
 
 n = int(input())
 lines = []
-for i in range(n):
+for _ in range(n):
     line = input()
     lines.append(line)
 
@@ -17,14 +17,9 @@ for i in range(n):
 
 joined_lines = '\n'.join(lines)
 
-choice_count = 0
-for choice_text in re.findall(r'(\((.|\s)*?\))', joined_lines):
-    choice_text = choice_text[0]
-
+for choice_count, choice_text in enumerate(re.findall(r'(\([\s\S]*?\))', joined_lines)):
     choices = choice_text[1:-1].split('|')
     choiced = choices[choice_count % len(choices)]
-
-    choice_count += 1
 
     joined_lines = joined_lines.replace(choice_text, choiced, 1)
 

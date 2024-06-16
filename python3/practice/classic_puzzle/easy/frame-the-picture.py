@@ -7,9 +7,9 @@
 frame_pattern = input()  # the ASCII art pattern to use to frame the picture
 # h: the height of the picture
 # w: the width  of the picture
-h, w = [int(i) for i in input().split()]
+h, w = (int(i) for i in input().split())
 lines = []
-for i in range(h):
+for _ in range(h):
     line = input()  # the ASCII art picture line by line
 
     lines.append(line)
@@ -22,7 +22,7 @@ def surround(grid, char):
     return [
         [char] * (len(grid[0]) + 2),
         *[[char, *row, char] for row in grid],
-        [char] * (len(grid[0]) + 2)
+        [char] * (len(grid[0]) + 2),
     ]
 
 

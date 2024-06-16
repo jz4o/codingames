@@ -29,7 +29,7 @@ AD_LIST = [
     'Passionate',
     'Sensible',
     'Sensitive',
-    'Sincere'
+    'Sincere',
 ]
 GOOD_LIST = ['Love', 'Forgiveness', 'Friendship', 'Inspiration', 'Epic Transformations', 'Wins']
 BAD_LIST = ['Crime', 'Disappointment', 'Disasters', 'Illness', 'Injury', 'Investment Loss']

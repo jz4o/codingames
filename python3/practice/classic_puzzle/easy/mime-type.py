@@ -10,7 +10,7 @@ n = int(input())  # Number of elements which make up the association table.
 q = int(input())  # Number Q of file names to be analyzed.
 exts = []
 mts = []
-for i in range(n):
+for _ in range(n):
     # ext: file extension
     # mt: MIME type.
     ext, mt = input().split()
@@ -18,7 +18,7 @@ for i in range(n):
     exts.append(ext.lower())
     mts.append(mt)
 fnames = []
-for i in range(q):
+for _ in range(q):
     fname = input()  # One file name per line.
     fnames.append(fname)
 

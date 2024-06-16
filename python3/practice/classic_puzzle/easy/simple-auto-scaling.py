@@ -4,13 +4,13 @@ import math
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-s, m = [int(i) for i in input().split()]
+s, m = (int(i) for i in input().split())
 service_maxclients = []
 for i in input().split():
     maxclients = int(i)
     service_maxclients.append(maxclients)
 service_clients = []
-for i in range(m):
+for _ in range(m):
     service_clients_row = []
     for j in input().split():
         clients = int(j)

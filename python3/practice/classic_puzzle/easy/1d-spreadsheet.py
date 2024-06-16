@@ -28,10 +28,11 @@ class Cell:
     def get_arg_value(self, arg):
         if '$' in arg:
             return self.spread_sheet.get_cell(int(arg[1:])).get_value()
-        elif arg == '_':
+
+        if arg == '_':
             return '0'
-        else:
-            return arg
+
+        return arg
 
     def get_value(self):
         return self.value if self.value is not None else self.calc_value()
@@ -57,7 +58,7 @@ class Cell:
 
 n = int(input())
 spread_sheet = SpreadSheet()
-for i in range(n):
+for _ in range(n):
     operation, arg_1, arg_2 = input().split()
 
     spread_sheet.add_cell(Cell(operation, arg_1, arg_2))

@@ -6,12 +6,12 @@
 
 c = int(input())
 wirings = []
-for i in range(c):
+for _ in range(c):
     wiring = input()
     wirings.append(wiring)
 a = int(input())
 switches = []
-for i in range(a):
+for _ in range(a):
     switch = input()
     switches.append(switch)
 switch_status = {switch: switches.count(switch) % 2 == 1 for switch in list(set(switches))}

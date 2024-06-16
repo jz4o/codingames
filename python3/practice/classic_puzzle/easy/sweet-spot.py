@@ -1,6 +1,7 @@
 # import sys
 # import math
 
+import itertools
 import re
 
 # Auto-generated code below aims at helping you parse
@@ -8,7 +9,7 @@ import re
 
 n = int(input())
 lines = []
-for i in range(n):
+for _ in range(n):
     line = input()
 
     lines.append(line)
@@ -59,7 +60,7 @@ def explosion_b_bomb(grid, bomb_mass):
             grid[bomb_mass.y - n][bomb_mass.x],
             grid[bomb_mass.y + n][bomb_mass.x],
             grid[bomb_mass.y][bomb_mass.x - n],
-            grid[bomb_mass.y][bomb_mass.x + n]
+            grid[bomb_mass.y][bomb_mass.x + n],
         ]
 
         for explosion_mass in explosion_masses:
@@ -72,7 +73,7 @@ def explosion_b_bomb(grid, bomb_mass):
 grid = [list(line) for line in lines]
 
 grid = [[*[0] * 3, *row, *[0] * 3] for row in grid]
-for i in range(3):
+for _ in range(3):
     grid.insert(0, [0] * (n + 6))
     grid.append([0] * (n + 6))
 
@@ -87,7 +88,7 @@ for row_index, row in enumerate(grid):
 
 grid = temp_grid
 
-masses = sum(grid, [])
+masses = list(itertools.chain.from_iterable(grid))
 a_bomb_masses = [mass for mass in masses if mass.value == 'A']
 for bomb_mass in a_bomb_masses:
     explosion_a_bomb(grid, bomb_mass)

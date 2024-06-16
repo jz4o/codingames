@@ -4,9 +4,9 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-width, height = [int(i) for i in input().split()]
+width, height = (int(i) for i in input().split())
 lines = []
-for i in range(height):
+for _ in range(height):
     line = input()
     lines.append(line)
 results = []

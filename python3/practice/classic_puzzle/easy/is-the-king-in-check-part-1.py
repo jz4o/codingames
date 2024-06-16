@@ -5,7 +5,7 @@
 # the standard input according to the problem statement.
 
 chess_board = []
-for i in range(8):
+for _ in range(8):
     chess_row = input()
 
     chess_board.append(chess_row.split(' '))

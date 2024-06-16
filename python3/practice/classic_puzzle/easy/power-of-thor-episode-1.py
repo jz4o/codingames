@@ -10,7 +10,7 @@
 # light_y: the Y position of the light of power
 # initial_tx: Thor's starting X position
 # initial_ty: Thor's starting Y position
-light_x, light_y, initial_tx, initial_ty = [int(i) for i in input().split()]
+light_x, light_y, initial_tx, initial_ty = (int(i) for i in input().split())
 
 # game loop
 while True:

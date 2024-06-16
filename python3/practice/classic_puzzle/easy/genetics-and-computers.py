@@ -1,8 +1,8 @@
 # import sys
-import math
 
 import collections
 import itertools
+import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.

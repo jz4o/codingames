@@ -14,7 +14,7 @@ expression = input()
 BRACKETS = {
     '(': ')',
     '[': ']',
-    '{': '}'
+    '{': '}',
 }
 
 expression = ''.join(re.findall('[()\\[\\]{}]', expression))

@@ -8,7 +8,7 @@ w = int(input())
 h = int(input())
 grid = []
 grid.append([0] * (w + 2))
-for i in range(h):
+for _ in range(h):
     line = input()
 
     grid.append([0, *[int(c) for c in line.replace('.', '0').replace('x', '9')], 0])

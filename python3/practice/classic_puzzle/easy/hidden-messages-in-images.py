@@ -6,9 +6,9 @@ import re
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-w, h = [int(i) for i in input().split()]
+w, h = (int(i) for i in input().split())
 pixels = []
-for i in range(h):
+for _ in range(h):
     for j in input().split():
         pixel = int(j)
 

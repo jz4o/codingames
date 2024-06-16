@@ -8,7 +8,7 @@ import numpy as np
 
 total = int(input())
 symbols = []
-for i in range(total):
+for _ in range(total):
     symbol = input()
     symbols.append(symbol)
 
@@ -16,8 +16,8 @@ for i in range(total):
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
 
-def each_cons(list, n):
-    return [list[i:i + n] for i in range(len(list) - n + 1)]
+def each_cons(target_list, n):
+    return [target_list[i:i + n] for i in range(len(target_list) - n + 1)]
 
 
 binary_cycle = [np.base_repr(i, 2).rjust(total, '0') for i in range(1, 2**total)]

@@ -23,24 +23,24 @@ class MetricUnit:
         convert_dict = {
             'km': {
                 'small_unit': 'm',
-                'rate': 1000
+                'rate': 1000,
             },
             'm': {
                 'small_unit': 'dm',
-                'rate': 10
+                'rate': 10,
             },
             'dm': {
                 'small_unit': 'cm',
-                'rate': 10
+                'rate': 10,
             },
             'cm': {
                 'small_unit': 'mm',
-                'rate': 10
+                'rate': 10,
             },
             'mm': {
                 'small_unit': 'um',
-                'rate': 1000
-            }
+                'rate': 1000,
+            },
         }
 
         self.value = round(self.value * convert_dict[self.unit]['rate'], __class__.DIGIT_PRECISION)
@@ -63,7 +63,7 @@ while left_metric.unit != right_metric.unit:
 
 result_value = re.sub(r'\.0+$', '', str(left_metric.value + right_metric.value))
 
-result = ''.join([result_value, left_metric.unit])
+result = f'{result_value}{left_metric.unit}'
 
 # print("1cm")
 print(result)

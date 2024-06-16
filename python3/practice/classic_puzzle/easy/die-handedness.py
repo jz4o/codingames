@@ -5,16 +5,16 @@
 # the standard input according to the problem statement.
 
 lines = []
-for i in range(3):
+for _ in range(3):
     line = input()  # One line out of three in the string describing the arrangement of the numbers.
     lines.append(line)
 
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
-a, b, c, d, e, f = [int(char) for char in ''.join(lines).replace(' ', '')]
+a, b, c, d, e, f = (int(char) for char in ''.join(lines).replace(' ', ''))
 
-is_check_versus_faces = all([sum_value == 7 for sum_value in [a + f, b + d, c + e]])
+is_check_versus_faces = all(sum_value == 7 for sum_value in [a + f, b + d, c + e])
 is_check_face_values = sorted([a, b, c, d, e, f]) == [1, 2, 3, 4, 5, 6]
 is_not_degenerate = is_check_versus_faces and is_check_face_values
 

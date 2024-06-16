@@ -6,8 +6,8 @@
 
 n = int(input())
 strengths = []
-for i in range(n):
-    v, e = [int(j) for j in input().split()]
+for _ in range(n):
+    v, e = (int(j) for j in input().split())
     strengths.append({'v': v, 'e': e})
 
 # Write an answer using print

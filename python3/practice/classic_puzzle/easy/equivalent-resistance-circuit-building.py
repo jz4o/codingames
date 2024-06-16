@@ -8,7 +8,7 @@ from fractions import Fraction
 
 n = int(input())
 name_rs = []
-for i in range(n):
+for _ in range(n):
     inputs = input().split()
     name = inputs[0]
     r = int(inputs[1])

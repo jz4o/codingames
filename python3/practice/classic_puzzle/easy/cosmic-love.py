@@ -8,7 +8,7 @@ import numpy as np
 
 n = int(input())
 lines = []
-for i in range(n):
+for _ in range(n):
     name, r, m, c = input().split()
     lines.append([name, r, m, c])
 

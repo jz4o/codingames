@@ -17,7 +17,7 @@ _input = input()
 
 digits = [int(c) for c in _input.replace(':', '')[1:]]
 four_bit_digits = [np.base_repr(d, 2).rjust(4, '0') for d in digits]
-transposed_four_bit_digits = pd.DataFrame([list(bits) for bits in four_bit_digits]).T.values
+transposed_four_bit_digits = pd.DataFrame([list(bits) for bits in four_bit_digits]).T.to_numpy()
 
 results = []
 for bits in transposed_four_bit_digits:

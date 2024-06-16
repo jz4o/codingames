@@ -1,6 +1,8 @@
 # import sys
 # import math
 
+import itertools
+
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
@@ -26,8 +28,8 @@ expand_shelf = [shelf_space_parts, *normal_shelf]
 expand_shelf_count = (height - 1) % number_of_shelves
 normal_shelf_count = number_of_shelves - expand_shelf_count
 
-normal_shelves = sum([normal_shelf] * normal_shelf_count, [])
-expand_shelves = sum([expand_shelf] * expand_shelf_count, [])
+normal_shelves = itertools.chain.from_iterable([normal_shelf] * normal_shelf_count)
+expand_shelves = itertools.chain.from_iterable([expand_shelf] * expand_shelf_count)
 
 results = [top, *normal_shelves, *expand_shelves]
 

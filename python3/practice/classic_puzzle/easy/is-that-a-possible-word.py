@@ -8,14 +8,14 @@ _input = input()
 states = input()
 number_of_transitions = int(input())
 transitions = []
-for i in range(number_of_transitions):
+for _ in range(number_of_transitions):
     transition = input()
     transitions.append(transition)
 start_state = input()
 end_states = input()
 number_of_words = int(input())
 words = []
-for i in range(number_of_words):
+for _ in range(number_of_words):
     word = input()
     words.append(word)
 

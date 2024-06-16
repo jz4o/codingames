@@ -11,7 +11,8 @@ n = int(input())
 
 
 def is_prime(num):
-    if num < 2:
+    min_prime = 2
+    if num < min_prime:
         return False
 
     i = 2
@@ -60,9 +61,11 @@ top_rows.pop(0)
 
 number_grid = top_rows + bottom_rows
 
-results = []
-for number_row in number_grid:
-    results.append(' '.join(['#' if is_prime(number) else ' ' for number in number_row]))
+results = [
+    ' '.join('#' if is_prime(number) else ' ' for number in number_row)
+    for number_row
+    in number_grid
+]
 
 # print("ROW")
 for result in results:

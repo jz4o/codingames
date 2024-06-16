@@ -6,7 +6,7 @@
 
 n = int(input())
 lines = []
-for i in range(n):
+for _ in range(n):
     line = input()
     lines.append(line)
 for i in range(n):

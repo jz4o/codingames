@@ -4,14 +4,14 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-a, b = [int(i) for i in input().split()]
+a, b = (int(i) for i in input().split())
 object_lines = []
-for i in range(a):
+for _ in range(a):
     object_line = input()
     object_lines.append(object_line)
-c, d = [int(i) for i in input().split()]
+c, d = (int(i) for i in input().split())
 grid = []
-for i in range(c):
+for _ in range(c):
     grid_line = input()
     grid.append(list(grid_line))
 
@@ -34,7 +34,7 @@ for line_index, object_line in enumerate(object_lines):
 putable_points = []
 for line_index in range(c - a + 1):
     for column_index in range(d - b + 1):
-        if any([grid[line_index + point.y][column_index + point.x] != '.' for point in object_parts_points]):
+        if any(grid[line_index + point.y][column_index + point.x] != '.' for point in object_parts_points):
             continue
 
         putable_points.append(Point(line_index, column_index))

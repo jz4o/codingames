@@ -1,12 +1,14 @@
 # import sys
 # import math
 
+import itertools
+
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
 n = int(input())
 ms = []
-for i in range(n):
+for _ in range(n):
     m = input()
     ms.append(m)
 
@@ -21,12 +23,13 @@ class Mass:
         self.value = value
 
 
-mass_grid = []
-for row_index, row in enumerate(ms):
-    row = [Mass(row_index, column_index, value) for column_index, value in enumerate(list(row))]
-    mass_grid.append(row)
+mass_grid = [
+    [Mass(row_index, column_index, value) for column_index, value in enumerate(list(row))]
+    for row_index, row
+    in enumerate(ms)
+]
 
-candidate_mass_lists = [[mass] for mass in sum(mass_grid, []) if mass.value == 'a']
+candidate_mass_lists = [[mass] for mass in itertools.chain.from_iterable(mass_grid) if mass.value == 'a']
 
 result_list = []
 candidate_mass_list = []
@@ -50,9 +53,12 @@ while len(candidate_mass_lists) > 0:
     if last_mass.row_index + 1 < len(mass_grid):
         around_last_masses.append(mass_grid[last_mass.row_index + 1][last_mass.column_index])
 
-    for mass in around_last_masses:
-        if mass.value == target_value:
-            candidate_mass_lists.append(candidate_mass_list + [mass])
+    candidate_mass_lists.extend(
+        [*candidate_mass_list, mass]
+        for mass
+        in around_last_masses
+        if mass.value == target_value
+    )
 
 result_grid = [['-'] * n for _ in range(n)]
 for mass in result_list:

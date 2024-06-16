@@ -12,9 +12,9 @@ class Log:
 
 l = int(input())
 f = input()
-n, k = [int(i) for i in input().split()]
+n, k = (int(i) for i in input().split())
 crewmates = []
-for i in range(n):
+for _ in range(n):
     crewmate = input()
     crewmates.append(crewmate)
 for i in range(n):

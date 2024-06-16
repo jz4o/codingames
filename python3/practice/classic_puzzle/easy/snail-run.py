@@ -8,13 +8,13 @@ import re
 
 number_snails = int(input())
 speed_snails = []
-for i in range(number_snails):
+for _ in range(number_snails):
     speed_snail = int(input())
     speed_snails.append(speed_snail)
 map_height = int(input())
 map_width = int(input())
 rows = []
-for i in range(map_height):
+for _ in range(map_height):
     row = input()
     rows.append(row)
 
@@ -40,11 +40,11 @@ snails = []
 goal_positions = []
 
 for row_index, row in enumerate(rows):
-    for value_index, value in enumerate(row):
-        if re.fullmatch(r'\d', value):
-            value = int(value)
+    for value_index, str_value in enumerate(row):
+        if re.fullmatch(r'\d', str_value):
+            value = int(str_value)
             snails.append(Snail(value, speed_snails[value - 1], Position(row_index, value_index)))
-        elif value == '#':
+        elif str_value == '#':
             goal_positions.append(Position(row_index, value_index))
 
 for snail in snails:

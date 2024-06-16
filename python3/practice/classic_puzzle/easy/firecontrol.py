@@ -5,7 +5,7 @@
 # the standard input according to the problem statement.
 
 texts = []
-for i in range(6):
+for _ in range(6):
     text = input()
     texts.append(text)
 
@@ -25,7 +25,7 @@ CUT_DOWN_TREE = '='
 EMPTY = 'o'
 FIRE = '*'
 
-texts = [''.join([EMPTY, EMPTY, text, EMPTY, EMPTY]) for text in texts]
+texts = [f'{EMPTY}{EMPTY}{text}{EMPTY}{EMPTY}' for text in texts]
 texts.insert(0, EMPTY * len(texts[0]))
 texts.insert(0, EMPTY * len(texts[0]))
 texts.append(EMPTY * len(texts[0]))

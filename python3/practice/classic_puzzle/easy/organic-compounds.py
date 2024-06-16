@@ -1,6 +1,7 @@
 # import sys
 # import math
 
+import itertools
 import re
 
 # Auto-generated code below aims at helping you parse
@@ -8,7 +9,7 @@ import re
 
 n = int(input())
 compounds = []
-for i in range(n):
+for _ in range(n):
     compound = input()
     compounds.append(compound)
 
@@ -45,7 +46,7 @@ compound_grid.append([Union(0)] * len(compound_grid[0]))
 
 max_width_count = max(map(len, compound_grid))
 for compound_row in compound_grid:
-    compound_row += [Union(0)] * (max_width_count - len(compound_row))
+    compound_row.extend([Union(0)] * (max_width_count - len(compound_row)))
 
 for row_index, row in enumerate(compound_grid):
     for compound_index, compound in enumerate(row):
@@ -61,8 +62,13 @@ for row_index, row in enumerate(compound_grid):
             if isinstance(union, Union):
                 compound.can_union -= union.require_size
 
-compound_instances = [compound for compound in sum(compound_grid, []) if isinstance(compound, Compound)]
-result = 'VALID' if all([compound.can_union == 0 for compound in compound_instances]) else 'INVALID'
+compound_instances = [
+    compound
+    for compound
+    in itertools.chain.from_iterable(compound_grid)
+    if isinstance(compound, Compound)
+]
+result = 'VALID' if all(compound.can_union == 0 for compound in compound_instances) else 'INVALID'
 
 # print("answer")
 print(result)

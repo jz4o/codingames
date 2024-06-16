@@ -5,7 +5,7 @@
 # the standard input according to the problem statement.
 
 lines = []
-for i in range(3):
+for _ in range(3):
     line = input()  # One line out of three in the string describing the starting position.
     lines.append(line)
 commands = input()  # The sequence of ULDR-characters describing the steps to perform.
@@ -23,7 +23,7 @@ class Dice:
             'U': self.move_to_forward,
             'D': self.move_to_backward,
             'L': self.move_to_left,
-            'R': self.move_to_right
+            'R': self.move_to_right,
         }
 
         for command in commands:

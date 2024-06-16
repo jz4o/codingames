@@ -9,7 +9,7 @@ import pandas as pd
 size = int(input())
 angle = int(input())
 lines = []
-for i in range(size):
+for _ in range(size):
     line = input()
     lines.append(line)
 
@@ -21,10 +21,10 @@ grid = pd.DataFrame([line.split() for line in lines])
 DIAGONAL_SIZE = size * 2 - 1
 
 rotate_count = ((angle - 45) % 360) // 90
-for i in range(rotate_count):
+for _ in range(rotate_count):
     grid = pd.DataFrame(reversed(grid.T.values))
 
-grid = [list(row) for row in grid.values]
+grid = [list(row) for row in grid.to_numpy()]
 
 diamond_grid = []
 for time in range(1, DIAGONAL_SIZE + 1):

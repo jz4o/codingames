@@ -32,7 +32,7 @@ for key, value in depths.items():
     depths[key] = sum([Fraction(1, v) for v in value])
 
 max_value = max(depths.values())
-result = [key for key, value in depths.items() if value == max_value][0]
+result = next(iter([key for key, value in depths.items() if value == max_value]))
 
 # print("answer")
 print(result)

@@ -6,7 +6,7 @@
 
 n = int(input())
 answers = []
-for i in range(n):
+for _ in range(n):
     answer = input()
     answers.append(answer)
 
@@ -47,8 +47,8 @@ for answer in train_answers:
         learning_model[gender][genre] = range(age, age + 1)
 
     age_range = learning_model[gender][genre]
-    age_range_begin = min(min(age_range), age)
-    age_range_end = max(max(age_range), age)
+    age_range_begin = min(*age_range, age)
+    age_range_end = max(*age_range, age)
     learning_model[gender][genre] = range(age_range_begin, age_range_end + 1)
 
 results = []

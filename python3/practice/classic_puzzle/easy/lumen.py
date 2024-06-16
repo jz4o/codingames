@@ -1,6 +1,8 @@
 # import sys
 # import math
 
+import itertools
+
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
@@ -14,12 +16,10 @@ padding_row = [LIGHT_SPOT] * (l * 2 + n)
 padding_column = [LIGHT_SPOT] * l
 grid = []
 grid.extend([padding_row for i in range(l)])
-for i in range(n):
+for _ in range(n):
     row = []
     row.extend(padding_column)
-    for cell in input().split():
-        row.append(cell)
-        # pass
+    row.extend(input().split())
     row.extend(padding_column)
 
     grid.append(row)
@@ -39,7 +39,7 @@ for row_index, column_index in c_indexes:
     for c_row_index in range(row_index - l + 1, row_index + l):
         grid[c_row_index][column_index - l + 1:column_index + l] = replace_column
 
-result = sum(grid, []).count(DARK_SPOT)
+result = list(itertools.chain.from_iterable(grid)).count(DARK_SPOT)
 
 # print("2")
 print(result)

@@ -6,11 +6,11 @@
 
 n = int(input())
 players = []
-for i in range(n):
+for _ in range(n):
     player = input()
     players.append(player)
 player_shoots = []
-for i in range(n):
+for _ in range(n):
     shoots = input()
     player_shoots.append(shoots)
 
@@ -49,10 +49,10 @@ for player, shoots in zip(players, player_shoots):
 
             temp_shoots.append(shoot)
 
-            if TARGET_POINT <= point + temp_point:
+            if point + temp_point >= TARGET_POINT:
                 break
 
-        if all([temp_shoot == MISS_SHOOT for temp_shoot in temp_shoots]):
+        if all(temp_shoot == MISS_SHOOT for temp_shoot in temp_shoots):
             point = 0
         elif point + temp_point <= TARGET_POINT:
             point += temp_point
@@ -61,7 +61,7 @@ for player, shoots in zip(players, player_shoots):
         reached_rounds[player] = game_round
 
 min_round = min(reached_rounds.values())
-result = [player for player, game_round in reached_rounds.items() if game_round == min_round][0]
+result = next(iter([player for player, game_round in reached_rounds.items() if game_round == min_round]))
 
 # print("winner")
 print(result)

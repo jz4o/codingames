@@ -18,44 +18,44 @@ rotation_dict = {
         'U': 'B',
         'F': 'U',
         'D': 'F',
-        'B': 'D'
+        'B': 'D',
     },
     "x'": {
         'U': 'F',
         'F': 'D',
         'D': 'B',
-        'B': 'U'
+        'B': 'U',
     },
     'y': {
         'L': 'B',
         'F': 'L',
         'R': 'F',
-        'B': 'R'
+        'B': 'R',
     },
     "y'": {
         'L': 'F',
         'F': 'R',
         'R': 'B',
-        'B': 'L'
+        'B': 'L',
     },
     'z': {
         'U': 'R',
         'L': 'U',
         'D': 'L',
-        'R': 'D'
+        'R': 'D',
     },
     "z'": {
         'U': 'L',
         'L': 'D',
         'D': 'R',
-        'R': 'U'
-    }
+        'R': 'U',
+    },
 }
 
 [after_face_1, after_face_2] = reduce(
     lambda fs, rotation: [rotation_dict[rotation].get(f, f) for f in fs],
     rotations.split(' '),
-    [face_1, face_2]
+    [face_1, face_2],
 )
 
 results = [after_face_1, after_face_2]

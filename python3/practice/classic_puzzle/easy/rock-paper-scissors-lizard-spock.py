@@ -12,36 +12,36 @@ class Player:
             'P': 'lose',
             'C': 'win',
             'L': 'win',
-            'S': 'lose'
+            'S': 'lose',
         },
         'P': {
             'R': 'win',
             'P': 'draw',
             'C': 'lose',
             'L': 'lose',
-            'S': 'win'
+            'S': 'win',
         },
         'C': {
             'R': 'lose',
             'P': 'win',
             'C': 'draw',
             'L': 'win',
-            'S': 'lose'
+            'S': 'lose',
         },
         'L': {
             'R': 'lose',
             'P': 'win',
             'C': 'lose',
             'L': 'draw',
-            'S': 'win'
+            'S': 'win',
         },
         'S': {
             'R': 'win',
             'P': 'lose',
             'C': 'win',
             'L': 'lose',
-            'S': 'draw'
-        }
+            'S': 'draw',
+        },
     }
 
     def __init__(self, num, sign):
@@ -55,7 +55,7 @@ class Player:
 
 n = int(input())
 players = []
-for i in range(n):
+for _ in range(n):
     inputs = input().split()
     numplayer = int(inputs[0])
     signplayer = inputs[1]

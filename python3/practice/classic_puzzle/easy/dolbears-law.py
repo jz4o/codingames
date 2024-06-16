@@ -1,12 +1,14 @@
 # import sys
 # import math
 
+import itertools
+
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
 m = int(input())
 lines = []
-for i in range(m):
+for _ in range(m):
     line = input()
     lines.append(line)
 
@@ -22,7 +24,7 @@ tc_n60 = round(tc_n60 / len(lines), 1)
 
 tc_n8 = None
 if 5 <= tc_n60 <= 30:
-    chirps = sum(lines, [])
+    chirps = list(itertools.chain.from_iterable(lines))
     if len(chirps) % 2 == 1:
         chirps.pop()
 

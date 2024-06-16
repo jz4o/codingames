@@ -4,9 +4,9 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-n, m = [int(i) for i in input().split()]
+n, m = (int(i) for i in input().split())
 ts = []
-for i in range(n):
+for _ in range(n):
     t = input()
     ts.append(t)
 

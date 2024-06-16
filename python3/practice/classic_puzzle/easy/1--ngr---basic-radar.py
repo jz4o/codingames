@@ -15,7 +15,7 @@ class ScanResult:
 
 n = int(input())
 scan_results = []
-for i in range(n):
+for _ in range(n):
     inputs = input().split()
     plate = inputs[0]
     radarname = inputs[1]

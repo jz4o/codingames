@@ -6,7 +6,7 @@
 
 n = int(input())
 grid = []
-for i in range(n):
+for _ in range(n):
     line = input()
 
     grid.append(list(line))
@@ -31,7 +31,7 @@ for row_index in reversed(range(n + 2)):
         if row_index >= 1 and column_index >= 1 and grid[row_index - 1][column_index - 1] != ' ':
             grid[row_index][column_index] = '-'
 
-results = map(lambda row: ''.join(row).rstrip(), grid)
+results = [''.join(row).rstrip() for row in grid]
 
 # print("answer")
 for result in results:

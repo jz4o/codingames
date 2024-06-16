@@ -7,11 +7,11 @@ import math
 n = int(input())
 v = int(input())
 speeds = []
-for i in range(n):
+for _ in range(n):
     speed = int(input())
     speeds.append(speed)
 bends = []
-for i in range(v):
+for _ in range(v):
     bend = int(input())
     bends.append(bend)
 

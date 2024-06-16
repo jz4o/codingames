@@ -6,9 +6,9 @@ import numpy as np
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-w, h = [int(i) for i in input().split()]
+w, h = (int(i) for i in input().split())
 rows = []
-for i in range(h):
+for _ in range(h):
     row = input()
     rows.append(row)
 # for i in range(h):
@@ -49,7 +49,7 @@ while len(arive_positions) > 0:
             Position(h - 1 if position.y == 0 else position.y - 1, position.x),
             Position(position.y, w - 1 if position.x == 0 else position.x - 1),
             Position(position.y, (position.x + 1) % w),
-            Position((position.y + 1) % h, position.x)
+            Position((position.y + 1) % h, position.x),
         ]
 
         temp_arive_positions += [pos for pos in around_positions if grid[pos.y][pos.x] == '.']

@@ -4,7 +4,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-n, m, c = [int(i) for i in input().split()]
+n, m, c = (int(i) for i in input().split())
 nxs = []
 for i in input().split():
     nx = int(i)
@@ -27,9 +27,9 @@ class Device:
         if self.status == 'on':
             self.status = 'off'
             return -self.ampere
-        else:
-            self.status = 'on'
-            return self.ampere
+
+        self.status = 'on'
+        return self.ampere
 
 
 devices = [Device(nx) for nx in nxs]

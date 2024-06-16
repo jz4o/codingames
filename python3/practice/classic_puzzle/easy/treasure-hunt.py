@@ -1,12 +1,14 @@
 # import sys
 # import math
 
+import itertools
+
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-h, w = [int(i) for i in input().split()]
+h, w = (int(i) for i in input().split())
 rows = []
-for i in range(h):
+for _ in range(h):
     row = input()
     rows.append(row)
 
@@ -36,7 +38,12 @@ for row_index, row in enumerate(rows):
         position_row.append(Position(row_index, column_index, value))
     grid.append(position_row)
 
-start_position = [position for position in sum(grid, []) if position.value == YOUR_POSITION][0]
+start_position = next(iter([
+    position
+    for position
+    in itertools.chain.from_iterable(grid)
+    if position.value == YOUR_POSITION
+]))
 
 move_histories = []
 temp_histories = [[start_position]]
@@ -48,7 +55,7 @@ while len(temp_histories) > 0:
         grid[last_position.y - 1][last_position.x],  # top
         grid[last_position.y][last_position.x + 1],  # right
         grid[last_position.y + 1][last_position.x],  # bottom
-        grid[last_position.y][last_position.x - 1]   # left
+        grid[last_position.y][last_position.x - 1],  # left
     ]
 
     around_positions = [pos for pos in around_positions if pos not in temp_history and pos.value != WALL]
@@ -57,8 +64,7 @@ while len(temp_histories) > 0:
         move_histories.append(temp_history)
         continue
 
-    for position in around_positions:
-        temp_histories.append([*temp_history, position])
+    temp_histories.extend([*temp_history, position] for position in around_positions)
 
 amount_of_golds = []
 for move_history in move_histories:

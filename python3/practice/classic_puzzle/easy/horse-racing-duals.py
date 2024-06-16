@@ -6,7 +6,7 @@
 
 n = int(input())
 pis = []
-for i in range(n):
+for _ in range(n):
     pi = int(input())
     pis.append(pi)
 

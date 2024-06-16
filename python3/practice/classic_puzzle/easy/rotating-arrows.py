@@ -4,10 +4,10 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-w, h = [int(i) for i in input().split()]
-x, y = [int(i) for i in input().split()]
+w, h = (int(i) for i in input().split())
+x, y = (int(i) for i in input().split())
 lines = []
-for i in range(h):
+for _ in range(h):
     line = input()  # The line of w arrows represented by ascii char ^v<>
     lines.append(line)
 
@@ -16,7 +16,7 @@ for i in range(h):
 
 
 class Position:
-    ARROWS = ['^', '>', 'v', '<']
+    ARROWS = ('^', '>', 'v', '<')
 
     def __init__(self, y, x, value):
         self.y = y
@@ -26,11 +26,14 @@ class Position:
     def arrow_position(self):
         if self.value == '^':
             return [self.y - 1, self.x]
-        elif self.value == '>':
+
+        if self.value == '>':
             return [self.y, self.x + 1]
-        elif self.value == 'v':
+
+        if self.value == 'v':
             return [self.y + 1, self.x]
-        elif self.value == '<':
+
+        if self.value == '<':
             return [self.y, self.x - 1]
 
     def rotate_arrow(self):

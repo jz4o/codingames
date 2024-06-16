@@ -8,7 +8,7 @@ l = int(input())
 h = int(input())
 t = input()
 rows = []
-for i in range(h):
+for _ in range(h):
     row = input()
 
     rows.append(row)

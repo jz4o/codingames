@@ -15,7 +15,7 @@ converter = {
     'from': '0123456789abcdef',
     'to_v': '0153#2e#8a9#c#6#',
     'to_h': '015##2a#8e6d#b9#',
-    'to_vh': '012##59#86e###a#'
+    'to_vh': '012##59#86e###a#',
 }
 
 binary = np.base_repr(int(number, 16), 2)

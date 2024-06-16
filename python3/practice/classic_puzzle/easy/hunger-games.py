@@ -6,12 +6,12 @@
 
 tributes = int(input())
 tribute_dict = {}
-for i in range(tributes):
+for _ in range(tributes):
     player_name = input()
     tribute_dict[player_name] = {'killed': []}
 turns = int(input())
 infos = []
-for i in range(turns):
+for _ in range(turns):
     info = input()
     infos.append(info)
 
@@ -21,8 +21,8 @@ for i in range(turns):
 for info in infos:
     killer, _, *people_killed = info.split()
 
-    for killed in people_killed:
-        killed = killed.replace(',', '')
+    for person_killed in people_killed:
+        killed = person_killed.replace(',', '')
         tribute_dict[killed]['killer'] = killer
         tribute_dict[killer]['killed'].append(killed)
 
@@ -31,7 +31,7 @@ for player_name in sorted(tribute_dict.keys()):
     result = tribute_dict[player_name]
 
     killed = 'None' if len(result['killed']) == 0 else ', '.join(sorted(result['killed']))
-    killer = result['killer'] if 'killer' in result else 'Winner'
+    killer = result.get('killer', 'Winner')
 
     results.append(f'Name: {player_name}')
     results.append(f'Killed: {killed}')

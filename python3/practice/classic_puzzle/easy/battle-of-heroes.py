@@ -27,7 +27,7 @@ def combat(attack, defense):
 
     log = [
         f'{attack.amount} {attack.name}(s) attack(s) {defense.amount} {defense.name}(s) dealing {damage} damage',
-        f'{perish} unit(s) perish'
+        f'{perish} unit(s) perish',
     ]
     defense.amount -= perish
     defense.surplus_damage = surplus_damage
@@ -49,7 +49,7 @@ stack2 = Stack(stack2_name, stack2_amount, stack2_health, stack2_damage)
 
 round_count = 0
 results = []
-while 0 < stack1.amount:
+while stack1.amount > 0:
     round_count += 1
     results.append(f'Round {round_count}')
 

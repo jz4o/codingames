@@ -8,7 +8,7 @@ import re
 
 n = int(input())
 isbns = []
-for i in range(n):
+for _ in range(n):
     isbn = input()
 
     isbns.append(isbn)
@@ -18,7 +18,7 @@ for i in range(n):
 
 MODULUS_WEIGHTS = {
     '10': [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3],
-    '11': list(reversed(range(1, 10 + 1)))
+    '11': list(reversed(range(1, 10 + 1))),
 }
 
 invalids = []

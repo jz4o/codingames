@@ -7,7 +7,7 @@
 rook_position = input()
 nb_pieces = int(input())
 piece_rows = []
-for i in range(nb_pieces):
+for _ in range(nb_pieces):
     inputs = input().split()
     colour = int(inputs[0])
     one_piece = inputs[1]

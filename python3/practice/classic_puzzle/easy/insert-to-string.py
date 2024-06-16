@@ -1,13 +1,15 @@
 # import sys
 # import math
 
+import itertools
+
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
 s = input()
 change_count = int(input())
 raw_changes = []
-for i in range(change_count):
+for _ in range(change_count):
     raw_change = input()
     raw_changes.append(raw_change)
 
@@ -41,7 +43,7 @@ for raw_change in raw_changes:
 
     s_rows[raw_change.row_index] = before + raw_change.string + after
 
-results = sum([s_row.split('\\n') for s_row in s_rows], [])
+results = itertools.chain.from_iterable([s_row.split('\\n') for s_row in s_rows])
 
 # print("answer")
 for result in results:

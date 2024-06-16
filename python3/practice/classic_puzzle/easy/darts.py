@@ -21,12 +21,12 @@ class Score:
 size = int(input())
 n = int(input())
 names = []
-for i in range(n):
+for _ in range(n):
     name = input()
     names.append(name)
 t = int(input())
 throw_datas = []
-for i in range(t):
+for _ in range(t):
     inputs = input().split()
     throw_name = inputs[0]
     throw_x = int(inputs[1])

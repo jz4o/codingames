@@ -19,12 +19,12 @@ for i in range(1, n + 1):
     part = '*' * (i * 2 - 1)
 
     upper_left_space_part = ' ' * int((width - len(part)) / 2)
-    upper_part += upper_left_space_part + part + "\n"
+    upper_part += upper_left_space_part + part + '\n'
 
     lower_space_part = ' ' * ((n - i + 1) * 2 - 1)
     lower_line = part + lower_space_part + part
     lower_left_space_part = ' ' * int((width - len(lower_line)) / 2)
-    lower_part += lower_left_space_part + lower_line + "\n"
+    lower_part += lower_left_space_part + lower_line + '\n'
 
 upper_part = re.sub('^.', '.', upper_part)
 result = upper_part + lower_part.rstrip()

@@ -7,10 +7,10 @@
 road_length = int(input())  # The total kilometers of the route.
 zone_quantity = int(input())  # The number of road construction sites.
 zone_rows = []
-for i in range(zone_quantity):
+for _ in range(zone_quantity):
     # zone_km: The kilometer in which the road construction site begins.
     # zone_speed: The speed limit of the road construction site.
-    zone_km, zone_speed = [int(j) for j in input().split()]
+    zone_km, zone_speed = (int(j) for j in input().split())
     zone_rows.append([zone_km, zone_speed])
 
 # Write an answer using print

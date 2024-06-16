@@ -68,7 +68,7 @@ class Calculator:
 
 n = int(input())
 keys = []
-for i in range(n):
+for _ in range(n):
     key = input()
     keys.append(key)
 calculator = Calculator()

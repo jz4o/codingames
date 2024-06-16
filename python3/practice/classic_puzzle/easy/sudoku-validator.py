@@ -7,7 +7,7 @@ import numpy as np
 # the standard input according to the problem statement.
 
 grid = []
-for i in range(9):
+for _ in range(9):
     row = []
     for j in input().split():
         n = int(j)
@@ -28,7 +28,7 @@ for row_index in range(9):
         sub_grids[sub_grid_index].append(grid[row_index][column_index])
 groups.extend(sub_grids)
 
-result = 'true' if all([len(set(row)) == 9 for row in groups]) else 'false'
+result = 'true' if all(len(set(row)) == 9 for row in groups) else 'false'
 
 # print("true or false")
 print(result)

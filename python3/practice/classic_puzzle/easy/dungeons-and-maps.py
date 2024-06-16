@@ -4,12 +4,12 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-w, h = [int(i) for i in input().split()]
-start_row, start_col = [int(i) for i in input().split()]
+w, h = (int(i) for i in input().split())
+start_row, start_col = (int(i) for i in input().split())
 n = int(input())
 map_rows = []
-for i in range(n):
-    for j in range(h):
+for _ in range(n):
+    for _ in range(h):
         map_row = input()
         map_rows.append(map_row)
 
@@ -26,11 +26,11 @@ for i in range(n):
     maps.append(rows)
 
 for index, rows in enumerate(maps):
-    rows = [[EMPTY, *row, EMPTY] for row in rows]
-    rows.insert(0, [EMPTY] * len(rows[0]))
-    rows.append([EMPTY] * len(rows[0]))
+    temp_rows = [[EMPTY, *row, EMPTY] for row in rows]
+    temp_rows.insert(0, [EMPTY] * len(temp_rows[0]))
+    temp_rows.append([EMPTY] * len(temp_rows[0]))
 
-    maps[index] = rows
+    maps[index] = temp_rows
 
 paths = []
 for rows in maps:

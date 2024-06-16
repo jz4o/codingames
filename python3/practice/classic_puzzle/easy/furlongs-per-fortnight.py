@@ -2,7 +2,6 @@
 # import math
 
 import re
-
 from functools import reduce
 
 # Auto-generated code below aims at helping you parse
@@ -19,7 +18,7 @@ DISTANCE_CONVERTERS = [
     {'name': 'chains', 'rate': 10},
     {'name': 'yards', 'rate': 22},
     {'name': 'feet', 'rate': 3},
-    {'name': 'inches', 'rate': 12}
+    {'name': 'inches', 'rate': 12},
 ]
 
 UNIT_CONVERTERS = [
@@ -28,7 +27,7 @@ UNIT_CONVERTERS = [
     {'name': 'days', 'rate': 7},
     {'name': 'hours', 'rate': 24},
     {'name': 'minutes', 'rate': 60},
-    {'name': 'seconds', 'rate': 60}
+    {'name': 'seconds', 'rate': 60},
 ]
 
 
@@ -45,7 +44,7 @@ def calc_distance_rate(begin_index, end_index):
     return reduce(
         lambda mul, index: mul * DISTANCE_CONVERTERS[index]['rate'],
         range(begin_index, end_index),
-        1
+        1,
     )
 
 
@@ -62,7 +61,7 @@ def calc_unit_rate(begin_index, end_index):
     return reduce(
         lambda mul, index: mul * UNIT_CONVERTERS[index]['rate'],
         range(begin_index, end_index),
-        1
+        1,
     )
 
 

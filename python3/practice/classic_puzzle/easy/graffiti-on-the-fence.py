@@ -14,8 +14,8 @@ class Report:
 l = int(input())
 n = int(input())
 reports = []
-for i in range(n):
-    st, ed = [int(j) for j in input().split()]
+for _ in range(n):
+    st, ed = (int(j) for j in input().split())
 
     reports.append(Report(st, ed))
 

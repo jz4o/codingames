@@ -8,7 +8,7 @@ import re
 
 n = int(input())
 numbers = []
-for i in range(n):
+for _ in range(n):
     x = input()
 
     numbers.append(x)
@@ -42,7 +42,7 @@ def how_to_read(number):
 
     result = ''
     number = int(number)
-    if 100 <= number:
+    if number >= 100:
         hundred_unit, mod_unit = divmod(number, 100)
 
         if hundred_unit != 0:
@@ -60,7 +60,7 @@ def how_to_read(number):
     else:
         under_twenty_names = [
             'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
-            'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'
+            'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen',
         ]
 
         result = under_twenty_names[number]

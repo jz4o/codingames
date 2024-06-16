@@ -7,8 +7,8 @@
 r = int(input())
 v = int(input())
 robbers = [0] * r
-for i in range(v):
-    c, n = [int(j) for j in input().split()]
+for _ in range(v):
+    c, n = (int(j) for j in input().split())
 
     vault_time = (10**n) * (5**(c - n))
     robbers[robbers.index(min(robbers))] += vault_time

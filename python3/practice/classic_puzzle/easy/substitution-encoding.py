@@ -6,7 +6,7 @@
 
 rows = int(input())
 grid = []
-for i in range(rows):
+for _ in range(rows):
     row = input()
     grid.append(row.split(' '))
 message = input()

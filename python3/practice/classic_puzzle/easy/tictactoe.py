@@ -7,7 +7,7 @@ import numpy as np
 # the standard input according to the problem statement.
 
 grid = np.empty((0, 3), int)
-for i in range(3):
+for _ in range(3):
     line = input()
 
     grid = np.append(grid, np.array([list(line)]), axis=0)
@@ -29,14 +29,14 @@ if (origin_grid == grid).all():
             grid[:, index] = list('OOO')
 
 # check diagonal
-if (origin_grid == grid).all() and sorted(map(lambda index: grid[index, index], range(3))) == list('.OO'):
+if (origin_grid == grid).all() and sorted([grid[index, index] for index in range(3)]) == list('.OO'):
     for index in range(3):
         grid[index, index] = 'O'
-if (origin_grid == grid).all() and sorted(map(lambda index: grid[index, 2 - index], range(3))) == list('.OO'):
+if (origin_grid == grid).all() and sorted(grid[index, 2 - index] for index in range(3)) == list('.OO'):
     for index in range(3):
         grid[index, 2 - index] = 'O'
 
-results = ['false'] if (origin_grid == grid).all() else map(lambda row: ''.join(row), grid)
+results = ['false'] if (origin_grid == grid).all() else [''.join(row) for row in grid]
 
 # print("answer")
 for result in results:

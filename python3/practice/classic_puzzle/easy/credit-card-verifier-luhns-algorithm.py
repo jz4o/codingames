@@ -6,7 +6,7 @@
 
 n = int(input())
 cards = []
-for i in range(n):
+for _ in range(n):
     card = input()
     cards.append(card)
 
@@ -16,7 +16,8 @@ for i in range(n):
 results = []
 for card in cards:
     sum_numbers = 0
-    for index, number in enumerate(map(int, card.replace(' ', ''))):
+    for index, temp_number in enumerate(map(int, card.replace(' ', ''))):
+        number = temp_number
         if index % 2 == 0:
             number *= 2
             if number >= 10:

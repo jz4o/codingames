@@ -7,7 +7,7 @@
 s = input()
 n = int(input())
 ms = []
-for i in range(n):
+for _ in range(n):
     m = input()
     ms.append(m)
 
@@ -15,7 +15,7 @@ for i in range(n):
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
 s_elements = [s_element for s_element in s.split(' ') if s_element[0] != s_element[1]]
-replace_from_chars = set([s_element[0] for s_element in s_elements])
+replace_from_chars = {s_element[0] for s_element in s_elements}
 
 replace_dict = {}
 for s_element in s_elements:
@@ -37,7 +37,7 @@ for f in replace_from_chars:
     replace_roads[f] = road
 
 is_ambigious_error = len(s_elements) != len(replace_from_chars)
-is_loop_error = any([road.index(road[-1]) != len(road) - 1 for road in replace_roads.values()])
+is_loop_error = any(road.index(road[-1]) != len(road) - 1 for road in replace_roads.values())
 
 replaced_ms = []
 for m in ms:

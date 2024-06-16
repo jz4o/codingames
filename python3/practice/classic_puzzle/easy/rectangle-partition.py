@@ -4,7 +4,7 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-w, h, count_x, count_y = [int(i) for i in input().split()]
+w, h, count_x, count_y = (int(i) for i in input().split())
 width_measurements = [0]
 for i in input().split():
     x = int(i)
@@ -40,7 +40,7 @@ for k in width_counts:
     if k not in height_counts:
         height_counts[k] = 0
 
-result = sum([width_counts[k] * height_counts[k] for k in width_counts.keys()])
+result = sum([width_counts[k] * height_counts[k] for k in width_counts])
 
 # print("0")
 print(result)

@@ -13,7 +13,7 @@ class PrefixCode:
 
 n = int(input())
 prefix_codes = []
-for i in range(n):
+for _ in range(n):
     inputs = input().split()
     b = inputs[0]
     c = int(inputs[1])

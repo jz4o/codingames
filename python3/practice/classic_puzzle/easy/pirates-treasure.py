@@ -8,7 +8,7 @@ w = int(input())
 h = int(input())
 grid = []
 grid.append([1] * (w + 2))
-for i in range(h):
+for _ in range(h):
     row = []
 
     row.append(1)

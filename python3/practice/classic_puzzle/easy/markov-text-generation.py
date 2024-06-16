@@ -16,7 +16,7 @@ s = input()
 
 markov_chain = defaultdict(list)
 t_words = t.split()
-for i in range(0, len(t_words) - d):
+for i in range(len(t_words) - d):
     words = t_words[i:i + d + 1]
 
     markov_value = words.pop()

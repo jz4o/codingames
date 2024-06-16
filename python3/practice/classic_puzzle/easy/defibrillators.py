@@ -6,8 +6,8 @@ import math
 
 
 class Defib:
-    def __init__(self, id, name, address, phone, longitude, latitude):
-        self.id = id
+    def __init__(self, id_value, name, address, phone, longitude, latitude):
+        self.id = id_value
         self.name = name
         self.address = address
         self.phone = phone
@@ -19,7 +19,7 @@ lon = float(input().replace(',', '.'))
 lat = float(input().replace(',', '.'))
 n = int(input())
 defibs = []
-for i in range(n):
+for _ in range(n):
     defib = input()
 
     defibs.append(Defib(*defib.split(';')))

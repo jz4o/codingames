@@ -8,17 +8,17 @@ import re
 
 cyborg_count = int(input())
 cyborg_names = []
-for i in range(cyborg_count):
+for _ in range(cyborg_count):
     cyborg_name = input()
     cyborg_names.append(cyborg_name)
 mayhem_report_count = int(input())
 mayhem_reports = []
-for i in range(mayhem_report_count):
+for _ in range(mayhem_report_count):
     mayhem_report = input()
     mayhem_reports.append(mayhem_report)
 cyborg_report_count = int(input())
 cyborg_reports = []
-for i in range(cyborg_report_count):
+for _ in range(cyborg_report_count):
     cyborg_report = input()
     cyborg_reports.append(cyborg_report)
 

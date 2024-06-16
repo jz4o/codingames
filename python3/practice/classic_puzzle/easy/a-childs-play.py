@@ -4,10 +4,10 @@
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
-w, h = [int(i) for i in input().split()]
+w, h = (int(i) for i in input().split())
 n = int(input())
 grid = []
-for i in range(h):
+for _ in range(h):
     line = input()
     grid.append(list(line))
 
@@ -48,12 +48,14 @@ class Robot:
 
         if direction == 'N':
             return (self.y - 1, self.x)
-        elif direction == 'E':
+
+        if direction == 'E':
             return (self.y, self.x + 1)
-        elif direction == 'S':
+
+        if direction == 'S':
             return (self.y + 1, self.x)
-        elif direction == 'W':
-            return (self.y, self.x - 1)
+
+        return (self.y, self.x - 1)
 
     def turn_right(self):
         self.directions.append(self.directions.pop(0))

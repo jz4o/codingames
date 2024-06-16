@@ -1,6 +1,8 @@
 # import sys
 # import math
 
+import itertools
+
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
@@ -54,7 +56,7 @@ for row_index, row_sum in enumerate(sum_r_index_digits):
 bottom_right_cell = grid[-1][-1]
 check_reachable_cell(grid, bottom_right_cell.y, bottom_right_cell.x, t)
 
-result = len([cell for cell in sum(grid, []) if cell.is_reachable])
+result = len([cell for cell in itertools.chain.from_iterable(grid) if cell.is_reachable])
 
 # print("answer")
 print(result)

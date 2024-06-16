@@ -1,8 +1,9 @@
 # import sys
 # import math
 
-import pandas as pd
 import re
+
+import pandas as pd
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -11,7 +12,7 @@ sql_query = input()
 rows = int(input())
 table_header = input()
 table_rows = []
-for i in range(rows):
+for _ in range(rows):
     table_row = input()
 
     table_rows.append(table_row)
@@ -49,7 +50,7 @@ if query['SELECT'] != '*':
 
 results = []
 results.append(' '.join(columns))
-results.extend([' '.join(record_values) for record_values in records.loc[:, columns].values])
+results.extend([' '.join(record_values) for record_values in records.loc[:, columns].to_numpy()])
 
 # print("outputTableWithColumnTitlesNoRowIndexes")
 for result in results:
