@@ -6,13 +6,15 @@ n = gets.to_i
 # Write an answer using puts
 # To debug: STDERR.puts "Debug messages..."
 
-n += 1
+kind_of_number = n + 1
 binary_length = n.to_s(2).length
 
-result = (1..binary_length).sum do |i|
-  div, mod = n.divmod(2**i)
+result = binary_length.times.sum do |i|
+  half_cycle = 2**i
+  cycle = half_cycle * 2
 
-  div * (2**i.pred) + [0, mod - (2**i.pred)].max
+  div, mod = kind_of_number.divmod cycle
+  div * half_cycle + [mod - half_cycle, 0].max
 end
 
 # puts "Number of 1s"
