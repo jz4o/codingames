@@ -14,7 +14,7 @@ end
 
 class Champion
   attr_accessor :life, :rage
-  attr_reader :name, :hit
+  attr_reader :name, :punch, :kick, :hit
 
   def initialize(name, life, punch, kick)
     @name = name
@@ -27,21 +27,14 @@ class Champion
     @rage = 0
   end
 
-  def punch(_opp)
-    @punch
-  end
-
-  def kick(_opp)
-    @kick
-  end
-
   def special(_opp)
     puts 'not implement'
     0
   end
 
   def attack(attack_type, opp)
-    damage = method(attack_type.downcase.to_sym).call(opp)
+    attack_method = method(attack_type.downcase.to_sym)
+    damage = attack_method.parameters.empty? ? attack_method.call : attack_method.call(opp)
 
     opp.life -= damage
     opp.rage += 1
@@ -55,7 +48,7 @@ class Ken < Champion
     super('KEN', 25, 6, 5)
   end
 
-  def special(_opp)
+  def special
     damage = @rage * 3
     @rage = 0
 
@@ -68,7 +61,7 @@ class Ryu < Champion
     super('RYU', 25, 4, 5)
   end
 
-  def special(_opp)
+  def special
     damage = @rage * 4
     @rage = 0
 
@@ -81,7 +74,7 @@ class Tank < Champion
     super('TANK', 50, 2, 2)
   end
 
-  def special(_opp)
+  def special
     damage = @rage * 2
     @rage = 0
 
@@ -107,7 +100,7 @@ class Jade < Champion
     super('JADE', 20, 2, 7)
   end
 
-  def special(_opp)
+  def special
     damage = @hit * @rage
     @rage = 0
 
@@ -120,7 +113,7 @@ class Anna < Champion
     super('ANNA', 18, 9, 1)
   end
 
-  def special(_opp)
+  def special
     damage = (@initial_life - @life) * @rage
     @rage = 0
 
@@ -133,7 +126,7 @@ class Jun < Champion
     super('JUN', 60, 2, 1)
   end
 
-  def special(_opp)
+  def special
     damage = @rage
     @life += @rage
     @rage = 0
@@ -142,18 +135,10 @@ class Jun < Champion
   end
 end
 
-champion_hash = {
-  ken: Ken,
-  ryu: Ryu,
-  tank: Tank,
-  vlad: Vlad,
-  jade: Jade,
-  anna: Anna,
-  jun: Jun
-}
+champion_classes = [Ken, Ryu, Tank, Vlad, Jade, Anna, Jun]
 
-c1 = champion_hash[champion1.downcase.to_sym].new
-c2 = champion_hash[champion2.downcase.to_sym].new
+c1 = champion_classes.find { |champion| champion.to_s.downcase == champion1.downcase }.new
+c2 = champion_classes.find { |champion| champion.to_s.downcase == champion2.downcase }.new
 
 input_rows.each do |d, attack|
   if d == '<'
