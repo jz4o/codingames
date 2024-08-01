@@ -61,7 +61,7 @@ try {
     }
 
     result = `${deck1.length > 0 ? 1 : 2} ${turn}`;
-} catch (e) {
+} catch (_) {
     result = 'PAT';
 }
 

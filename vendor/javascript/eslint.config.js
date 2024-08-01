@@ -7,9 +7,6 @@ export default [
   {
     ignores: [
       '**/code_golf/**',
-      'typescript/practice/classic_puzzle/easy/onboarding.ts',
-      'typescript/practice/classic_puzzle/easy/pirates-treasure.ts',
-      'typescript/practice/classic_puzzle/medium/winamax-battle.ts',
     ]
   },
   {
@@ -24,7 +21,8 @@ export default [
         'error',
         {
           'argsIgnorePattern': '^_',
-          'varsIgnorePattern': '^_'
+          'varsIgnorePattern': '^_',
+          'caughtErrorsIgnorePattern': '^_',
         }
       ],
       'semi': ['error', 'always']

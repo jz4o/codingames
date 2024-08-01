@@ -49,7 +49,7 @@ try {
             throw false; // global escape
         }
     }
-} catch (e) {
+} catch (_) {
     // for global escape
 }
 
