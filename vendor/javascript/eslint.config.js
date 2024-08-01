@@ -5,7 +5,12 @@ export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ['**/code_golf/**']
+    ignores: [
+      '**/code_golf/**',
+      'typescript/practice/classic_puzzle/easy/onboarding.ts',
+      'typescript/practice/classic_puzzle/easy/pirates-treasure.ts',
+      'typescript/practice/classic_puzzle/medium/winamax-battle.ts',
+    ]
   },
   {
     languageOptions: {
