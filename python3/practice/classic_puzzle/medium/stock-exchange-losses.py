@@ -26,8 +26,7 @@ for index, value in enumerate(values):
     max_value = value
 
     diff = min(values[index + 1:]) - value
-    if max_diff >= diff:
-        max_diff = diff
+    max_diff = min(diff, max_diff)
 
 # print("answer")
 print(max_diff)
