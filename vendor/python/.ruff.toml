@@ -1,5 +1,6 @@
 exclude = [
     'python3/compete/code_golf/*',
+    'python3/practice/classic_puzzle/medium/stock-exchange-losses.py',
 ]
 
 line-length = 120
