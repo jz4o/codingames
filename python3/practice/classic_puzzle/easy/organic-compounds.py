@@ -54,8 +54,8 @@ for row_index, row in enumerate(compound_grid):
             continue
 
         top_union = compound_grid[row_index - 1][compound_index]
-        left_union = compound_grid[row_index][compound_index - 1]
-        right_union = compound_grid[row_index][compound_index + 1]
+        left_union = row[compound_index - 1]
+        right_union = row[compound_index + 1]
         bottom_union = compound_grid[row_index + 1][compound_index]
 
         for union in [top_union, left_union, right_union, bottom_union]:

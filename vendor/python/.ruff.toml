@@ -1,6 +1,5 @@
 exclude = [
     'python3/compete/code_golf/*',
-    'python3/practice/classic_puzzle/easy/organic-compounds.py',
 ]
 
 line-length = 120
