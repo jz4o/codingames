@@ -25,11 +25,9 @@ class Shelf
 
   def add_books(book_names, force: false)
     add_book_names = book_names - @book_names
-    return false if !force && @size < @book_names.size + add_book_names.size
+    return if !force && @size < @book_names.size + add_book_names.size
 
     @book_names.concat(add_book_names)
-
-    true
   end
 
   def books
