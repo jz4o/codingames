@@ -11,23 +11,20 @@ MIN_ASCII_CODE = 32
 MAX_ASCII_CODE = 126
 ASCII_CODE_SIZE = MAX_ASCII_CODE - MIN_ASCII_CODE + 1
 
-keys = ASCII_CODE_SIZE.times.filter do |i|
-  encrypted_word = word.chars.map { |c| (((c.ord - MIN_ASCII_CODE + i) % ASCII_CODE_SIZE) + MIN_ASCII_CODE).chr }.join
-  ciphertext.include? encrypted_word
-end
+DecryptResult = Struct.new :key, :message
 
-decrypted_texts = keys.map do |key|
-  ciphertext.chars.map { |c| (((c.ord - MIN_ASCII_CODE - key) % ASCII_CODE_SIZE) + MIN_ASCII_CODE).chr }.join
-end
+decrypt_result = ASCII_CODE_SIZE.times.filter_map do |key|
+  decrypted_text = ciphertext.chars.map do |c|
+    (((c.ord - MIN_ASCII_CODE - key) % ASCII_CODE_SIZE) + MIN_ASCII_CODE).chr
+  end.join
+  next unless decrypted_text.split(/[\s,.?;:!]/).include? word
 
-decrypted_text = decrypted_texts.find do |decrypted|
-  decrypted.split(/[\s,.?;:!]/).include? word
-end
-key = keys[decrypted_texts.index decrypted_text]
+  DecryptResult.new key, decrypted_text
+end.first
 
 results = [
-  key,
-  decrypted_text
+  decrypt_result.key,
+  decrypt_result.message
 ]
 
 # puts "key"
