@@ -20,7 +20,7 @@ input_lines.each do |line|
     other_words = words - [word]
     regexp_word = Regexp.new word.chars.join '.*?'
 
-    kangaroos = other_words.filter { |other_word| other_word =~ regexp_word }
+    kangaroos = other_words.grep regexp_word
     kangaroos.each do |kangaroo|
       correspond_hash[kangaroo] += [word]
     end
