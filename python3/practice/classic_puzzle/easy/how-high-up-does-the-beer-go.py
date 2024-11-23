@@ -1,7 +1,7 @@
 # import sys
 # import math
 
-from math import pi, pow
+from math import pi
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
