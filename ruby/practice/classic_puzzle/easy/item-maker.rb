@@ -17,6 +17,12 @@ class Item
 end
 
 class ItemInterface
+  Frame = Struct.new(
+    :top_left_parts, :top_parts, :top_right_parts,
+    :body_side_parts,
+    :bottom_left_parts, :bottom_parts, :bottom_right_parts
+  )
+
   def self.create_ascii(item)
     ascii_rows = create_ascii_rows item
     surround_with_frame ascii_rows, item.rarity
@@ -41,38 +47,20 @@ class ItemInterface
 
   def self.surround_with_frame(ascii_rows, rarity)
     width = ascii_rows.first.length + (2 * 2)
+    frame = case rarity.to_sym
+            when :Common then Frame.new '#', '#', '#', '#', '#', '#', '#'
+            when :Rare then Frame.new '/', '#', '\\', '#', '\\', '#', '/'
+            when :Epic then Frame.new '/', '-', '\\', '|', '\\', '_', '/'
+            when :Legendary then Frame.new 'X', '-', 'X', '|', 'X', '_', 'X'
+            end
 
-    case rarity.to_sym
-    when :Common
-      ascii_rows.map! do |ascii_row|
-        "# #{ascii_row} #"
-      end
-      ascii_rows.unshift '#' * width
-      ascii_rows.push '#' * width
+    ascii_rows.map! { |ascii_row| "#{frame.body_side_parts} #{ascii_row} #{frame.body_side_parts}" }
+    ascii_rows.unshift "#{frame.top_left_parts}#{frame.top_parts * (width - 2)}#{frame.top_right_parts}"
+    ascii_rows.push "#{frame.bottom_left_parts}#{frame.bottom_parts * (width - 2)}#{frame.bottom_right_parts}"
 
-    when :Rare
-      ascii_rows.map! do |ascii_row|
-        "# #{ascii_row} #"
-      end
-      ascii_rows.unshift "/#{'#' * (width - 2)}\\"
-      ascii_rows.push "\\#{'#' * (width - 2)}/"
-
-    when :Epic
-      ascii_rows.map! do |ascii_row|
-        "| #{ascii_row} |"
-      end
-      ascii_rows.unshift "/#{'-' * (width - 2)}\\"
-      ascii_rows.push "\\#{'_' * (width - 2)}/"
-
-    when :Legendary
-      ascii_rows.map! do |ascii_row|
-        "| #{ascii_row} |"
-      end
-      ascii_rows.first[0] = '['
-      ascii_rows.first[-1] = ']'
-
-      ascii_rows.unshift "X#{'-' * (width - 2)}X"
-      ascii_rows.push "X#{'_' * (width - 2)}X"
+    if rarity.to_sym == :Legendary
+      name_row_index = 1
+      ascii_rows[name_row_index] = "[#{ascii_rows[name_row_index][1...-1]}]"
 
       center_index = width / 2
       if width.even?
