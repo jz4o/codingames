@@ -75,10 +75,6 @@ class Tree
     def post_order_values
       [@left&.post_order_values, @right&.post_order_values, @value]
     end
-
-    def level_order_values
-      [@left&.value, @right&.value, @left&.level_order_values, @right&.level_order_values]
-    end
   end
 end
 
