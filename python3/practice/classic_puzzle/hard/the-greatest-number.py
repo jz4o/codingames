@@ -27,8 +27,7 @@ else:
     _input = ''.join(sorted(_input, reverse=True))
     if dot_flag:
         _input = _input[:-1] + '.' + _input[-1]
-    if _input.endswith('.0'):
-        _input = _input[:-2]
+    _input = _input.removesuffix('.0')
 
 # print("greatest")
 print(_input)

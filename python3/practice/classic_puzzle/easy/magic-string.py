@@ -53,10 +53,10 @@ for char in chars:
     border_char = f'{border}{char}'
     border_char_next = next_string(border_char)
 
-    if border_prev <= border_char and border_char < border_next:
+    if border_prev <= border_char < border_next:
         border += char
         break
-    elif border_prev <= border_char_next and border_char_next < border_next:
+    elif border_prev <= border_char_next < border_next:
         border += next_string(char)
         break
     else:

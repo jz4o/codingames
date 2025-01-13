@@ -1,7 +1,5 @@
 exclude = [
     'python3/compete/code_golf/*',
-    'python3/practice/classic_puzzle/easy/magic-string.py',
-    'python3/practice/classic_puzzle/hard/the-greatest-number.py',
 ]
 
 line-length = 120
