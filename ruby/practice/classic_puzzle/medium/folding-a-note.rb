@@ -11,7 +11,7 @@ end
 # Write an answer using puts
 # To debug: STDERR.puts "Debug messages..."
 
-folding_note = ls.map { |l| l.chars.map { |c| [c] } }
+folding_note = ls.map { |l| l.chars.zip }
 
 methods = {
   rtl: lambda do |note|

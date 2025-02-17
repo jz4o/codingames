@@ -9,7 +9,7 @@
 # puts "answer"
 
 results = []
-temps = (1..@k).map { |k| [k] }
+temps = (1..@k).zip
 while temps.any?
   temp = temps.pop
   if temp.sum == @n

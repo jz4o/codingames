@@ -6,7 +6,7 @@ n = gets.to_i
 # Write an answer using puts
 # To debug: STDERR.puts "Debug messages..."
 
-temp_digits = (1..n).map { |i| [i] }
+temp_digits = (1..n).zip
 results = []
 while temp_digits.any? do
   temp_digit = temp_digits.pop
