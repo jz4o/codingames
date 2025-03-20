@@ -37,7 +37,7 @@ for _ in range(t):
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
 HALF_SIZE = size // 2
-score_board = {name: 0 for name in names}
+score_board = dict.fromkeys(names, 0)
 
 for throw_data in throw_datas:
     distance_with_center = math.sqrt(throw_data.x**2 + throw_data.y**2)
