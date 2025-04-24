@@ -33,8 +33,8 @@ while arive_positions.any?
     grid[position.y][position.x] = step.to_s(36).upcase if replaceable_chars.include? grid[position.y][position.x]
 
     around_positions = [
-      Position.new((position.y.zero? ? h - 1 : position.y - 1), position.x), # top
-      Position.new(position.y, (position.x.zero? ? w - 1 : position.x - 1)), # left
+      Position.new(position.y.zero? ? h - 1 : position.y - 1, position.x), # top
+      Position.new(position.y, position.x.zero? ? w - 1 : position.x - 1), # left
       Position.new(position.y, (position.x + 1) % w), # right
       Position.new((position.y + 1) % h, position.x)  # bottom
     ]
