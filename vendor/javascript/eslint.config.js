@@ -7,6 +7,7 @@ export default [
   {
     ignores: [
       '**/code_golf/**',
+      '**/mitosis-mayhem.ts',
     ]
   },
   {
@@ -52,7 +53,6 @@ export default [
       'yoda': 'off',
 
       // below temporary ignore rules.
-      'array-callback-return': 'off',
       'camelcase': 'off',
       'class-methods-use-this': 'off',
       'consistent-return': 'off',

@@ -71,6 +71,7 @@ const isCheck: boolean = [...Array(enemies.length).keys()].some(index => {
         case 'N': return !isSameRow && !isSameColumn && Math.abs(king.row - enemy.row) + Math.abs(king.column - enemy.column) === 3;
         case 'R': return isCheckRow || isCheckColumn;
         case 'Q': return isCheckRow || isCheckColumn || isCheckDiagonalLine;
+        default: return false;
     }
 });
 

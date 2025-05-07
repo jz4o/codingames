@@ -83,6 +83,8 @@ instructions.some(instruction => {
     } else {
         stack.push(instruction);
     }
+
+    return false;
 });
 
 const result: string = stack.join(' ');

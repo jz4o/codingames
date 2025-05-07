@@ -45,9 +45,7 @@ if (sumValue < valueToReach) {
         sumCount += payCount;
         tempValueToReach -= payCount * v;
 
-        if (tempValueToReach <= 0) {
-            return true;
-        }
+        return tempValueToReach <= 0;
     });
 
     resultNum = sumCount;

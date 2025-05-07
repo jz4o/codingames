@@ -47,11 +47,9 @@ lowerName.split('').forEach(char => {
 });
 const [firstConsonant, secondConsonant, thirdConsonant]: string[] = consonants;
 
-const vowels: string[] = lowerName.split('').map(char => {
-    if (VOWELS.includes(char)) {
-        return char;
-    }
-}).filter(char => char);
+const vowels: string[] = lowerName
+    .split('')
+    .filter(char => VOWELS.includes(char));
 const [goodVowel, badVowel]: string[] = vowels;
 
 const results: string[] = [];

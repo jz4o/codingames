@@ -35,7 +35,7 @@ const results: string[] = [...Array(records.length - 1).keys()].map(index => {
     const lRecord: RecordObject = records[index];
     const rRecord: RecordObject = records[index + 1];
     if (lRecord.num !== rRecord.num) {
-        return;
+        return null;
     }
 
     const time: number = rRecord.timestamp - lRecord.timestamp;
@@ -43,13 +43,13 @@ const results: string[] = [...Array(records.length - 1).keys()].map(index => {
 
     const speed: number = distance / (time / 60 / 60);
     if (speed <= L) {
-        return;
+        return null;
     }
 
     const result: string = `${rRecord.num} ${rRecord.distance}`;
 
     return result;
-}).filter(result => result);
+}).filter(result => result !== null);
 
 if (results.length === 0) {
     results.push('OK');

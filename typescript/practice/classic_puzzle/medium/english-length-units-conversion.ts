@@ -90,6 +90,8 @@ while (convertRelations.length === 0 && tempRelationPatterns.length !== 0) {
         if (!tempRelationPattern.includes(convertedUnit)) {
             tempRelationPatterns.push([...tempRelationPattern, convertedUnit]);
         }
+
+        return false;
     });
 }
 

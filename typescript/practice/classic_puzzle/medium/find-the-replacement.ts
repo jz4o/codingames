@@ -28,7 +28,7 @@ xChars.forEach(x => {
 if (X === Y) {
     console.log('NONE');
 } else if (replaced === Y) {
-    Object.keys(replaceMap).map(key => {
+    Object.keys(replaceMap).forEach(key => {
         console.log(`${key}->${replaceMap[key]}`);
     });
 } else {

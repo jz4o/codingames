@@ -71,6 +71,8 @@ while (!foundFlag) {
 
         grid[checkPosition.y][checkPosition.x] = turn.toString();
         nextCheckPositions.push(...checkPosition.getAroundPositions());
+
+        return false;
     });
 
     checkPositions.splice(0, Infinity, ...nextCheckPositions);

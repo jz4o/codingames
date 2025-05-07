@@ -40,7 +40,7 @@ const results: string[] = rangeArrayFromTo(a, b).map(i => {
     //
     //     previousTempI = tempI;
     //     tempI = tempI.toString().split('').reduce((sum, c) => sum + parseInt(c), 0);
-    // } while (previousTempI !== tempI);
+    // } while (previousTempI !== tempI && !isBuzzle);
 
 
     // level 3
@@ -51,14 +51,12 @@ const results: string[] = rangeArrayFromTo(a, b).map(i => {
     //         isBuzzle ||= tempI.toString().endsWith(num.toString());
     //         isBuzzle ||= tempI % num === 0;
     //
-    //         if (isBuzzle) {
-    //             return true;
-    //         }
+    //         return isBuzzle
     //     });
     //
     //     previousTempI = tempI;
     //     tempI = tempI.toString().split('').reduce((sum, c) => sum + parseInt(c), 0);
-    // } while (previousTempI !== tempI);
+    // } while (previousTempI !== tempI && !isBuzzle);
 
 
     // level 4
@@ -69,14 +67,12 @@ const results: string[] = rangeArrayFromTo(a, b).map(i => {
             isBuzzle ||= tempI.toString(n).endsWith(num.toString(n));
             isBuzzle ||= tempI % num === 0;
 
-            if (isBuzzle) {
-                return 0;
-            }
+            return isBuzzle;
         });
 
         previousTempI = tempI;
         tempI = tempI.toString(n).split('').reduce((sum, c) => sum + parseInt(c, n), 0);
-    } while (previousTempI !== tempI);
+    } while (previousTempI !== tempI && !isBuzzle);
 
     return isBuzzle ? 'Buzzle' : i.toString();
 });

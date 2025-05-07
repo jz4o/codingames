@@ -47,6 +47,8 @@ girls.some(girl => {
     }
 
     girlCount++;
+
+    return false;
 });
 
 const result: string = girlCount.toString();

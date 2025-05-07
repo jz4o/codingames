@@ -22,10 +22,12 @@ type Enemy = {
 const ENEMY_VALUES: string[] = ['>', '<'];
 const enemies: Enemy[] = lines.flatMap((row, rowIndex) => {
     return row.split('').map((value, columnIndex) => {
-        if (ENEMY_VALUES.includes(value)) {
-            return { rowIndex, columnIndex, _value: value };
+        if (!ENEMY_VALUES.includes(value)) {
+            return null;
         }
-    }).filter(enemy => enemy);
+
+        return { rowIndex, columnIndex, _value: value };
+    }).filter(enemy => enemy !== null);
 });
 
 const LAUNCHER_VALUE: string = '^';

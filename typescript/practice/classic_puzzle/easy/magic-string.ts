@@ -70,6 +70,8 @@ chars.some(char => {
     } else {
         border += char;
     }
+
+    return false;
 });
 
 const result: string = border;

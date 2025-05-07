@@ -90,6 +90,8 @@ s.split('').some(direction => {
         warrior.money += unit.value;
         units.splice(units.indexOf(unit), 1);
     }
+
+    return false;
 });
 
 result ||= `GameClear ${warrior.y} ${warrior.x} ${warrior.money}G`;

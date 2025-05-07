@@ -62,6 +62,8 @@ zip(players, playerShoots).forEach(([player, shoots]) => {
             if (point + tempPoint >= TARGET_POINT) {
                 return true;
             }
+
+            return false;
         });
 
         if (tempShoots.every(tempShoot => tempShoot === MISS_SHOOT)) {

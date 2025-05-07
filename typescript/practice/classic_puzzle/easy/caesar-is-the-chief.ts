@@ -25,6 +25,8 @@ let result: string = 'WRONG MESSAGE';
             .map(char => ALPHABETS.charAt((ALPHABETS.indexOf(char) || ALPHABETS.length) - 1))
             .join('');
     });
+
+    return false;
 });
 
 // console.log('DecodedText:string(101)');

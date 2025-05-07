@@ -108,6 +108,8 @@ const results: string[] = shots.map(shot => {
         });
 
         return Math.min(...ys) <= shot.y && shot.y <= Math.max(...ys) ? 'hit' : 'miss';
+    } else {
+        return null;
     }
 });
 

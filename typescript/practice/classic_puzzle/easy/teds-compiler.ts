@@ -17,9 +17,7 @@ line.split('').some((c, step) => {
         prefixSize = step + 1;
     }
 
-    if (stack < 0) {
-        return true;
-    }
+    return stack < 0;
 });
 
 const result: number = prefixSize;

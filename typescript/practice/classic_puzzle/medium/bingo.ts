@@ -76,6 +76,8 @@ callNumbers.some((callNumber, index) => {
         fullHouseIndex = index + 1;
         return true;
     }
+
+    return false;
 });
 
 // console.log('answer');

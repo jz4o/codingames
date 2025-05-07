@@ -54,6 +54,8 @@ rangeArrayFromTo(1, rookRow - 1).reverse().some(rowNum => {
     }
 
     availableMovements.push(`R${rookPosition}-${rookColumn}${rowNum}`);
+
+    return false;
 });
 
 // move to bottom
@@ -66,6 +68,8 @@ rangeArrayFromTo(rookRow + 1, 8).some(rowNum => {
     }
 
     availableMovements.push(`R${rookPosition}-${rookColumn}${rowNum}`);
+
+    return false;
 });
 
 // move to left
@@ -82,6 +86,8 @@ rangeArrayFromTo(rookRow + 1, 8).some(rowNum => {
     }
 
     availableMovements.push(`R${rookPosition}-${column}${rookRow}`);
+
+    return false;
 });
 
 // move to right
@@ -98,6 +104,8 @@ rangeArrayFromTo(rookRow + 1, 8).some(rowNum => {
     }
 
     availableMovements.push(`R${rookPosition}-${column}${rookRow}`);
+
+    return false;
 });
 
 const results = availableMovements.sort();

@@ -15,20 +15,20 @@ const BRACKETS: { [key: string]: string; } = {
 };
 
 const chars: string[] = [];
-const collectFlag: boolean = !expression.replace(/[^[\](){}]/g, '')
-                                        .split('')
-                                        .some(b => {
-                                            if (BRACKETS[b]) {
-                                                chars.push(b);
-                                                return;
-                                            }
-                                            if (BRACKETS[chars.pop()] === b) {
-                                                return;
-                                            }
+const collectFlag: boolean = !expression
+    .replace(/[^[\](){}]/g, '')
+    .split('')
+    .some(b => {
+        if (BRACKETS[b]) {
+            chars.push(b);
+            return false;
+        }
+        if (BRACKETS[chars.pop()] === b) {
+            return false;
+        }
 
-                                            return true;
-                                        });
+        return true;
+    });
 
 // console.log('true/false');
 console.log(collectFlag && chars.length === 0);
-
