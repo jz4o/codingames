@@ -9,9 +9,9 @@ const C: string = readline();
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const decode = (encoded_value: number, alphabet: string): string => {
+const decode = (encodedValue: number, alphabet: string): string => {
     let result: string = '';
-    let int: number = encoded_value + 1;
+    let int: number = encodedValue + 1;
     while (int > 0) {
         let mod = int % alphabet.length;
         int = Math.floor(int / alphabet.length);

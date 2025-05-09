@@ -53,7 +53,6 @@ export default [
       'yoda': 'off',
 
       // below temporary ignore rules.
-      'camelcase': 'off',
       'class-methods-use-this': 'off',
       'consistent-return': 'off',
       'curly': 'off',
