@@ -16,15 +16,15 @@ class DigitalNumber {
     bitsArray: number[];
 
     constructor(scoreRows: string[]) {
-        this.bitsArray = this.#toBitsArray(scoreRows);
+        this.bitsArray = DigitalNumber.#toBitsArray(scoreRows);
     }
 
     subtractScore: (scoreRows: string[]) => void = (scoreRows: string[]): void => {
-        this.bitsArray = zip(this.bitsArray, this.#toBitsArray(scoreRows)).map(([s1, s2]) => s1 & (s2 ^ parseInt('1111111', 2)));
+        this.bitsArray = zip(this.bitsArray, DigitalNumber.#toBitsArray(scoreRows)).map(([s1, s2]) => s1 & (s2 ^ parseInt('1111111', 2)));
     };
 
     addScore: (scoreRows: string[]) => void = (scoreRows: string[]): void => {
-        this.bitsArray = zip(this.bitsArray, this.#toBitsArray(scoreRows)).map(([s1, s2]) => s1 | s2);
+        this.bitsArray = zip(this.bitsArray, DigitalNumber.#toBitsArray(scoreRows)).map(([s1, s2]) => s1 | s2);
     };
 
     toString: () => string = (): string => {
@@ -36,7 +36,7 @@ class DigitalNumber {
         return [...this.bitsArray].reverse().map(s => DIGIT_BITS.indexOf(s.toString(2).padStart(7, '0'))).join('');
     };
 
-    #toBitsArray: (scoreRows: string[]) => number[] = (scoreRows: string[]): number[] => {
+    static #toBitsArray: (scoreRows: string[]) => number[] = (scoreRows: string[]): number[] => {
         const ROW_SIZE: number = 8;
 
         const scoreGrid: string[][] = transpose(scoreRows.map(row => row.split('')));

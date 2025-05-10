@@ -38,7 +38,7 @@ class Champion {
     }
 
     special: (_opp: Champion) => number = (_opp: Champion): number => {
-        console.log('not implement');
+        console.log(`${this.constructor.name}.special is not implement`);
         return 0;
     };
 
