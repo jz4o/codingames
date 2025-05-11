@@ -16,8 +16,10 @@ for (let i = 0; i < h; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
+type Direction = 'N'|'E'|'W'|'S';
+
 class Robot {
-    directions: string[];
+    directions: Direction[];
     logs: string[];
     y: number;
     x: number;
@@ -37,12 +39,12 @@ class Robot {
         return `${this.place()} ${this.direction()}`;
     };
 
-    direction: () => string = (): string => {
+    direction: () => Direction = (): Direction => {
         return this.directions[0];
     };
 
     forward: () => void = (): void => {
-        const direction: string = this.direction();
+        const direction: Direction = this.direction();
         if (direction === 'N') {
             this.y--;
         } else if (direction === 'E') {
@@ -55,15 +57,13 @@ class Robot {
     };
 
     aheadMassIndex: () => [number, number] = (): [number, number] => {
-        const direction: string = this.direction();
-        if (direction === 'N') {
-            return [this.y - 1, this.x];
-        } else if (direction === 'E') {
-            return [this.y, this.x + 1];
-        } else if (direction === 'S') {
-            return [this.y + 1, this.x];
-        } else if (direction === 'W') {
-            return [this.y, this.x - 1];
+        const direction: Direction = this.direction();
+        switch (direction) {
+            case 'N': return [this.y - 1, this.x];
+            case 'E': return [this.y, this.x + 1];
+            case 'S': return [this.y + 1, this.x];
+            case 'W': return [this.y, this.x - 1];
+            default: throw new Error();
         }
     };
 
@@ -77,7 +77,7 @@ class Robot {
     };
 
     turnRight: () => void = (): void => {
-        const direction: string = this.directions.shift();
+        const direction: Direction = this.directions.shift();
         this.directions.push(direction);
     };
 

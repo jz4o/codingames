@@ -21,9 +21,9 @@ const isEncodable = (str: string): boolean => {
     return encode(str) && encode(str) !== str;
 };
 
-const encode = (str: string): string => {
+const encode = (str: string): string | null => {
     if (str.length % 2 !== 0) {
-        return;
+        return null;
     }
 
     const result: string = sliceN(str.split(''), 2).reduce((result, values) => {
