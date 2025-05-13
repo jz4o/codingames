@@ -28,10 +28,23 @@ while (grid.some(row => row.some(value => value >= BORDER))) {
             }
 
             grid[rowIndex][columnIndex] -= BORDER;
-            if (rowIndex > 0)          grid[rowIndex - 1][columnIndex]++; // above
-            if (rowIndex + 1 !== n)    grid[rowIndex + 1][columnIndex]++; // below
-            if (columnIndex > 0)       grid[rowIndex][columnIndex - 1]++; // left
-            if (columnIndex + 1 !== n) grid[rowIndex][columnIndex + 1]++; // right
+
+            // above
+            if (rowIndex > 0) {
+                grid[rowIndex - 1][columnIndex]++;
+            }
+            // below
+            if (rowIndex + 1 !== n) {
+                grid[rowIndex + 1][columnIndex]++;
+            }
+            // left
+            if (columnIndex > 0) {
+                grid[rowIndex][columnIndex - 1]++;
+            }
+            // right
+            if (columnIndex + 1 !== n) {
+                grid[rowIndex][columnIndex + 1]++;
+            }
         });
     });
 }
