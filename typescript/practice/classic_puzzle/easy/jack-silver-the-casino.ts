@@ -32,6 +32,8 @@ for (let i = 0; i < ROUNDS; i++) {
                 result += bet * 2;
             }
             break;
+        default:
+            throw new Error();
     }
 }
 

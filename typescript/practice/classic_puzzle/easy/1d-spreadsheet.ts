@@ -40,6 +40,8 @@ class SpreadSheet {
                 // plus zero is for remove minus zero.
                 cell.value = arg1 * arg2 + 0;
                 break;
+            default:
+                throw new Error();
         }
 
         return cell.value;

@@ -53,7 +53,6 @@ export default [
       'yoda': 'off',
 
       // below temporary ignore rules.
-      'default-case': 'off',
       'dot-notation': 'off',
       'eqeqeq': 'off',
       'func-names': 'off',
