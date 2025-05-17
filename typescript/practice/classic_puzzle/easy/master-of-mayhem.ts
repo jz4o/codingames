@@ -25,13 +25,17 @@ for (let i = 0; i < cyborgReportCount; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
+interface CyborgAttribute {
+    catchphrase?: string;
+};
+
 const mayhemAttributes: { [key: string]: string} = {};
 mayhemReports.forEach(mayhemReport => {
     const { attribute, value }: { [key: string]: string } = mayhemReport.match(/^Mayhem's\s(?<attribute>.*?)\s(is)?(\san?)?\s"?(?<value>.*?)"?$/).groups;
     mayhemAttributes[attribute] = value;
 });
 
-const cyborgsAttributes: { [key: string]: { [key: string]: string } } = {};
+const cyborgsAttributes: { [key: string]: CyborgAttribute } = {};
 cyborgNames.forEach(name => {
     cyborgsAttributes[name] = {};
 });
@@ -43,11 +47,11 @@ cyborgReports.forEach(cyborgReport => {
 Object.entries(mayhemAttributes).forEach(([mayhemAttribute, mayhemValue]) => {
     Object.entries(cyborgsAttributes).forEach(([cyborgName, cyborgAttributes]) => {
         if (mayhemAttribute === 'word') {
-            if (!('catchphrase' in cyborgAttributes)) {
+            if (!cyborgAttributes.catchphrase) {
                 return;
             }
 
-            if (!(cyborgAttributes['catchphrase'] || '').includes(mayhemValue)) {
+            if (!(cyborgAttributes.catchphrase || '').includes(mayhemValue)) {
                 delete cyborgsAttributes[cyborgName];
             }
         } else {

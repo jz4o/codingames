@@ -35,7 +35,7 @@ for (let i = 0; i < T; i++) {
         x: throwX,
         y: throwY
     });
-}
+};
 
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
@@ -45,9 +45,9 @@ const scoreBoard: {[key: string]: number} = {};
 names.forEach(name => scoreBoard[name] = 0);
 
 throwDatas.forEach(throwData => {
-    const name: string = throwData['name'];
-    const x: number = throwData['x'];
-    const y: number = throwData['y'];
+    const name: string = throwData.name;
+    const x: number = throwData.x;
+    const y: number = throwData.y;
 
     const distanceWithCenter: number = Math.sqrt(x ** 2 + y ** 2);
     const distanceWithEdge: number = Math.sqrt((HALF_SIZE - Math.abs(x)) ** 2 + (HALF_SIZE - Math.abs(y)) ** 2);
@@ -75,15 +75,15 @@ Object.keys(scoreBoard).forEach(name => {
 
 // score DESC, name index ASC
 scoreRanking.sort((s1, s2) => {
-    if (s1['score'] === s2['score']) {
-        return names.indexOf(s1['name']) - names.indexOf(s2['name']);
+    if (s1.score === s2.score) {
+        return names.indexOf(s1.name) - names.indexOf(s2.name);
     } else {
-        return s2['score'] - s1['score'];
+        return s2.score - s1.score;
     }
 });
 
 // console.log('answer');
 scoreRanking.forEach(score => {
-    console.log(`${score['name']} ${score['score']}`);
+    console.log(`${score.name} ${score.score}`);
 });
 

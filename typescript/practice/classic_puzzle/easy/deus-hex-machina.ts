@@ -8,7 +8,9 @@ const number: string = readline();
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const converter: { [key: string]: string } = {
+type ConverterKey = 'from' | 'toV' | 'toH' | 'toVh';
+
+const converter: { [key in ConverterKey]: string } = {
   'from': '0123456789abcdef',
   'toV': '0153#2e#8a9#c#6#',
   'toH': '015##2a#8e6d#b9#',
@@ -21,7 +23,7 @@ const bits: string[] = binary.split('');
 const isVReverse: boolean = bits.filter(b => b == '1').length % 2 == 1;
 const isHReverse: boolean = bits.filter(b => b == '0').length % 2 == 1;
 
-let convertTo: string;
+let convertTo: ConverterKey;
 if (isVReverse && isHReverse) {
     convertTo = 'toVh';
 } else if (isVReverse) {
@@ -32,7 +34,7 @@ if (isVReverse && isHReverse) {
     convertTo = 'from';
 }
 
-let result: string = number.split('').map(n => converter[convertTo].charAt(converter['from'].indexOf(n))).join('');
+let result: string = number.split('').map(n => converter[convertTo].charAt(converter.from.indexOf(n))).join('');
 if (isHReverse) {
     result = result.split('').reverse().join('');
 }

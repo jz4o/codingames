@@ -13,10 +13,21 @@ for (let i = 0; i < n; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-type Answer = {
-    age: number,
-    gender: string,
-    genre: string
+interface ModelGenre {
+    minAge: number;
+    maxAge: number;
+};
+
+type Gender = 'female' | 'male';
+
+interface Model {
+    gender?: { [key in Gender]: ModelGenre };
+};
+
+interface Answer {
+    age: number;
+    gender: string;
+    genre: string;
 };
 
 const answers: Answer[] = inputAnswers.map(inputAnswer => {
@@ -29,7 +40,7 @@ const answers: Answer[] = inputAnswers.map(inputAnswer => {
 const trainAnswers: Answer[] = answers.filter(answer => answer.genre !== undefined);
 const testAnswers: Answer[] = answers.filter(answer => answer.genre === undefined);
 
-const learningModel: { [key: string]: { [key: string]: { [key: string]: number } } } = {};
+const learningModel: Model = {};
 trainAnswers.forEach(answer => {
     const age: number = answer.age;
     const gender: string = answer.gender;
@@ -40,27 +51,28 @@ trainAnswers.forEach(answer => {
     }
 
     if (!(genre in learningModel[gender])) {
-        learningModel[gender][genre] = {};
-        learningModel[gender][genre]['minAge'] = age;
-        learningModel[gender][genre]['maxAge'] = age;
+        learningModel[gender][genre] = {
+            minAge: age,
+            maxAge: age
+        };
     }
 
     const { minAge, maxAge }: { [key: string]: number } = learningModel[gender][genre];
-    learningModel[gender][genre]['minAge'] = Math.min(age, minAge);
-    learningModel[gender][genre]['maxAge'] = Math.max(age, maxAge);
+    learningModel[gender][genre].minAge = Math.min(age, minAge);
+    learningModel[gender][genre].maxAge = Math.max(age, maxAge);
 });
 
 const results: string[] = testAnswers.map(answer => {
     const age: number = answer.age;
     const gender: string = answer.gender;
 
-    const genderObject = learningModel[gender];
+    const genderObject: ModelGenre = learningModel[gender];
     if (genderObject === undefined) {
         return 'None';
     }
 
-    const genreObject: [string, { [key: string]: number }] = Object.entries(genderObject).find(entry => {
-        const [_genre, { minAge, maxAge }]: [string, { [key: string]: number }] = entry;
+    const genreObject: [string, ModelGenre] = Object.entries(genderObject).find(entry => {
+        const [_genre, { minAge, maxAge }]: [string, ModelGenre] = entry;
 
         return minAge <= age && age <= maxAge;
     });
@@ -69,7 +81,7 @@ const results: string[] = testAnswers.map(answer => {
         return 'None';
     }
 
-    const [genre]: [string, { [key: string]: number }] = genreObject;
+    const [genre]: [string, ModelGenre] = genreObject;
 
     return genre;
 });

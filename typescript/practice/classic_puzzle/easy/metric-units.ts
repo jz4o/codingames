@@ -8,6 +8,11 @@ const expression: string = readline(); // the expression to calculate
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
+interface SmallUnitConverteInformation {
+    smallUnit: string;
+    rate: number;
+};
+
 class MetricUnit {
     value: number;
     unit: string;
@@ -27,19 +32,20 @@ class MetricUnit {
         return otherUnitIndex < selfUnitIndex;
     };
 
+
     convertToSmallUnit = () => {
-        const convertObject: { [key: string]: { [key: string]: string } } = {
-            'km': { 'smallUnit': 'm', 'rate': '1000' },
-            'm': { 'smallUnit': 'dm', 'rate': '10' },
-            'dm': { 'smallUnit': 'cm', 'rate': '10' },
-            'cm': { 'smallUnit': 'mm', 'rate': '10' },
-            'mm': { 'smallUnit': 'um', 'rate': '1000' },
+        const convertObject: { [key: string]: SmallUnitConverteInformation } = {
+            'km': { 'smallUnit': 'm', 'rate': 1000 },
+            'm': { 'smallUnit': 'dm', 'rate': 10 },
+            'dm': { 'smallUnit': 'cm', 'rate': 10 },
+            'cm': { 'smallUnit': 'mm', 'rate': 10 },
+            'mm': { 'smallUnit': 'um', 'rate': 1000 },
         };
 
         const adjustRate: number = Math.pow(10, MetricUnit.DIGIT_PRECISION);
 
-        this.value = Math.round(this.value * parseInt(convertObject[this.unit]['rate']) * adjustRate) / adjustRate;
-        this.unit = convertObject[this.unit]['smallUnit'];
+        this.value = Math.round(this.value * convertObject[this.unit].rate * adjustRate) / adjustRate;
+        this.unit = convertObject[this.unit].smallUnit;
     };
 }
 

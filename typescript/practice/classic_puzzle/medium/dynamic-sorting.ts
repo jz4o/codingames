@@ -15,6 +15,10 @@ for (let i = 0; i < N; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
+interface SortingObject {
+    id?: string;
+};
+
 const zip: <T, U>(a: T[], b: U[]) => [T, U][] = <T, U>(a: T[], b: U[]): [T, U][] => {
     const arraySize: number = Math.max(a.length, b.length);
     return [...Array(arraySize).keys()].map(index => {
@@ -28,8 +32,7 @@ const intExpressions: string[] = zip(expressions, types.split(','))
     .filter(([_, type]) => type === 'int')
     .map(([expression, _]) => expression.slice(1));
 
-
-const objects: { [key: string]: string }[] = rows.map(row => {
+const objects: SortingObject[] = rows.map(row => {
     const object: { [key: string]: string } = {};
     row.split(',').forEach(column => {
         const [k, v]: string[] = column.split(':');
@@ -70,10 +73,10 @@ objects.sort((a, b) => {
         return isAscA ? 1 : -1;
     }
 
-    return a['id'] > b['id'] ? 1 : -1;
+    return a.id > b.id ? 1 : -1;
 });
 
-const results: string[] = objects.map(object => object['id']);
+const results: string[] = objects.map(object => object.id);
 
 // console.log('answer');
 results.forEach(result => {

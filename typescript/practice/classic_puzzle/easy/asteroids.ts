@@ -20,9 +20,15 @@ for (let i = 0; i < H; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-type Position = {
-    y: number,
-    x: number
+interface Position {
+    y: number;
+    x: number;
+};
+
+interface PicturePosition {
+    first?: Position;
+    second?: Position;
+    third?: Position;
 };
 
 const firstPictureRows: string[] = [];
@@ -36,38 +42,38 @@ inputRows.forEach(inputRow => {
 
 const marks: string[] = firstPictureRows.join('').replace(/\./g, '').split('').sort().reverse();
 
-const positionObject: { [key: string]: { [key: string]: Position } } = {};
+const positionObject: { [key: string]: PicturePosition } = {};
 marks.forEach(mark => {
     positionObject[mark] = {};
 });
 
 firstPictureRows.forEach((row, rowIndex) => {
     row.split('').forEach((char, charIndex) => {
-        if (char === '.') {
+        if (!(char in positionObject)) {
             return;
         }
 
-        positionObject[char]['first'] = { y: rowIndex, x: charIndex };
+        positionObject[char].first = { y: rowIndex, x: charIndex };
     });
 });
 
 secondPictureRows.forEach((row, rowIndex) => {
     row.split('').forEach((char, charIndex) => {
-        if (char === '.') {
+        if (!(char in positionObject)) {
             return;
         }
 
-        positionObject[char]['second'] = { y: rowIndex, x: charIndex };
+        positionObject[char].second = { y: rowIndex, x: charIndex };
     });
 });
 
 marks.forEach(mark => {
-    const markObject: { [key: string]: Position } = positionObject[mark];
-    const ySpeed: number = (markObject['second'].y - markObject['first'].y) / (T2 - T1);
-    const xSpeed: number = (markObject['second'].x - markObject['first'].x) / (T2 - T1);
+    const markObject: PicturePosition = positionObject[mark];
+    const ySpeed: number = (markObject.second.y - markObject.first.y) / (T2 - T1);
+    const xSpeed: number = (markObject.second.x - markObject.first.x) / (T2 - T1);
 
-    const thirdY: number = markObject['second'].y + Math.floor(ySpeed * (T3 - T2));
-    const thirdX: number = markObject['second'].x + Math.floor(xSpeed * (T3 - T2));
+    const thirdY: number = markObject.second.y + Math.floor(ySpeed * (T3 - T2));
+    const thirdX: number = markObject.second.x + Math.floor(xSpeed * (T3 - T2));
 
     if (thirdY < 0 || H <= thirdY) {
         return;
@@ -77,14 +83,14 @@ marks.forEach(mark => {
         return;
     }
 
-    markObject['third'] = { y: thirdY, x: thirdX };
+    markObject.third = { y: thirdY, x: thirdX };
 });
 
 const thirdPictureGrid: string[][] = [...Array(H).keys()].map(() => {
     return [...Array(W).keys()].map(() => '.');
 });
 marks.forEach(mark => {
-    const thirdPosition: Position = positionObject[mark]['third'];
+    const thirdPosition: Position = positionObject[mark].third;
     if (thirdPosition === undefined) {
         return;
     }

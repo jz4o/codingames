@@ -27,9 +27,9 @@ for (let i = 0; i < Y; i++) {
 
     let alive: number = 0;
     cages.forEach(cage => {
-        const sick = cage['sick'] * (2 ** i);
-        cage['alive'] -= sick;
-        alive += Math.max(cage['alive'], 0);
+        const sick = cage.sick * (2 ** i);
+        cage.alive -= sick;
+        alive += Math.max(cage.alive, 0);
     });
 
     // console.log('answer');

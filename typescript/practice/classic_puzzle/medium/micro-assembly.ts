@@ -19,12 +19,14 @@ for (let i = 0; i < n; i++) {
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
 
-const register: { [key: string]: number } = {
-    'a': a,
-    'b': b,
-    'c': c,
-    'd': d
+interface Register {
+    a: number;
+    b: number;
+    c: number;
+    d: number;
 };
+
+const register: Register = { a, b, c, d };
 
 let index: number = 0;
 while (index < instructions.length) {
@@ -53,7 +55,7 @@ while (index < instructions.length) {
     index++;
 }
 
-const result: string = `${register['a']} ${register['b']} ${register['c']} ${register['d']}`;
+const result: string = `${register.a} ${register.b} ${register.c} ${register.d}`;
 
 // console.log('a b c d');
 console.log(result);

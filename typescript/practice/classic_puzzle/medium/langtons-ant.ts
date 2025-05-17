@@ -32,14 +32,14 @@ for (let i = 0; i < T; i++) {
     // Write an action using console.log()
     // To debug: console.error('Debug messages...');
 
-    const colorIsBlack: boolean = grid[yTmp][xTmp] === MARKS['black'];
+    const colorIsBlack: boolean = grid[yTmp][xTmp] === MARKS.black;
     if (colorIsBlack) {
         directions.push(directions.shift());
     } else {
         directions.unshift(directions.pop());
     }
 
-    grid[yTmp][xTmp] = colorIsBlack ? MARKS['white'] : MARKS['black'];
+    grid[yTmp][xTmp] = colorIsBlack ? MARKS.white : MARKS.black;
 
     if (directions[0] === 'N') {
         yTmp--;
