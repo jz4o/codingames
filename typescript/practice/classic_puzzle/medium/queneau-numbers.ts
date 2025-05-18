@@ -34,7 +34,7 @@ for (let i = 0; i < N; i++) {
 }
 
 // console.log('IMPOSSIBLE');
-if (JSON.stringify(array) == JSON.stringify(INITIAL_ARRAY)) {
+if (JSON.stringify(array) === JSON.stringify(INITIAL_ARRAY)) {
     console.log(progressLog.join("\n"));
 } else {
     console.log('IMPOSSIBLE');

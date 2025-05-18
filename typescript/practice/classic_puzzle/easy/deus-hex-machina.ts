@@ -20,8 +20,8 @@ const converter: { [key in ConverterKey]: string } = {
 const binary: string = BigInt(`0x${number}`).toString(2);
 
 const bits: string[] = binary.split('');
-const isVReverse: boolean = bits.filter(b => b == '1').length % 2 == 1;
-const isHReverse: boolean = bits.filter(b => b == '0').length % 2 == 1;
+const isVReverse: boolean = bits.filter(b => b === '1').length % 2 === 1;
+const isHReverse: boolean = bits.filter(b => b === '0').length % 2 === 1;
 
 let convertTo: ConverterKey;
 if (isVReverse && isHReverse) {

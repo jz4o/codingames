@@ -15,7 +15,7 @@ const faroShuffle = (deck: string): string => {
     const halfIndex: number = Math.ceil(splitedDeck.length / 2);
     const frontHalf: string[] = splitedDeck.slice(0, halfIndex);
     const backHalf: string[] = splitedDeck.slice(halfIndex);
-    if (splitedDeck.length % 2 == 1) {
+    if (splitedDeck.length % 2 === 1) {
         backHalf.push('');
     }
 

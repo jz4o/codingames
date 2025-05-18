@@ -40,7 +40,7 @@ for (let i = 0; i < N; i++) {
     const gcdNum: number = gcd(rat, y);
     const ratX: number = Math.trunc(rat / gcdNum);
     const ratY: number = Math.trunc(y / gcdNum);
-    const minus: string = [int, ratX, ratY].filter(b => b < 0).length % 2 == 1 ? '-' : '';
+    const minus: string = [int, ratX, ratY].filter(b => b < 0).length % 2 === 1 ? '-' : '';
     const ratStr: string = rat !== 0 ? `${minus}${Math.abs(ratX)}/${Math.abs(ratY)}` : '';
 
     const result: string = `${intStr} ${ratStr}`.trim();

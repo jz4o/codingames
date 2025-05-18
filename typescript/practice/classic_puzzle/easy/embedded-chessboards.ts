@@ -24,7 +24,7 @@ const results: number[] = inputRows.map(inputRow => {
 
     const patternSize: number = rowPatternSize * colPatternSize;
 
-    const roundFunction: (n: number) => number = isWhite == 0 ? Math.floor : Math.ceil;
+    const roundFunction: (n: number) => number = isWhite === 0 ? Math.floor : Math.ceil;
 
     return roundFunction(patternSize / 2);
 });

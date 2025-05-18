@@ -40,7 +40,7 @@ transposedGrid.slice(1, -1).forEach(row => {
 const turnValleyPart: string[] = Array(length - 1).fill('|');
 [...Array(turns).keys()].forEach(index => {
     const i: number = (thickness + 1) * (index + 1);
-    transposedGrid[i] = (index + 1) % 2 == 1 ? [' ', ...turnValleyPart, '_'] : ['_', ' ', ...turnValleyPart];
+    transposedGrid[i] = (index + 1) % 2 === 1 ? [' ', ...turnValleyPart, '_'] : ['_', ' ', ...turnValleyPart];
 });
 
 const results: string[] = transpose(transposedGrid).map(row => {

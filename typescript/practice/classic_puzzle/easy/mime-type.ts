@@ -26,7 +26,7 @@ for (let i = 0; i < Q; i++) {
 const mimeTypes: string[] = [];
 for (const fname of fnames) {
     const fnameElements: string[] = fname.split('.');
-    const ext: string = fnameElements.length == 0 ? '' : fnameElements[fnameElements.length - 1];
+    const ext: string = fnameElements.length === 0 ? '' : fnameElements[fnameElements.length - 1];
 
     const mimeType: string = extMimes[ext];
 

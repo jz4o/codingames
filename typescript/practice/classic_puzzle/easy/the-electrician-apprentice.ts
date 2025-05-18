@@ -31,7 +31,7 @@ const DESCRIPTION_TYPES: string[] = ['-', '='];
 
 const switchStatus: { [key: string]: boolean } = {};
 uniq(switches).forEach(sw => {
-    const count: number = switches.filter(s => s == sw).length;
+    const count: number = switches.filter(s => s === sw).length;
     switchStatus[sw] = count % 2 === 1;
 });
 
