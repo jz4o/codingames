@@ -53,7 +53,6 @@ export default [
       'yoda': 'off',
 
       // below temporary ignore rules.
-      'func-names': 'off',
       'func-style': 'off',
       'logical-assignment-operators': 'off',
       'new-cap': 'off',

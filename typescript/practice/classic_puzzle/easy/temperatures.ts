@@ -16,7 +16,7 @@ for (let i = 0; i < n; i++) {
 
 let closestZeroNegative: number;
 let closestZeroPositive: number;
-ts.forEach(function(t) {
+ts.forEach(t => {
     if ((closestZeroNegative || -273) <= t && t < 0) {
         closestZeroNegative = t;
     } else if (0 < t && t <= (closestZeroPositive || 5526)) {
