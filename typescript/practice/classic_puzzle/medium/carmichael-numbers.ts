@@ -8,21 +8,7 @@ const n: number = parseInt(readline());
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
 
-const primeFlag: boolean = isPrime(n);
-let carmichaelFlag: boolean = !primeFlag;
-
-for (const primeFactor of primeDivision(n)) {
-    if ((n - 1) % (primeFactor - 1) !== 0) {
-        carmichaelFlag = false;
-        break;
-    }
-}
-
-// console.log('YES|NO');
-console.log(carmichaelFlag ? 'YES' : 'NO');
-
-
-function isPrime(num: number) {
+const isPrime = (num: number) => {
     if (num % 2 === 0) {
         return false;
     }
@@ -34,9 +20,9 @@ function isPrime(num: number) {
     }
 
     return true;
-}
+};
 
-function primeDivision(num) {
+const primeDivision = (num) => {
     const divisions: number[] = [];
 
     while (num % 2 === 0) {
@@ -55,5 +41,18 @@ function primeDivision(num) {
     }
 
     return divisions;
+};
+
+const primeFlag: boolean = isPrime(n);
+let carmichaelFlag: boolean = !primeFlag;
+
+for (const primeFactor of primeDivision(n)) {
+    if ((n - 1) % (primeFactor - 1) !== 0) {
+        carmichaelFlag = false;
+        break;
+    }
 }
+
+// console.log('YES|NO');
+console.log(carmichaelFlag ? 'YES' : 'NO');
 
