@@ -17,7 +17,7 @@ while (sequenceChars.length > 0) {
     if (char === '-') {
         char = sequenceChars.shift();
 
-        depths[char] = depths[char] || [];
+        depths[char] ||= [];
         depths[char].push(depth);
 
         depth--;
@@ -38,3 +38,4 @@ Object.keys(depths).forEach(key => {
 
 // console.log('answer');
 console.log(maximumValueKey);
+
