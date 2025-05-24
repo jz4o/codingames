@@ -156,13 +156,18 @@ class Jun extends Champion {
     };
 }
 
-const championClasses: (new () => Champion)[] = [Ken, Ryu, Tank, Vlad, Jade, Anna, Jun];
+const championClasses: { [key: string]: (new () => Champion) } = {
+    ken: Ken,
+    ryu: Ryu,
+    tank: Tank,
+    vlad: Vlad,
+    jade: Jade,
+    anna: Anna,
+    jun: Jun
+};
 
-const c1Class: new () => Champion = championClasses.find(champion => champion.name.toLowerCase() === champion1.toLowerCase());
-const c2Class: new () => Champion = championClasses.find(champion => champion.name.toLowerCase() === champion2.toLowerCase());
-
-const c1: Champion = new c1Class();
-const c2: Champion = new c2Class();
+const c1: Champion = new championClasses[champion1.toLowerCase()]();
+const c2: Champion = new championClasses[champion2.toLowerCase()]();
 
 inputRows.some(([d, attack]) => {
     if (d === '<') {

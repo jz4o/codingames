@@ -53,7 +53,6 @@ export default [
       'yoda': 'off',
 
       // below temporary ignore rules.
-      'new-cap': 'off',
       'no-implicit-coercion': 'off',
       'no-lonely-if': 'off',
       'no-multi-assign': 'off',
