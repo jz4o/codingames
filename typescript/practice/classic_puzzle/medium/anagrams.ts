@@ -58,7 +58,7 @@ const partReverse = (str: string, indexes: number[]): string => {
 const sizeOfWords: number[] = phrase.split(' ').map(word => word.length);
 const phraseChars: string[] = phrase.replace(/\s/g, '').split('');
 const words: string[] = sizeOfWords.reverse().map(sizeOfWord => {
-    return phraseChars.splice(0, sizeOfWord - 0).join('');
+    return phraseChars.splice(0, sizeOfWord).join('');
 });
 let tempPhrase: string = words.join(' ');
 

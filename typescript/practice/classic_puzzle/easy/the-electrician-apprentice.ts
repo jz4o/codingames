@@ -48,7 +48,7 @@ const results: string[] = wirings.map(wiring => {
         const descriptionSwitches: string[] = wiringElements.slice(descriptionTypeIndex + 1);
         wiringElements.splice(descriptionTypeIndex, wiringElements.length);
 
-        const descriptionSwitchStatuses: boolean[] = descriptionSwitches.map(s => !!switchStatus[s]);
+        const descriptionSwitchStatuses: boolean[] = descriptionSwitches.map(s => Boolean(switchStatus[s]));
         if (descriptionType === '-') {
             equipmentDescriptionSwitches.push(descriptionSwitchStatuses.every(status => status));
         } else {
