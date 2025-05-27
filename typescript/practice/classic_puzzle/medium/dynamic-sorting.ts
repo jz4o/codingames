@@ -53,17 +53,9 @@ objects.sort((a, b) => {
         }
 
         if (intExpressions.includes(column)) {
-            if (isAscending) {
-                isAscA = parseInt(a[column]) > parseInt(b[column]);
-            } else {
-                isAscA = parseInt(b[column]) > parseInt(a[column]);
-            }
+            isAscA = isAscending ? parseInt(a[column]) > parseInt(b[column]) : parseInt(b[column]) > parseInt(a[column]);
         } else {
-            if (isAscending) {
-                isAscA = a[column] > b[column];
-            } else {
-                isAscA = b[column] > a[column];
-            }
+            isAscA = isAscending ? a[column] > b[column] : b[column] > a[column];
         }
 
         return true;
