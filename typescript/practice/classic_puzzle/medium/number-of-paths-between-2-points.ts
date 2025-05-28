@@ -21,7 +21,8 @@ const rangeArrayFromTo = (from: number, to: number): number[] => {
 };
 
 const pathGrid: number[][] = [...Array(M + 1)].map(() => Array(N + 1).fill(0));
-grid[1][1] = pathGrid[1][1] = 1;
+grid[1][1] = 1;
+pathGrid[1][1] = 1;
 rangeArrayFromTo(1, M).forEach(row => {
     rangeArrayFromTo(1, N).forEach(column => {
         if (grid[row][column] !== 0) {
