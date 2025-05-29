@@ -6,5 +6,5 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
 
-gem 'rubocop', '1.75.7'
+gem 'rubocop', '1.75.8'
 gem 'rubocop-performance', '1.25.0'
