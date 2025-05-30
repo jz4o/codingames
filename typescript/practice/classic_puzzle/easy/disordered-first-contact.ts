@@ -14,52 +14,49 @@ const rangeArrayFromTo = (from: number, to: number): number[] => {
 };
 
 const decode = (text: string): string => {
-    let result: string = '';
-    let turn: number = 1;
-
-    let sum: number = turn;
-    while (sum < text.length) {
-        turn++;
-        sum += turn;
+    let loopSize: number = 1;
+    let sumLoopNumber: number = 1;
+    while (sumLoopNumber < text.length) {
+        loopSize++;
+        sumLoopNumber += loopSize;
     }
 
-    while (turn > 0) {
-        const sliceSize: number = text.length - rangeArrayFromTo(1, turn - 1).reduce((sum, value) => sum += value, 0);
+    let tempText: string = text;
+    return [...Array(loopSize).keys()].reverse().map(turn => {
+        const sliceSize: number = tempText.length - rangeArrayFromTo(1, turn).reduce((sum, value) => sum + value, 0);
 
-        if (turn % 2 === 1) {
-            result = `${text.slice(-sliceSize)}${result}`;
-            text = text.slice(0, -sliceSize);
+        if ((turn + 1) % 2 === 1) {
+            const turnResult = tempText.slice(-sliceSize);
+            tempText = tempText.slice(0, -sliceSize);
+
+            return turnResult;
         } else {
-            result = `${text.slice(0, sliceSize)}${result}`;
-            text = text.slice(sliceSize);
+            const turnResult = tempText.slice(0, sliceSize);
+            tempText = tempText.slice(sliceSize);
+
+            return turnResult;
         }
-
-        turn--;
-    }
-
-    return result;
+    }).reverse().join('');
 };
 
 const encode = (text: string): string => {
-    let result: string = '';
+    let tempText: string = text;
     let turn: number = 1;
-
-    let target: string = text.slice(0, turn);
-    text = text.slice(turn);
-    while (target.length !== 0) {
+    const resultElements: string[] = [];
+    while (tempText.length > 0) {
+        const target: string = tempText.slice(0, turn);
         if (turn % 2 === 1) {
-            result += target;
+            resultElements.push(target);
         } else {
-            result = `${target}${result}`;
+            resultElements.unshift(target);
         }
 
-        turn++;
+        tempText = tempText.slice(turn);
 
-        target = text.slice(0, turn);
-        text = text.slice(turn);
+        turn++;
     }
 
-    return result;
+    return resultElements.join('');
 };
 
 const decodeOrEncode = N > 0 ? decode : encode;
@@ -69,3 +66,4 @@ const result: string = rangeArrayFromTo(1, Math.abs(N)).reduce(result => {
 
 // console.log('answer');
 console.log(result);
+

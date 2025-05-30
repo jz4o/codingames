@@ -8,7 +8,7 @@ const n: number = parseInt(readline());
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
 
-const isPrime = (num: number) => {
+const isPrime = (num: number): boolean => {
     if (num % 2 === 0) {
         return false;
     }
@@ -22,19 +22,20 @@ const isPrime = (num: number) => {
     return true;
 };
 
-const primeDivision = (num) => {
+const primeDivision = (num: number): number[] => {
     const divisions: number[] = [];
+    let tempNum: number = num;
 
-    while (num % 2 === 0) {
+    while (tempNum % 2 === 0) {
         divisions.push(2);
-        num /= 2;
+        tempNum /= 2;
     }
 
     let i: number = 3;
-    while (num !== 1) {
-        if (num % i === 0) {
+    while (tempNum !== 1) {
+        if (tempNum % i === 0) {
             divisions.push(i);
-            num /= i;
+            tempNum /= i;
         } else {
             i += 2;
         }

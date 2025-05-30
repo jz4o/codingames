@@ -37,11 +37,12 @@ const encode = (str: string): string | null => {
 };
 
 const isDecodable = (encodedStr: string, originalStr: string): boolean => {
+    let tempEncodedStr: string = encodedStr;
     let result: string = '';
-    while (encodedStr.length !== 0) {
-        const char: string = encodedStr[0];
-        const charGroup: string = encodedStr.match(new RegExp(`^${char}+`)).toString();
-        encodedStr = encodedStr.substring(charGroup.length);
+    while (tempEncodedStr.length !== 0) {
+        const char: string = tempEncodedStr[0];
+        const charGroup: string = tempEncodedStr.match(new RegExp(`^${char}+`)).toString();
+        tempEncodedStr = tempEncodedStr.substring(charGroup.length);
         result += charGroup.length + char;
     }
 
@@ -54,3 +55,4 @@ while (isEncodable(result)) {
 }
 
 console.log(result);
+

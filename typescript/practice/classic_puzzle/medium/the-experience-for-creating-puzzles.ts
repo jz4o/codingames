@@ -18,11 +18,11 @@ interface BlitzProg {
 }
 
 const reflectExp = (currentLevel: number, exp: number, levelUpExp: number = null): BlitzProg => {
-    exp -= (levelUpExp || getExpForLevelUp(currentLevel));
-    if (exp < 0) {
-        return {level: currentLevel, expToLevelUp: exp * -1 };
+    const reflectedExp = exp - (levelUpExp || getExpForLevelUp(currentLevel));
+    if (reflectedExp < 0) {
+        return {level: currentLevel, expToLevelUp: reflectedExp * -1 };
     } else {
-        return reflectExp(currentLevel + 1, exp);
+        return reflectExp(currentLevel + 1, reflectedExp);
     }
 };
 
@@ -34,3 +34,4 @@ const getExpForLevelUp = (currentLevel: number): number => {
 const result: BlitzProg = reflectExp(level, EXP_OF_PUZZLE * N, xp);
 console.log(result.level);
 console.log(result.expToLevelUp);
+

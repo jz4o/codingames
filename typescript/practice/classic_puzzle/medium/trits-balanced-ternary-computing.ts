@@ -17,14 +17,15 @@ const balanceToDecimal = (balance: string): number => {
 };
 
 const decimalToBalance = (decimal: number): string => {
+    let tempDecimal: number = decimal;
     const digits: string[] = [];
-    while (decimal !== 0) {
-        let mod: string = (decimal % BASE_NUMBER).toString();
-        decimal = Math.trunc(decimal / BASE_NUMBER);
+    while (tempDecimal !== 0) {
+        let mod: string = (tempDecimal % BASE_NUMBER).toString();
+        tempDecimal = Math.trunc(tempDecimal / BASE_NUMBER);
 
         if (mod === (BASE_NUMBER - 1).toString()) {
             mod = 'T';
-            decimal++;
+            tempDecimal++;
         }
 
         digits.unshift(mod);
@@ -55,3 +56,4 @@ const resultBalance: string = decimalToBalance(resultDecimal);
 
 // console.log('11T');
 console.log(resultBalance);
+

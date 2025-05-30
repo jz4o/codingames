@@ -19,14 +19,15 @@ const alphaToInt = (alpha: string): number => {
 };
 
 const intToAlpha = (alphaInt: number): string => {
+    let tempAlphaInt: number = alphaInt;
     let result: string = '';
-    while (alphaInt > 0) {
-        let i = alphaInt % ALPHAS.length;
+    while (tempAlphaInt > 0) {
+        let i = tempAlphaInt % ALPHAS.length;
         if (i === 0) {
-           i = ALPHAS.length;
-            alphaInt--;
+            i = ALPHAS.length;
+            tempAlphaInt--;
         }
-        alphaInt = alphaInt > ALPHAS.length ? Math.trunc(alphaInt / ALPHAS.length) : 0;
+        tempAlphaInt = tempAlphaInt > ALPHAS.length ? Math.trunc(tempAlphaInt / ALPHAS.length) : 0;
 
         result= `${ALPHAS.charAt(i - 1)}${result}`;
     }
@@ -61,3 +62,4 @@ const newFg: string = newAlpha.substring(2);
 
 // console.log('AA-000-AA');
 console.log(`${newAd}-${newCde}-${newFg}`);
+

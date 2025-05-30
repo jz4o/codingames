@@ -21,19 +21,13 @@ const getIndexes = (str: string, searchArray: string[]): number[] => {
 };
 
 const partShift = (str: string, indexes: number[]): string => {
-    indexes.forEach((indexInStr, index) => {
-        if (index === indexes.length - 1) {
-            return;
-        }
-
+    return indexes.slice(0, -1).reduce((result, indexInStr, index) => {
         const nextIndexInStr: number = indexes[index + 1];
         const left: number = Math.min(indexInStr, nextIndexInStr);
         const right: number = Math.max(indexInStr, nextIndexInStr);
 
-        str = str.replace(new RegExp(`(.{${left}})(.)(.{${right - left - 1}})(.)`), '$1$4$3$2');
-    });
-
-    return str;
+        return result.replace(new RegExp(`(.{${left}})(.)(.{${right - left - 1}})(.)`), '$1$4$3$2');
+    }, str);
 };
 
 const partUnshift = (str: string, indexes: number[]): string => {
@@ -41,17 +35,15 @@ const partUnshift = (str: string, indexes: number[]): string => {
 };
 
 const partReverse = (str: string, indexes: number[]): string => {
-    while (indexes.length >= 2) {
+    return [...Array(Math.floor(indexes.length / 2)).keys()].reduce(result => {
         const shiftIndex: number = indexes.shift();
         const popIndex: number = indexes.pop();
 
         const left: number = Math.min(shiftIndex, popIndex);
         const right: number = Math.max(shiftIndex, popIndex);
 
-        str = str.replace(new RegExp(`(.{${left}})(.)(.{${right - left - 1}})(.)`), '$1$4$3$2');
-    }
-
-    return str;
+        return result.replace(new RegExp(`(.{${left}})(.)(.{${right - left - 1}})(.)`), '$1$4$3$2');
+    }, str);
 };
 
 // # reverse word length
@@ -73,3 +65,4 @@ tempPhrase = partReverse(tempPhrase, getIndexes(tempPhrase, getAlphabetsEveryBy(
 
 // console.log('answer');
 console.log(tempPhrase);
+

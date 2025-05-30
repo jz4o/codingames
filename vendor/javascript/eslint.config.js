@@ -53,7 +53,6 @@ export default [
       'yoda': 'off',
 
       // below temporary ignore rules.
-      'no-param-reassign': 'off',
       'no-shadow': 'off',
       'no-unmodified-loop-condition': 'off',
       'no-useless-assignment': 'off',

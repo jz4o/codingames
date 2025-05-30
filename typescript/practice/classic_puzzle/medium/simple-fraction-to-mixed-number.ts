@@ -4,13 +4,16 @@
  **/
 
 const gcd = (x: number, y: number): number => {
+    let tempX: number = x;
+    let tempY: number = y;
+
     let tmp: number;
-    while ((tmp = x % y) !== 0) {
-        x = y;
-        y = tmp;
+    while ((tmp = tempX % tempY) !== 0) {
+        tempX = tempY;
+        tempY = tmp;
     }
 
-    return y;
+    return tempY;
 };
 
 const N: number = parseInt(readline());
@@ -48,3 +51,4 @@ for (let i = 0; i < N; i++) {
     // console.log('answer');
     console.log(result || '0');
 }
+

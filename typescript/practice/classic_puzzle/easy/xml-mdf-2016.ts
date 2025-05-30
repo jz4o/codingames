@@ -29,7 +29,7 @@ while (sequenceChars.length > 0) {
 let maximumValueKey: string;
 let maximumValue: number = 0;
 Object.keys(depths).forEach(key => {
-    const sum: number = depths[key].reduce((sum, keyDepth) => sum += 1 / keyDepth, 0);
+    const sum: number = depths[key].reduce((sum, keyDepth) => sum + 1 / keyDepth, 0);
     if (maximumValue < sum) {
         maximumValueKey = key;
         maximumValue = sum;

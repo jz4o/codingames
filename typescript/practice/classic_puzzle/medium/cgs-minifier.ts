@@ -19,26 +19,28 @@ const CODE_POINT_A: number = 97; // 'a'
 const variables: {[key: string]: string} = {};
 const characters: string[] = [];
 const replacedCgsContents: string[] = cgsContents.map(cgsContent => {
+    let tempCgsContent: string = cgsContent;
+
     // replace variable part
-    (cgsContent.match(/\$.+?\$/g) || []).forEach(variable => {
+    (tempCgsContent.match(/\$.+?\$/g) || []).forEach(variable => {
         if (!(variable in variables)) {
             variables[variable] = `$${String.fromCharCode(CODE_POINT_A + Object.keys(variables).length)}$`;
         }
 
         const escapedVariable: string = variable.replace(/\$/g, '\\$');
-        cgsContent = cgsContent.replace(new RegExp(escapedVariable, 'g'), variables[variable]);
+        tempCgsContent = tempCgsContent.replace(new RegExp(escapedVariable, 'g'), variables[variable]);
     });
 
     // replace character part
-    (cgsContent.match(/'.+'/) || []).forEach(character => {
-        cgsContent = cgsContent.replace(new RegExp(character, 'g'), `$${characters.length}`);
+    (tempCgsContent.match(/'.+'/) || []).forEach(character => {
+        tempCgsContent = tempCgsContent.replace(new RegExp(character, 'g'), `$${characters.length}`);
         characters.push(character);
     });
 
     // replace spaces
-    cgsContent = cgsContent.replace(/\s/g, '');
+    tempCgsContent = tempCgsContent.replace(/\s/g, '');
 
-    return cgsContent;
+    return tempCgsContent;
 });
 
 // restore character part
@@ -48,3 +50,4 @@ const result: string = characters.reduce((result, character, index) => {
 
 // console.log('minified all CGS content');
 console.log(result);
+
