@@ -44,6 +44,7 @@ export default [
       'no-negated-condition': 'off',
       'no-plusplus': 'off',
       'no-return-assign': 'off',
+      'no-shadow': 'off',
       'no-ternary': 'off',
       'no-undefined': 'off',
       'no-underscore-dangle': 'off',
@@ -53,7 +54,6 @@ export default [
       'yoda': 'off',
 
       // below temporary ignore rules.
-      'no-shadow': 'off',
       'no-unmodified-loop-condition': 'off',
       'no-useless-assignment': 'off',
       'no-useless-return': 'off',
