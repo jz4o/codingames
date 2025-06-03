@@ -27,24 +27,22 @@ class MiniSudoku {
 
                     const verticalLine: number[] = cloneSquare.map(row => row[columnIndex]);
 
-                    const littleSquareRows: number[] = rowIndex < Math.trunc(cloneSquare.length / 2) ? [0, 1] : [2, 3];
-                    const littleSquareColumns: number[] = columnIndex < Math.trunc(row.length / 2) ? [0, 1] : [2, 3];
-                    const littleSquare: number[] = littleSquareRows.reduce((littleSquare, littleSquareRow) => {
-                        littleSquareColumns.forEach(littleSquareColumn => littleSquare.push(cloneSquare[littleSquareRow][littleSquareColumn]));
-                        return littleSquare;
-                    }, []);
+                    const littleSquareRows: number[] = rowIndex < Math.floor(cloneSquare.length / 2) ? [0, 1] : [2, 3];
+                    const littleSquareColumns: number[] = columnIndex < Math.floor(row.length / 2) ? [0, 1] : [2, 3];
+                    const littleSquare: number[] = littleSquareRows.flatMap(littleSquareRow => {
+                        return littleSquareColumns.map(littleSquareColumn => {
+                            return cloneSquare[littleSquareRow][littleSquareColumn];
+                        });
+                    });
 
                     const candidate: number[] = [1, 2, 3, 4]
-                        .filter(num => row.indexOf(num) === -1)
-                        .filter(num => verticalLine.indexOf(num) === -1)
-                        .filter(num => littleSquare.indexOf(num) === -1);
-
-                    if (candidate.length === 1) {
-                        const value: number = candidate.pop();
-                        cloneSquare[rowIndex][columnIndex] = value;
-
-                        isChanged = true;
+                        .filter(num => ![...row, ...verticalLine, ...littleSquare].includes(num));
+                    if (candidate.length !== 1) {
+                        return;
                     }
+
+                    cloneSquare[rowIndex][columnIndex] = candidate[0];
+                    isChanged = true;
                 });
             });
         }
