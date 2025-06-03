@@ -54,7 +54,6 @@ export default [
       'yoda': 'off',
 
       // below temporary ignore rules.
-      'no-unmodified-loop-condition': 'off',
       'no-useless-assignment': 'off',
       'no-useless-return': 'off',
       'no-use-before-define': 'off',
