@@ -43,7 +43,7 @@ method_names = %i[rtl btt ltr ttb]
   folding_note = method.call folding_note
 end
 
-result = folding_note.flatten.join
+result = folding_note.join
 
 # puts "decoded note"
 puts result

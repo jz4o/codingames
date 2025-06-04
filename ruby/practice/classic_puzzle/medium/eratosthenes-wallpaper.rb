@@ -19,7 +19,7 @@ while wallpaper_lines.size < height
     wallpaper_lines << wallpaper_line.ljust(width, '-')
     wallpaper_lines.fill '-' * width, wallpaper_lines.size...height
   elsif wallpaper_line.length + expression.length + (wallpaper_line.empty? ? 0 : 1) <= width
-    wallpaper_line += "#{wallpaper_line.empty? ? '' : ','}#{expression}"
+    wallpaper_line += "#{',' unless wallpaper_line.empty?}#{expression}"
   else
     wallpaper_lines << wallpaper_line.ljust(width, '-')
     wallpaper_line = expression

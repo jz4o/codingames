@@ -26,7 +26,7 @@ transposed_lines = lines.transpose
 
 result = []
 transposed_lines.each_slice(3) do |line|
-  result << DIGIT_NUMS.index(line.flatten.join)
+  result << DIGIT_NUMS.index(line.join)
 end
 
 # puts "number"
