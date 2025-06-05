@@ -103,13 +103,9 @@ const results: string[] = inputRows.map(([parent1, parent2, child]) => {
     const parentBlood2: Blood = parent2 === '?' ? null : new Blood(parent2);
     const childBlood: Blood = child === '?' ? null : new Blood(child);
 
-    let predictedBloodTypes: string[] = [];
-    if (childBlood === null) {
-        predictedBloodTypes = Blood.predictChildBloodStrings(parentBlood1, parentBlood2);
-    } else {
-        const parentBlood: Blood = parentBlood1 || parentBlood2;
-        predictedBloodTypes = Blood.predictParentBloodStrings(parentBlood, childBlood);
-    }
+    const predictedBloodTypes: string[] = childBlood === null
+        ? Blood.predictChildBloodStrings(parentBlood1, parentBlood2)
+        : Blood.predictParentBloodStrings(parentBlood1 || parentBlood2, childBlood);
 
     return predictedBloodTypes.length === 0 ? 'impossible' : predictedBloodTypes.join(' ');
 });
@@ -118,3 +114,4 @@ const results: string[] = inputRows.map(([parent1, parent2, child]) => {
 results.forEach(result => {
     console.log(result);
 });
+

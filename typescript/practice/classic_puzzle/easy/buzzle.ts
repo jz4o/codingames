@@ -60,7 +60,7 @@ const results: string[] = rangeArrayFromTo(a, b).map(i => {
 
 
     // level 4
-    let previousTempI: number = i;
+    let previousTempI: number;
     let tempI: number = i;
     do {
         nums.some(num => {
@@ -81,3 +81,4 @@ const results: string[] = rangeArrayFromTo(a, b).map(i => {
 results.forEach(result => {
     console.log(result);
 });
+
