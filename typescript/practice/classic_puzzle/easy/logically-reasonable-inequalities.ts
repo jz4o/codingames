@@ -26,25 +26,19 @@ rows.forEach(row => {
 
 const temps: string[][] = Object.keys(inheritances).map(k => [k]);
 let isBreak: boolean = false;
-while (temps.length > 0) {
+while (temps.length > 0 && !isBreak) {
     const temp: string[] = temps.pop();
 
     const lastElement: string = temp[temp.length - 1];
-    (inheritances[lastElement] || []).forEach(inheritanceChild => {
+    isBreak = (inheritances[lastElement] || []).some(inheritanceChild => {
         temps.push([...temp, inheritanceChild]);
 
-        if (temp.includes(inheritanceChild)) {
-            isBreak = true;
-            return;
-        }
+        return temp.includes(inheritanceChild);
     });
-
-    if (isBreak) {
-        break;
-    }
 }
 
 const result: string = temps.length === 0 ? 'consistent' : 'contradiction';
 
 // console.log('consistent/contradiction');
 console.log(result);
+
