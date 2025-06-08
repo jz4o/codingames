@@ -10,6 +10,8 @@ const rhs: string = readline();
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
+const BASE_NUMBER: number = 3;
+
 const balanceToDecimal = (balance: string): number => {
     return balance.split('').reverse().reduce((sum, i, index) => {
         return sum + (i === 'T' ? -1 : parseInt(i)) * Math.pow(BASE_NUMBER, index);
@@ -33,8 +35,6 @@ const decimalToBalance = (decimal: number): string => {
 
     return digits.length === 0 ? '0' : digits.join('');
 };
-
-const BASE_NUMBER: number = 3;
 
 const decimalLhs: number = balanceToDecimal(lhs);
 const decimalRhs: number = balanceToDecimal(rhs);

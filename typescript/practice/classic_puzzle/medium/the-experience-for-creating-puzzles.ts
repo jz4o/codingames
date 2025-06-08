@@ -10,12 +10,16 @@ const N: number = parseInt(readline());
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
 
-const EXP_OF_PUZZLE: number = 300;
-
 interface BlitzProg {
     level: number;
     expToLevelUp: number;
 }
+
+const EXP_OF_PUZZLE: number = 300;
+
+const getExpForLevelUp = (currentLevel: number): number => {
+    return Math.floor(currentLevel * Math.sqrt(currentLevel) * 10);
+};
 
 const reflectExp = (currentLevel: number, exp: number, levelUpExp: number = null): BlitzProg => {
     const reflectedExp = exp - (levelUpExp || getExpForLevelUp(currentLevel));
@@ -24,10 +28,6 @@ const reflectExp = (currentLevel: number, exp: number, levelUpExp: number = null
     } else {
         return reflectExp(currentLevel + 1, reflectedExp);
     }
-};
-
-const getExpForLevelUp = (currentLevel: number): number => {
-    return Math.floor(currentLevel * Math.sqrt(currentLevel) * 10);
 };
 
 // console.log('answer');

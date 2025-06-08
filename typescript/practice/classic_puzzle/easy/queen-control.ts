@@ -16,6 +16,12 @@ for (let i = 0; i < 8; i++) {
 const EMPTY: string = '.';
 const QUEEN: string = 'Q';
 
+const countLineControlledSquare: (squares, queenColor: string) => number = (squares, queenColor: string): number => {
+    const pieceIndex: number = squares.findIndex(square => square !== EMPTY);
+
+    return pieceIndex + (squares[pieceIndex] === queenColor ? 0 : 1);
+};
+
 const countControlledSquare: (board: string[][], queenY: number, queenX: number, queenColor: string) => number
     = (board: string[][], queenY: number, queenX: number, queenColor: string): number => {
 
@@ -51,12 +57,6 @@ const countControlledSquare: (board: string[][], queenY: number, queenX: number,
         .reduce((sum, count) => sum + count, 0);
 };
 
-const countLineControlledSquare: (squares, queenColor: string) => number = (squares, queenColor: string): number => {
-    const pieceIndex: number = squares.findIndex(square => square !== EMPTY);
-
-    return pieceIndex + (squares[pieceIndex] === queenColor ? 0 : 1);
-};
-
 const c: string = color.charAt(0);
 
 const board: string[][] = lines.map(line => `${c}${line}${c}`.split(''));
@@ -70,3 +70,4 @@ const result: string = countControlledSquare(board, queenY, queenX, c).toString(
 
 // console.log('answer');
 console.log(result);
+

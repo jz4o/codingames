@@ -14,6 +14,14 @@ const direction: string = inputs2[1];
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
+const rangeArrayFromTo: (from: number, to: number, step?: number) => number[] = (from: number, to: number, step: number = 1): number[] => {
+    return [...Array(Math.floor((to - from + step) / step)).keys()].map(i => from + i * step);
+};
+
+const transpose: <T>(array: T[][]) => T[][] = <T>(array: T[][]): T[][] => {
+    return array[0].map((_value, index) => array.map(row => row[index]));
+};
+
 class NumberSpiral {
     static create: (size: number, vertPos: string, horPos: string, order: string, direction: string) => number[][] = (size: number, vertPos: string, horPos: string, order: string, direction: string): number[][] => {
         let numberSpiral: number[][] = this.createFixedNumberSpiral(size);
@@ -136,14 +144,6 @@ class NumberSpiral {
     };
 }
 
-const rangeArrayFromTo: (from: number, to: number, step?: number) => number[] = (from: number, to: number, step: number = 1): number[] => {
-    return [...Array(Math.floor((to - from + step) / step)).keys()].map(i => from + i * step);
-};
-
-const transpose: <T>(array: T[][]) => T[][] = <T>(array: T[][]): T[][] => {
-    return array[0].map((_value, index) => array.map(row => row[index]));
-};
-
 const numberSpiral: number[][] = NumberSpiral.create(n, vertPos, horPos, order, direction);
 
 const results: string[] = numberSpiral.map(row => row.join('\t'));
@@ -152,3 +152,4 @@ const results: string[] = numberSpiral.map(row => row.join('\t'));
 results.forEach(result => {
     console.log(result);
 });
+

@@ -18,42 +18,6 @@ for (let i = 0; i < n; i++) {
 //     console.log('answer');
 // }
 
-class Tree {
-    root: Node;
-
-    constructor(values: number[]) {
-        const dupValues: number[] = [...values];
-        this.root = new Node(dupValues.shift());
-
-        dupValues.forEach(value => this.root.addNode(value));
-    }
-
-    preOrderValues: () => number[] = (): number[] => {
-        return this.root.preOrderValues();
-    };
-
-    inOrderValues: () => number[] = (): number[] => {
-        return this.root.inOrderValues();
-    };
-
-    postOrderValues: () => number[] = (): number[] => {
-        return this.root.postOrderValue();
-    };
-
-    levelOrderValues: () => number[] = (): number[] => {
-        const values: number[] = [];
-        let targetLevelNodes: Node[] = [this.root];
-        while (targetLevelNodes.length > 0) {
-            values.push(...targetLevelNodes.map(node => node.value));
-            targetLevelNodes = targetLevelNodes.flatMap(node => {
-                return [node.left, node.right].filter(child => child !== null);
-            });
-        }
-
-        return values;
-    };
-}
-
 class Node {
     value: number;
     left: Node;
@@ -105,6 +69,42 @@ class Node {
     };
 }
 
+class Tree {
+    root: Node;
+
+    constructor(values: number[]) {
+        const dupValues: number[] = [...values];
+        this.root = new Node(dupValues.shift());
+
+        dupValues.forEach(value => this.root.addNode(value));
+    }
+
+    preOrderValues: () => number[] = (): number[] => {
+        return this.root.preOrderValues();
+    };
+
+    inOrderValues: () => number[] = (): number[] => {
+        return this.root.inOrderValues();
+    };
+
+    postOrderValues: () => number[] = (): number[] => {
+        return this.root.postOrderValue();
+    };
+
+    levelOrderValues: () => number[] = (): number[] => {
+        const values: number[] = [];
+        let targetLevelNodes: Node[] = [this.root];
+        while (targetLevelNodes.length > 0) {
+            values.push(...targetLevelNodes.map(node => node.value));
+            targetLevelNodes = targetLevelNodes.flatMap(node => {
+                return [node.left, node.right].filter(child => child !== null);
+            });
+        }
+
+        return values;
+    };
+}
+
 const tree: Tree = new Tree(vis);
 
 const results: string[] = [
@@ -117,3 +117,4 @@ const results: string[] = [
 results.forEach(result => {
     console.log(result);
 });
+

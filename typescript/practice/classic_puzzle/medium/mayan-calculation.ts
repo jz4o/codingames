@@ -45,23 +45,45 @@ const sliceN = <T>(array: T[], sliceSize: number): T[][] => {
     return result;
 };
 
-const mayansToNum = (mayans: string[]): number => {
-    const mayanIndexes: number[] = sliceN(mayans, H).map(mayan => {
-        return asciiMayans.indexOf(mayan.join(''));
-    }).reverse();
+class MayanConverter {
+    asciiMayans: string[];
+    asciiMayanHeight: number;
+    asciiMayanWidth: number;
 
-    const num: number = mayanIndexes.reduce((sum, mayanIndex, index) => {
-        const radix: number = Math.pow(asciiMayans.length, index);
-        return sum + radix * mayanIndex;
-    }, 0);
+    constructor(asciiMayans: string[], asciiMayanHeight: number, asciiMayanWidth: number) {
+        this.asciiMayans = asciiMayans;
+        this.asciiMayanHeight = asciiMayanHeight;
+        this.asciiMayanWidth = asciiMayanWidth;
+    }
 
-    return num;
-};
+    mayansToNum: (mayans: string[]) => number = (mayans: string[]): number => {
+        const mayanIndexes: number[] = sliceN(mayans, this.asciiMayanHeight).map(mayan => {
+            return this.asciiMayans.indexOf(mayan.join(''));
+        }).reverse();
+
+        const num: number = mayanIndexes.reduce((sum, mayanIndex, index) => {
+            const radix: number = Math.pow(this.asciiMayans.length, index);
+            return sum + radix * mayanIndex;
+        }, 0);
+
+        return num;
+    };
+
+    numToMayans: (num: number) => string[] = (num: number): string[] => {
+        return num.toString(this.asciiMayans.length).split('').reduce((results, char) => {
+            const mayan: string = this.asciiMayans[parseInt(char, this.asciiMayans.length)];
+            results.push(...mayan.match(new RegExp(`.{${L}}`, 'g')));
+
+            return results;
+        }, []);
+    };
+}
 
 const asciiMayans: string[] = transpose(transposeAsciiMayans).map(line => line.join(''));
+const mayanConverter: MayanConverter = new MayanConverter(asciiMayans, H, L);
 
-const num1: number = mayansToNum(mayans1);
-const num2: number = mayansToNum(mayans2);
+const num1: number = mayanConverter.mayansToNum(mayans1);
+const num2: number = mayanConverter.mayansToNum(mayans2);
 
 let result: number;
 if (operation === '+') {
@@ -74,14 +96,10 @@ if (operation === '+') {
     result = Math.trunc(num1 / num2);
 }
 
-const results: string[] = result.toString(asciiMayans.length).split('').reduce((results, char) => {
-    const mayan: string = asciiMayans[parseInt(char, asciiMayans.length)];
-    results.push(...mayan.match(new RegExp(`.{${L}}`, 'g')));
-
-    return results;
-}, []);
+const results: string[] = mayanConverter.numToMayans(result);
 
 // console.log('result');
 results.forEach(result => {
     console.log(result);
 });
+

@@ -17,8 +17,17 @@ const sliceN = <T>(array: T[], sliceSize: number): T[][] => {
     return result;
 };
 
-const isEncodable = (str: string): boolean => {
-    return encode(str) && encode(str) !== str;
+const isDecodable = (encodedStr: string, originalStr: string): boolean => {
+    let tempEncodedStr: string = encodedStr;
+    let result: string = '';
+    while (tempEncodedStr.length !== 0) {
+        const char: string = tempEncodedStr[0];
+        const charGroup: string = tempEncodedStr.match(new RegExp(`^${char}+`)).toString();
+        tempEncodedStr = tempEncodedStr.substring(charGroup.length);
+        result += charGroup.length + char;
+    }
+
+    return result === originalStr;
 };
 
 const encode = (str: string): string | null => {
@@ -36,17 +45,8 @@ const encode = (str: string): string | null => {
     return isDecodable(result, str) ? result : null;
 };
 
-const isDecodable = (encodedStr: string, originalStr: string): boolean => {
-    let tempEncodedStr: string = encodedStr;
-    let result: string = '';
-    while (tempEncodedStr.length !== 0) {
-        const char: string = tempEncodedStr[0];
-        const charGroup: string = tempEncodedStr.match(new RegExp(`^${char}+`)).toString();
-        tempEncodedStr = tempEncodedStr.substring(charGroup.length);
-        result += charGroup.length + char;
-    }
-
-    return result === originalStr;
+const isEncodable = (str: string): boolean => {
+    return encode(str) && encode(str) !== str;
 };
 
 let result: string = s;

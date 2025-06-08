@@ -13,15 +13,15 @@ for (let i = 0; i < n; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const gcdFromArray: (numbers: number[]) => number = (numbers: number[]): number => {
-    return numbers.reduce((result, number) => gcd(result, number));
-};
-
 const gcd: (a: number, b: number) => number = (a: number, b: number): number => {
     const min: number = Math.min(a, b);
     const max: number = Math.max(a, b);
 
     return min === 0 ? max : gcd(min, max % min);
+};
+
+const gcdFromArray: (numbers: number[]) => number = (numbers: number[]): number => {
+    return numbers.reduce((result, number) => gcd(result, number));
 };
 
 const firstNumberIndex: number = lines.findIndex(line => line.match(/^\d+$/));
@@ -37,3 +37,4 @@ const result: string = `${fizz} ${buzz}`;
 
 // console.log('fizz buzz');
 console.log(result);
+

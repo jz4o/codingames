@@ -17,6 +17,10 @@ for (let i = 0; i < N; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
+const uniq: <T>(array: T[]) => T[] = <T>(array: T[]): T[] => {
+    return Array.from(new Set(array));
+};
+
 class Blood {
     type: string;
     rh: string;
@@ -93,10 +97,6 @@ class Blood {
         return candidateBloodStrings;
     };
 }
-
-const uniq: <T>(array: T[]) => T[] = <T>(array: T[]): T[] => {
-    return Array.from(new Set(array));
-};
 
 const results: string[] = inputRows.map(([parent1, parent2, child]) => {
     const parentBlood1: Blood = parent1 === '?' ? null : new Blood(parent1);

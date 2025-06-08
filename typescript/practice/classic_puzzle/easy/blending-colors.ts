@@ -22,6 +22,29 @@ for (let i = 0; i < P; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
+class Color {
+    static BLACK: Color = new Color(0, 0, 0);
+    static WHITE: Color = new Color(255, 255, 255);
+
+    r: number;
+    g: number;
+    b: number;
+
+    constructor(r: number, g: number, b: number) {
+        this.r = r;
+        this.g = g;
+        this.b = b;
+    }
+
+    isBlack: () => boolean = (): boolean => {
+        return [this.r, this.g, this.b].every(c => c === 0);
+    };
+
+    toString: () => string = (): string => {
+        return `(${this.r}, ${this.g}, ${this.b})`;
+    };
+}
+
 class Point {
     x: number;
     y: number;
@@ -54,29 +77,6 @@ class Point {
         const b: number = Math.round(this.colors.reduce((sum, c) => sum + c.b, 0) / this.colors.length);
 
         return new Color(r, g, b);
-    };
-}
-
-class Color {
-    static BLACK: Color = new Color(0, 0, 0);
-    static WHITE: Color = new Color(255, 255, 255);
-
-    r: number;
-    g: number;
-    b: number;
-
-    constructor(r: number, g: number, b: number) {
-        this.r = r;
-        this.g = g;
-        this.b = b;
-    }
-
-    isBlack: () => boolean = (): boolean => {
-        return [this.r, this.g, this.b].every(c => c === 0);
-    };
-
-    toString: () => string = (): string => {
-        return `(${this.r}, ${this.g}, ${this.b})`;
     };
 }
 
@@ -134,3 +134,4 @@ const results: string[] = points.map(point => point.color().toString());
 results.forEach(result => {
     console.log(result);
 });
+

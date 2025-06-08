@@ -12,6 +12,35 @@ for (let i = 0; i < 23; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
+const ROW_SIZE: number = 8;
+
+const zip: <T, U>(a: T[], b: U[]) => [T, U][] = <T, U>(a: T[], b: U[]): [T, U][] => {
+    const arraySize: number = Math.max(a.length, b.length);
+    return [...Array(arraySize).keys()].map(index => {
+        return [a[index], b[index]];
+    });
+};
+
+const rangeArrayFromTo = (from: number, to: number): number[] => {
+    return [...Array(to - from + 1).keys()].map(i => i + from);
+};
+
+const transpose = <T>(array: T[][]): T[][] => {
+    const rowSize: number = array.length;
+    const columnSize: number = array[0].length;
+
+    const result: T[][] = [];
+    rangeArrayFromTo(0, columnSize - 1).forEach(columnIndex => {
+        const transposedRow: T[] = [];
+        rangeArrayFromTo(0, rowSize - 1).forEach(rowIndex => {
+            transposedRow.push(array[rowIndex][columnIndex]);
+        });
+        result.push(transposedRow);
+    });
+
+    return result;
+};
+
 class DigitalNumber {
     bitsArray: number[];
 
@@ -63,34 +92,6 @@ class DigitalNumber {
     };
 }
 
-const zip: <T, U>(a: T[], b: U[]) => [T, U][] = <T, U>(a: T[], b: U[]): [T, U][] => {
-    const arraySize: number = Math.max(a.length, b.length);
-    return [...Array(arraySize).keys()].map(index => {
-        return [a[index], b[index]];
-    });
-};
-
-const rangeArrayFromTo = (from: number, to: number): number[] => {
-    return [...Array(to - from + 1).keys()].map(i => i + from);
-};
-
-const transpose = <T>(array: T[][]): T[][] => {
-    const rowSize: number = array.length;
-    const columnSize: number = array[0].length;
-
-    const result: T[][] = [];
-    rangeArrayFromTo(0, columnSize - 1).forEach(columnIndex => {
-        const transposedRow: T[] = [];
-        rangeArrayFromTo(0, rowSize - 1).forEach(rowIndex => {
-            transposedRow.push(array[rowIndex][columnIndex]);
-        });
-        result.push(transposedRow);
-    });
-
-    return result;
-};
-
-const ROW_SIZE: number = 8;
 const [digitalRows1, digitalRows2, digitalRows3]: string[][] = [...Array(3).keys()].map(i => {
     return rows.slice(i * ROW_SIZE, (i + 1) * ROW_SIZE);
 });
@@ -103,3 +104,4 @@ const result: string = digitalNumber.toString();
 
 // console.log('newScore');
 console.log(result);
+

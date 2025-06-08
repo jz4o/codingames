@@ -30,6 +30,25 @@ const rangeArrayFromTo: (from: number, to: number, step?: number) => number[] = 
     return [...Array(Math.floor((to - from + step) / step)).keys()].map(i => from + i * step);
 };
 
+const reverseStones: (linePositions: Position[], moveValue: string) => void = (linePositions: Position[], moveValue: string): void => {
+    const sameColorIndexes: number[] = linePositions.map((position, index) => position.value === moveValue ? index : null).filter(index => index !== null);
+    if (sameColorIndexes.length === 0) {
+        return;
+    }
+    const nearestSameColorIndex: number = sameColorIndexes[0];
+
+    const reversedValue: string = moveValue === WHITE ? BLACK : WHITE;
+
+    const reverseTargetPositions: Position[] = linePositions.slice(0, nearestSameColorIndex);
+    if (reverseTargetPositions.some(position => position.value !== reversedValue)) {
+        return;
+    }
+
+    reverseTargetPositions.forEach(position => {
+        position.value = moveValue;
+    });
+};
+
 const moveStone: (grid: Position[][], movePosition: Position) => void = (grid: Position[][], movePosition: Position): void => {
     const gridHeight: number = grid.length;
     const gridWidth: number = grid[0].length;
@@ -73,25 +92,6 @@ const moveStone: (grid: Position[][], movePosition: Position) => void = (grid: P
     reverseStones(topLeftPositions, movePosition.value);
 };
 
-const reverseStones: (linePositions: Position[], moveValue: string) => void = (linePositions: Position[], moveValue: string): void => {
-    const sameColorIndexes: number[] = linePositions.map((position, index) => position.value === moveValue ? index : null).filter(index => index !== null);
-    if (sameColorIndexes.length === 0) {
-        return;
-    }
-    const nearestSameColorIndex: number = sameColorIndexes[0];
-
-    const reversedValue: string = moveValue === WHITE ? BLACK : WHITE;
-
-    const reverseTargetPositions: Position[] = linePositions.slice(0, nearestSameColorIndex);
-    if (reverseTargetPositions.some(position => position.value !== reversedValue)) {
-        return;
-    }
-
-    reverseTargetPositions.forEach(position => {
-        position.value = moveValue;
-    });
-};
-
 const strGrid: string[][] = [
     Array(10).fill(WALL),
     ...rows.map(row => [WALL, ...row, WALL]),
@@ -127,3 +127,4 @@ if (grid[moveRow][moveColumn].value === EMPTY) {
 
 // console.log('answer');
 console.log(result);
+

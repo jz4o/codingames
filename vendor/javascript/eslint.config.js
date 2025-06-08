@@ -54,7 +54,6 @@ export default [
       'yoda': 'off',
 
       // below temporary ignore rules.
-      'no-use-before-define': 'off',
       'object-shorthand': 'off',
       'one-var': 'off',
       'operator-assignment': 'off',
