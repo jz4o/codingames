@@ -15,7 +15,7 @@ for (let i = 0; i < surfaceN; i++) {
     const landX: number = parseInt(inputs[0]); // X coordinate of a surface point. (0 to 6999)
     const landY: number = parseInt(inputs[1]); // Y coordinate of a surface point. By linking all the points together in a sequential fashion, you form the surface of Mars.
 
-    lands.push({landX: landX, landY: landY});
+    lands.push({ landX, landY });
 }
 
 // game loop

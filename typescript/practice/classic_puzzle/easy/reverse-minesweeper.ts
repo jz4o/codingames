@@ -41,12 +41,12 @@ rangeArrayFromTo(1, h).forEach(rowIndex => {
 
         const aroundPositions: Position[] = [
             { rowIndex: rowIndex - 1, columnIndex: columnIndex - 1 },
-            { rowIndex: rowIndex - 1, columnIndex: columnIndex },
+            { rowIndex: rowIndex - 1, columnIndex },
             { rowIndex: rowIndex - 1, columnIndex: columnIndex + 1 },
-            { rowIndex: rowIndex, columnIndex: columnIndex - 1 },
-            { rowIndex: rowIndex, columnIndex: columnIndex + 1 },
+            { rowIndex, columnIndex: columnIndex - 1 },
+            { rowIndex, columnIndex: columnIndex + 1 },
             { rowIndex: rowIndex + 1, columnIndex: columnIndex - 1 },
-            { rowIndex: rowIndex + 1, columnIndex: columnIndex },
+            { rowIndex: rowIndex + 1, columnIndex },
             { rowIndex: rowIndex + 1, columnIndex: columnIndex + 1 }
         ];
 
@@ -69,3 +69,4 @@ const results: string[] = grid.slice(1, -1).map(row => {
 results.forEach(result => {
     console.log(result);
 });
+

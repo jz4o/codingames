@@ -64,12 +64,7 @@ for (let i = 0; i < N; i++) {
     const arg1: string = inputs[1];
     const arg2: string = inputs[2];
 
-    const cell: Cell = {
-        operation: operation,
-        arg1: arg1,
-        arg2: arg2,
-        value: null
-    };
+    const cell: Cell = { operation, arg1, arg2, value: null };
 
     spreadSheet.addCell(cell);
 }

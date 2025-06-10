@@ -20,7 +20,7 @@ type Generation = {
 
 const generations: Generation[] = lines.map(line => {
     const level: number = line.split('').filter(c => c === '.').length;
-    return { level: level, name: line.slice(level) };
+    return { level, name: line.slice(level) };
 });
 
 const results: string[] = [];
@@ -40,3 +40,4 @@ while (generations.length !== 0) {
 results.forEach(result => {
     console.log(result);
 });
+

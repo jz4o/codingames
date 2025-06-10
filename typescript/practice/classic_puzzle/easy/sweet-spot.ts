@@ -83,7 +83,7 @@ const grid: Mass[][] = lines
     .map(line => `${'0'.repeat(3)}${line}${'0'.repeat(3)}`.split(''))
     .map((row, rowIndex) => {
         return row.map((value, columnIndex) => {
-            return { y: rowIndex, x: columnIndex, value: value, explosion: false };
+            return { y: rowIndex, x: columnIndex, value, explosion: false };
         });
     });
 
@@ -118,3 +118,4 @@ const results: string[] = grid.slice(3, -3).map(row => {
 results.forEach(result => {
     console.log(result);
 });
+

@@ -37,7 +37,7 @@ const enemies: Piece[] = chessBoard.flatMap((chessRow, rowIndex) => {
             return null;
         }
 
-        return { kind: kind, row: rowIndex, column: columnIndex };
+        return { kind, row: rowIndex, column: columnIndex };
     });
 }).filter(enemy => enemy);
 
@@ -79,3 +79,4 @@ const result: string = isCheck ? 'Check' : 'No Check';
 
 // console.log('Check/No Check');
 console.log(result);
+

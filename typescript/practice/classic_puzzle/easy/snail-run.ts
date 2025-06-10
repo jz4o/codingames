@@ -44,7 +44,7 @@ rows.forEach((row, rowIndex) => {
             const snail: Snail = {
                 num: v,
                 speed: speedSnails[v - 1],
-                position: position,
+                position,
                 goalTime: -1
             };
 
@@ -75,3 +75,4 @@ const result: string = winner.num.toString();
 
 // console.log('winner is number');
 console.log(result);
+

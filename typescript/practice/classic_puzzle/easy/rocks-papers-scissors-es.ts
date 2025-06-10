@@ -49,8 +49,8 @@ const playResults: PlayResult[] = as.map((a, index) => {
     const winCount: number = targetAs.slice(0, loseIndex).filter(a => a === RULE[hand].beats).length;
 
     return {
-        hand: hand,
-        winCount: winCount,
+        hand,
+        winCount,
         startIndex: index
     };
 });
@@ -73,3 +73,4 @@ const results: string[] = [
 results.forEach(result => {
     console.log(result);
 });
+

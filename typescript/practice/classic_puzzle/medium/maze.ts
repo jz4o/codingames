@@ -38,13 +38,13 @@ while (beCheckMasses.length > 0) {
         continue;
     }
 
-    checkedMasses.push({y: y, x: x});
+    checkedMasses.push({ y, x });
 
     const nearMasses: Mass[] = [];
-    nearMasses.push({y: y, x: x - 1});
-    nearMasses.push({y: y - 1, x: x});
-    nearMasses.push({y: y, x: x + 1});
-    nearMasses.push({y: y + 1, x: x});
+    nearMasses.push({ y, x: x - 1 });
+    nearMasses.push({ y: y - 1, x });
+    nearMasses.push({ y, x: x + 1 });
+    nearMasses.push({ y: y + 1, x });
 
     nearMasses.forEach(nearMass => {
         const mass: string = grid[nearMass.y][nearMass.x];

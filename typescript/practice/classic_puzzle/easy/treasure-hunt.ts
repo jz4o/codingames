@@ -31,7 +31,7 @@ const grid: Position[][] = rows
     .map(row => `${WALL}${row}${WALL}`)
     .map((row, rowIndex) => {
         return row.split('').map((value, columnIndex) => {
-            return { y: rowIndex, x: columnIndex, value: value };
+            return { y: rowIndex, x: columnIndex, value };
         });
     });
 
@@ -75,3 +75,4 @@ const result: number = amountOfGolds.reduce((max, amountOfGold) => Math.max(max,
 
 // console.log('answer');
 console.log(result);
+

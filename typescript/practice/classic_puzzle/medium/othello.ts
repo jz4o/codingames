@@ -99,7 +99,7 @@ const strGrid: string[][] = [
 ];
 const grid: Position[][] = strGrid.map((row, rowIndex) => {
     return row.map((value, columnIndex) => {
-        return { y: rowIndex, x: columnIndex, value: value };
+        return { y: rowIndex, x: columnIndex, value };
     });
 });
 

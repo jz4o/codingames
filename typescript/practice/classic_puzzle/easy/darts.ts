@@ -70,7 +70,7 @@ throwDatas.forEach(throwData => {
 
 const scoreRanking: Score[] = [];
 Object.keys(scoreBoard).forEach(name => {
-    scoreRanking.push({name: name, score: scoreBoard[name]});
+    scoreRanking.push({ name, score: scoreBoard[name] });
 });
 
 // score DESC, name index ASC

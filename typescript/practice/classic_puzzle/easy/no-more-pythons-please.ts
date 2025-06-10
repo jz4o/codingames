@@ -83,7 +83,7 @@ const snakes: Snake[] = tailPositions.map(tailPosition => {
         }
     }
 
-    return { partsSize: partsSize };
+    return { partsSize };
 });
 
 const maxSize: number = Math.max(...snakes.map(snake => snake.partsSize));
@@ -95,3 +95,4 @@ const results: [number, number] = [maxSize, maxSizeCount];
 results.forEach(result => {
     console.log(result);
 });
+

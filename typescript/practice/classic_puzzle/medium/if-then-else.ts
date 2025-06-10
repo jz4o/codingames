@@ -33,7 +33,7 @@ const stack: IndentCombination[] = [];
 
         indent--;
 
-        stack.push({ indent: indent, combination: value });
+        stack.push({ indent, combination: value });
     } else if (ifElement === 'else') {
         let value: number = 1;
         while (stack.length !== 0 && stack[stack.length - 1].indent === indent) {
@@ -50,3 +50,4 @@ const result: number = stack.reduce((result, indentCombination) => result * inde
 
 // console.log('answer');
 console.log(result);
+

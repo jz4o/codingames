@@ -44,7 +44,7 @@ const fight = (deck1: number[], deck2: number[], index: number = 0): FigthResult
 
     return {
         winner: deck1Card < deck2Card ? 'deck2' : 'deck1',
-        index: index
+        index
     };
 };
 
@@ -67,3 +67,4 @@ try {
 
 // console.log('PAT');
 console.log(result);
+

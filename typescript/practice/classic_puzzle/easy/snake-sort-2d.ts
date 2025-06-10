@@ -23,7 +23,7 @@ type Apple = {
     columnCondition: number
 };
 
-const apples: Apple[] = inputRows.map(([name, r, c]) => ({ name: name, row: r, column: c, columnCondition: null}));
+const apples: Apple[] = inputRows.map(([name, r, c]) => ({ name, row: r, column: c, columnCondition: null}));
 
 const appleRows: number[] = Array.from(new Set(apples.map(apple => apple.row))).sort((a, b) => a - b);
 apples.forEach(apple => apple.columnCondition = appleRows.indexOf(apple.row) % 2 === 0 ? apple.column : -apple.column);
@@ -40,3 +40,4 @@ const result: string = sortedApples.map(apple => apple.name).join(',');
 
 // console.log('UNKNOWN');
 console.log(result);
+

@@ -24,11 +24,7 @@ const records: RecordObject[] = rs.map(r => {
     const [num, distanceStr, timestampStr]: string[] = r.split(' ');
     const [distance, timestamp]: number[] = [distanceStr, timestampStr].map(elm => parseInt(elm));
 
-    return {
-        num: num,
-        distance: distance,
-        timestamp: timestamp
-    };
+    return { num, distance, timestamp };
 });
 
 const results: string[] = [...Array(records.length - 1).keys()].map(index => {
@@ -59,3 +55,4 @@ if (results.length === 0) {
 results.forEach(result => {
     console.log(result);
 });
+
