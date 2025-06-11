@@ -48,13 +48,13 @@ export default [
       'no-ternary': 'off',
       'no-undefined': 'off',
       'no-underscore-dangle': 'off',
+      'one-var': ['off', 'never'],
       'require-unicode-regexp': 'off',
       'semi': ['error', 'always'],
       'sort-keys': 'off',
       'yoda': 'off',
 
       // below temporary ignore rules.
-      'one-var': 'off',
       'operator-assignment': 'off',
       'prefer-arrow-callback': 'off',
       'prefer-destructuring': 'off',
