@@ -53,7 +53,7 @@ const alphaInt: number = alphaToInt(alpha);
 cde = cde + n - 1;
 
 const carry: number = Math.trunc(cde / 999);
-cde = cde % 999;
+cde %= 999;
 
 const newAlpha = intToAlpha(alphaInt + carry);
 const newAd = newAlpha.substring(0, 2);

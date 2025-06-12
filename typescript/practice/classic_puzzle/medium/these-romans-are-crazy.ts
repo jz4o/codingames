@@ -30,7 +30,7 @@ class Roman {
         let tempArabia: number = arabia;
         const inefficientRoman: string = VALUES.reduce((result, [value, roman]) => {
             const romanCount: number = Math.floor(tempArabia / value);
-            tempArabia = tempArabia % value;
+            tempArabia %= value;
 
             return result + roman.repeat(romanCount);
         }, '');
@@ -78,3 +78,4 @@ const arabia2: number = Roman.toArabia(rom2);
 const result: string = Roman.fromArabia(arabia1 + arabia2);
 
 console.log(result);
+

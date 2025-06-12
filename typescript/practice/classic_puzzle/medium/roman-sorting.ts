@@ -44,7 +44,7 @@ class ArabiaRoman {
         let tempArabia: number = arabia;
         const inefficientRoman: string = VALUES.reduce((result, [value, roman]) => {
             const romanCount: number = Math.floor(tempArabia / value);
-            tempArabia = tempArabia % value;
+            tempArabia %= value;
 
             return result + roman.repeat(romanCount);
         }, '');
@@ -63,3 +63,4 @@ const result: string = xs.sort((a, b) => ArabiaRoman.toRoman(a) > ArabiaRoman.to
 
 // console.log('50 60 40');
 console.log(result);
+

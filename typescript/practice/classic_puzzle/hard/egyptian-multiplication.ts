@@ -22,7 +22,7 @@ results.push(`${high} * ${low}`);
 let addNums: string = '';
 while (low !== 0) {
     if (low % 2 === 0) {
-        high = high * 2;
+        high *= 2;
         low = Math.trunc(low / 2);
     } else {
         addNums = `${addNums} + ${high}`;
@@ -40,3 +40,4 @@ results.push(`= ${a * b}`);
 results.forEach(result => {
     console.log(result);
 });
+
