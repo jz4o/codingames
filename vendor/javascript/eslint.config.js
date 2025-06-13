@@ -55,7 +55,6 @@ export default [
       'yoda': 'off',
 
       // below temporary ignore rules.
-      'prefer-arrow-callback': 'off',
       'prefer-destructuring': 'off',
       'prefer-exponentiation-operator': 'off',
       'prefer-named-capture-group': 'off',
