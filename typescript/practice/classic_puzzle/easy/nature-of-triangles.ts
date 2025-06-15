@@ -6,16 +6,13 @@
 const n: number = parseInt(readline());
 const inputRows: [string, number, number, string, number, number, string, number, number][] = [];
 for (let i = 0; i < n; i++) {
-    const inputs: string[] = readline().split(' ');
-    const A: string = inputs[0];
-    const xA: number = parseInt(inputs[1]);
-    const yA: number = parseInt(inputs[2]);
-    const B: string = inputs[3];
-    const xB: number = parseInt(inputs[4]);
-    const yB: number = parseInt(inputs[5]);
-    const C: string = inputs[6];
-    const xC: number = parseInt(inputs[7]);
-    const yC: number = parseInt(inputs[8]);
+    const [A, xAStr, yAStr, B, xBStr, yBStr, C, xCStr, yCStr]: string[] = readline().split(' ');
+    const xA: number = parseInt(xAStr);
+    const yA: number = parseInt(yAStr);
+    const xB: number = parseInt(xBStr);
+    const yB: number = parseInt(yBStr);
+    const xC: number = parseInt(xCStr);
+    const yC: number = parseInt(yCStr);
 
     inputRows.push([A, xA, yA, B, xB, yB, C, xC, yC]);
 }
@@ -92,3 +89,4 @@ const results: string[] = inputRows.map(([a, xA, yA, b, xB, yB, c, xC, yC]) => {
 results.forEach(result => {
     console.log(result);
 });
+

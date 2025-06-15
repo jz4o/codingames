@@ -3,15 +3,14 @@
  * the standard input according to the problem statement.
  **/
 
-const inputs: string[] = readline().split(' ');
-const W: number = parseInt(inputs[0]);
-const H: number = parseInt(inputs[1]);
+const [wStr, hStr]: string[] = readline().split(' ');
+const W: number = parseInt(wStr);
+const H: number = parseInt(hStr);
 const N: number = parseInt(readline());
 const inputRows: [string, number][] = [];
 for (let i = 0; i < N; i++) {
-    const inputs: string[] = readline().split(' ');
-    const S: string = inputs[0];
-    const P: number = parseInt(inputs[1]);
+    const [S, pStr]: string[] = readline().split(' ');
+    const P: number = parseInt(pStr);
     inputRows.push([S, P]);
 }
 
@@ -61,3 +60,4 @@ const results: string[] = grid.map(row => row.join(''));
 results.forEach(result => {
     console.log(result);
 });
+

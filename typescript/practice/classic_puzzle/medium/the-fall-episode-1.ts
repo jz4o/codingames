@@ -33,9 +33,9 @@ const PANEL_DESTINATION: {[key: string]: number[]} = {
 // game loop
 let loopInputs;
 while ((loopInputs = readline().split(' ')).length !== 0) {
-    const XI: number = parseInt(loopInputs[0]);
-    const YI: number = parseInt(loopInputs[1]);
-    const POS: string = loopInputs[2];
+    const [xiStr, yiStr, POS]: string[] = loopInputs;
+    const XI: number = parseInt(xiStr);
+    const YI: number = parseInt(yiStr);
 
     // Write an action using console.log()
     // To debug: console.error('Debug messages...');

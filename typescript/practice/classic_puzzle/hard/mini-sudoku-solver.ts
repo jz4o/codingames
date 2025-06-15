@@ -41,7 +41,8 @@ class MiniSudoku {
                         return;
                     }
 
-                    cloneSquare[rowIndex][columnIndex] = candidate[0];
+                    const [value]: number[] = candidate;
+                    cloneSquare[rowIndex][columnIndex] = value;
                     isChanged = true;
                 });
             });

@@ -22,8 +22,8 @@ const sliceN = <T>(array: T[], sliceSize: number): T[][] => {
 
 let binaries: string = '';
 const validFlag = sliceN(ENCRYPT.split(' '), 2).every(array => {
-    const binary: string = array[0];
-    const count: number = (array[1] || '').length;
+    const [binary, countStr]: string[] = array;
+    const count: number = (countStr || '').length;
 
     if (!['0', '00'].includes(binary) || count === 0) {
         return false;

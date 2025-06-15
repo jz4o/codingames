@@ -26,9 +26,12 @@ for (let i = 0; i < nbElevators; i++) {
 // game loop
 let loopInputs: string[];
 while ((loopInputs = readline().split(' ')).length !== 0) {
-    const cloneFloor: number = parseInt(loopInputs[0]); // floor of the leading clone
-    const clonePos: number = parseInt(loopInputs[1]); // position of the leading clone on its floor
-    const direction: string = loopInputs[2]; // direction of the leading clone: LEFT or RIGHT
+    // direction of the leading clone: LEFT or RIGHT
+    // floor of the leading clone
+    // position of the leading clone on its floor
+    const [cloneFloorStr, clonePosStr, direction]: string[] = loopInputs;
+    const cloneFloor: number = parseInt(cloneFloorStr);
+    const clonePos: number = parseInt(clonePosStr);
 
     // Write an action using console.log()
     // To debug: console.error('Debug messages...');

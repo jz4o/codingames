@@ -8,9 +8,7 @@ for (let i = 0; i < 8; i++) {
     const row: string = readline();
     rows.push(row);
 }
-const inputs: string[] = readline().split(' ');
-const colour: string = inputs[0];
-const move: string = inputs[1];
+const [colour, move]: string[] = readline().split(' ');
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
@@ -35,7 +33,7 @@ const reverseStones: (linePositions: Position[], moveValue: string) => void = (l
     if (sameColorIndexes.length === 0) {
         return;
     }
-    const nearestSameColorIndex: number = sameColorIndexes[0];
+    const [nearestSameColorIndex]: number[] = sameColorIndexes;
 
     const reversedValue: string = moveValue === WHITE ? BLACK : WHITE;
 

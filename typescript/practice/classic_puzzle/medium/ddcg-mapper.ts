@@ -8,9 +8,8 @@ const N: number = parseInt(readline());
 const patterns: number[] = [];
 const tempos: number[] = [];
 for (let i = 0; i < N; i++) {
-    const inputs: string[] = readline().split(' ');
-    const pattern: string = inputs[0];
-    const tempo: number = parseInt(inputs[1]);
+    const [pattern, tempoStr]: string[] = readline().split(' ');
+    const tempo: number = parseInt(tempoStr);
 
     patterns.push(parseInt(pattern.replace(/X/g, '1'), 2));
     tempos.push(tempo);

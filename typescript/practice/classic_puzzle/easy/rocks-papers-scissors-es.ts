@@ -55,13 +55,13 @@ const playResults: PlayResult[] = as.map((a, index) => {
     };
 });
 
-const playResult: PlayResult = playResults.sort((a, b) => {
+const [playResult]: PlayResult[] = playResults.sort((a, b) => {
     if (a.winCount !== b.winCount) {
         return b.winCount - a.winCount;
     }
 
     return a.startIndex - b.startIndex;
-})[0];
+});
 
 const results: string[] = [
     playResult.hand,

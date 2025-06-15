@@ -6,10 +6,8 @@
 const N: number = parseInt(readline());
 const inputRows: [string, string, number][] = [];
 for (let i = 0; i < N; i++) {
-    const inputs: string[] = readline().split(' ');
-    const plate: string = inputs[0];
-    const radarname: string = inputs[1];
-    const timestamp: number = parseInt(inputs[2]);
+    const [plate, radarname, timestampStr]: string[] = readline().split(' ');
+    const timestamp: number = parseInt(timestampStr);
 
     inputRows.push([plate, radarname, timestamp]);
 }
@@ -76,3 +74,4 @@ plates.forEach(plate => {
 results.forEach(result => {
     console.log(result);
 });
+

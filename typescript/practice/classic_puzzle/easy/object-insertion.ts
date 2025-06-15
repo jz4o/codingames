@@ -62,7 +62,7 @@ const results: string[] = [];
 
 results.push(putablePoints.length.toString());
 if (putablePoints.length === 1) {
-    const putablePoint: Point = putablePoints[0];
+    const [putablePoint]: Point[] = putablePoints;
 
     const insertedGrid: string[][] = grid.map(row => [...row]);
     objectPartsPoints.forEach(objectPartsPoint => {
@@ -79,3 +79,4 @@ if (putablePoints.length === 1) {
 results.forEach(result => {
     console.log(result);
 });
+

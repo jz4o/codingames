@@ -25,10 +25,9 @@ for (let i = 0; i < N; i++) {
 const T: number = parseInt(readline());
 const throwDatas: ThrowData[] = [];
 for (let i = 0; i < T; i++) {
-    const inputs: string[] = readline().split(' ');
-    const throwName: string = inputs[0];
-    const throwX: number = parseInt(inputs[1]);
-    const throwY: number = parseInt(inputs[2]);
+    const [throwName, throwXStr, throwYStr]: string[] = readline().split(' ');
+    const throwX: number = parseInt(throwXStr);
+    const throwY: number = parseInt(throwYStr);
 
     throwDatas.push({
         name: throwName,
@@ -45,9 +44,7 @@ const scoreBoard: {[key: string]: number} = {};
 names.forEach(name => scoreBoard[name] = 0);
 
 throwDatas.forEach(throwData => {
-    const name: string = throwData.name;
-    const x: number = throwData.x;
-    const y: number = throwData.y;
+    const { name, x, y }: ThrowData = throwData;
 
     const distanceWithCenter: number = Math.sqrt(x ** 2 + y ** 2);
     const distanceWithEdge: number = Math.sqrt((HALF_SIZE - Math.abs(x)) ** 2 + (HALF_SIZE - Math.abs(y)) ** 2);

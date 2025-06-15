@@ -14,7 +14,7 @@ const result: number[] = [R];
 for (let i = 0; i < L - 1; i++) {
     const temp: number[] = result.splice(0);
     while (temp.length > 0) {
-        const firstElement: number = temp[0];
+        const [firstElement]: number[] = temp;
         const anotherElement: number = temp.find(i => i !== firstElement);
         const deleteSize: number = anotherElement !== undefined ? temp.indexOf(anotherElement) : temp.length;
 
@@ -25,3 +25,4 @@ for (let i = 0; i < L - 1; i++) {
 
 // console.log('answer');
 console.log(result.join(' '));
+

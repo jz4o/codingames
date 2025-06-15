@@ -42,9 +42,7 @@ const testAnswers: Answer[] = answers.filter(answer => answer.genre === undefine
 
 const learningModel: Model = {};
 trainAnswers.forEach(answer => {
-    const age: number = answer.age;
-    const gender: string = answer.gender;
-    const genre: string = answer.genre;
+    const { age, gender, genre }: Answer = answer;
 
     if (!(gender in learningModel)) {
         learningModel[gender] = {};
@@ -63,8 +61,7 @@ trainAnswers.forEach(answer => {
 });
 
 const results: string[] = testAnswers.map(answer => {
-    const age: number = answer.age;
-    const gender: string = answer.gender;
+    const { age, gender }: Answer = answer;
 
     const genderObject: ModelGenre = learningModel[gender];
     if (genderObject === undefined) {
@@ -90,3 +87,4 @@ const results: string[] = testAnswers.map(answer => {
 results.forEach(result => {
     console.log(result);
 });
+

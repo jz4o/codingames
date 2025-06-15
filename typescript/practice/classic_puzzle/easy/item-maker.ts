@@ -32,8 +32,7 @@ class ItemInterface {
 
     static createAsciiRows: (item: Item) => string[] = (item: Item): string[] => {
         const name: string = `-${item.name}-`;
-        const rarity: string = item.rarity;
-        const attributes: string[] = item.attributes;
+        const { rarity, attributes }: Item = item;
 
         const width: number = Math.max(...[name, rarity, ...attributes].map(elm => elm.length));
 
@@ -87,3 +86,4 @@ const results: string[] = ItemInterface.createAscii(item);
 results.forEach(result => {
     console.log(result);
 });
+

@@ -6,13 +6,8 @@
 const n: number = parseInt(readline());
 const inputRows: [string, string, number, string, string, string][] = [];
 for (let i = 0; i < n; i++) {
-    const inputs: string[] = readline().split(' ');
-    const name: string = inputs[0];
-    const parent: string = inputs[1];
-    const birth: number = parseInt(inputs[2]);
-    const death: string = inputs[3];
-    const religion: string = inputs[4];
-    const gender: string = inputs[5];
+    const [name, parent, birthStr, death, religion, gender]: string[] = readline().split(' ');
+    const birth: number = parseInt(birthStr);
 
     inputRows.push([name, parent, birth, death, religion, gender]);
 }
@@ -58,3 +53,4 @@ while (tempPeople.length > 0) {
 results.forEach(result => {
     console.log(result);
 });
+

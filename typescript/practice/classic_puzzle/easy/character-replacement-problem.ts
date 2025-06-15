@@ -14,11 +14,19 @@ for (let i = 0; i < n; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const sElements: string[] = s.split(' ').filter(sElement => sElement[0] !== sElement[1]);
-const replaceFromChars: string[] = [...new Set(sElements.map(sElement => sElement[0]))];
+interface Replace {
+    from: string;
+    to: string;
+};
+
+const replaces: Replace[] = s
+    .split(' ')
+    .filter(([replaceFrom, replaceTo]) => replaceFrom !== replaceTo)
+    .map(([replaceFrom, replaceTo]) => ({from: replaceFrom, to: replaceTo}));
+const replaceFromChars: string[] = [...new Set(replaces.map(replace => replace.from))];
 
 const replaceObject: { [key: string]: string } = {};
-sElements.forEach(sElement => replaceObject[sElement[0]] = sElement[1]);
+replaces.forEach(replace => replaceObject[replace.from] = replace.to);
 
 const replaceRoads: { [key: string]: string[] } = {};
 replaceFromChars.forEach(f => {
@@ -38,7 +46,7 @@ replaceFromChars.forEach(f => {
     replaceRoads[f] = road;
 });
 
-const isAmbigiousError: boolean = sElements.length !== replaceFromChars.length;
+const isAmbigiousError: boolean = replaces.length !== replaceFromChars.length;
 const isLoopError: boolean = Object.values(replaceRoads).some(road => road.indexOf(road[road.length - 1]) !== (road.length - 1));
 
 const replacedMs: string[] = ms.map(m => {
@@ -51,3 +59,4 @@ const results: string[] = isAmbigiousError || isLoopError ? ['ERROR'] : replaced
 results.forEach(result => {
     console.log(result);
 });
+

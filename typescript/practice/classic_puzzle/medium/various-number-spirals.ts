@@ -4,12 +4,8 @@
  **/
 
 const n: number = parseInt(readline());
-const inputs1: string[] = readline().split(' ');
-const vertPos: string = inputs1[0];
-const horPos: string = inputs1[1];
-const inputs2: string[] = readline().split(' ');
-const order: string = inputs2[0];
-const direction: string = inputs2[1];
+const [vertPos, horPos]: string[] = readline().split(' ');
+const [order, direction]: string[] = readline().split(' ');
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');

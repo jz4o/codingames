@@ -72,10 +72,11 @@ let result: string;
 if (candidateCyborgNames.length === 0) {
     result = 'MISSING';
 } else if (candidateCyborgNames.length === 1) {
-    result = candidateCyborgNames[0];
+    [result] = candidateCyborgNames;
 } else if (candidateCyborgNames.length >= 2) {
     result = 'INDETERMINATE';
 }
 
 // console.log('CYBORG');
 console.log(result);
+

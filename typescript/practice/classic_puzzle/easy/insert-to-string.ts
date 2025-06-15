@@ -42,7 +42,7 @@ changes.forEach(change => {
 
     const before: string = sRow.slice(0, change.columnIndex);
     const after: string = sRow.slice(change.columnIndex);
-    const value: string = change.value;
+    const { value }: Change = change;
 
     sRows[change.rowIndex] = `${before}${value}${after}`;
 });
@@ -53,3 +53,4 @@ const results: string[] = sRows.flatMap(sRow => sRow.split('\\n'));
 results.forEach(result => {
     console.log(result);
 });
+

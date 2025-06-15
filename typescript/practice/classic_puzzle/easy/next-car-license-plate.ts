@@ -43,10 +43,8 @@ const zeroPadLeft = (str: string, length: number): string => {
     return `${repeatStr('0', length)}${str}`.substr(length * -1);
 };
 
-const xElements: string[] = x.split('-');
-const ad: string = xElements[0];
-let cde: number = parseInt(xElements[1]);
-const fg: string = xElements[2];
+const [ad, cdeStr, fg]: string[] = x.split('-');
+let cde: number = parseInt(cdeStr);
 
 const alpha: string = `${ad}${fg}`;
 const alphaInt: number = alphaToInt(alpha);

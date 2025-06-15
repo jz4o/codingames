@@ -25,7 +25,7 @@ b.split('').forEach(c => {
 const sequences: number[] = [];
 if (chunkedBits.length === 1) {
     // all bits is equal
-    const chunkedBit: ChunkedBit = chunkedBits[0];
+    const [chunkedBit]: ChunkedBit[] = chunkedBits;
     sequences.push(chunkedBit.bit === '1' ? chunkedBit.size - 1 : 1);
 } else {
     // extend a positive
@@ -53,3 +53,4 @@ const result: number = sequences.reduce((max, sequence) => Math.max(max, sequenc
 
 // console.log('answer');
 console.log(result);
+

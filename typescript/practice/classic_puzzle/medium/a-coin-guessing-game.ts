@@ -57,7 +57,8 @@ while (pendingKeys.length > 0) {
     const fixPairs: { [key: string]: string } = {};
     Object.entries(guessObject).forEach(([k, v]) => {
         if (v.length === 1) {
-            fixPairs[k] = v[0];
+            const [value]: string[] = v;
+            fixPairs[k] = value;
         }
     });
 
@@ -84,3 +85,4 @@ const result: string = oddNumbers.map(i => guessObject[i][0]).join(' ');
 
 // console.log('2 4 6...');
 console.log(result);
+

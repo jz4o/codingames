@@ -12,9 +12,8 @@ const rookPosition: string = readline();
 const nbPieces: number = parseInt(readline());
 const inputRows: InputRow[] = [];
 for (let i = 0; i < nbPieces; i++) {
-    const inputs: string[] = readline().split(' ');
-    const colour: number = parseInt(inputs[0]);
-    const onePiece: string = inputs[1];
+    const [colourStr, onePiece]: string[] = readline().split(' ');
+    const colour: number = parseInt(colourStr);
 
     inputRows.push({ colour, onePiece });
 }
@@ -114,3 +113,4 @@ const results = availableMovements.sort();
 results.forEach(result => {
     console.log(result);
 });
+

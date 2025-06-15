@@ -59,10 +59,7 @@ const spreadSheet: SpreadSheet = new SpreadSheet();
 
 const N: number = parseInt(readline());
 for (let i = 0; i < N; i++) {
-    const inputs: string[] = readline().split(' ');
-    const operation: string = inputs[0];
-    const arg1: string = inputs[1];
-    const arg2: string = inputs[2];
+    const [operation, arg1, arg2]: string[] = readline().split(' ');
 
     const cell: Cell = { operation, arg1, arg2, value: null };
 

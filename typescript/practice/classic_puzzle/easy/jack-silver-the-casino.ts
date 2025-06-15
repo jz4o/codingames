@@ -11,10 +11,9 @@ for (let i = 0; i < ROUNDS; i++) {
     result -= bet;
 
     const PLAY: string = readline();
-    const playElements: string[] = PLAY.split(' ');
-    const ball: number = parseInt(playElements[0]);
-    const call: string = playElements[1];
-    const target: number = parseInt(playElements[2]);
+    const [ballStr, call, targetStr]: string[] = PLAY.split(' ');
+    const ball: number = parseInt(ballStr);
+    const target: number = parseInt(targetStr);
 
     switch (call) {
         case 'PLAIN':

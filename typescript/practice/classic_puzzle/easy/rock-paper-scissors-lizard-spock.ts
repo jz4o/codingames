@@ -6,9 +6,8 @@
 const N: number = parseInt(readline());
 const inputRows: [number, string][] = [];
 for (let i = 0; i < N; i++) {
-    const inputs: string[] = readline().split(' ');
-    const NUMPLAYER: number = parseInt(inputs[0]);
-    const SIGNPLAYER: string = inputs[1];
+    const [numplayerStr, SIGNPLAYER]: string[] = readline().split(' ');
+    const NUMPLAYER: number = parseInt(numplayerStr);
 
     inputRows.push([NUMPLAYER, SIGNPLAYER]);
 }
@@ -96,3 +95,4 @@ results.push(winner.competedNums.join(' '));
 results.forEach(result => {
     console.log(result);
 });
+

@@ -7,19 +7,13 @@ const n: number = parseInt(readline());
 const m: number = parseInt(readline());
 const inputSignals: { [key: string]: string } = {};
 for (let i = 0; i < n; i++) {
-    const inputs: string[] = readline().split(' ');
-    const inputName: string = inputs[0];
-    const inputSignal: string = inputs[1];
+    const [inputName, inputSignal]: string[] = readline().split(' ');
 
     inputSignals[inputName] = inputSignal;
 }
 const outputLines: [string, string, string, string][] = [];
 for (let i = 0; i < m; i++) {
-    const inputs: string[] = readline().split(' ');
-    const outputName: string = inputs[0];
-    const type: string = inputs[1];
-    const inputName1: string = inputs[2];
-    const inputName2: string = inputs[3];
+    const [outputName, type, inputName1, inputName2]: string[] = readline().split(' ');
 
     outputLines.push([outputName, type, inputName1, inputName2]);
 }
@@ -60,3 +54,4 @@ for (let i = 0; i < m; i++) {
     // console.log('output name and signal');
     console.log(result);
 }
+

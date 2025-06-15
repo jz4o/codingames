@@ -7,9 +7,9 @@ const N: number = parseInt(readline()); // Number of elements which make up the 
 const Q: number = parseInt(readline()); // Number Q of file names to be analyzed.
 const extMimes: { [key: string]: string; } = {};
 for (let i = 0; i < N; i++) {
-    const inputs: string[] = readline().split(' ');
-    const EXT: string = inputs[0]; // file extension
-    const MT: string = inputs[1]; // MIME type.
+    // EXT: file extension
+    // MT: MIME type.
+    const [EXT, MT]: string[] = readline().split(' ');
 
     extMimes[EXT.toLowerCase()] = MT;
 }

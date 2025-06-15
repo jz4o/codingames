@@ -20,7 +20,7 @@ const binaries: number[] = MESSAGE.split('').reduce((binaries, char) => {
 
 const groupedBinaries: number[][] = [];
 while (binaries.length > 0) {
-    const firstBinary: number = binaries[0];
+    const [firstBinary]: number[] = binaries;
     const searchTargetBinary: number = firstBinary * -1 + 1;
 
     const targetBinaryIndex: number = binaries.indexOf(searchTargetBinary);
@@ -39,3 +39,4 @@ groupedBinaries.forEach(groupedBinary => {
 
 // console.log('answer');
 console.log(result.join(' '));
+

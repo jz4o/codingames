@@ -3,15 +3,11 @@
  * the standard input according to the problem statement.
  **/
 
-const inputs: string[] = readline().split(' ');
-const champion1: string = inputs[0];
-const champion2: string = inputs[1];
+const [champion1, champion2]: string[] = readline().split(' ');
 const N: number = parseInt(readline());
 const inputRows: [string, string][] = [];
 for (let i = 0; i < N; i++) {
-    const inputs: string[] = readline().split(' ');
-    const d: string = inputs[0];
-    const ATTACK: string = inputs[1];
+    const [d, ATTACK]: string[] = readline().split(' ');
 
     inputRows.push([d, ATTACK]);
 }
@@ -185,3 +181,4 @@ const result: string = `${winner.getName()} beats ${loser.getName()} in ${winner
 
 // console.log('[winner] beats [loser] in [n] hits');
 console.log(result);
+

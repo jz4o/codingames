@@ -4,13 +4,10 @@
  **/
 
 const leapYear: number = parseInt(readline());
-const inputs1: string[] = readline().split(' ');
-const sourceDayOfWeek: string = inputs1[0];
-const sourceMonth: string = inputs1[1];
-const sourceDayOfMonth: number = parseInt(inputs1[2]);
-const inputs2: string[] = readline().split(' ');
-const targetMonth: string = inputs2[0];
-const targetDayOfMonth: number = parseInt(inputs2[1]);
+const [sourceDayOfWeek, sourceMonth, sourceDayOfMonthStr]: string[] = readline().split(' ');
+const sourceDayOfMonth: number = parseInt(sourceDayOfMonthStr);
+const [targetMonth, targetDayOfMonthStr]: string[] = readline().split(' ');
+const targetDayOfMonth: number = parseInt(targetDayOfMonthStr);
 
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');

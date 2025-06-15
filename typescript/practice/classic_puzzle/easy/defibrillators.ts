@@ -39,7 +39,7 @@ for (let i = 0; i < N; i++) {
 const floatLat: number = parseFloat(LAT.replace(',', '.'));
 const floatLon: number = parseFloat(LON.replace(',', '.'));
 
-let nearDefib: Defib = defibs[0];
+let [nearDefib]: Defib[] = defibs;
 let distance: number = 10000;
 for (const defib of defibs) {
     const x: number = (floatLon - defib.longitude) * Math.cos((defib.latitude + floatLat) / 2);

@@ -21,7 +21,7 @@ const isDecodable = (encodedStr: string, originalStr: string): boolean => {
     let tempEncodedStr: string = encodedStr;
     let result: string = '';
     while (tempEncodedStr.length !== 0) {
-        const char: string = tempEncodedStr[0];
+        const char: string = tempEncodedStr.charAt(0);
         const charGroup: string = tempEncodedStr.match(new RegExp(`^${char}+`)).toString();
         tempEncodedStr = tempEncodedStr.substring(charGroup.length);
         result += charGroup.length + char;
@@ -36,8 +36,8 @@ const encode = (str: string): string | null => {
     }
 
     const result: string = sliceN(str.split(''), 2).reduce((result, values) => {
-        const count: number = parseInt(values[0]);
-        const value: string = values[1];
+        const [countStr, value]: string[] = values;
+        const count: number = parseInt(countStr);
 
         return result + value.repeat(count);
     }, '');

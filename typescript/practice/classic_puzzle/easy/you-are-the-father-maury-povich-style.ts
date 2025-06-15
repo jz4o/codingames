@@ -45,9 +45,10 @@ const father: string = aPossibleFathers.find(aPossibleFather => {
     return isFather;
 });
 
-const fatherName: string = father.split(':')[0];
+const [fatherName]: string[] = father.split(':');
 
 const result: string = `${fatherName}, you are the father!`;
 
 // console.log('what Maury Povich might say');
 console.log(result);
+

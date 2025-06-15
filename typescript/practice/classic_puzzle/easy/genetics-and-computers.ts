@@ -3,9 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const inputs: string[] = readline().split(' ');
-const parent1: string = inputs[0];
-const parent2: string = inputs[1];
+const [parent1, parent2]: string[] = readline().split(' ');
 const ratio: string = readline();
 
 // Write an answer using console.log()
@@ -56,3 +54,4 @@ const result: string = ratios.map(r => r / gcdValue).join(':');
 
 // console.log('Genotypic Ratio');
 console.log(result);
+

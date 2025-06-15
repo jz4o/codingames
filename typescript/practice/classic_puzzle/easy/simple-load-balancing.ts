@@ -19,7 +19,7 @@ let i: number = k;
 while (i > 0) {
     lis = lis.sort((a, b) => a - b);
 
-    const firstElement: number = lis[0];
+    const [firstElement]: number[] = lis;
     const notFirstElementIndex: number= lis.findIndex(li => li !== firstElement);
     const firstElementCount: number = notFirstElementIndex !== -1 ? notFirstElementIndex : lis.length;
     const size: number = Math.min(firstElementCount, i);
@@ -36,3 +36,4 @@ const result: number = max - min;
 
 // console.log('answer');
 console.log(result);
+

@@ -30,9 +30,7 @@ const checkedMasses: Mass[] = [];
 const beCheckMasses: Mass[] = [{y: Y + 1, x: X + 1}];
 const exitMasses: Mass[] = [];
 while (beCheckMasses.length > 0) {
-    const checkMass: Mass = beCheckMasses.pop();
-    const y: number = checkMass.y;
-    const x: number = checkMass.x;
+    const { y, x }: Mass = beCheckMasses.pop();
 
     if (checkedMasses.find(mass => mass.y === y && mass.x === x)) {
         continue;

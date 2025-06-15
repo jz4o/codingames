@@ -6,9 +6,9 @@
 const N: number = parseInt(readline());
 const inputRows: [string, number][] = [];
 for (let i = 0; i < N; i++) {
-    const inputs: string[] = readline().split(' ');
-    const name: string = inputs[0];
-    const R: number = parseInt(inputs[1]);
+    const [name, rStr]: string[] = readline().split(' ');
+    const R: number = parseInt(rStr);
+
     inputRows.push([name, R]);
 }
 const circuit: string = readline();
@@ -47,3 +47,4 @@ const result : string = equivalentResistance.toFixed(1);
 
 // console.log('Equivalent Resistance');
 console.log(result);
+

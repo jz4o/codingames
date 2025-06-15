@@ -6,10 +6,7 @@
 const N: number = parseInt(readline());
 const inputRows: [string, string, string][] = [];
 for (let i = 0; i < N; i++) {
-    const inputs: string[] = readline().split(' ');
-    const parent1: string = inputs[0];
-    const parent2: string = inputs[1];
-    const child: string = inputs[2];
+    const [parent1, parent2, child]: string[] = readline().split(' ');
 
     inputRows.push([parent1, parent2, child]);
 }

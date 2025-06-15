@@ -30,13 +30,11 @@ const register: Register = { a, b, c, d };
 
 let index: number = 0;
 while (index < instructions.length) {
-    const args: string[] = instructions[index].split(' ');
-    const operator: string = args[0];
-    const arg0: string = args[1];
-    const arg1: number = register[args[2]] !== undefined ? register[args[2]] : parseInt(args[2]);
+    const [operator, arg0, arg1Key, arg2Key]: string[] = instructions[index].split(' ');
+    const arg1: number = arg1Key in register ? register[arg1Key] : parseInt(arg1Key);
     let arg2: number;
-    if (4 <= args.length) {
-        arg2 = register[args[3]] !== undefined ? register[args[3]] : parseInt(args[3]);
+    if (arg2Key !== undefined) {
+        arg2 = arg2Key in register ? register[arg2Key] : parseInt(arg2Key);
     }
 
     if (operator === 'MOV') {
@@ -59,3 +57,4 @@ const result: string = `${register.a} ${register.b} ${register.c} ${register.d}`
 
 // console.log('a b c d');
 console.log(result);
+

@@ -11,9 +11,7 @@ const T2: number = parseInt(inputs[3]);
 const T3: number = parseInt(inputs[4]);
 const inputRows: [string, string][] = [];
 for (let i = 0; i < H; i++) {
-    const inputs: string[] = readline().split(' ');
-    const firstPictureRow: string = inputs[0];
-    const secondPictureRow: string = inputs[1];
+    const [firstPictureRow, secondPictureRow]: string[] = readline().split(' ');
     inputRows.push([firstPictureRow, secondPictureRow]);
 }
 
@@ -107,3 +105,4 @@ const results: string[] = thirdPictureGrid.map(row => row.join(''));
 results.forEach(result => {
     console.log(result);
 });
+

@@ -6,11 +6,7 @@
 const N: number = parseInt(readline());
 const inputRows: [string, string, string, string][] = [];
 for (let i = 0; i < N; i++) {
-    const inputs: string[] = readline().split(' ');
-    const name: string = inputs[0];
-    const r: string = inputs[1];
-    const m: string = inputs[2];
-    const c: string = inputs[3];
+    const [name, r, m, c]: string[] = readline().split(' ');
 
     inputRows.push([name, r, m, c]);
 }
@@ -55,3 +51,4 @@ const result: string = closestPlanet.name;
 
 // console.log('answer');
 console.log(result);
+

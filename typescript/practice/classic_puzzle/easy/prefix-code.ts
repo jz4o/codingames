@@ -6,9 +6,9 @@
 const n: number = parseInt(readline());
 const inputRows: [string, number][] = [];
 for (let i = 0; i < n; i++) {
-    const inputs: string[] = readline().split(' ');
-    const b: string = inputs[0];
-    const c: number = parseInt(inputs[1]);
+    const [b, cStr]: string[] = readline().split(' ');
+    const c: number = parseInt(cStr);
+
     inputRows.push([b, c]);
 }
 const s: string = readline();
@@ -40,3 +40,4 @@ while (tempS.length > 0) {
 
 // console.log('abracadabra');
 console.log(result);
+
