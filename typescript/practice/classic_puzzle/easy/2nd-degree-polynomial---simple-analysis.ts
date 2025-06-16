@@ -34,7 +34,7 @@ class Point {
     };
 }
 
-const delta: number = Math.pow(b, 2) - (4 * a * c);
+const delta: number = (b ** 2) - (4 * a * c);
 
 const points: Point[] = [];
 
@@ -65,3 +65,4 @@ const result: string = points.map(point => point.toString()).join(',');
 
 // console.log('(X1,Y1),...,(Xn,Yn)');
 console.log(result);
+

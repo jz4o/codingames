@@ -48,7 +48,7 @@ const vectors: Vector[] = rangeArrayFromTo(0, n - 1).flatMap(leftIndex => {
         const rightPoint: Point = points[rightIndex];
 
         const componentDistances: number[] = zip(leftPoint.components, rightPoint.components).map(([l, r]) => r - l);
-        const distance: number = Math.sqrt(componentDistances.reduce((sum, d) => sum + Math.pow(d, 2), 0));
+        const distance: number = Math.sqrt(componentDistances.reduce((sum, d) => sum + (d ** 2), 0));
 
         const text: string = `${leftPoint.name}${rightPoint.name}(${componentDistances.join(',')})`;
 
@@ -72,3 +72,4 @@ const results: string[] = [
 results.forEach(result => {
     console.log(result);
 });
+

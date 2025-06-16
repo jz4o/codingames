@@ -116,7 +116,7 @@ lines.forEach(line => {
 
             const diffX: number = Math.abs(x - point.x);
             const diffY: number = Math.abs(y - point.y);
-            const radius: number = Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
+            const radius: number = Math.sqrt((diffX ** 2) + (diffY ** 2));
 
             if (length < radius) {
                 return;

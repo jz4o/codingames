@@ -22,7 +22,7 @@ const toDecimal: (decimary: string) => number = (decimary: string): number => {
         .filter(index => index !== null);
 
     const otherAceDecimal: number = parseInt(decimary.replace(/A/g, '0'));
-    const aceDecimal: number = aceIndexes.reduce((sum, index) => sum + Math.pow(10, index + 1), 0);
+    const aceDecimal: number = aceIndexes.reduce((sum, index) => sum + (10 ** (index + 1)), 0);
 
     return otherAceDecimal + aceDecimal;
 };
@@ -55,3 +55,4 @@ const result: string =toDecimary(sumDecimal);
 
 // console.log('summation');
 console.log(result);
+

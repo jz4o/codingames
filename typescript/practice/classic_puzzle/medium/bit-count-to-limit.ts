@@ -14,7 +14,7 @@ const kindOfNumber: number = n + 1;
 
 const result: string = [...Array(binaryLength).keys()]
     .reduce((count, i) => {
-        const halfCycleLength: number = Math.pow(2, i);
+        const halfCycleLength: number = 2 ** i;
         const cycleLength: number = halfCycleLength * 2;
 
         const div: number = Math.floor(kindOfNumber / cycleLength);
@@ -26,3 +26,4 @@ const result: string = [...Array(binaryLength).keys()]
 
 // console.log('Number of 1s');
 console.log(result);
+

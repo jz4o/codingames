@@ -16,7 +16,7 @@ for (let i = 0; i < m; i++) {
 const calcNumberOfAddress: (suffix: number) => number = (suffix: number): number => {
     const hostAddressSize: number = 32 - suffix;
 
-    return Math.pow(2, hostAddressSize);
+    return 2 ** hostAddressSize;
 };
 
 const results: string[] = rs.map(r => {
@@ -41,3 +41,4 @@ const results: string[] = rs.map(r => {
 results.forEach(result => {
     console.log(result);
 });
+

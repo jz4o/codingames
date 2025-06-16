@@ -19,7 +19,7 @@ const NUMS: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', '
 
 const monthlyToNumber = (monthlyStr: string): number => {
     return monthlyStr.match(/.{3}/g).reverse().reduce((sum, month, index) => {
-        const base: number = Math.pow(NUMS.length, index);
+        const base: number = NUMS.length ** index;
         const monthNum: number = parseInt(NUMS[MONTHS.indexOf(month)], NUMS.length);
 
         return sum + (monthNum * base);
@@ -39,3 +39,4 @@ const result: string = numberToMonthly(sum);
 
 // console.log('answer');
 console.log(result);
+

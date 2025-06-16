@@ -38,7 +38,7 @@ const alphaToInt: (alpha: string) => number = (alpha: string): number => {
     const result: number = alpha
         .split('')
         .reverse()
-        .map((alp, index) => Math.pow(ALPHABETS.length, index) * (ALPHABETS.indexOf(alp) + 1))
+        .map((alp, index) => (ALPHABETS.length ** index) * (ALPHABETS.indexOf(alp) + 1))
         .reduce((sum, i) => sum + i);
 
     return result;
@@ -78,3 +78,4 @@ const result: string = border;
 
 // console.log('answer');
 console.log(result);
+

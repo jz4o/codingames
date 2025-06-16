@@ -42,7 +42,7 @@ class MetricUnit {
             'mm': { 'smallUnit': 'um', 'rate': 1000 },
         };
 
-        const adjustRate: number = Math.pow(10, MetricUnit.DIGIT_PRECISION);
+        const adjustRate: number = 10 ** MetricUnit.DIGIT_PRECISION;
 
         this.value = Math.round(this.value * convertObject[this.unit].rate * adjustRate) / adjustRate;
         this.unit = convertObject[this.unit].smallUnit;
@@ -70,3 +70,4 @@ const result: string = `${resultValue}${leftMetric.unit}`;
 
 // console.log('1cm');
 console.log(result);
+

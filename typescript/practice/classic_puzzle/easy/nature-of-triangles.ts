@@ -32,11 +32,11 @@ const calcDistance: (y1: number, x1: number, y2: number, x2: number) => number =
         return diffY;
     }
 
-    return Math.sqrt(Math.pow(diffY, 2) + Math.pow(diffX, 2));
+    return Math.sqrt((diffY ** 2) + (diffX ** 2));
 };
 
 const calcAngle: (target: number, other1: number, other2: number) => number = (target: number, other1: number, other2: number): number => {
-    return Math.acos((Math.pow(other1, 2) + Math.pow(other2, 2) - Math.pow(target, 2)) / (2 * other1 * other2)) * 180 / Math.PI;
+    return Math.acos(((other1 ** 2) + (other2 ** 2) - (target ** 2)) / (2 * other1 * other2)) * 180 / Math.PI;
 };
 
 const getArticle: (nextWord: string) => string = (nextWord: string): string => {

@@ -17,8 +17,8 @@ const sumCount: number = [...Array(digits.length).keys()].reduce((sumCount, inde
     let digitCount: number = 0;
 
     digitCount += [...Array(index).keys()].reduce((sum, i) => {
-        const w: number = Math.pow(10, i);
-        const c: number = Math.pow(10, index - i - 1);
+        const w: number = 10 ** i;
+        const c: number = 10 ** (index - i - 1);
 
         return sum + (w * c * digit);
     }, 0);
@@ -27,7 +27,7 @@ const sumCount: number = [...Array(digits.length).keys()].reduce((sumCount, inde
         const kindOfLowerDigits: number = parseInt(digits.slice(0, index).reverse().join('') || '0') + 1;
         digitCount += kindOfLowerDigits;
     } else if (digit > k) {
-        digitCount += Math.pow(10, index);
+        digitCount += (10 ** index);
     }
 
     return sumCount + digitCount;
@@ -37,3 +37,4 @@ const result: string = sumCount.toString();
 
 // console.log('answer');
 console.log(result);
+

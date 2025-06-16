@@ -62,7 +62,7 @@ class MayanConverter {
         }).reverse();
 
         const num: number = mayanIndexes.reduce((sum, mayanIndex, index) => {
-            const radix: number = Math.pow(this.asciiMayans.length, index);
+            const radix: number = this.asciiMayans.length ** index;
             return sum + radix * mayanIndex;
         }, 0);
 

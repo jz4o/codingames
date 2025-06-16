@@ -34,12 +34,12 @@ const aliceIndex: number = planets.findIndex(planet => planet.name === 'Alice');
 const [alice]: Planet[] = planets.splice(aliceIndex, 1);
 
 const ra: number = alice.r;
-const va: number = 4 / 3 * Math.PI * Math.pow(ra, 3);
+const va: number = 4 / 3 * Math.PI * (ra ** 3);
 const da: number = alice.m / va;
 
 const closestPlanet: Planet = planets.sort((a, b) => a.c - b.c).find(planet => {
     const rp: number = planet.r;
-    const vp: number = 4 / 3 * Math.PI * Math.pow(rp, 3);
+    const vp: number = 4 / 3 * Math.PI * (rp ** 3);
     const dp: number = planet.m / vp;
 
     const rocheLimit: number = ra * Math.cbrt(2 * da / dp);

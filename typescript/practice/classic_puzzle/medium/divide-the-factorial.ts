@@ -51,13 +51,13 @@ const xs: number[] = Object.entries(aPrimeDivisions).map(([primeStr, count]) => 
     const prime: number = parseInt(primeStr);
 
     let exp: number = 1;
-    while (Math.pow(prime, exp) <= B) {
+    while ((prime ** exp) <= B) {
         exp++;
     }
     const maxExp: number = exp - 1;
 
     const countPrimeInBFactorial: number = rangeArrayFromTo(1, maxExp)
-        .reduce((sum, e) => sum + Math.floor(B / Math.pow(prime, e)), 0);
+        .reduce((sum, e) => sum + Math.floor(B / (prime ** e)), 0);
 
     return Math.floor(countPrimeInBFactorial / count);
 });
@@ -66,3 +66,4 @@ const result: string = Math.min(...xs).toString();
 
 // console.log('answer');
 console.log(result);
+

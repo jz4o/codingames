@@ -27,7 +27,7 @@ const girls: Girl[] = lines.flatMap((line, lineIndex) => {
             return null;
         }
 
-        const probability: number = Math.min(lineIndex, charIndex) / (Math.pow(lineIndex, 2) + Math.pow(charIndex, 2) + 1);
+        const probability: number = Math.min(lineIndex, charIndex) / ((lineIndex ** 2) + (charIndex ** 2) + 1);
         const girl: Girl =  { y: lineIndex, x: charIndex, probability };
 
         return girl;
@@ -55,3 +55,4 @@ const result: string = girlCount.toString();
 
 // console.log('max_girls');
 console.log(result);
+

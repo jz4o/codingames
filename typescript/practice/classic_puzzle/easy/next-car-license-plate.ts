@@ -13,7 +13,7 @@ const ALPHAS: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 const alphaToInt = (alpha: string): number => {
     return alpha.split('').reverse().reduce((alphaIntSum, value, index) => {
-        const alphaInt = Math.pow(ALPHAS.length, index) * (ALPHAS.indexOf(value) + 1);
+        const alphaInt = (ALPHAS.length ** index) * (ALPHAS.indexOf(value) + 1);
         return alphaIntSum + alphaInt;
     }, 0);
 };

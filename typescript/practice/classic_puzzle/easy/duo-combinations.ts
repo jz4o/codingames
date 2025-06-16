@@ -23,7 +23,7 @@ const eachCons: <T>(targetArray: T[], n: number) => T[][] = <T>(targetArray: T[]
     });
 };
 
-const binaryCycle: string[] = rangeArrayFromTo(1, Math.pow(2, total) - 1).map(i => {
+const binaryCycle: string[] = rangeArrayFromTo(1, (2 ** total) - 1).map(i => {
     return i.toString(2).padStart(total, '0');
 });
 
@@ -36,3 +36,4 @@ results.unshift(symbols[0].repeat(total));
 results.forEach(result => {
     console.log(result);
 });
+

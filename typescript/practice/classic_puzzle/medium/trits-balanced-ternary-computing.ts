@@ -14,7 +14,7 @@ const BASE_NUMBER: number = 3;
 
 const balanceToDecimal = (balance: string): number => {
     return balance.split('').reverse().reduce((sum, i, index) => {
-        return sum + (i === 'T' ? -1 : parseInt(i)) * Math.pow(BASE_NUMBER, index);
+        return sum + (i === 'T' ? -1 : parseInt(i)) * (BASE_NUMBER ** index);
     }, 0);
 };
 
@@ -28,7 +28,7 @@ const decimalToBalance = (decimal: number): string => {
         if (mod === (BASE_NUMBER - 1).toString()) {
             mod = 'T';
             tempDecimal++;
-        }
+    }
 
         digits.unshift(mod);
     }
@@ -47,9 +47,9 @@ if (op === '+') {
 } else if (op === '*') {
     resultDecimal = decimalLhs * decimalRhs;
 } else if (op === '<<') {
-    resultDecimal = decimalLhs * Math.pow(BASE_NUMBER, decimalRhs);
+    resultDecimal = decimalLhs * (BASE_NUMBER ** decimalRhs);
 } else if (op === '>>') {
-    resultDecimal = Math.trunc(decimalLhs / Math.pow(BASE_NUMBER, decimalRhs));
+    resultDecimal = Math.trunc(decimalLhs / (BASE_NUMBER ** decimalRhs));
 }
 
 const resultBalance: string = decimalToBalance(resultDecimal);

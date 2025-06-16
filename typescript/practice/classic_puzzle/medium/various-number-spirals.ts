@@ -66,17 +66,17 @@ class NumberSpiral {
         const bottomRows: number[][] = [];
 
         rangeArrayFromTo(1, Math.floor(size / 2) * 2 + 2 - 1, 2).forEach(i => {
-            const topRowRightValue: number = Math.pow(i, 2) + i + 2;
+            const topRowRightValue: number = (i ** 2) + i + 2;
             const topRowLeftValue: number = topRowRightValue + i - 1;
             const topRow: number[] = rangeArrayFromTo(topRowRightValue, topRowLeftValue).reverse();
 
-            const bottomRowRightValue: number = Math.pow(i, 2);
+            const bottomRowRightValue: number = i ** 2;
             const bottomRowLeftValue: number = bottomRowRightValue - i + 1;
             const bottomRow: number[] = rangeArrayFromTo(bottomRowLeftValue, bottomRowRightValue);
 
             rangeArrayFromTo(1, Math.floor(((Math.floor(size / 2) * 2 + 1) - i) / 2)).forEach(j => {
-                const innerSquareLastValue: number = Math.pow(i + (j - 1) * 2, 2);
-                const outerSquareLastValue: number = Math.pow(i + (j * 2), 2);
+                const innerSquareLastValue: number = (i + (j - 1) * 2) ** 2;
+                const outerSquareLastValue: number = (i + (j * 2)) ** 2;
 
                 const bottomRowLeftValue: number = outerSquareLastValue - i - j * 3 + 1;
                 const bottomRowRightValue: number = innerSquareLastValue + j;
