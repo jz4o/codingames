@@ -22,8 +22,9 @@ const zip: <T, U>(a: T[], b: U[]) => [T, U][] = <T, U>(a: T[], b: U[]): [T, U][]
     });
 };
 
-const motherChromPairs: string[] = mother.match(/.*?:(.*)/).at(-1).trim().split(' ');
-const childChromPairs: string[] = child.match(/.*?:(.*)/).at(-1).trim().split(' ');
+const chromRegexp: RegExp = /.*?:\s+(?<chroms>.+)/;
+const motherChromPairs: string[] = mother.match(chromRegexp).groups.chroms.split(' ');
+const childChromPairs: string[] = child.match(chromRegexp).groups.chroms.split(' ');
 
 const fatherChromParts: string[] = zip(motherChromPairs, childChromPairs).flatMap(([motherChromPair, childChromPair]) => {
     const fatherChromPart: string[] = childChromPair.split('').filter(childChrom => !motherChromPair.includes(childChrom));
@@ -32,7 +33,7 @@ const fatherChromParts: string[] = zip(motherChromPairs, childChromPairs).flatMa
 });
 
 const father: string = aPossibleFathers.find(aPossibleFather => {
-    const aPossibleFatherChromPairs: string[] = aPossibleFather.match(/.*?:(.*)/).at(-1).trim().split(' ');
+    const aPossibleFatherChromPairs: string[] = aPossibleFather.match(chromRegexp).groups.chroms.split(' ');
 
     const isFather: boolean = zip(aPossibleFatherChromPairs, fatherChromParts).every(([aPossibleFatherChromPair, fatherChromPart]) => {
         if (fatherChromPart.length === 1) {

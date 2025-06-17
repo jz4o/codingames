@@ -55,7 +55,6 @@ export default [
       'yoda': 'off',
 
       // below temporary ignore rules.
-      'prefer-named-capture-group': 'off',
       'prefer-numeric-literals': 'off',
       'radix': 'off',
     }

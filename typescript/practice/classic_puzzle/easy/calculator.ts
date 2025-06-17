@@ -94,7 +94,7 @@ class Calculator {
 
         this.num1 = result
             .toFixed(Calculator.#DECIMAL_PLACES)
-            .replace(/(\.[0-9]+?)0+$/, '$1')
+            .replace(/(?<validDecimal>\.[0-9]+?)0+$/, '$<validDecimal>')
             .replace(/\.0$/, '');
 
         return this.num1;
@@ -111,3 +111,4 @@ const results: string[] = keys.map(key => {
 results.forEach(result => {
     console.log(result);
 });
+

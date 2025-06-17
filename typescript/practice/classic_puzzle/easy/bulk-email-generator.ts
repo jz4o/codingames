@@ -21,7 +21,7 @@ type Replacer = {
 const joinedLines: string = lines.join('\n');
 
 let choiceCount: number = 0;
-const replacers: Replacer[] = joinedLines.match(/\((.|\s)*?\)/g).map(choiceText => {
+const replacers: Replacer[] = joinedLines.match(/\((?<choiceText>.|\s)*?\)/g).map(choiceText => {
     const choices: string[] = choiceText.replace(/\(|\)/g, '').split('|');
     const choiced: string = choices[choiceCount % choices.length];
 
@@ -36,3 +36,4 @@ const results: string[] = replacers.reduce((result, replacer) => result.replace(
 results.forEach(result => {
     console.log(result);
 });
+

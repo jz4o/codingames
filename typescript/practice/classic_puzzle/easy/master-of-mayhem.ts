@@ -31,7 +31,7 @@ interface CyborgAttribute {
 
 const mayhemAttributes: { [key: string]: string} = {};
 mayhemReports.forEach(mayhemReport => {
-    const { attribute, value }: { [key: string]: string } = mayhemReport.match(/^Mayhem's\s(?<attribute>.*?)\s(is)?(\san?)?\s"?(?<value>.*?)"?$/).groups;
+    const { attribute, value }: { [key: string]: string } = mayhemReport.match(/^Mayhem's\s(?<attribute>.*?)\s(?:is)?(?:\san?)?\s"?(?<value>.*?)"?$/).groups;
     mayhemAttributes[attribute] = value;
 });
 
@@ -40,7 +40,7 @@ cyborgNames.forEach(name => {
     cyborgsAttributes[name] = {};
 });
 cyborgReports.forEach(cyborgReport => {
-    const { name, attribute, value }: { [key: string]: string } = cyborgReport.match(/^(?<name>.*?)'s\s(?<attribute>.*?)\s(is)?(\san?)?\s"?(?<value>.*?)"?$/).groups;
+    const { name, attribute, value }: { [key: string]: string } = cyborgReport.match(/^(?<name>.*?)'s\s(?<attribute>.*?)\s(?:is)?(?:\san?)?\s"?(?<value>.*?)"?$/).groups;
     cyborgsAttributes[name][attribute] = value;
 });
 

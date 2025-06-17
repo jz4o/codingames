@@ -55,9 +55,9 @@ const [fromUnit, toUnit]: string[] = toconvert.split(' in ');
 
 const relationObject: { [key: string]: string[] } = {};
 const relationRates: { [key: string]: Fraction } = {};
-const relationRegexp: RegExp = /(\d+)\s(.*)\s=\s(\d+)\s(.*)/;
+const relationRegexp: RegExp = /(?<lSizeStr>\d+)\s(?<lUnit>.*)\s=\s(?<rSizeStr>\d+)\s(?<rUnit>.*)/;
 relations.forEach(relation => {
-    const [_, lSizeStr, lUnit, rSizeStr, rUnit]: string[] = relation.match(relationRegexp);
+    const { lSizeStr, lUnit, rSizeStr, rUnit }: { [key: string]: string } = relation.match(relationRegexp).groups;
     const [lSize, rSize]: number[] = [lSizeStr, rSizeStr].map(s => parseInt(s));
 
     if (!(lUnit in relationObject)) {
@@ -108,3 +108,4 @@ const result: string = `${fromSize} ${fromUnit} = ${toSize} ${toUnit}`;
 
 // console.log('result');
 console.log(result);
+

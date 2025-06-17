@@ -9,7 +9,7 @@ const ip: string = readline();
 // To debug: console.error('Debug messages...');
 
 const longestOmit: string = ip
-    .match(/(0000(:0000)+)/g)
+    .match(/(?<omitable>0000(?::0000)+)/g)
     ?.reduce((longestOmit, omit) => longestOmit.length < omit.length ? omit : longestOmit);
 
 const result: string = ip
@@ -17,7 +17,8 @@ const result: string = ip
     .replace(':::', '::')
     .replace(/^0+/g, '0')
     .replace(/:0+/g, ':0')
-    .replace(/:0([1-9a-f])/g, ':$1');
+    .replace(/:0(?<validValue>[1-9a-f])/g, ':$<validValue>');
 
 // console.log('output');
 console.log(result);
+

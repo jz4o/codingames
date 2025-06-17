@@ -35,7 +35,8 @@ const rangeArrayFromTo: (from: number, to: number, step?: number) => number[] = 
     return [...Array(Math.floor((to - from + step) / step)).keys()].map(i => from + i * step);
 };
 
-const [_, speed, dist1, time1, dist2, time2]: string[] = aSpeed.match(/(\d+)\s(.*)\sper\s(.*)\sCONVERT\sTO\s(.*)\sper\s(.*)/);
+const inputSpeedRegexp: RegExp = /(?<speed>\d+)\s(?<dist1>.*)\sper\s(?<time1>.*)\sCONVERT\sTO\s(?<dist2>.*)\sper\s(?<time2>.*)/;
+const { speed, dist1, time1, dist2, time2 }: { [key: string]: string } = aSpeed.match(inputSpeedRegexp).groups;
 
 const dist1RegExp: RegExp = new RegExp(`${dist1}s?`);
 const dist2RegExp: RegExp = new RegExp(`${dist2}s?`);
@@ -69,3 +70,4 @@ const result: string = `${toSpeed} ${dist2} per ${time2}`;
 
 // console.log('The Converted Speed');
 console.log(result);
+

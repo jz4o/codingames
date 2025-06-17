@@ -16,8 +16,8 @@ const abbreviations: { [key: string]: string } = {
 };
 
 const chars: string[] = T.replace(/nl/g, '1nl').split(' ').flatMap(chunk => {
-    const [_, strCount, char]: string[] = /^(\d+)(.+?)$/.exec(chunk);
-    const count: number = parseInt(strCount);
+    const { countStr, char }: { [key: string]: string } = chunk.match(/^(?<countStr>\d+)(?<char>.+?)$/).groups;
+    const count: number = parseInt(countStr);
 
     return Array(count).fill(abbreviations[char] || char);
 });
@@ -26,3 +26,4 @@ const result: string = chars.join('');
 
 // console.log('answer');
 console.log(result);
+

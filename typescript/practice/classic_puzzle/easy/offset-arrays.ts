@@ -25,13 +25,13 @@ const rangeArrayFromTo: (from: number, to: number) => number[] = (from: number, 
     return [...Array(to - from + 1).keys()].map(i => i + from);
 };
 
-const assignmentRegexp: RegExp = /([A-Z]+)\[([-\d]+)\.\.([-\d]+)\]\s=\s([-\s\d]+)/;
+const assignmentRegexp: RegExp = /(?<arrayName>[A-Z]+)\[(?<rangeBeginStr>[-\d]+)\.\.(?<rangeEndStr>[-\d]+)\]\s=\s(?<valuesStr>[-\s\d]+)/;
 const assignmentObject: { [key: string]: { [key: string]: string } } = {};
 assignments.forEach(assignment => {
-    const [_, arrayName, strRangeBegin, strRangeEnd, strValues]: string[] = assignmentRegexp.exec(assignment);
-    const rangeBegin: number = parseInt(strRangeBegin);
-    const rangeEnd: number = parseInt(strRangeEnd);
-    const values: string[] = strValues.split(' ');
+    const { arrayName, rangeBeginStr, rangeEndStr, valuesStr }: { [key: string]: string } = assignment.match(assignmentRegexp).groups;
+    const rangeBegin: number = parseInt(rangeBeginStr);
+    const rangeEnd: number = parseInt(rangeEndStr);
+    const values: string[] = valuesStr.split(' ');
 
     if (!(arrayName in assignmentObject)) {
         assignmentObject[arrayName] = {};
@@ -44,13 +44,14 @@ assignments.forEach(assignment => {
     });
 });
 
-const resultRegexp: RegExp = /([A-Z]+)\[([-\d]+)\]/;
+const resultRegexp: RegExp = /(?<arrayName>[A-Z]+)\[(?<key>[-\d]+)\]/;
 let result: string = x.toString();
 while (result.match(resultRegexp)) {
-    const [_, arrayName, key]: string[] = resultRegexp.exec(result);
+    const { arrayName, key }: { [key: string]: string } = result.match(resultRegexp).groups;
 
     result = result.replace(`${arrayName}[${key}]`, assignmentObject[arrayName][key]);
 }
 
 // console.log('0');
 console.log(result);
+

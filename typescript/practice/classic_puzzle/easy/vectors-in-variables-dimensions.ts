@@ -36,7 +36,7 @@ interface Vector {
 };
 
 const points: Point[] = pointRows.map(pointRow => {
-    const [, name, componentsStr]: string[] = pointRow.match(/(.*?)\((.*?)\)/);
+    const { name, componentsStr }: { [key: string]: string } = pointRow.match(/(?<name>.*?)\((?<componentsStr>.*?)\)/).groups;
     const components: number[] = componentsStr.split(',').map(componentStr => parseInt(componentStr));
 
     return { name, components };
