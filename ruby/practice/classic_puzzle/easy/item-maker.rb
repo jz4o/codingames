@@ -64,9 +64,9 @@ class ItemInterface
 
       center_index = width / 2
       if width.even?
-        ascii_rows.first[center_index - 2..center_index + 1] = '\__/'
+        ascii_rows.first[(center_index - 2)..(center_index + 1)] = '\__/'
       else
-        ascii_rows.first[center_index - 1..center_index + 1] = '\_/'
+        ascii_rows.first[(center_index - 1)..(center_index + 1)] = '\_/'
       end
     end
 

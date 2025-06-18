@@ -37,7 +37,7 @@ parentheses_array.each do |parentheses|
   nest_level = nested_parentheses_array.map(&:level).max.to_i
 
   arrow_head_row = 1
-  arrow_shaft_rows = 2..nest_level - level + 2
+  arrow_shaft_rows = 2..(nest_level - level + 2)
   level_row = nest_level - level + 3
 
   [begin_index, end_index].each do |index|
@@ -48,7 +48,7 @@ parentheses_array.each do |parentheses|
     output_grid[level_row][index] = level
   end
 
-  (begin_index + 1..end_index - 1).each do |i|
+  ((begin_index + 1)..(end_index - 1)).each do |i|
     output_grid[level_row][i] = '-'
   end
 end

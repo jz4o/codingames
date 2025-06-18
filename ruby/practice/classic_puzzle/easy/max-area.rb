@@ -13,7 +13,7 @@ end
 # To debug: STDERR.puts "Debug messages..."
 
 areas = as.flat_map.with_index do |l, l_index|
-  as[l_index + 1..].map.with_index(l_index + 1) do |r, r_index|
+  as[(l_index + 1)..].map.with_index(l_index + 1) do |r, r_index|
     height = [l, r].min
     width = r_index - l_index
 

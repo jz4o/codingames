@@ -20,7 +20,7 @@ if key_index
   results << key_index % 10
   results << (sorted_words.size - key_index - 1) % 10
   results << sorted_words[...key_index].sum(&:length) % 10
-  results << sorted_words[key_index + 1..].sum(&:length) % 10
+  results << sorted_words[(key_index + 1)..].sum(&:length) % 10
 else
   results << 'IMPOSSIBLE'
 end

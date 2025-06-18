@@ -23,10 +23,10 @@ grid.each_with_index do |row, row_index|
   row.each_with_index do |cell, cell_index|
     next unless cell == 1
 
-    (1..height - row_index).each do |h|
+    (1..(height - row_index)).each do |h|
       h_rows = grid[row_index, h]
 
-      (1..width - cell_index).each do |w|
+      (1..(width - cell_index)).each do |w|
         binaries = h_rows.flat_map { |r| r[cell_index, w] }
         rectangle_sizes << binaries.size if binaries.all?(1)
       end

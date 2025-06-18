@@ -12,7 +12,7 @@ end
 
 # puts "answer"
 
-check_all_sum = map.flatten.sum == (1..@n**2).sum
+check_all_sum = map.flatten.sum == (1..(@n**2)).sum
 
 line_sums = []
 line_sums += map.map(&:sum)

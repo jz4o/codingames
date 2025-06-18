@@ -28,7 +28,7 @@ results = games.map do |game|
 
         10 - scores[index.pred].point.to_i + bonus_point
       when 'X'
-        bonus_points = score.frame < 9 ? scores[index.next..index + 2].map(&:point) : []
+        bonus_points = score.frame < 9 ? scores[index.next..(index + 2)].map(&:point) : []
         bonus_point = bonus_points.include?('/') ? 10 : bonus_points.sum { |point| point.sub('X', '10').to_i }
 
         10 + bonus_point

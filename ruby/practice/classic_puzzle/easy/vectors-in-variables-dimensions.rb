@@ -22,8 +22,8 @@ points.map! do |point|
   Point.new name, components
 end
 
-vectors = (0..n - 1).flat_map do |left_index|
-  (left_index + 1..n - 1).map do |right_index|
+vectors = (0..(n - 1)).flat_map do |left_index|
+  ((left_index + 1)..(n - 1)).map do |right_index|
     left_point = points[left_index]
     right_point = points[right_index]
 

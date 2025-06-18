@@ -14,10 +14,10 @@ end
 # Write an answer using puts
 # To debug: STDERR.puts "Debug messages..."
 
-odd_numbers = (1..n * 2).step(2).to_a
-even_numbers = (2..n * 2).step(2).to_a
+odd_numbers = (1..(n * 2)).step(2).to_a
+even_numbers = (2..(n * 2)).step(2).to_a
 
-guess_hash = (1..n * 2).to_h do |i|
+guess_hash = (1..(n * 2)).to_h do |i|
   numbers = i.odd? ? even_numbers : odd_numbers
   [i, numbers.clone]
 end

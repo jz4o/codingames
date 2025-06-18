@@ -32,7 +32,7 @@ while mine_log.size < mines
   gen_x = (prng.generate % width) + 1
   gen_y = (prng.generate % height) + 1
 
-  next if (x..x + 2).cover?(gen_x) && (y..y + 2).cover?(gen_y)
+  next if (x..(x + 2)).cover?(gen_x) && (y..(y + 2)).cover?(gen_y)
   next if mine_log.include? [gen_x, gen_y]
 
   mine_log << [gen_x, gen_y]
@@ -41,8 +41,8 @@ while mine_log.size < mines
 end
 
 mine_log.each do |mine_x, mine_y|
-  (mine_y - 1..mine_y + 1).each do |target_y|
-    (mine_x - 1..mine_x + 1).each do |target_x|
+  ((mine_y - 1)..(mine_y + 1)).each do |target_y|
+    ((mine_x - 1)..(mine_x + 1)).each do |target_x|
       target_value = grid[target_y][target_x]
       next if target_value == MINE
 

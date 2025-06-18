@@ -23,9 +23,9 @@ def count_controlled_square(board, queen_y, queen_x, queen_color)
 
   top_squares = (0...queen_y).map { |i| board[i][queen_x] }.reverse
   top_right_squares = (1..[queen_y, right_square_size].min).map { |i| board[queen_y - i][queen_x + i] }
-  right_squares = board[queen_y][queen_x + 1..]
+  right_squares = board[queen_y][(queen_x + 1)..]
   bottom_right_squares = (1..[bottom_square_size, right_square_size].min).map { |i| board[queen_y + i][queen_x + i] }
-  bottom_squares = board[queen_y + 1..].map { |row| row[queen_x] }
+  bottom_squares = board[(queen_y + 1)..].map { |row| row[queen_x] }
   bottom_left_squares = (1..[bottom_square_size, queen_x].min).map { |i| board[queen_y + i][queen_x - i] }
   left_squares = board[queen_y][...queen_x].reverse
   top_left_squares = (1..[queen_y, queen_x].min).map { |i| board[queen_y - i][queen_x - i] }

@@ -82,7 +82,7 @@ end
 ducks.sort_by!(&:keep_field)
 
 results = []
-(2..ducks.size + 1).each do |turn|
+(2..(ducks.size + 1)).each do |turn|
   target_keep_field = ducks.map(&:keep_field).find { |keep_field| turn <= keep_field }
   target_ducks = ducks.filter { |duck| duck.keep_field == target_keep_field }
   target_duck = target_ducks.min_by { |duck| duck.distance_edge turn, h, w }

@@ -41,7 +41,7 @@ while check_cell = be_check_cells.shift
     grid[check_cell.y][check_cell.x + 1],
     grid[check_cell.y + 1][check_cell.x]
   ].filter do |around_cell|
-    (check_cell.v - 1..check_cell.v + 1).cover? around_cell.v
+    ((check_cell.v - 1)..(check_cell.v + 1)).cover? around_cell.v
   end
 
   new_cells = around_cells - reachable_cells - be_check_cells

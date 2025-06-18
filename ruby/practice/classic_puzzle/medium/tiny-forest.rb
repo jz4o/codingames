@@ -44,8 +44,8 @@ end
 
 before_tree_count = grid.flatten.count TREE
 
-increase_tree_counts = (3...h + 3).flat_map do |row_index|
-  (3...w + 3).map do |column_index|
+increase_tree_counts = (3...(h + 3)).flat_map do |row_index|
+  (3...(w + 3)).map do |column_index|
     (-2..2).sum do |row_distance|
       ((-2 + row_distance.abs)..(2 - row_distance.abs)).count do |column_distance|
         grid[row_index + row_distance][column_index + column_distance] == GRASS

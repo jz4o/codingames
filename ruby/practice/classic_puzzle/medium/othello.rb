@@ -35,7 +35,7 @@ def move_stone(grid, move_position)
   reverse_stones top_right_positions, move_position.value
 
   # right
-  right_positions = grid[move_position.y][move_position.x + 1..]
+  right_positions = grid[move_position.y][(move_position.x + 1)..]
   reverse_stones right_positions, move_position.value
 
   # bottom-right
@@ -44,7 +44,7 @@ def move_stone(grid, move_position)
   reverse_stones bottom_right_positions, move_position.value
 
   # bottom
-  bottom_positions = grid[move_position.y + 1..].map { |row| row[move_position.x] }
+  bottom_positions = grid[(move_position.y + 1)..].map { |row| row[move_position.x] }
   reverse_stones bottom_positions, move_position.value
 
   # bottom-left
