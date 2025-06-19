@@ -49,7 +49,7 @@ class DigitalNumber {
     }
 
     subtractScore: (scoreRows: string[]) => void = (scoreRows: string[]): void => {
-        this.bitsArray = zip(this.bitsArray, DigitalNumber.#toBitsArray(scoreRows)).map(([s1, s2]) => s1 & (s2 ^ parseInt('1111111', 2)));
+        this.bitsArray = zip(this.bitsArray, DigitalNumber.#toBitsArray(scoreRows)).map(([s1, s2]) => s1 & (s2 ^ 0b1111111));
     };
 
     addScore: (scoreRows: string[]) => void = (scoreRows: string[]): void => {
