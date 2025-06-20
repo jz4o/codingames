@@ -13,7 +13,7 @@ n.times do |i|
 
   word = words[i]
   prefix_length = word.length.times.to_a.find do |length|
-    words.count { |w| w.start_with? word[..length] } == 1
+    words.one? { |w| w.start_with? word[..length] }
   end
   prefix_length ||= word.length
 
