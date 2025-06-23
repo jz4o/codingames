@@ -21,6 +21,9 @@ ignore = [
     'SIM114',
     'T201',
     'TRY003',
+
+    # below temporary ignore rules
+    'FURB157',
 ]
 
 [lint.flake8-quotes]
