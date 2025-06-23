@@ -27,7 +27,7 @@ def precise_round_div(dividend: float, divisor: float, ndigits: int | None = Non
         return float(div_decimal)
 
     adjust_decimal = Decimal(str(10 ** -ndigits))
-    rounded_decimal = (div_decimal / adjust_decimal).quantize(Decimal('0'), ROUND_HALF_UP) * adjust_decimal
+    rounded_decimal = (div_decimal / adjust_decimal).quantize(Decimal(0), ROUND_HALF_UP) * adjust_decimal
 
     return float(rounded_decimal)
 
@@ -111,3 +111,4 @@ results = [str(point.color()) for point in points]
 # print("answer")
 for result in results:
     print(result)
+
