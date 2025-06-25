@@ -48,7 +48,7 @@ export default [
       'no-ternary': 'off',
       'no-undefined': 'off',
       'no-underscore-dangle': 'off',
-      'one-var': ['off', 'never'],
+      'one-var': 'off',
       'radix': ['error', 'as-needed'],
       'require-unicode-regexp': 'off',
       'semi': ['error', 'always'],
