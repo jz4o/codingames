@@ -55,5 +55,11 @@ export default [
       'sort-keys': 'off',
       'yoda': 'off',
     }
-  }
+  },
+  {
+    files: ['**/hacking-at-robbercity.ts'],
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+    }
+  },
 ];
