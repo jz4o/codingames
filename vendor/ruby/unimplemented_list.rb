@@ -9,7 +9,7 @@ def get_file_names(*dir_name)
 end
 
 # codingames directory
-ROOT_DIR = File.expand_path '../', __dir__
+ROOT_DIR = File.expand_path '../../', __dir__
 
 # implemented languages to Onboarding
 # NOTE: assume to implement on Onboarding first
