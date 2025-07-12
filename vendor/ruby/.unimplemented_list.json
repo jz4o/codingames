@@ -1,0 +1,7 @@
+{
+  "ignores": {
+    "typescript": [
+      "what-is-your-garden-worth"
+    ]
+  }
+}

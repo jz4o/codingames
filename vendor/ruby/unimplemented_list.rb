@@ -1,3 +1,5 @@
+require 'json'
+
 # get implemented file list for specific languages
 #
 # @param [Array] dir language names
@@ -18,6 +20,9 @@ LANGUAGES = Dir.glob('**/onboarding.*', base: ROOT_DIR).map { |path| path.sub(%r
 # implemented file list
 FILE_NAMES = get_file_names LANGUAGES
 
+# setting json
+settings = JSON.load_file File.join(__dir__, '.unimplemented_list.json')
+
 # for output
 output_list = []
 
@@ -29,8 +34,14 @@ TARGET_LANGUAGES.each do |language|
   # implemented file names by specific language
   implemented_file_names = get_file_names language
 
+  # ignore file names by specific language
+  ignores = (settings['ignores']['all'] || []) + (settings['ignores'][language] || [])
+  ignore_file_names = ignores.flat_map do |ignore|
+    FILE_NAMES.filter { |file_name| file_name.end_with? "/#{ignore}" }
+  end
+
   # unimplemented file names by specific language
-  unimplemented_file_names = FILE_NAMES - implemented_file_names
+  unimplemented_file_names = FILE_NAMES - implemented_file_names - ignore_file_names
 
   # goto next loop if unimplemented files is empty for specific language
   next unless unimplemented_file_names.any?
