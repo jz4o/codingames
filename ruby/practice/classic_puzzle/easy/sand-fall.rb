@@ -21,20 +21,17 @@ input_rows.each do |str, point|
   first_fall_direction = str.match?(/[a-z]/) ? 1 : -1
 
   target_point = point + 1
-  fall_flag = true
-  while fall_flag
-    fall_flag = false
-
+  loop do
     target_row = clockwise_grid[target_point]
     first_fall_row = clockwise_grid[target_point + first_fall_direction]
     second_fall_row = clockwise_grid[target_point - first_fall_direction]
 
     if first_fall_row.size < target_row.size
       target_point += first_fall_direction
-      fall_flag = true
     elsif second_fall_row.size < target_row.size
       target_point -= first_fall_direction
-      fall_flag = true
+    else
+      break
     end
   end
 

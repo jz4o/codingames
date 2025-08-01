@@ -8,10 +8,10 @@ exprs = []
 incomplete_exprs << @expr
 
 class Integer
-  alias :'origin_>' :'>'
+  alias :origin_gt :'>'
 
   def >(other)
-    send(:'origin_>', other) ? 1 : 0
+    send(:origin_gt, other) ? 1 : 0
   end
 end
 
