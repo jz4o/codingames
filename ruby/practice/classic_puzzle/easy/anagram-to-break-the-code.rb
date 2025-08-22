@@ -7,7 +7,7 @@ s = gets.chomp
 # Write an answer using puts
 # To debug: STDERR.puts "Debug messages..."
 
-words = s.downcase.gsub(/[:\.,?!]/, ' ').split
+words = s.downcase.gsub(/[:.,?!]/, ' ').split
 sorted_words = words.map { |word| word.chars.sort.join }
 
 downcase_w = w.downcase
