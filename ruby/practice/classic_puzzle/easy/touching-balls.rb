@@ -20,10 +20,8 @@ balls.each do |ball|
                    .map do |b|
                      distance_x = (ball.x - b.x).abs
                      distance_y = (ball.y - b.y).abs
-                     center_point_distance_horizontal = Math.sqrt(distance_x**2 + distance_y**2)
-
                      distance_z = (ball.z - b.z).abs
-                     center_point_distance = Math.sqrt(center_point_distance_horizontal**2 + distance_z**2)
+                     center_point_distance = Math.sqrt(distance_x**2 + distance_y**2 + distance_z**2)
 
                      center_point_distance - ball.r - b.r
                    end
