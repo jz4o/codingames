@@ -22,13 +22,13 @@ class DigitalNumber:
 
     def subtract_score(self, score_rows):
         subtracted_bits_list = []
-        for s1, s2 in zip(self.bits_list, self._to_bits_list(score_rows)):
+        for s1, s2 in zip(self.bits_list, self._to_bits_list(score_rows), strict=True):
             subtracted_bits_list.append(s1 & (s2 ^ int('1111111', 2)))
 
         self.bits_list = subtracted_bits_list
 
     def add_score(self, score_rows):
-        self.bits_list = [s1 | s2 for s1, s2 in zip(self.bits_list, self._to_bits_list(score_rows))]
+        self.bits_list = [s1 | s2 for s1, s2 in zip(self.bits_list, self._to_bits_list(score_rows), strict=True)]
 
     def __str__(self):
         digit_bits = [

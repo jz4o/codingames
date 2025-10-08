@@ -25,7 +25,7 @@ s2_move_part.extend('' for _ in range(t - len(s2_move_part)))
 s1_not_move_part = list(reversed(s1[t:]))
 s2_not_move_part = list(s2[t:])
 
-s_moved_part = itertools.chain.from_iterable([list(t) for t in zip(s2_move_part, s1_move_part)])
+s_moved_part = itertools.chain.from_iterable([list(t) for t in zip(s2_move_part, s1_move_part, strict=True)])
 
 result = ''.join([*s1_not_move_part, *s_moved_part, *s2_not_move_part])
 

@@ -24,9 +24,13 @@ for i in range(m):
 
     service_clients_row = service_clients[i]
 
-    instances = [math.ceil(client / maxclient) for client, maxclient in zip(service_clients_row, service_maxclients)]
+    instances = [
+        math.ceil(client / maxclient)
+        for client, maxclient
+        in zip(service_clients_row, service_maxclients, strict=True)
+    ]
 
-    scalings = [instance - temp_instance for instance, temp_instance in zip(instances, temp_instances)]
+    scalings = [instance - temp_instance for instance, temp_instance in zip(instances, temp_instances, strict=True)]
     temp_instances = instances
 
     result = ' '.join(map(str, scalings))

@@ -1,6 +1,8 @@
 # import sys
 # import math
 
+import itertools
+
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
@@ -26,7 +28,7 @@ for i in range(n):
     logs = [Log(index, f.index(char)) for index, char in enumerate(crewmate) if char in f]
 
     is_sus = False
-    for l, r in zip(logs[:-1], logs[1:]):
+    for l, r in itertools.pairwise(logs):
         time = r.time - l.time
         distance = abs(r.room_index - l.room_index)
         distance = min(distance, len(f) - distance)

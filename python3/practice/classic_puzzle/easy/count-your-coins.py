@@ -18,7 +18,7 @@ for i in input().split():
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
-count_values = [[count, value] for count, value in zip(counts, values)]
+count_values = [[count, value] for count, value in zip(counts, values, strict=True)]
 count_values.sort(key=lambda count_value: count_value[1])
 
 sum_value = sum([count * value for count, value in count_values])

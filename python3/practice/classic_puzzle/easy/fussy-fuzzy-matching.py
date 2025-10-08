@@ -33,7 +33,7 @@ for candidate in candidates:
         continue
 
     result = True
-    for template_element, element in zip(template_elements, elements):
+    for template_element, element in zip(template_elements, elements, strict=True):
         if re.match(r'[a-zA-Z]', template_element) is not None:
             if re.match(r'[a-zA-Z]', element) is None or abs(ord(template_element) - ord(element)) > letter_fuzz:
                 result = False

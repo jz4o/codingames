@@ -64,7 +64,7 @@ for index, fname in enumerate(temp_fnames):
 functions = [
     Function(begin_row_index, end_row_index)
     for begin_row_index, end_row_index
-    in zip(begin_row_indexes, end_row_indexes)
+    in zip(begin_row_indexes, end_row_indexes, strict=True)
 ]
 
 for insert in reversed(inserts):

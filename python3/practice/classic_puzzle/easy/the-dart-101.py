@@ -21,7 +21,7 @@ TARGET_POINT = 101
 MISS_SHOOT = 'X'
 
 reached_rounds = {}
-for player, shoots in zip(players, player_shoots):
+for player, shoots in zip(players, player_shoots, strict=True):
     point = 0
     game_round = 0
     shoots_list = shoots.split()

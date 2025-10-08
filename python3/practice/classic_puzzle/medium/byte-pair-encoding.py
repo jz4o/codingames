@@ -1,6 +1,7 @@
 # import sys
 # import math
 
+import itertools
 import re
 
 # Auto-generated code below aims at helping you parse
@@ -24,7 +25,7 @@ replace_char = 'Z'
 
 while True:
     chars = list(replaced_string)
-    char_groups = [f'{l}{r}' for l, r in zip(chars[:-1], chars[1:])]
+    char_groups = [f'{l}{r}' for l, r in itertools.pairwise(chars)]
     group_sizes = [[char_group, len(re.findall(char_group, replaced_string))] for char_group in char_groups]
 
     max_group_size = max([group_size for _, group_size in group_sizes])

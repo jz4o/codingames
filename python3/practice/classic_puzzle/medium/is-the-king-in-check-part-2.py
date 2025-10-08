@@ -32,7 +32,7 @@ for row_index, row in enumerate(chess_board):
             enemies.append(Piece(kind, row_index, column_index))
 
 is_check = False
-for enemy, another_enemy in zip(enemies, reversed(enemies)):
+for enemy, another_enemy in zip(enemies, reversed(enemies), strict=True):
     is_same_row = king.row == enemy.row
     is_same_column = king.column == enemy.column
     is_same_diagonal_line = abs(king.row - enemy.row) == abs(king.column - enemy.column)

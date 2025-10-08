@@ -40,7 +40,7 @@ class LabeledPayment:
 labeled_payments = [
     LabeledPayment(label, payment)
     for label, payment
-    in zip(string.ascii_uppercase[:len(payment_entries)], payment_entries)
+    in zip(string.ascii_uppercase[:len(payment_entries)], payment_entries, strict=True)
 ]
 
 invoice_stack = []

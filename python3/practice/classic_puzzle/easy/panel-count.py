@@ -32,7 +32,7 @@ for person_row in person_rows:
     person_properties = person_row.split()
 
     person = {}
-    for property_name, person_property in zip(properties, person_properties):
+    for property_name, person_property in zip(properties, person_properties, strict=True):
         person[property_name] = person_property
 
     people.append(person)

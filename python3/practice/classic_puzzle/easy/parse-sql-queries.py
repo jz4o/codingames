@@ -21,7 +21,7 @@ for _ in range(rows):
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
 columns = table_header.split(' ')
-records = pd.DataFrame([dict(zip(columns, table_row.split(' '))) for table_row in table_rows])
+records = pd.DataFrame([dict(zip(columns, table_row.split(' '), strict=True)) for table_row in table_rows])
 
 sql_regexp = '(SELECT)\\s(.*)\\s(FROM)\\s(.*)'
 if 'WHERE' in sql_query:

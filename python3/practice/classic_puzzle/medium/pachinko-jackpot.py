@@ -40,9 +40,9 @@ for increment_row in increment_grid:
     counter_grid.append(counter_row)
 
 last_counter_row = counter_grid[-1]
-total_counters = [max(l, r) for l, r in zip([0, *last_counter_row], [*last_counter_row, 0])]
+total_counters = [max(l, r) for l, r in zip([0, *last_counter_row], [*last_counter_row, 0], strict=True)]
 
-possible_wins = [total_count * prize for total_count, prize in zip(total_counters, prizes)]
+possible_wins = [total_count * prize for total_count, prize in zip(total_counters, prizes, strict=True)]
 
 result = max(possible_wins)
 

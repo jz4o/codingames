@@ -18,7 +18,7 @@ for _ in range(n):
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
 expressions = re.findall('[-+][a-z]+', expression)
-int_expressions = [express[1:] for express, t in zip(expressions, types.split(',')) if t == 'int']
+int_expressions = [express[1:] for express, t in zip(expressions, types.split(','), strict=True) if t == 'int']
 
 objects = []
 for row in rows:

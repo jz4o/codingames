@@ -1,6 +1,7 @@
 # import sys
 # import math
 
+import itertools
 import re
 from fractions import Fraction
 
@@ -53,7 +54,7 @@ while convert_relations is None and len(temp_relation_patterns) > 0:
 
 from_size = 1
 to_size = 1
-for f, t in zip(convert_relations[:-1], convert_relations[1:]):
+for f, t in itertools.pairwise(convert_relations):
     to_size *= relation_rates[f'{f}->{t}']
 
 from_size *= to_size.denominator

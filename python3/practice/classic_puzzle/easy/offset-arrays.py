@@ -25,7 +25,7 @@ for assignment in assignments:
         assignment_dict[array_name] = {}
 
     target_dict = assignment_dict[array_name]
-    for r, v in zip(range(int(range_begin), int(range_end) + 1), values.split(' ')):
+    for r, v in zip(range(int(range_begin), int(range_end) + 1), values.split(' '), strict=True):
         target_dict[str(r)] = v
 
 result = x

@@ -20,7 +20,7 @@ message_3_binary_chars = [int(hexadecimal_char, 16) for hexadecimal_char in re.f
 message_binary_chars = [
     nth_binary_char_1 ^ nth_binary_char_2 ^ nth_binary_char_3
     for nth_binary_char_1, nth_binary_char_2, nth_binary_char_3
-    in zip(message_1_binary_chars, message_2_binary_chars, message_3_binary_chars)
+    in zip(message_1_binary_chars, message_2_binary_chars, message_3_binary_chars, strict=True)
 ]
 
 message_chars = [chr(message_binary_char) for message_binary_char in message_binary_chars]

@@ -42,7 +42,7 @@ for left_index in range(n):
         component_distances = [
             r - l
             for (l, r)
-            in zip(left_point.components, right_point.components)
+            in zip(left_point.components, right_point.components, strict=True)
         ]
         distance = math.sqrt(sum(d**2 for d in component_distances))
 

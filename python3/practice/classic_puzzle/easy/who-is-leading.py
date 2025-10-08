@@ -1,6 +1,8 @@
 # import sys
 # import math
 
+import itertools
+
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
@@ -63,7 +65,7 @@ points.sort(key=lambda point: point.timestamp)
 lead_data_1 = LeadData(team_1, 0, 0)
 lead_data_2 = LeadData(team_2, 0, 0)
 
-for left, right in zip(points[:-1], points[1:]):
+for left, right in itertools.pairwise(points):
     if lead_data_1.point > lead_data_2.point:
         lead_data_1.advantage_time += right.timestamp - left.timestamp
     elif lead_data_1.point < lead_data_2.point:

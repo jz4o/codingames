@@ -1,6 +1,8 @@
 # import sys
 # import math
 
+import itertools
+
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
 
@@ -31,7 +33,7 @@ for r in rs:
     records.append(Record(number, distance, timestamp))
 
 results = []
-for l_record, r_record in zip(records[:-1], records[1:]):
+for l_record, r_record in itertools.pairwise(records):
     if l_record.number != r_record.number:
         continue
 

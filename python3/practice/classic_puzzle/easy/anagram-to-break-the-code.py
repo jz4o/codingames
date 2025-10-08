@@ -19,7 +19,7 @@ lower_case_w = w.lower()
 sorted_w = ''.join(sorted(lower_case_w))
 
 key_index = None
-for index, (word, sorted_word) in enumerate(zip(words, sorted_words)):
+for index, (word, sorted_word) in enumerate(zip(words, sorted_words, strict=True)):
     if word != lower_case_w and sorted_word == sorted_w:
         key_index = index
         break

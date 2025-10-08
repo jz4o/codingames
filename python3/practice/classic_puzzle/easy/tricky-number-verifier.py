@@ -23,7 +23,7 @@ def calc_check_digit(lll, ddmmyy):
     sum_value = sum(
         int(l) * int(r)
         for l, r
-        in zip(f'{lll}{ddmmyy}', '379584216')
+        in zip(f'{lll}{ddmmyy}', '379584216', strict=True)
     )
 
     return sum_value % 11

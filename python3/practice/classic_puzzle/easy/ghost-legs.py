@@ -21,7 +21,7 @@ for row in reversed(grid):
         if char == '-':
             bottom_row[column_index - 1:column_index + 2] = reversed(bottom_row[column_index - 1:column_index + 2])
 
-results = [top_char + bottom_char for top_char, bottom_char in zip(top_row, bottom_row) if top_char != ' ']
+results = [top_char + bottom_char for top_char, bottom_char in zip(top_row, bottom_row, strict=True) if top_char != ' ']
 
 # print("answer")
 for result in results:

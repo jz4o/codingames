@@ -24,7 +24,7 @@ for _ in range(m):
     input_signal_1 = input_signals[input_name_1]
     input_signal_2 = input_signals[input_name_2]
 
-    signal_chars = zip(input_signal_1, input_signal_2)
+    signal_chars = zip(input_signal_1, input_signal_2, strict=True)
 
     output = ''
     if _type == 'AND':

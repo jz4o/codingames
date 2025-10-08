@@ -20,7 +20,7 @@ for _ in range(height):
 lines1_numbers = map(int, ' '.join(lines1).split())
 lines2_marks = ' '.join(lines2).split()
 
-x_numbers = [number for number, mark in zip(lines1_numbers, lines2_marks) if mark == 'X']
+x_numbers = [number for number, mark in zip(lines1_numbers, lines2_marks, strict=True) if mark == 'X']
 x_positive_booleans = [x_number > 0 for x_number in x_numbers]
 
 result = all(x_positive_booleans[i] is not x_positive_booleans[i + 1] for i in range(len(x_positive_booleans) - 1))

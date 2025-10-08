@@ -20,7 +20,7 @@ def faro_shuffle(deck):
     if len(splited_deck) % 2 == 1:
         back_half.append('')
 
-    result = zip(front_half, back_half)
+    result = zip(front_half, back_half, strict=True)
     result = itertools.chain.from_iterable(map(list, result))
     result = [elm for elm in result if elm != '']  # remove empty string
     result = ' '.join(result)
