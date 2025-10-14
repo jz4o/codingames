@@ -1,4 +1,4 @@
-FROM python:3.9.12-alpine
+FROM python:3.11.5-alpine
 
 RUN pip list --outdated | tail -n +3 | awk '{print $1}' | xargs pip install --upgrade
 
