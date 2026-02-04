@@ -56,7 +56,7 @@ class ArabiaRoman:
 
         return roman
 
-sorted_xs = sorted(xs, key=lambda x: ArabiaRoman.to_roman(x))
+sorted_xs = sorted(xs, key=ArabiaRoman.to_roman)
 result = ' '.join([str(x) for x in sorted_xs])
 
 # print("50 60 40")
