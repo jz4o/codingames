@@ -27,7 +27,8 @@ result = nil
   (picture_width - wally_width + 1).times do |w|
     picture_chars = picture_grid[h, wally_height]
                     .flat_map { |row| row[w, wally_width] }
-                    .select.with_index { |_char, index| wally_indexes.include? index }
+                    .select
+                    .with_index { |_char, index| wally_indexes.include? index }
                     .join
     result = "#{w} #{h}" and break if wally_chars == picture_chars
   end
