@@ -54,6 +54,10 @@ export default [
       'semi': ['error', 'always'],
       'sort-keys': 'off',
       'yoda': 'off',
+
+      // temporary ignore rules.
+      'radix': 'off',
+      'no-dupe-keys': 'off',
     }
   },
   {
