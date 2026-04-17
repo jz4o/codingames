@@ -33,8 +33,8 @@ fn main() {
         io::stdin().read_line(&mut input_line).unwrap();
         let inputs = input_line.split(" ").collect::<Vec<_>>();
         let throw_name = inputs[0].trim().to_string();
-        let throw_x = parse_input!(inputs[1], i32);
-        let throw_y = parse_input!(inputs[2], i32);
+        let throw_x = parse_input!(inputs[1], f32);
+        let throw_y = parse_input!(inputs[2], f32);
 
         throw_datas.push(ThrowData{name: throw_name, x: throw_x, y: throw_y});
     }
@@ -42,21 +42,21 @@ fn main() {
     // Write an answer using println!("message...");
     // To debug: eprintln!("Debug message...");
 
-    let half_size: i32 = size / 2;
+    let half_size: f32 = size as f32 / 2.0;
     let mut score_board: HashMap<String, i32> = HashMap::new();
     for name in names.iter() {
         score_board.insert(name.to_string(), 0);
     }
 
     for throw_data in throw_datas {
-        let distance_with_center: f32 = ((throw_data.x.pow(2 as u32) + throw_data.y.pow(2 as u32)) as f32).sqrt();
-        let distance_with_edge: f32 = (((half_size - throw_data.x.abs()).pow(2 as u32) + (half_size - throw_data.y.abs()).pow(2 as u32)) as f32).sqrt();
+        let distance_with_center: f32 = (throw_data.x.powf(2.0) + throw_data.y.powf(2.0)).sqrt();
+        let distance_with_edge: f32 = ((half_size - throw_data.x.abs()).powf(2.0) + (half_size - throw_data.y.abs()).powf(2.0)).sqrt();
 
-        let in_square_horizontal: bool = half_size * -1 <= throw_data.x && throw_data.x <= half_size;
-        let in_square_vertical: bool = half_size * -1 <= throw_data.y && throw_data.y <= half_size;
+        let in_square_horizontal: bool = half_size * -1.0 <= throw_data.x && throw_data.x <= half_size;
+        let in_square_vertical: bool = half_size * -1.0 <= throw_data.y && throw_data.y <= half_size;
 
         let in_square: bool = in_square_horizontal && in_square_vertical;
-        let in_circle: bool = distance_with_center <= half_size as f32;
+        let in_circle: bool = distance_with_center <= half_size;
         let in_diamond: bool = distance_with_center <= distance_with_edge;
 
         if in_diamond {
@@ -85,8 +85,8 @@ fn main() {
 
 struct ThrowData {
     name: String,
-    x: i32,
-    y: i32
+    x: f32,
+    y: f32
 }
 
 struct Score {

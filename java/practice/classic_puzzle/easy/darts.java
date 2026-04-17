@@ -34,7 +34,7 @@ class Solution {
         // Write an action using System.out.println()
         // To debug: System.err.println("Debug messages...");
 
-        final int halfSize = SIZE / 2;
+        final double halfSize = SIZE / 2.0;
         HashMap<String, Score> scoreBoard = new HashMap<String, Score>();
         for (String name : names) {
             scoreBoard.put(name, new Score(name, 0));

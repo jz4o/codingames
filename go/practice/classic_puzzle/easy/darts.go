@@ -46,7 +46,7 @@ func main() {
         throwDatas = append(throwDatas, ThrowData{throwName, float64(throwX), float64(throwY)})
     }
 
-    halfSize := float64(SIZE / 2)
+    halfSize := float64(SIZE) / 2
     scoreBoard := map[string]int{}
     for _, name := range names {
         scoreBoard[name] = 0

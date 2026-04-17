@@ -15,7 +15,7 @@ throw_datas = []
   throw_datas << throw_data
 end
 
-HALF_SIZE = @size / 2
+HALF_SIZE = @size / 2.0
 score_board = names.to_h { |name| [name, 0] }
 
 throw_datas.each do |throw_data|

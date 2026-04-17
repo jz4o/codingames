@@ -40,8 +40,8 @@ foreach ($throw_datas as $throw_data) {
     $distance_with_center = sqrt($x ** 2 + $y ** 2);
     $distance_with_edge   = sqrt(($HALF_SIZE - abs($x)) ** 2 + ($HALF_SIZE - abs($y)) ** 2);
 
-    $in_square_horizontal = in_array($x, range(-$HALF_SIZE, $HALF_SIZE));
-    $in_square_vertical   = in_array($y, range(-$HALF_SIZE, $HALF_SIZE));
+    $in_square_horizontal = abs($x) <= $HALF_SIZE;
+    $in_square_vertical   = abs($y) <= $HALF_SIZE;
 
     $in_square  = $in_square_horizontal && $in_square_vertical;
     $in_circle  = $distance_with_center <= $HALF_SIZE;

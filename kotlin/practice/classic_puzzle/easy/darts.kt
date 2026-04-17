@@ -32,7 +32,7 @@ fun main(args : Array<String>) {
     // Write an answer using println()
     // To debug: System.err.println("Debug messages...");
 
-    val HALF_SIZE: Int = Math.floor(SIZE / 2.0).toInt()
+    val HALF_SIZE: Double = SIZE / 2.0
     val scoreBoard: HashMap<String, Int> = hashMapOf()
     names.forEach { scoreBoard[it] = 0 }
 

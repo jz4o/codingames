@@ -39,7 +39,7 @@ for (let i = 0; i < T; i++) {
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
 
-const HALF_SIZE: number = Math.floor(SIZE / 2);
+const HALF_SIZE: number = SIZE / 2;
 const scoreBoard: {[key: string]: number} = {};
 names.forEach(name => scoreBoard[name] = 0);
 

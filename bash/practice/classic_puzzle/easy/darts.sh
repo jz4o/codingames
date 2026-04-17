@@ -20,7 +20,7 @@ done
 # Write an action using echo
 # To debug: echo "Debug messages..." >&2
 
-half_size=$(( $SIZE / 2 ))
+half_size=`echo "scale=1; $SIZE / 2" | bc`
 declare -A score_board=()
 for name in "${names[@]}"; do
     score_board[$name]=0
@@ -32,23 +32,15 @@ for throw_data in "${throw_datas[@]}"; do
     x=${throw_data_elements[1]}
     y=${throw_data_elements[2]}
 
-    distance_with_center=`echo "sqrt( $x ^ 2 + $y ^ 2 )" | bc`
-    if [[ ! "$distance_with_center" =~ '.0+$' ]]; then
-        distance_with_center=`echo "${distance_with_center}" | grep -o -E '^[0-9]+'`
-        let distance_with_center++
-    fi
-    distance_with_edge=`echo "sqrt(($half_size - ${x/-}) ^ 2 + ($half_size - ${y/-}) ^ 2)" | bc`
-    if [[ ! "$distance_with_edge" =~ '.0+$' ]]; then
-        distance_with_edge=`echo "${distance_with_edge}" | grep -o -E '^[0-9]+'`
-        let distance_with_edge++
-    fi
+    distance_with_center=`echo "scale=5; sqrt( $x ^ 2 + $y ^ 2 )" | bc`
+    distance_with_edge=`echo "scale=5; sqrt(($half_size - ${x/-}) ^ 2 + ($half_size - ${y/-}) ^ 2)" | bc`
 
     in_square_horizontal_flag=0
-    if [ $x -ge $(( $half_size * -1 )) ] && [ $x -le $half_size ]; then
+    if [ `echo "$x >= $half_size * -1" | bc` == 1 ] && [ `echo "$x <= $half_size" | bc` == 1 ]; then
         in_square_horizontal_flag=1
     fi
     in_square_vertical_flag=0
-    if [ $y -ge $(( $half_size * -1 )) ] && [ $y -le $half_size ]; then
+    if [ `echo "$y >= $half_size * -1" | bc` == 1 ] && [ `echo "$y <= $half_size" | bc` == 1 ]; then
         in_square_vertical_flag=1
     fi
 
@@ -57,11 +49,11 @@ for throw_data in "${throw_datas[@]}"; do
         in_square_flag=1
     fi
     in_circle_flag=0
-    if [ $distance_with_center -le $half_size ]; then
+    if [ `echo "$distance_with_center <= $half_size" | bc` == 1 ]; then
         in_circle_flag=1
     fi
     in_diamond_flag=0
-    if [ $distance_with_center -le $distance_with_edge ]; then
+    if [ `echo "$distance_with_center <= $distance_with_edge" | bc` == 1 ]; then
         in_diamond_flag=1
     fi
 
@@ -86,7 +78,7 @@ sorted_score_board=(`for v in "${score_board_for_sort[@]}"; do echo "$v"; done |
 # echo "answer"
 for score_line in "${sorted_score_board[@]}"; do
     score_elements=(${score_line//:/ })
-    score=`echo "${score_elements[0]}" | sed s/^0//`
+    score=`echo "${score_elements[0]}" | sed s/^0*//`
     name=${score_elements[2]}
 
     echo "$name $score"

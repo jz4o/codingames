@@ -36,7 +36,7 @@ for _ in range(t):
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
-HALF_SIZE = size // 2
+HALF_SIZE = size / 2
 score_board = dict.fromkeys(names, 0)
 
 for throw_data in throw_datas:

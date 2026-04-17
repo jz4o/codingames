@@ -35,7 +35,7 @@ for my $i (0..$t-1) {
 # Write an answer using print
 # To debug: print STDERR "Debug messages...\n";
 
-my $HALF_SIZE = int($size / 2);
+my $HALF_SIZE = $size / 2;
 my %score_board;
 foreach my $name (@names) {
     $score_board{$name} = 0;
