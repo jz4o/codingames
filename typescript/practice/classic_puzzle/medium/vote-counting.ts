@@ -3,12 +3,12 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
-const M: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
+const M: number = parseInt(readline(), 10);
 const voters: {[key: string]: number} = {};
 for (let i = 0; i < N; i++) {
     const [personName, nbVoteStr]: string[] = readline().split(' ');
-    const nbVote: number = parseInt(nbVoteStr);
+    const nbVote: number = parseInt(nbVoteStr, 10);
 
     voters[personName] = nbVote;
 }

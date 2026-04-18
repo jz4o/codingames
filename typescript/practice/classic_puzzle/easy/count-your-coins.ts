@@ -3,18 +3,18 @@
  * the standard input according to the problem statement.
  **/
 
-const valueToReach: number = parseInt(readline());
-const N: number = parseInt(readline());
+const valueToReach: number = parseInt(readline(), 10);
+const N: number = parseInt(readline(), 10);
 const inputs1: string[] = readline().split(' ');
 const counts: number[] = [];
 for (let i = 0; i < N; i++) {
-    const count: number = parseInt(inputs1[i]);
+    const count: number = parseInt(inputs1[i], 10);
     counts.push(count);
 }
 const inputs2: string[] = readline().split(' ');
 const values: number[] = [];
 for (let i = 0; i < N; i++) {
-    const value: number = parseInt(inputs2[i]);
+    const value: number = parseInt(inputs2[i], 10);
     values.push(value);
 }
 

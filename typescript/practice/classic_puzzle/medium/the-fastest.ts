@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const ts: string[] = [];
 for (let i = 0; i < N; i++) {
     const t: string = readline();
@@ -18,3 +18,4 @@ const result = ts.reduce((min, t) => t < min ? t : min);
 
 // console.log('answer');
 console.log(result);
+

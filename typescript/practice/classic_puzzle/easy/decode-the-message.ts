@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const P: number = parseInt(readline());
+const P: number = parseInt(readline(), 10);
 const C: string = readline();
 
 // Write an answer using console.log()

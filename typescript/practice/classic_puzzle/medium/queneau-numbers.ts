@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
@@ -39,3 +39,4 @@ if (JSON.stringify(array) === JSON.stringify(INITIAL_ARRAY)) {
 } else {
     console.log('IMPOSSIBLE');
 }
+

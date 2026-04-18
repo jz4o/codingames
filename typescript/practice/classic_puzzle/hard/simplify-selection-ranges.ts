@@ -14,7 +14,7 @@ const buildAddItems = (array: number[]): string => {
 
 const numbers: number[] = N.replace(/[[\]]/g, '')
                            .split(',')
-                           .map(n => parseInt(n))
+                           .map(n => parseInt(n, 10))
                            .sort((n1, n2) => n1 < n2 ? -1 : 1);
 
 const result: string[] = [];

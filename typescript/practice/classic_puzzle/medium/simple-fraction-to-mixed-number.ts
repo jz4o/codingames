@@ -16,7 +16,7 @@ const gcd = (x: number, y: number): number => {
     return tempY;
 };
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const xys: string[] = [];
 for (let i = 0; i < N; i++) {
     const xY: string = readline();
@@ -29,7 +29,7 @@ for (let i = 0; i < N; i++) {
     // To debug: console.error('Debug messages...');
 
     const xy: string = xys[i];
-    const [x, y]: number[] = xy.split('/').map(i => parseInt(i));
+    const [x, y]: number[] = xy.split('/').map(i => parseInt(i, 10));
 
     if (y === 0) {
         console.log('DIVISION BY ZERO');

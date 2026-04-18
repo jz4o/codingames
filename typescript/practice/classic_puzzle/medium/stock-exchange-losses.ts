@@ -3,11 +3,11 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const inputs: string[] = readline().split(' ');
 const vs: number[] = [];
 for (let i = 0; i < n; i++) {
-    const v: number = parseInt(inputs[i]);
+    const v: number = parseInt(inputs[i], 10);
 
     vs.push(v);
 }

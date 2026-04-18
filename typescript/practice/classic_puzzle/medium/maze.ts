@@ -4,11 +4,11 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const W: number = parseInt(inputs1[0]);
-const H: number = parseInt(inputs1[1]);
+const W: number = parseInt(inputs1[0], 10);
+const H: number = parseInt(inputs1[1], 10);
 const inputs2: string[] = readline().split(' ');
-const X: number = parseInt(inputs2[0]);
-const Y: number = parseInt(inputs2[1]);
+const X: number = parseInt(inputs2[0], 10);
+const Y: number = parseInt(inputs2[1], 10);
 const grid: string[][] = [];
 grid.push(Array(W + 2).fill(null));
 for (let i = 0; i < H; i++) {

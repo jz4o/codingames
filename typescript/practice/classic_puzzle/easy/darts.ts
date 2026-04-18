@@ -14,20 +14,20 @@ interface ThrowData {
     y: number;
 }
 
-const SIZE: number = parseInt(readline());
-const N: number = parseInt(readline());
+const SIZE: number = parseInt(readline(), 10);
+const N: number = parseInt(readline(), 10);
 const names: string[] = [];
 for (let i = 0; i < N; i++) {
     const name: string = readline();
 
     names.push(name);
 }
-const T: number = parseInt(readline());
+const T: number = parseInt(readline(), 10);
 const throwDatas: ThrowData[] = [];
 for (let i = 0; i < T; i++) {
     const [throwName, throwXStr, throwYStr]: string[] = readline().split(' ');
-    const throwX: number = parseInt(throwXStr);
-    const throwY: number = parseInt(throwYStr);
+    const throwX: number = parseInt(throwXStr, 10);
+    const throwY: number = parseInt(throwYStr, 10);
 
     throwDatas.push({
         name: throwName,

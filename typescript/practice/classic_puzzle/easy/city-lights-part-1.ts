@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const h: number = parseInt(readline());
-const w: number = parseInt(readline());
+const h: number = parseInt(readline(), 10);
+const w: number = parseInt(readline(), 10);
 const ss: string[] = [];
 for (let i = 0; i < h; i++) {
     const s: string = readline();

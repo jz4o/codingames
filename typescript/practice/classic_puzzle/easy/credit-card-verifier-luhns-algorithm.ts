@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const cards: string[] = [];
 for (let i = 0; i < n; i++) {
     const card: string = readline();
@@ -18,7 +18,7 @@ for (const card of cards) {
     const sum: number = card.replace(/ /g, '')
                             .split('')
                             .map((d, index) => {
-                                let result: number = parseInt(d);
+                                let result: number = parseInt(d, 10);
                                 if (index % 2 === 0) {
                                     result *= 2;
                                     if (result >= 10) {
@@ -37,3 +37,4 @@ for (const card of cards) {
 for (const result of results) {
     console.log(result);
 }
+

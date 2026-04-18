@@ -9,14 +9,14 @@ interface Cage {
     alive: number;
 }
 
-const N: number = parseInt(readline());
-const Y: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
+const Y: number = parseInt(readline(), 10);
 const cages: Cage[] = [];
 for (let i = 0; i < N; i++) {
     const inputs: string[] = readline().split(' ');
-    const S: number = parseInt(inputs[0]);
-    const H: number = parseInt(inputs[1]);
-    const A: number = parseInt(inputs[2]);
+    const S: number = parseInt(inputs[0], 10);
+    const H: number = parseInt(inputs[1], 10);
+    const A: number = parseInt(inputs[2], 10);
 
     cages.push({sick: S, healthy: H, alive: A});
 }

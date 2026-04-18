@@ -4,12 +4,12 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const W: number = parseInt(inputs1[0]); // width of the building.
-const H: number = parseInt(inputs1[1]); // height of the building.
-const _N: number = parseInt(readline()); // maximum number of turns before game over.
+const W: number = parseInt(inputs1[0], 10); // width of the building.
+const H: number = parseInt(inputs1[1], 10); // height of the building.
+const _N: number = parseInt(readline(), 10); // maximum number of turns before game over.
 const inputs2: string[] = readline().split(' ');
-const X0: number = parseInt(inputs2[0]);
-const Y0: number = parseInt(inputs2[1]);
+const X0: number = parseInt(inputs2[0], 10);
+const Y0: number = parseInt(inputs2[1], 10);
 
 let bombMinHeight: number = H;
 let bombMaxHeight: number = 0;

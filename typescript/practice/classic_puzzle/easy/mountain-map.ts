@@ -3,11 +3,11 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline()); // the number of mountains
+const n: number = parseInt(readline(), 10); // the number of mountains
 const inputs: string[] = readline().split(' ');
 const heights: number[] = [];
 for (let i = 0; i < n; i++) {
-    const height: number = parseInt(inputs[i]);// height of the mountain
+    const height: number = parseInt(inputs[i], 10);// height of the mountain
     heights.push(height);
 }
 

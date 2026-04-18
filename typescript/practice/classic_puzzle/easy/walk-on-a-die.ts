@@ -59,7 +59,7 @@ class Dice {
     };
 }
 
-const diceNumbers: number[] = lines.join('').replace(/ /g, '').split('').map(diceNumber => parseInt(diceNumber));
+const diceNumbers: number[] = lines.join('').replace(/ /g, '').split('').map(diceNumber => parseInt(diceNumber, 10));
 const dice: Dice = new Dice(diceNumbers);
 
 dice.walk(commands);

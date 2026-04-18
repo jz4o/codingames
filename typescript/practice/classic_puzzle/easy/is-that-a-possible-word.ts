@@ -5,7 +5,7 @@
 
 const _input: string = readline();
 const states: string = readline();
-const numberOfTransitions: number = parseInt(readline());
+const numberOfTransitions: number = parseInt(readline(), 10);
 const transitions: string[] = [];
 for (let i = 0; i < numberOfTransitions; i++) {
     const transition: string = readline();
@@ -13,7 +13,7 @@ for (let i = 0; i < numberOfTransitions; i++) {
 }
 const startState: string = readline();
 const endStates: string = readline();
-const numberOfWords: number = parseInt(readline());
+const numberOfWords: number = parseInt(readline(), 10);
 const words: string[] = [];
 for (let i = 0; i < numberOfWords; i++) {
     const word: string = readline();

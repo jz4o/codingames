@@ -4,14 +4,14 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const n: number = parseInt(inputs1[0]);
-const a: number = parseInt(inputs1[1]);
-const b: number = parseInt(inputs1[2]);
-const k: number = parseInt(readline());
+const n: number = parseInt(inputs1[0], 10);
+const a: number = parseInt(inputs1[1], 10);
+const b: number = parseInt(inputs1[2], 10);
+const k: number = parseInt(readline(), 10);
 const inputs2: string[] = readline().split(' ');
 const nums: number[] = [];
 for (let i = 0; i < k; i++) {
-    const num: number = parseInt(inputs2[i]);
+    const num: number = parseInt(inputs2[i], 10);
     nums.push(num);
 }
 

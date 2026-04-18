@@ -4,7 +4,7 @@
  **/
 
 const sqlQuery: string = readline();
-const ROWS: number = parseInt(readline());
+const ROWS: number = parseInt(readline(), 10);
 const tableHeader: string = readline();
 const tableRows: string[] = [];
 for (let i = 0; i < ROWS; i++) {

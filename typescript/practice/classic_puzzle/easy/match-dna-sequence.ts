@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-const delta: number = parseInt(readline());
+const delta: number = parseInt(readline(), 10);
 const gene: string = readline();
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const chrs: string[] = [];
 for (let i = 0; i < n; i++) {
     const chr: string = readline();

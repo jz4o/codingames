@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const isbns: string[] = [];
 for (let i = 0; i < N; i++) {
     const ISBN: string = readline();
@@ -62,3 +62,4 @@ console.log(`${invalids.length} invalid:`);
 invalids.forEach(invalid => {
     console.log(invalid);
 });
+

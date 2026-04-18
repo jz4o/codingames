@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const rows: number = parseInt(readline());
+const rows: number = parseInt(readline(), 10);
 const grid: string[][] = [];
 for (let i = 0; i < rows; i++) {
     const row: string = readline();

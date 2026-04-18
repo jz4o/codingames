@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const h: number = parseInt(readline());
+const h: number = parseInt(readline(), 10);
 const rows: Array<string> = [];
 for (let i = 0; i < h; i++) {
     const row: string = readline();
@@ -18,7 +18,7 @@ for (let i = 0; i < h; i++) {
     const row: string = rows[i];
     const result: string = row
         .split(' ')
-        .map((length, index) => (index % 2 === 0 ? '.' : 'O').repeat(parseInt(length)))
+        .map((length, index) => (index % 2 === 0 ? '.' : 'O').repeat(parseInt(length, 10)))
         .join('');
 
     // console.log('answer');

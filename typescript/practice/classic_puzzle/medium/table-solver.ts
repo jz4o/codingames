@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const inputLines: number = parseInt(readline());
+const inputLines: number = parseInt(readline(), 10);
 const ss: string[] = [];
 for (let i = 0; i < inputLines; i++) {
     const s: string = readline();
@@ -49,9 +49,9 @@ const [[operationStr]]: string[][] = grid;
 const operation: (a: number, b: number) => number = operationObject[operationStr];
 const reverseOperation: (a: number, b: number) => number = reverseOperationObject[operationStr];
 
-const topNumbers: (number | null)[] = grid[0].slice(1).map(c => c.length === 0 ? null : parseInt(c));
-const leftNumbers: (number | null)[] = grid.slice(1).map(row => row[0].length === 0 ? null : parseInt(row[0]));
-const numbersGrid: (number | null)[][] = grid.slice(1).map(row => row.slice(1).map(c => c.length === 0 ? null : parseInt(c)));
+const topNumbers: (number | null)[] = grid[0].slice(1).map(c => c.length === 0 ? null : parseInt(c, 10));
+const leftNumbers: (number | null)[] = grid.slice(1).map(row => row[0].length === 0 ? null : parseInt(row[0], 10));
+const numbersGrid: (number | null)[][] = grid.slice(1).map(row => row.slice(1).map(c => c.length === 0 ? null : parseInt(c, 10)));
 
 while ([...topNumbers, ...leftNumbers, ...numbersGrid.flat()].includes(null)) {
     numbersGrid.forEach((row, rowIndex) => {

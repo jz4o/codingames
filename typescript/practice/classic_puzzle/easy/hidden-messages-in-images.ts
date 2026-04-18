@@ -4,13 +4,13 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const w: number = parseInt(inputs[0]);
-const h: number = parseInt(inputs[1]);
+const w: number = parseInt(inputs[0], 10);
+const h: number = parseInt(inputs[1], 10);
 const pixels: number[] = [];
 for (let i = 0; i < h; i++) {
     const inputs: string[] = readline().split(' ');
     for (let j = 0; j < w; j++) {
-        const pixel: number = parseInt(inputs[j]);
+        const pixel: number = parseInt(inputs[j], 10);
         pixels.push(pixel);
     }
 }

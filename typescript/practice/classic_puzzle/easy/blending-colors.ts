@@ -4,8 +4,8 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const S: number = parseInt(inputs[0]);
-const P: number = parseInt(inputs[1]);
+const S: number = parseInt(inputs[0], 10);
+const P: number = parseInt(inputs[1], 10);
 const lines: string[] = [];
 for (let i = 0; i < S; i++) {
     const line: string = readline();
@@ -14,8 +14,8 @@ for (let i = 0; i < S; i++) {
 const xys: [number, number][] = [];
 for (let i = 0; i < P; i++) {
     const inputs: string[] = readline().split(' ');
-    const x: number = parseInt(inputs[0]);
-    const y: number = parseInt(inputs[1]);
+    const x: number = parseInt(inputs[0], 10);
+    const y: number = parseInt(inputs[1], 10);
     xys.push([x, y]);
 }
 
@@ -86,7 +86,7 @@ const points: Point[] = xys.map(([x, y]) => {
 
 lines.forEach(line => {
     const [name, strX, strY, strLength, strR, strG, strB]: string[] = line.split(' ');
-    const [x, y, length, r, g, b]: number[] = [strX, strY, strLength, strR, strG, strB].map(elm => parseInt(elm));
+    const [x, y, length, r, g, b]: number[] = [strX, strY, strLength, strR, strG, strB].map(elm => parseInt(elm, 10));
     const c = new Color(r, g, b);
 
     if (name === 'SQUARE') {

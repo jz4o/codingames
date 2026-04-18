@@ -5,7 +5,7 @@
 
 const mother: string = readline();
 const child: string = readline();
-const numOfPossibleFathers: number = parseInt(readline());
+const numOfPossibleFathers: number = parseInt(readline(), 10);
 const aPossibleFathers: string[] = [];
 for (let i = 0; i < numOfPossibleFathers; i++) {
     const aPossibleFather: string = readline();

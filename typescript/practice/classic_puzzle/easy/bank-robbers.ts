@@ -8,14 +8,14 @@ interface Vault {
     n: number;
 }
 
-const R: number = parseInt(readline());
-const V: number = parseInt(readline());
+const R: number = parseInt(readline(), 10);
+const V: number = parseInt(readline(), 10);
 
 const vaults: Vault[] = [];
 for (let i = 0; i < V; i++) {
     const inputs: string[] = readline().split(' ');
-    const C: number = parseInt(inputs[0]);
-    const N: number = parseInt(inputs[1]);
+    const C: number = parseInt(inputs[0], 10);
+    const N: number = parseInt(inputs[1], 10);
 
     vaults.push({c: C, n: N});
 }

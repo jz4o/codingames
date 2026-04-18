@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const lines: string[] = [];
 for (let i = 0; i < n; i++) {
     const line: string = readline();
@@ -25,7 +25,7 @@ const gcdFromArray: (numbers: number[]) => number = (numbers: number[]): number 
 };
 
 const firstNumberIndex: number = lines.findIndex(line => line.match(/^\d+$/));
-const baseNumber: number = firstNumberIndex === -1 ? 1 : parseInt(lines[firstNumberIndex]) - firstNumberIndex;
+const baseNumber: number = firstNumberIndex === -1 ? 1 : parseInt(lines[firstNumberIndex], 10) - firstNumberIndex;
 
 const fizzNumbers: number[] = lines.map((line, index) => line.includes('Fizz') ? baseNumber + index : null).filter(number => number);
 const buzzNumbers: number[] = lines.map((line, index) => line.includes('Buzz') ? baseNumber + index : null).filter(number => number);

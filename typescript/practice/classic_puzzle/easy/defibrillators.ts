@@ -5,7 +5,7 @@
 
 const LON: string = readline();
 const LAT: string = readline();
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 
 interface Defib {
     id:        string;

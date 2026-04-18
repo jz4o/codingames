@@ -3,11 +3,11 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
-const C: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
+const C: number = parseInt(readline(), 10);
 const budgets: number[] = [];
 for (let i = 0; i < N; i++) {
-    const B: number = parseInt(readline());
+    const B: number = parseInt(readline(), 10);
 
     budgets.push(B);
 }
@@ -37,3 +37,4 @@ if (budgetsSum < C) {
 results.forEach(result => {
     console.log(result);
 });
+

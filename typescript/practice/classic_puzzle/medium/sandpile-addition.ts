@@ -3,17 +3,17 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const grid: number[][] = [];
 for (let i = 0; i < n; i++) {
     const row: string = readline();
 
-    grid.push(row.split('').map(v => parseInt(v)));
+    grid.push(row.split('').map(v => parseInt(v, 10)));
 }
 for (let i = 0; i < n; i++) {
     const row: string = readline();
 
-    row.split('').forEach((v, c) => grid[i][c] += parseInt(v));
+    row.split('').forEach((v, c) => grid[i][c] += parseInt(v, 10));
 }
 
 // Write an action using console.log()

@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const ROUNDS: number = parseInt(readline());
-const CASH: number = parseInt(readline());
+const ROUNDS: number = parseInt(readline(), 10);
+const CASH: number = parseInt(readline(), 10);
 let result: number = CASH;
 for (let i = 0; i < ROUNDS; i++) {
     const bet = Math.ceil(result / 4);
@@ -12,8 +12,8 @@ for (let i = 0; i < ROUNDS; i++) {
 
     const PLAY: string = readline();
     const [ballStr, call, targetStr]: string[] = PLAY.split(' ');
-    const ball: number = parseInt(ballStr);
-    const target: number = parseInt(targetStr);
+    const ball: number = parseInt(ballStr, 10);
+    const target: number = parseInt(targetStr, 10);
 
     switch (call) {
         case 'PLAIN':

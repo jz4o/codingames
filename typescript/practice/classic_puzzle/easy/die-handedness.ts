@@ -12,7 +12,7 @@ for (let i = 0; i < 3; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-let [a, b, c, d, e, f]: number[] = lines.join('').replace(/\s/g, '').split('').map(c => parseInt(c));
+let [a, b, c, d, e, f]: number[] = lines.join('').replace(/\s/g, '').split('').map(c => parseInt(c, 10));
 
 const isCheckVersusFaces: boolean = [a + f, b + d, c + e].every(sumValue => sumValue === 7);
 const isCheckFaceValues: boolean = [a, b, c, d, e, f].sort().join('') === '123456';

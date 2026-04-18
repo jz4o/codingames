@@ -4,19 +4,19 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const n: number = parseInt(inputs1[0]);
-const m: number = parseInt(inputs1[1]);
-const c: number = parseInt(inputs1[2]);
+const n: number = parseInt(inputs1[0], 10);
+const m: number = parseInt(inputs1[1], 10);
+const c: number = parseInt(inputs1[2], 10);
 const inputs2: string[] = readline().split(' ');
 const nxs: number[] = [];
 for (let i = 0; i < n; i++) {
-    const nx: number = parseInt(inputs2[i]);
+    const nx: number = parseInt(inputs2[i], 10);
     nxs.push(nx);
 }
 const inputs3: string[] = readline().split(' ');
 const mxs: number[] = [];
 for (let i = 0; i < m; i++) {
-    const mx: number = parseInt(inputs3[i]);
+    const mx: number = parseInt(inputs3[i], 10);
     mxs.push(mx);
 }
 

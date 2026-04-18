@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const L: number = parseInt(readline());
-const H: number = parseInt(readline());
+const L: number = parseInt(readline(), 10);
+const H: number = parseInt(readline(), 10);
 const T: string = readline();
 const rows: string[] = [];
 for (let i = 0; i < H; i++) {

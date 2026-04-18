@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const lengthofline: number = parseInt(readline());
-const N: number = parseInt(readline());
+const lengthofline: number = parseInt(readline(), 10);
+const N: number = parseInt(readline(), 10);
 const entries: string[] = [];
 for (let i = 0; i < N; i++) {
     const entry: string = readline();

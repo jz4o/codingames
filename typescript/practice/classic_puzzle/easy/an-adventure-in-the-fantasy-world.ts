@@ -4,7 +4,7 @@
  **/
 
 const s: string = readline();
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const ms: string[] = [];
 for (let i = 0; i < n; i++) {
     const m: string = readline();
@@ -48,13 +48,13 @@ const warrior: Warrior = { y: 0, x: 0, money: 50 };
 
 const units: (Enemy|Money)[] = ms.map(m => {
     const [strY, strX, unitType, value]: string[] = m.split(' ');
-    const y: number = parseInt(strY);
-    const x: number = parseInt(strX);
+    const y: number = parseInt(strY, 10);
+    const x: number = parseInt(strX, 10);
 
     if (unitType === 'enemy') {
         return new Enemy(y, x, value);
     } else if (unitType === 'money') {
-        return new Money(y, x, parseInt(value.replace('G', '')));
+        return new Money(y, x, parseInt(value.replace('G', ''), 10));
     } else {
         return null;
     }

@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const lines: string[] = [];
 for (let i = 0; i < N; i++) {
     const line: string = readline();
@@ -23,7 +23,7 @@ class Fraction {
     }
 
     static fromString: (num: string) => Fraction = (num: string): Fraction => {
-        const [numerator, denominator]: number[] = num.split('/').map(n => parseInt(n));
+        const [numerator, denominator]: number[] = num.split('/').map(n => parseInt(n, 10));
 
         return new Fraction(numerator, denominator);
     };

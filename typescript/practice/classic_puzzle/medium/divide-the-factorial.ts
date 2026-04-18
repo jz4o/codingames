@@ -4,8 +4,8 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const A: number = parseInt(inputs[0]);
-const B: number = parseInt(inputs[1]);
+const A: number = parseInt(inputs[0], 10);
+const B: number = parseInt(inputs[1], 10);
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
@@ -48,7 +48,7 @@ aPrimes.forEach(aPrime => {
 });
 
 const xs: number[] = Object.entries(aPrimeDivisions).map(([primeStr, count]) => {
-    const prime: number = parseInt(primeStr);
+    const prime: number = parseInt(primeStr, 10);
 
     let exp: number = 1;
     while ((prime ** exp) <= B) {

@@ -3,13 +3,13 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const inputRows: number[][] = [];
 for (let i = 0; i < n; i++) {
     const inputs: string[] = readline().split(' ');
-    const row: number = parseInt(inputs[0]);
-    const col: number = parseInt(inputs[1]);
-    const isWhite: number = parseInt(inputs[2]);
+    const row: number = parseInt(inputs[0], 10);
+    const col: number = parseInt(inputs[1], 10);
+    const isWhite: number = parseInt(inputs[2], 10);
     inputRows.push([row, col, isWhite]);
 }
 

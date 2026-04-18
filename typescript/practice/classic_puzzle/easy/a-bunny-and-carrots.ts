@@ -4,13 +4,13 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const M: number = parseInt(inputs1[0]);
-const N: number = parseInt(inputs1[1]);
-const t: number = parseInt(readline());
+const M: number = parseInt(inputs1[0], 10);
+const N: number = parseInt(inputs1[1], 10);
+const t: number = parseInt(readline(), 10);
 const inputs2: string[] = readline().split(' ');
 const choices: number[] = [];
 for (let i = 0; i < t; i++) {
-    const choice: number = parseInt(inputs2[i]);
+    const choice: number = parseInt(inputs2[i], 10);
     choices.push(choice);
 }
 const grid: number[][] = [...Array(N).keys()].map(() => Array(M).fill(0));

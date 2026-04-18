@@ -4,13 +4,13 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const width: number = parseInt(inputs1[0]);
-const height: number = parseInt(inputs1[1]);
+const width: number = parseInt(inputs1[0], 10);
+const height: number = parseInt(inputs1[1], 10);
 const cells: number[] = [];
 for (let i = 0; i < height; i++) {
     const inputs2: string[] = readline().split(' ');
     for (let j = 0; j < width; j++) {
-        const cell: number = parseInt(inputs2[j]);
+        const cell: number = parseInt(inputs2[j], 10);
         cells.push(cell);
     }
 }

@@ -3,13 +3,13 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
-const k: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
+const k: number = parseInt(readline(), 10);
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const digits: number[] = n.toString().split('').reverse().map(c => parseInt(c));
+const digits: number[] = n.toString().split('').reverse().map(c => parseInt(c, 10));
 
 const sumCount: number = [...Array(digits.length).keys()].reduce((sumCount, index) => {
     const digit: number = digits[index];
@@ -24,7 +24,7 @@ const sumCount: number = [...Array(digits.length).keys()].reduce((sumCount, inde
     }, 0);
 
     if (digit === k) {
-        const kindOfLowerDigits: number = parseInt(digits.slice(0, index).reverse().join('') || '0') + 1;
+        const kindOfLowerDigits: number = parseInt(digits.slice(0, index).reverse().join('') || '0', 10) + 1;
         digitCount += kindOfLowerDigits;
     } else if (digit > k) {
         digitCount += (10 ** index);

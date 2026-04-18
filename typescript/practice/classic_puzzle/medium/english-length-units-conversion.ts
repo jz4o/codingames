@@ -4,7 +4,7 @@
  **/
 
 const toconvert: string = readline();
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const relations: string[] = [];
 for (let i = 0; i < n; i++) {
     const relation: string = readline();
@@ -58,7 +58,7 @@ const relationRates: { [key: string]: Fraction } = {};
 const relationRegexp: RegExp = /(?<lSizeStr>\d+)\s(?<lUnit>.*)\s=\s(?<rSizeStr>\d+)\s(?<rUnit>.*)/;
 relations.forEach(relation => {
     const { lSizeStr, lUnit, rSizeStr, rUnit }: { [key: string]: string } = relation.match(relationRegexp).groups;
-    const [lSize, rSize]: number[] = [lSizeStr, rSizeStr].map(s => parseInt(s));
+    const [lSize, rSize]: number[] = [lSizeStr, rSizeStr].map(s => parseInt(s, 10));
 
     if (!(lUnit in relationObject)) {
         relationObject[lUnit] = [];

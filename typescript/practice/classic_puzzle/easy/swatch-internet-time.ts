@@ -10,9 +10,9 @@ const rawtime: string = readline();
 
 const timeRegexp: RegExp = /(?<hh>\d{2}):(?<mm>\d{2}):(?<ss>\d{2})\sUTC(?<utcSign>[+-])(?<utcHh>\d{2}):(?<utcMm>\d{2})/;
 const { hh, mm, ss, utcSign, utcHh, utcMm }: { [key: string]: string } = rawtime.match(timeRegexp).groups;
-const rawSeconds: number = parseInt(hh) * 3600 + parseInt(mm) * 60 + parseInt(ss);
+const rawSeconds: number = parseInt(hh, 10) * 3600 + parseInt(mm, 10) * 60 + parseInt(ss, 10);
 
-const utcMinutes: number = (parseInt(utcHh) * 60 + parseInt(utcMm)) * (utcSign === '+' ? 1 : -1);
+const utcMinutes: number = (parseInt(utcHh, 10) * 60 + parseInt(utcMm, 10)) * (utcSign === '+' ? 1 : -1);
 const bielDiffSeconds: number = (60 - utcMinutes) * 60;
 const daySeconds: number = 60 * 60 * 24;
 const bielSeconds: number = (rawSeconds + bielDiffSeconds) < 0

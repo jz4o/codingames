@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const B: string = readline();
 
 // Write an action using console.log()
@@ -47,3 +47,4 @@ if (leftIndexInLongestSpace === 0) {
 
 // console.log('0');
 console.log(result);
+

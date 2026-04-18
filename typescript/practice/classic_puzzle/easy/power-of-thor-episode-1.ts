@@ -6,17 +6,17 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const lightX: number = parseInt(inputs[0]); // the X position of the light of power
-const lightY: number = parseInt(inputs[1]); // the Y position of the light of power
-const initialTx: number = parseInt(inputs[2]); // Thor's starting X position
-const initialTy: number = parseInt(inputs[3]); // Thor's starting Y position
+const lightX: number = parseInt(inputs[0], 10); // the X position of the light of power
+const lightY: number = parseInt(inputs[1], 10); // the Y position of the light of power
+const initialTx: number = parseInt(inputs[2], 10); // Thor's starting X position
+const initialTy: number = parseInt(inputs[3], 10); // Thor's starting Y position
 
 let tx: number = initialTx;
 let ty: number = initialTy;
 
 // game loop
 let _remainingTurns: number; // The remaining amount of turns Thor can move. Do not remove this line.
-while ((_remainingTurns = parseInt(readline() || '-1')) !== -1) {
+while ((_remainingTurns = parseInt(readline() || '-1', 10)) !== -1) {
     // Write an action using console.log()
     // To debug: console.error('Debug messages...');
 

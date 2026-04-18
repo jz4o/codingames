@@ -8,7 +8,7 @@ const n: string = readline();
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const digits: number[] = (parseInt(n) + 1).toString().split('').map(c => parseInt(c));
+const digits: number[] = (parseInt(n, 10) + 1).toString().split('').map(c => parseInt(c, 10));
 
 const incrementIndex: number = [...Array(digits.length - 1).keys()].find(index => digits[index] > digits[index + 1]);
 const incrementNumber: number = digits[incrementIndex];

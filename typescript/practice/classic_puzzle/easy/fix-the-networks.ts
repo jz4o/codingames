@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const m: number = parseInt(readline());
+const m: number = parseInt(readline(), 10);
 const rs: string[] = [];
 for (let i = 0; i < m; i++) {
     const r: string = readline();
@@ -21,9 +21,9 @@ const calcNumberOfAddress: (suffix: number) => number = (suffix: number): number
 
 const results: string[] = rs.map(r => {
     const [strPrefix, strSuffix]: string[] = r.split('/');
-    const suffix: number = parseInt(strSuffix);
+    const suffix: number = parseInt(strSuffix, 10);
 
-    const bits: string = strPrefix.split('.').map(b => parseInt(b).toString(2).padStart(8, '0')).join('');
+    const bits: string = strPrefix.split('.').map(b => parseInt(b, 10).toString(2).padStart(8, '0')).join('');
     const lastOneBitIndex: number = bits.lastIndexOf('1');
     if (lastOneBitIndex < suffix) {
         const numberOfAddress: number = calcNumberOfAddress(suffix);

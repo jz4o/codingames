@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const _N: number = parseInt(readline());
+const _N: number = parseInt(readline(), 10);
 const input: string = readline();
 
 // Write an answer using console.log()
@@ -15,7 +15,7 @@ const minusFlag: boolean = input.includes('-');
 const dotFlag: boolean = input.includes('.');
 temp = temp.replace('-', '').replace('.', '').replace(/\s/g, '');
 
-const digits: number[] = temp.split('').map(i => parseInt(i));
+const digits: number[] = temp.split('').map(i => parseInt(i, 10));
 if (minusFlag) {
     temp = digits.sort().join('');
     temp = dotFlag ? temp.replace(temp[0], `${temp[0]}.`) : temp;

@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const inputAnswers: string[] = [];
 for (let i = 0; i < n; i++) {
     const answer: string = readline();
@@ -32,7 +32,7 @@ interface Answer {
 
 const answers: Answer[] = inputAnswers.map(inputAnswer => {
     const [strAge, gender, genre]: string[] = inputAnswer.split(' ');
-    const age: number = parseInt(strAge);
+    const age: number = parseInt(strAge, 10);
 
     return { age, gender, genre };
 });

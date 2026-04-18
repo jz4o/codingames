@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const inputs: string[] = readline().split(' ');
 const instructions: string[] = [];
 for (let i = 0; i < N; i++) {
@@ -33,7 +33,7 @@ instructions.some(instruction => {
             return true;
         }
 
-        const [lNumber, rNumber]: number[] = [lStr, rStr].map(s => parseInt(s));
+        const [lNumber, rNumber]: number[] = [lStr, rStr].map(s => parseInt(s, 10));
 
         if (zeroCheckOperation.includes(instruction) && rNumber === 0) {
             stack.push('ERROR');
@@ -72,7 +72,7 @@ instructions.some(instruction => {
             return true;
         }
 
-        const lastNumber: number = parseInt(lastStr);
+        const lastNumber: number = parseInt(lastStr, 10);
         if (stack.length < lastNumber) {
             stack.splice(0);
             stack.push('ERROR');

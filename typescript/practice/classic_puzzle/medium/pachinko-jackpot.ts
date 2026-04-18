@@ -7,17 +7,17 @@
  * stub generation. The number of prizes is (1 + height)
  **/
 
-const height: number = parseInt(readline());
+const height: number = parseInt(readline(), 10);
 const incrementsRows: string[] = [];
 for (let i = 0; i < height; i++) {
     const increments: string = readline();
     incrementsRows.push(increments);
 }
 const prizes: number[] = [];
-const prize1: number = parseInt(readline());
+const prize1: number = parseInt(readline(), 10);
 prizes.push(prize1);
 for (let i = 0; i < height; i++) {
-    const prize: number = parseInt(readline());
+    const prize: number = parseInt(readline(), 10);
     prizes.push(prize);
 }
 
@@ -32,7 +32,7 @@ const zip: <T, U>(a: T[], b: U[]) => [T, U][] = <T, U>(a: T[], b: U[]): [T, U][]
 };
 
 const incrementGrid: number[][] = incrementsRows.map(incrementsRow => {
-    return incrementsRow.split('').map(increment => parseInt(increment));
+    return incrementsRow.split('').map(increment => parseInt(increment, 10));
 });
 
 const counterGrid: number[][] = incrementGrid.reduce((counterGrid, incrementRow) => {

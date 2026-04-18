@@ -4,9 +4,9 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const _w: number = parseInt(inputs[0]);
-const h: number = parseInt(inputs[1]);
-const n: number = parseInt(readline());
+const _w: number = parseInt(inputs[0], 10);
+const h: number = parseInt(inputs[1], 10);
+const n: number = parseInt(readline(), 10);
 const lines: string[] = [];
 for (let i = 0; i < h; i++) {
     const line: string = readline();

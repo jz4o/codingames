@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const quarterSize: number = parseInt(readline());
+const quarterSize: number = parseInt(readline(), 10);
 const rows: string[] = [];
 for (let i = 0; i < quarterSize; i++) {
     const ROW: string = readline();

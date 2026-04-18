@@ -15,8 +15,8 @@ const digits: string[] = numbertext.split('').map(d => {
         return d;
     }
 
-    const div: number = Math.floor((isCarryUp + parseInt(d !== 'x' ? d : '0')) / 2);
-    const mod: number = (isCarryUp + parseInt(d !== 'x' ? d : '0')) % 2;
+    const div: number = Math.floor((isCarryUp + parseInt(d !== 'x' ? d : '0', 10)) / 2);
+    const mod: number = (isCarryUp + parseInt(d !== 'x' ? d : '0', 10)) % 2;
 
     isCarryUp = mod * 10;
     isSignificantDigit ||= 0 < div;

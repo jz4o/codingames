@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const players: string[] = [];
 for (let i = 0; i < N; i++) {
     const PLAYER: string = readline();
@@ -47,12 +47,12 @@ zip(players, playerShoots).forEach(([player, shoots]) => {
 
             let shootPoint: number;
             if (shoot.includes('*')) {
-                const shootElements: number[] = shoot.split('*').map(i => parseInt(i));
+                const shootElements: number[] = shoot.split('*').map(i => parseInt(i, 10));
                 shootPoint = shootElements[0] * shootElements.at(-1);
             } else if (shoot === MISS_SHOOT) {
                 shootPoint = tempShoots.length > 0 && tempShoots.at(-1) === MISS_SHOOT ? -30 : -20;
             } else {
-                shootPoint = parseInt(shoot);
+                shootPoint = parseInt(shoot, 10);
             }
 
             tempPoint += shootPoint;

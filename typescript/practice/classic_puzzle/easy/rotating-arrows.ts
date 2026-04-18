@@ -4,11 +4,11 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const W: number = parseInt(inputs1[0]);
-const H: number = parseInt(inputs1[1]);
+const W: number = parseInt(inputs1[0], 10);
+const H: number = parseInt(inputs1[1], 10);
 const inputs2: string[] = readline().split(' ');
-const x: number = parseInt(inputs2[0]);
-const y: number = parseInt(inputs2[1]);
+const x: number = parseInt(inputs2[0], 10);
+const y: number = parseInt(inputs2[1], 10);
 const lines: string[] = [];
 for (let i = 0; i < H; i++) {
     const line: string = readline(); // The line of w arrows represented by ascii char ^v<>

@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-const _X: number = parseInt(readline());
-const Y: number = parseInt(readline());
-const R: number = parseInt(readline());
+const _X: number = parseInt(readline(), 10);
+const Y: number = parseInt(readline(), 10);
+const R: number = parseInt(readline(), 10);
 const rows: string[] = [];
 for (let i = 0; i < Y; i++) {
     const ROW: string = readline();

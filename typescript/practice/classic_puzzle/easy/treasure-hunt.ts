@@ -4,8 +4,8 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const H: number = parseInt(inputs[0]);
-const W: number = parseInt(inputs[1]);
+const H: number = parseInt(inputs[0], 10);
+const W: number = parseInt(inputs[1], 10);
 const rows: string[] = [];
 for (let i = 0; i < H; i++) {
     const row: string = readline();
@@ -67,7 +67,7 @@ while (tempHistories.length > 0) {
 const amountOfGolds: number[] = moveHistories.map(moveHistory => {
     return moveHistory
         .filter(position => "0123456789".includes(position.value))
-        .map(position => parseInt(position.value))
+        .map(position => parseInt(position.value, 10))
         .reduce((sum, value) => sum + value, 0);
 });
 

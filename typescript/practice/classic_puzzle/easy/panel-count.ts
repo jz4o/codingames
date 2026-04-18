@@ -3,19 +3,19 @@
  * the standard input according to the problem statement.
  **/
 
-const P: number = parseInt(readline());
+const P: number = parseInt(readline(), 10);
 const properties: string[] = [];
 for (let i = 0; i < P; i++) {
     const property: string = readline();
     properties.push(property);
 }
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const personRows: string[] = [];
 for (let i = 0; i < N; i++) {
     const person: string = readline();
     personRows.push(person);
 }
-const F: number = parseInt(readline());
+const F: number = parseInt(readline(), 10);
 const formulas: string[] = [];
 for (let i = 0; i < F; i++) {
     const formula: string = readline();

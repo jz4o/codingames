@@ -41,15 +41,15 @@ const combat: (attack: Stack, defense: Stack) => string[] = (attack: Stack, defe
 };
 
 const [stack1Name, stack1AmountStr, stack1HealthStr, stack1DamageStr]: string[] = stack1Data.split(';');
-const stack1Amount: number = parseInt(stack1AmountStr);
-const stack1Health: number = parseInt(stack1HealthStr);
-const stack1Damage: number = parseInt(stack1DamageStr);
+const stack1Amount: number = parseInt(stack1AmountStr, 10);
+const stack1Health: number = parseInt(stack1HealthStr, 10);
+const stack1Damage: number = parseInt(stack1DamageStr, 10);
 const stack1: Stack = new Stack(stack1Name, stack1Amount, stack1Health, stack1Damage);
 
 const [stack2Name, stack2AmountStr, stack2HealthStr, stack2DamageStr]: string[] = stack2Data.split(';');
-const stack2Amount: number = parseInt(stack2AmountStr);
-const stack2Health: number = parseInt(stack2HealthStr);
-const stack2Damage: number = parseInt(stack2DamageStr);
+const stack2Amount: number = parseInt(stack2AmountStr, 10);
+const stack2Health: number = parseInt(stack2HealthStr, 10);
+const stack2Damage: number = parseInt(stack2DamageStr, 10);
 const stack2: Stack = new Stack(stack2Name, stack2Amount, stack2Health, stack2Damage);
 
 let round: number = 0;

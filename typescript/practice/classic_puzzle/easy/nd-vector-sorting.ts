@@ -3,12 +3,12 @@
  * the standard input according to the problem statement.
  **/
 
-const D: number = parseInt(readline());
-const N: number = parseInt(readline());
+const D: number = parseInt(readline(), 10);
+const N: number = parseInt(readline(), 10);
 const inputs1: string[] = readline().split(' ');
 const ords: number[] = [];
 for (let i = 0; i < D; i++) {
-    const ord: number = parseInt(inputs1[i]);
+    const ord: number = parseInt(inputs1[i], 10);
     ords.push(ord);
 }
 const coordRows: number[][] = [];
@@ -16,7 +16,7 @@ for (let i = 0; i < N; i++) {
     const inputs2: string[] = readline().split(' ');
     const coordRow: number[] = [];
     for (let j = 0; j < D; j++) {
-        const coord: number = parseInt(inputs2[j]);
+        const coord: number = parseInt(inputs2[j], 10);
         coordRow.push(coord);
     }
     coordRows.push(coordRow);

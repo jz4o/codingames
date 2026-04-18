@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const lines: string[] = [];
 for (let i = 0; i < n; i++) {
     const line: string = readline();

@@ -4,7 +4,7 @@
  **/
 
 const cgsContents: string[] = [];
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 for (let i = 0; i < N; i++) {
     const cgsContent: string = readline();
 

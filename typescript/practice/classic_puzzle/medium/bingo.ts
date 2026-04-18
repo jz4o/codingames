@@ -5,7 +5,7 @@
 
 const BINGO_ROWS = 5;
 
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const rows: string[] = [];
 for (let i = 0; i < n * BINGO_ROWS; i++) {
     const row: string = readline();

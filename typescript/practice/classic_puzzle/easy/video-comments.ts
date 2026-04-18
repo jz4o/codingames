@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const comments: string[] = [];
 for (let i = 0; i < n; i++) {
     const comment: string = readline();
@@ -24,8 +24,8 @@ class Comment {
 
     constructor(commentStr: string, index: number) {
         const [userName, dateStr, likesStr, priorityStr]: string[] = commentStr.split('|');
-        const date: number = parseInt(dateStr.replace(':', ''));
-        const likes: number = parseInt(likesStr);
+        const date: number = parseInt(dateStr.replace(':', ''), 10);
+        const likes: number = parseInt(likesStr, 10);
         const priority: number = ['Pinned', 'Followed', 'none'].indexOf(priorityStr);
 
         this.origin = commentStr;

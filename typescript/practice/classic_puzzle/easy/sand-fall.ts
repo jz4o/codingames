@@ -4,13 +4,13 @@
  **/
 
 const [wStr, hStr]: string[] = readline().split(' ');
-const W: number = parseInt(wStr);
-const H: number = parseInt(hStr);
-const N: number = parseInt(readline());
+const W: number = parseInt(wStr, 10);
+const H: number = parseInt(hStr, 10);
+const N: number = parseInt(readline(), 10);
 const inputRows: [string, number][] = [];
 for (let i = 0; i < N; i++) {
     const [S, pStr]: string[] = readline().split(' ');
-    const P: number = parseInt(pStr);
+    const P: number = parseInt(pStr, 10);
     inputRows.push([S, P]);
 }
 

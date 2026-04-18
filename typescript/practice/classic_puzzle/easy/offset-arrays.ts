@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const assignments: string[] = [];
 for (let i = 0; i < n; i++) {
     const assignment: string = readline();
@@ -29,8 +29,8 @@ const assignmentRegexp: RegExp = /(?<arrayName>[A-Z]+)\[(?<rangeBeginStr>[-\d]+)
 const assignmentObject: { [key: string]: { [key: string]: string } } = {};
 assignments.forEach(assignment => {
     const { arrayName, rangeBeginStr, rangeEndStr, valuesStr }: { [key: string]: string } = assignment.match(assignmentRegexp).groups;
-    const rangeBegin: number = parseInt(rangeBeginStr);
-    const rangeEnd: number = parseInt(rangeEndStr);
+    const rangeBegin: number = parseInt(rangeBeginStr, 10);
+    const rangeEnd: number = parseInt(rangeEndStr, 10);
     const values: string[] = valuesStr.split(' ');
 
     if (!(arrayName in assignmentObject)) {

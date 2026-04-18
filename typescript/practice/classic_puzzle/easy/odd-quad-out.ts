@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const sideSize: number = parseInt(readline());
+const sideSize: number = parseInt(readline(), 10);
 const rows: string[] = [];
 for (let i = 0; i < sideSize; i++) {
     const ROW: string = readline();
@@ -21,7 +21,7 @@ rows.forEach((row, rowIndex) => {
         }
 
         const quadIndex: number = (rowIndex < sideSize / 2 ? 0 : 2) + (valueIndex < sideSize / 2 ? 0 : 1);
-        quadValues[quadIndex] += parseInt(value);
+        quadValues[quadIndex] += parseInt(value, 10);
     });
 });
 

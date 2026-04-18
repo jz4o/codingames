@@ -4,12 +4,12 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const n: number = parseInt(inputs1[0]);
-const m: number = parseInt(inputs1[1]);
+const n: number = parseInt(inputs1[0], 10);
+const m: number = parseInt(inputs1[1], 10);
 const inputs2: string[] = readline().split(' ');
 const xs: number[] = [];
 for (let i = 0; i < n; i++) {
-    const x: number = parseInt(inputs2[i]);
+    const x: number = parseInt(inputs2[i], 10);
     xs.push(x);
 }
 

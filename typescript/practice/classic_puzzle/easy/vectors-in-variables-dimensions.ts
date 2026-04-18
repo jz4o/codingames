@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const _d: number = parseInt(readline());
-const n: number = parseInt(readline());
+const _d: number = parseInt(readline(), 10);
+const n: number = parseInt(readline(), 10);
 const pointRows: string[] = [];
 for (let i = 0; i < n; i++) {
     const point: string = readline();
@@ -37,7 +37,7 @@ interface Vector {
 
 const points: Point[] = pointRows.map(pointRow => {
     const { name, componentsStr }: { [key: string]: string } = pointRow.match(/(?<name>.*?)\((?<componentsStr>.*?)\)/).groups;
-    const components: number[] = componentsStr.split(',').map(componentStr => parseInt(componentStr));
+    const components: number[] = componentsStr.split(',').map(componentStr => parseInt(componentStr, 10));
 
     return { name, components };
 });

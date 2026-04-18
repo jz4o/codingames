@@ -3,13 +3,13 @@
  * the standard input according to the problem statement.
  **/
 
-const L: number = parseInt(readline());
-const N: number = parseInt(readline());
+const L: number = parseInt(readline(), 10);
+const N: number = parseInt(readline(), 10);
 const patterns: number[] = [];
 const tempos: number[] = [];
 for (let i = 0; i < N; i++) {
     const [pattern, tempoStr]: string[] = readline().split(' ');
-    const tempo: number = parseInt(tempoStr);
+    const tempo: number = parseInt(tempoStr, 10);
 
     patterns.push(parseInt(pattern.replace(/X/g, '1'), 2));
     tempos.push(tempo);

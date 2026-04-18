@@ -5,8 +5,8 @@
 
 const framePattern: string = readline(); // the ASCII art pattern to use to frame the picture
 const inputs: string[] = readline().split(' ');
-const h: number = parseInt(inputs[0]); // the height of the picture
-const w: number = parseInt(inputs[1]); // the width  of the picture
+const h: number = parseInt(inputs[0], 10); // the height of the picture
+const w: number = parseInt(inputs[1], 10); // the width  of the picture
 const lines: string[] = [];
 for (let i = 0; i < h; i++) {
     const line: string = readline(); // the ASCII art picture line by line

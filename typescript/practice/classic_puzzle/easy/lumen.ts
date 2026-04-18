@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
-const L: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
+const L: number = parseInt(readline(), 10);
 const cellGrid: string[][] = [];
 for (let i = 0; i < N; i++) {
     const inputs: string[] = readline().split(' ');

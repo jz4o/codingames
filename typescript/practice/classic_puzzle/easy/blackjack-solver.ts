@@ -20,7 +20,7 @@ class Hand {
             } else if (card === 'A') {
                 return 1;
             } else {
-                return parseInt(card);
+                return parseInt(card, 10);
             }
         });
 

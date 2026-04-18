@@ -3,7 +3,7 @@
  **/
 
 const actorName: string = readline();
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const movieCasts: string[] = [];
 for (let i = 0; i < n; i++) {
     const movieCast: string = readline();

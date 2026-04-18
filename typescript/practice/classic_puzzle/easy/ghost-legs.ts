@@ -4,8 +4,8 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const _W: number = parseInt(inputs[0]);
-const H: number = parseInt(inputs[1]);
+const _W: number = parseInt(inputs[0], 10);
+const H: number = parseInt(inputs[1], 10);
 const grid: string[][] = [];
 for (let i = 0; i < H; i++) {
     const line: string = readline();

@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const R: number = parseInt(readline());
-const L: number = parseInt(readline());
+const R: number = parseInt(readline(), 10);
+const L: number = parseInt(readline(), 10);
 
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');

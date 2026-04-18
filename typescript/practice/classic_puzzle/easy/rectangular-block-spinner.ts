@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const size: number = parseInt(readline());
-const angle: number = parseInt(readline());
+const size: number = parseInt(readline(), 10);
+const angle: number = parseInt(readline(), 10);
 const grid: string[][] = [];
 for (let i = 0; i < size; i++) {
     const line: string = readline();

@@ -4,12 +4,12 @@
  **/
 
 const mode: string = readline();
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const stringFrets: [number, number][] = [];
 for (let i = 0; i < n; i++) {
     const inputs: string[] = readline().split(' ');
-    const string: number = parseInt(inputs[0]);
-    const fret: number = parseInt(inputs[1]);
+    const string: number = parseInt(inputs[0], 10);
+    const fret: number = parseInt(inputs[1], 10);
 
     stringFrets.push([string, fret]);
 }
@@ -53,7 +53,7 @@ class Converter {
 
     static #calcNoteNum: (string: string, fret: number) => number = (string: string, fret: number): number => {
         const [noteCode, noteNumStr]: string[] = string.split('');
-        const noteNum: number = parseInt(noteNumStr);
+        const noteNum: number = parseInt(noteNumStr, 10);
 
         return noteNum * this.NOTE_PATTERN.length + this.NOTE_PATTERN.indexOf(noteCode) + fret;
     };

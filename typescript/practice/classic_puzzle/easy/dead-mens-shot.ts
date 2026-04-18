@@ -3,20 +3,20 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const cornerInputs: [number, number][] = [];
 for (let i = 0; i < N; i++) {
     const inputs: string[] = readline().split(' ');
-    const x: number = parseInt(inputs[0]);
-    const y: number = parseInt(inputs[1]);
+    const x: number = parseInt(inputs[0], 10);
+    const y: number = parseInt(inputs[1], 10);
     cornerInputs.push([x, y]);
 }
-const M: number = parseInt(readline());
+const M: number = parseInt(readline(), 10);
 const shotInputs: [number, number][] = [];
 for (let i = 0; i < M; i++) {
     const inputs: string[] = readline().split(' ');
-    const x: number = parseInt(inputs[0]);
-    const y: number = parseInt(inputs[1]);
+    const x: number = parseInt(inputs[0], 10);
+    const y: number = parseInt(inputs[1], 10);
     shotInputs.push([x, y]);
 }
 

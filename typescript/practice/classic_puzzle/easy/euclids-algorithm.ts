@@ -4,8 +4,8 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const a: number = parseInt(inputs[0]);
-const b: number = parseInt(inputs[1]);
+const a: number = parseInt(inputs[0], 10);
+const b: number = parseInt(inputs[1], 10);
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');

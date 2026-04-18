@@ -4,8 +4,8 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const R: number = parseInt(inputs[0]);
-const _C: number = parseInt(inputs[1]);
+const R: number = parseInt(inputs[0], 10);
+const _C: number = parseInt(inputs[1], 10);
 const grid: string[][] = [];
 for (let i = 0; i < R; i++) {
     const row: string = readline();
@@ -35,7 +35,7 @@ const transposeGrid: string[][] = grid[0].map((_value, index) => grid.map(row =>
 [...grid, ...transposeGrid].forEach(row => {
     for (let start = 0; start < row.length; start++) {
         for (let end = start + 1; end <= row.length; end++) {
-            const digit: number = parseInt(row.slice(start, end).join(''));
+            const digit: number = parseInt(row.slice(start, end).join(''), 10);
 
             if (!digits.includes(digit)) {
                 digits.push(digit);

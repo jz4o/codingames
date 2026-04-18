@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
-const m: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
+const m: number = parseInt(readline(), 10);
 const inputSignals: { [key: string]: string } = {};
 for (let i = 0; i < n; i++) {
     const [inputName, inputSignal]: string[] = readline().split(' ');

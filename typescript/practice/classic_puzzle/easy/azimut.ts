@@ -4,7 +4,7 @@
  **/
 
 const startDirection: string = readline();
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const turns: string[] = [];
 for (let i = 0; i < N; i++) {
     const turn: string = readline();

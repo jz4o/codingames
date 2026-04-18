@@ -4,11 +4,11 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const x: number = parseInt(inputs1[0]);
-const y: number = parseInt(inputs1[1]);
+const x: number = parseInt(inputs1[0], 10);
+const y: number = parseInt(inputs1[1], 10);
 const inputs2: string[] = readline().split(' ');
-const u: number = parseInt(inputs2[0]);
-const v: number = parseInt(inputs2[1]);
+const u: number = parseInt(inputs2[0], 10);
+const v: number = parseInt(inputs2[1], 10);
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');

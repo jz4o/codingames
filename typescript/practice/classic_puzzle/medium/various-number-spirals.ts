@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const [vertPos, horPos]: string[] = readline().split(' ');
 const [order, direction]: string[] = readline().split(' ');
 

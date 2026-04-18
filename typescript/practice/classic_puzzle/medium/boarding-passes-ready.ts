@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-const h: number = parseInt(readline());
-const w: number = parseInt(readline());
-const n: number = parseInt(readline());
+const h: number = parseInt(readline(), 10);
+const w: number = parseInt(readline(), 10);
+const n: number = parseInt(readline(), 10);
 const passengers: string[] = [];
 for (let i = 0; i < n; i++) {
     const passenger: string = readline();

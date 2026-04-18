@@ -10,7 +10,7 @@ interface FigthResult {
 
 const CARD_LANKS: string[] = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
-const n: number = parseInt(readline()); // the number of cards for player 1
+const n: number = parseInt(readline(), 10); // the number of cards for player 1
 const deck1: number[] = [];
 for (let i = 0; i < n; i++) {
     const cardp1: string = readline(); // the n cards of player 1
@@ -18,7 +18,7 @@ for (let i = 0; i < n; i++) {
     const cardLank: string = cardp1.slice(0, cardp1.length - 1).toString();
     deck1.push(CARD_LANKS.indexOf(cardLank));
 }
-const m: number = parseInt(readline()); // the number of cards for player 2
+const m: number = parseInt(readline(), 10); // the number of cards for player 2
 const deck2: number[] = [];
 for (let i = 0; i < m; i++) {
     const cardp2: string = readline(); // the m cards of player 2

@@ -4,8 +4,8 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const R: number = parseInt(inputs[0]);
-const S: number = parseInt(inputs[1]);
+const R: number = parseInt(inputs[0], 10);
+const S: number = parseInt(inputs[1], 10);
 const removedArray: string[] = [];
 for (let i = 0; i < R; i++) {
     const removed: string = readline();

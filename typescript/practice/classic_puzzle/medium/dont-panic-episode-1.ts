@@ -4,20 +4,20 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const _nbFloors: number = parseInt(inputs[0]); // number of floors
-const _width: number = parseInt(inputs[1]); // width of the area
-const _nbRounds: number = parseInt(inputs[2]); // maximum number of rounds
-const _exitFloor: number = parseInt(inputs[3]); // floor on which the exit is found
-const exitPos: number = parseInt(inputs[4]); // position of the exit on its floor
-const _nbTotalClones: number = parseInt(inputs[5]); // number of generated clones
-const _nbAdditionalElevators: number = parseInt(inputs[6]); // ignore (always zero)
-const nbElevators: number = parseInt(inputs[7]); // number of elevators
+const _nbFloors: number = parseInt(inputs[0], 10); // number of floors
+const _width: number = parseInt(inputs[1], 10); // width of the area
+const _nbRounds: number = parseInt(inputs[2], 10); // maximum number of rounds
+const _exitFloor: number = parseInt(inputs[3], 10); // floor on which the exit is found
+const exitPos: number = parseInt(inputs[4], 10); // position of the exit on its floor
+const _nbTotalClones: number = parseInt(inputs[5], 10); // number of generated clones
+const _nbAdditionalElevators: number = parseInt(inputs[6], 10); // ignore (always zero)
+const nbElevators: number = parseInt(inputs[7], 10); // number of elevators
 const elevatorFloors: number[] = [];
 const elevatorPositions: number[] = [];
 for (let i = 0; i < nbElevators; i++) {
     const inputs: string[] = readline().split(' ');
-    const elevatorFloor: number = parseInt(inputs[0]); // floor on which this elevator is found
-    const elevatorPos: number = parseInt(inputs[1]); // position of the elevator on its floor
+    const elevatorFloor: number = parseInt(inputs[0], 10); // floor on which this elevator is found
+    const elevatorPos: number = parseInt(inputs[1], 10); // position of the elevator on its floor
 
     elevatorFloors.push(elevatorFloor);
     elevatorPositions.push(elevatorPos);
@@ -30,8 +30,8 @@ while ((loopInputs = readline().split(' ')).length !== 0) {
     // floor of the leading clone
     // position of the leading clone on its floor
     const [cloneFloorStr, clonePosStr, direction]: string[] = loopInputs;
-    const cloneFloor: number = parseInt(cloneFloorStr);
-    const clonePos: number = parseInt(clonePosStr);
+    const cloneFloor: number = parseInt(cloneFloorStr, 10);
+    const clonePos: number = parseInt(clonePosStr, 10);
 
     // Write an action using console.log()
     // To debug: console.error('Debug messages...');

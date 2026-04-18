@@ -3,13 +3,13 @@
  * the standard input according to the problem statement.
  **/
 
-const tributes: number = parseInt(readline());
+const tributes: number = parseInt(readline(), 10);
 const playerNames: string[] = [];
 for (let i = 0; i < tributes; i++) {
     const playerName: string = readline();
     playerNames.push(playerName);
 }
-const turns: number = parseInt(readline());
+const turns: number = parseInt(readline(), 10);
 const infos: string[] = [];
 for (let i = 0; i < turns; i++) {
     const info: string = readline();

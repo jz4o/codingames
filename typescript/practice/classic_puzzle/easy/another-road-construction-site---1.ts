@@ -3,13 +3,13 @@
  * the standard input according to the problem statement.
  **/
 
-const roadLength: number = parseInt(readline()); // The total kilometers of the route.
-const zoneQuantity: number = parseInt(readline()); // The number of road construction sites.
+const roadLength: number = parseInt(readline(), 10); // The total kilometers of the route.
+const zoneQuantity: number = parseInt(readline(), 10); // The number of road construction sites.
 const zoneRows: number[][] = [];
 for (let i = 0; i < zoneQuantity; i++) {
     const inputs: string[] = readline().split(' ');
-    const zoneKm: number = parseInt(inputs[0]); // The kilometer in which the road construction site begins.
-    const zoneSpeed: number = parseInt(inputs[1]); // The speed limit of the road construction site.
+    const zoneKm: number = parseInt(inputs[0], 10); // The kilometer in which the road construction site begins.
+    const zoneSpeed: number = parseInt(inputs[1], 10); // The speed limit of the road construction site.
 
     zoneRows.push([zoneKm, zoneSpeed]);
 }

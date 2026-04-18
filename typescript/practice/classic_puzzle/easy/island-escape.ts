@@ -3,13 +3,13 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const elevationRows: number[][] = [];
 for (let i = 0; i < N; i++) {
     const inputs: string[] = readline().split(' ');
     const elevationRow: number[] = [];
     for (let j = 0; j < N; j++) {
-        const elevation: number = parseInt(inputs[j]);
+        const elevation: number = parseInt(inputs[j], 10);
         elevationRow.push(elevation);
     }
     elevationRows.push(elevationRow);

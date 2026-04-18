@@ -4,13 +4,13 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const N: number = parseInt(inputs1[0]);
-const T: number = parseInt(inputs1[1]);
+const N: number = parseInt(inputs1[0], 10);
+const T: number = parseInt(inputs1[1], 10);
 const cs: number[] = [];
 for (let i = 0; i < T; i++) {
     const inputs2: string[] = readline().split(' ');
     for (let j = 0; j < N; j++) {
-        const C: number = parseInt(inputs2[j]);
+        const C: number = parseInt(inputs2[j], 10);
         cs.push(C);
     }
 }

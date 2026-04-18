@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const inputRows: [string, string, string, string][] = [];
 for (let i = 0; i < N; i++) {
     const [name, r, m, c]: string[] = readline().split(' ');

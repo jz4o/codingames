@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const C: string = readline();
-const S: number = parseInt(readline());
+const S: number = parseInt(readline(), 10);
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
@@ -31,7 +31,7 @@ const transpose = array => array[0].map((_value, index) => array.map(row => row[
 
 const results: string[][] = [];
 N.toString().split('').forEach(n => {
-    const digit: number = parseInt(n);
+    const digit: number = parseInt(n, 10);
 
     const tl: string = getSegmentChar(digit, 'tl').repeat(S);
     const bl: string = getSegmentChar(digit, 'bl').repeat(S);

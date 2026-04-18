@@ -9,8 +9,8 @@ const b: string = readline();
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const aVectors: number[] = a.split(' ').map(i => parseInt(i));
-const bVectors: number[] = b.split(' ').map(i => parseInt(i));
+const aVectors: number[] = a.split(' ').map(i => parseInt(i, 10));
+const bVectors: number[] = b.split(' ').map(i => parseInt(i, 10));
 
 let result: number = 0;
 while (aVectors.length > 0) {

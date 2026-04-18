@@ -3,12 +3,12 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline()); // the number of relationships of influence
+const n: number = parseInt(readline(), 10); // the number of relationships of influence
 const relationMap: {[key: number]: number[]} = {};
 for (let i = 0; i < n; i++) {
     const inputs: string[] = readline().split(' ');
-    const x: number = parseInt(inputs[0]); // a relationship of influence between two people (x influences y)
-    const y: number = parseInt(inputs[1]);
+    const x: number = parseInt(inputs[0], 10); // a relationship of influence between two people (x influences y)
+    const y: number = parseInt(inputs[1], 10);
 
     if (!(x in relationMap)) {
         relationMap[x] = [];
@@ -20,7 +20,7 @@ for (let i = 0; i < n; i++) {
 // To debug: console.error('Debug messages...');
 
 let deepLevel: number = 0;
-let targets: number[] = Object.keys(relationMap).map(key => parseInt(key));
+let targets: number[] = Object.keys(relationMap).map(key => parseInt(key, 10));
 while (targets.length > 0) {
     deepLevel++;
     targets = targets.reduce((result, target) => {

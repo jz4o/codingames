@@ -6,7 +6,7 @@
 const inputs: string[] = readline().split(' ');
 const ws: number[] = [];
 for (let i = 0; i < 10; i++) {
-    const w: number = parseInt(inputs[i]);
+    const w: number = parseInt(inputs[i], 10);
     ws.push(w);
 }
 

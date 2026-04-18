@@ -3,13 +3,13 @@
  * the standard input according to the problem statement.
  **/
 
-const nImp: number = parseInt(readline());
+const nImp: number = parseInt(readline(), 10);
 const imports: string[] = [];
 for (let i = 0; i < nImp; i++) {
     const _import: string = readline();
     imports.push(_import);
 }
-const nDep: number = parseInt(readline());
+const nDep: number = parseInt(readline(), 10);
 const dependencyRows: string[] = [];
 for (let i = 0; i < nDep; i++) {
     const dependency: string = readline();

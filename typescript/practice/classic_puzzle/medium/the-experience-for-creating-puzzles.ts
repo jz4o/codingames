@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-const level: number = parseInt(readline());
-const xp: number = parseInt(readline());
-const N: number = parseInt(readline());
+const level: number = parseInt(readline(), 10);
+const xp: number = parseInt(readline(), 10);
+const N: number = parseInt(readline(), 10);
 
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');

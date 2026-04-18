@@ -53,7 +53,7 @@ class MiniSudoku {
 }
 
 const lines: string[] = [line1, line2, line3, line4];
-const square: number[][] = lines.map(line => line.split('').map(i => parseInt(i)));
+const square: number[][] = lines.map(line => line.split('').map(i => parseInt(i, 10)));
 const solvedSquare: number[][] = MiniSudoku.solve(square);
 
 const results: string[] = solvedSquare.map(row => row.join(''));

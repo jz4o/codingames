@@ -3,16 +3,16 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const inputRows: [string, number, number, string, number, number, string, number, number][] = [];
 for (let i = 0; i < n; i++) {
     const [A, xAStr, yAStr, B, xBStr, yBStr, C, xCStr, yCStr]: string[] = readline().split(' ');
-    const xA: number = parseInt(xAStr);
-    const yA: number = parseInt(yAStr);
-    const xB: number = parseInt(xBStr);
-    const yB: number = parseInt(yBStr);
-    const xC: number = parseInt(xCStr);
-    const yC: number = parseInt(yCStr);
+    const xA: number = parseInt(xAStr, 10);
+    const yA: number = parseInt(yAStr, 10);
+    const xB: number = parseInt(xBStr, 10);
+    const yB: number = parseInt(yBStr, 10);
+    const xC: number = parseInt(xCStr, 10);
+    const yC: number = parseInt(yCStr, 10);
 
     inputRows.push([A, xA, yA, B, xB, yB, C, xC, yC]);
 }

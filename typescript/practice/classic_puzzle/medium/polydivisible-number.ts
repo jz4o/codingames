@@ -30,7 +30,7 @@ const toBigInt: (baseNumber: string, base: number) => bigint = (baseNumber: stri
         .reduce((sum, digit, index) => sum + BigInt(parseInt(digit, base)) * bigIntPow(base, index), BigInt(0));
 };
 
-const numbers: number[] = NUMBER.split(' ').map(n => parseInt(n));
+const numbers: number[] = NUMBER.split(' ').map(n => parseInt(n, 10));
 const maxNumber: number = Math.max(...numbers);
 
 const results: number[] = rangeArrayFromTo(maxNumber + 1, MAX_BASE).filter(base => {

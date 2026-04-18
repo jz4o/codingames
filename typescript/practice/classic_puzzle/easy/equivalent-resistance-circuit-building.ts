@@ -3,11 +3,11 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const inputRows: [string, number][] = [];
 for (let i = 0; i < N; i++) {
     const [name, rStr]: string[] = readline().split(' ');
-    const R: number = parseInt(rStr);
+    const R: number = parseInt(rStr, 10);
 
     inputRows.push([name, R]);
 }

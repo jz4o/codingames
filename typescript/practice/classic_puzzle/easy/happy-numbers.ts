@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const xs: string[] = [];
 for (let i = 0; i < N; i++) {
     const x: string = readline();
@@ -25,7 +25,7 @@ for (const x of xs) {
     const exitNumbers: string[] = [HAPPY_NUMBER];
     while (!exitNumbers.includes(temp)) {
         exitNumbers.push(temp);
-        temp = temp.split('').map(d => parseInt(d) ** 2).reduce((sum, d) => sum + d, 0).toString();
+        temp = temp.split('').map(d => parseInt(d, 10) ** 2).reduce((sum, d) => sum + d, 0).toString();
     }
 
     const resultFace = temp === HAPPY_NUMBER ? HAPPY_FACE : UNHAPPY_FACE;

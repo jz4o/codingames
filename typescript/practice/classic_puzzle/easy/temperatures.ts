@@ -3,11 +3,11 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline()); // the number of temperatures to analyse
+const n: number = parseInt(readline(), 10); // the number of temperatures to analyse
 const ts: number[] = [];
 const inputs: string[] = readline().split(' ');
 for (let i = 0; i < n; i++) {
-    const t: number = parseInt(inputs[i]);// a temperature expressed as an integer ranging from -273 to 5526
+    const t: number = parseInt(inputs[i], 10);// a temperature expressed as an integer ranging from -273 to 5526
     ts.push(t);
 }
 

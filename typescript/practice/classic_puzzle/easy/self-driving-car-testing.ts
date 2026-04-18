@@ -3,12 +3,12 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const xthenCommands: string = readline();
 const commands: string[] = xthenCommands.split(';');
-let position: number = parseInt(commands.shift());
+let position: number = parseInt(commands.shift(), 10);
 const commandChars: string[] = commands.reduce((chars, command) => {
-    const amount: number = parseInt(command.slice(0, -1));
+    const amount: number = parseInt(command.slice(0, -1), 10);
     const comm: string = command.slice(-1);
 
     chars.push(...comm.repeat(amount).split(''));
@@ -29,7 +29,7 @@ for (let i = 0; i < N; i++) {
 const results: string[] = [];
 rthenRoadpatterns.forEach(rthenRoadpattern => {
     const [count, pattern] = rthenRoadpattern.split(';');
-    Array(parseInt(count)).fill(null).forEach(() => {
+    Array(parseInt(count, 10)).fill(null).forEach(() => {
         const command: string = commandChars.shift();
         if (command === 'L') {
             position--;
@@ -45,3 +45,4 @@ rthenRoadpatterns.forEach(rthenRoadpattern => {
 results.forEach(result => {
     console.log(result);
 });
+

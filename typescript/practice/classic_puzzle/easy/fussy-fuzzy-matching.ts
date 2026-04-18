@@ -4,11 +4,11 @@
  **/
 
 const letterCase: string = readline();
-const letterFuzz: number = parseInt(readline());
-const numberFuzz: number = parseInt(readline());
+const letterFuzz: number = parseInt(readline(), 10);
+const numberFuzz: number = parseInt(readline(), 10);
 const otherFuzz: string = readline();
 const template: string = readline();
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 const candidates: string[] = [];
 for (let i = 0; i < n; i++) {
     const candidate: string = readline();
@@ -43,7 +43,7 @@ const results: string[] = candidates.map(candidate => {
                 return false;
             }
         } else if (/\d+/.test(templateElement)) {
-            if (!/\d+/.test(element) || numberFuzz < Math.abs(parseInt(templateElement) - parseInt(element))) {
+            if (!/\d+/.test(element) || numberFuzz < Math.abs(parseInt(templateElement, 10) - parseInt(element, 10))) {
                 return false;
             }
         } else if (/\d+|[a-zA-Z]/.test(element) || (otherFuzz === 'true' && templateElement !== element)) {

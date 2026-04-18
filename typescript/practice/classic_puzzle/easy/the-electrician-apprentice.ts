@@ -3,13 +3,13 @@
  * the standard input according to the problem statement.
  **/
 
-const C: number = parseInt(readline());
+const C: number = parseInt(readline(), 10);
 const wirings: string[] = [];
 for (let i = 0; i < C; i++) {
     const WIRING: string = readline();
     wirings.push(WIRING);
 }
-const A: number = parseInt(readline());
+const A: number = parseInt(readline(), 10);
 const switches: string[] = [];
 for (let i = 0; i < A; i++) {
     const SWITCH: string = readline();

@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
@@ -28,3 +28,4 @@ const result: string = `${upperPart.replace(' ', '.')}${lowerPart}`.trim();
 
 // console.log('answer');
 console.log(result);
+

@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-const height: number = parseInt(readline());
-const width: number = parseInt(readline());
-const numberOfShelves: number = parseInt(readline());
+const height: number = parseInt(readline(), 10);
+const width: number = parseInt(readline(), 10);
+const numberOfShelves: number = parseInt(readline(), 10);
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');

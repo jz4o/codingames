@@ -4,7 +4,7 @@
  **/
 
 const x: string = readline();
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
@@ -44,7 +44,7 @@ const zeroPadLeft = (str: string, length: number): string => {
 };
 
 const [ad, cdeStr, fg]: string[] = x.split('-');
-let cde: number = parseInt(cdeStr);
+let cde: number = parseInt(cdeStr, 10);
 
 const alpha: string = `${ad}${fg}`;
 const alphaInt: number = alphaToInt(alpha);

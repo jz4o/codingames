@@ -3,11 +3,11 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const inputs: string[] = readline().split(' ');
 let piles: number[] = [];
 for (let i = 0; i < N; i++) {
-    const C: number = parseInt(inputs[i]);
+    const C: number = parseInt(inputs[i], 10);
 
     piles.push(C);
 }

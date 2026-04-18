@@ -4,19 +4,19 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const HI: number = parseInt(inputs1[0]);
-const WI: number = parseInt(inputs1[1]);
+const HI: number = parseInt(inputs1[0], 10);
+const WI: number = parseInt(inputs1[1], 10);
 const style: string = readline();
-const howManyTriangles: number = parseInt(readline());
+const howManyTriangles: number = parseInt(readline(), 10);
 const triangleRows: number[][] = [];
 for (let i = 0; i < howManyTriangles; i++) {
     const inputs2: string[] = readline().split(' ');
-    const x1: number = parseInt(inputs2[0]);
-    const y1: number = parseInt(inputs2[1]);
-    const x2: number = parseInt(inputs2[2]);
-    const y2: number = parseInt(inputs2[3]);
-    const x3: number = parseInt(inputs2[4]);
-    const y3: number = parseInt(inputs2[5]);
+    const x1: number = parseInt(inputs2[0], 10);
+    const y1: number = parseInt(inputs2[1], 10);
+    const x2: number = parseInt(inputs2[2], 10);
+    const y2: number = parseInt(inputs2[3], 10);
+    const x3: number = parseInt(inputs2[4], 10);
+    const y3: number = parseInt(inputs2[5], 10);
     triangleRows.push([x1, y1, x2, y2, x3, y3]);
 }
 

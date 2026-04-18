@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-const R: number = parseInt(readline());
-const C: number = parseInt(readline());
-const T: number = parseInt(readline());
+const R: number = parseInt(readline(), 10);
+const C: number = parseInt(readline(), 10);
+const T: number = parseInt(readline(), 10);
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
@@ -77,10 +77,10 @@ class Cell {
 }
 
 const sumRIndexDigits: number[] = [...Array(R).keys()].map(index => {
-    return index.toString().split('').map(char => parseInt(char)).reduce((sum, i) => sum + i);
+    return index.toString().split('').map(char => parseInt(char, 10)).reduce((sum, i) => sum + i);
 });
 const sumCIndexDigits: number[] = [...Array(C).keys()].map(index => {
-    return index.toString().split('').map(char => parseInt(char)).reduce((sum, i) => sum + i);
+    return index.toString().split('').map(char => parseInt(char, 10)).reduce((sum, i) => sum + i);
 });
 
 const grid: Grid = new Grid();

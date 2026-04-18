@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-const thickness: number = parseInt(readline());
-const length: number = parseInt(readline());
-const turns: number = parseInt(readline());
+const thickness: number = parseInt(readline(), 10);
+const length: number = parseInt(readline(), 10);
+const turns: number = parseInt(readline(), 10);
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');

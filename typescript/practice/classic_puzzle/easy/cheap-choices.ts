@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const c: number = parseInt(readline());
-const p: number = parseInt(readline());
+const c: number = parseInt(readline(), 10);
+const p: number = parseInt(readline(), 10);
 const items: string[] = [];
 for (let i = 0; i < c; i++) {
     const item: string = readline();
@@ -22,7 +22,7 @@ for (let i = 0; i < p; i++) {
 const inventory: { [key: string]: number[] } = {};
 items.forEach(item => {
     const [category, size, priceStr]: string[] = item.split(' ');
-    const price: number = parseInt(priceStr);
+    const price: number = parseInt(priceStr, 10);
 
     const key: string = `${category} ${size}`;
     if (!(key in inventory)) {

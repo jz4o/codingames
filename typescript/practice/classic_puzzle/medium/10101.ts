@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const W: number = parseInt(readline());
-const H: number = parseInt(readline());
+const W: number = parseInt(readline(), 10);
+const H: number = parseInt(readline(), 10);
 const grid: string[][] = [];
 for (let i = 0; i < H; i++) {
     const ROW: string = readline();

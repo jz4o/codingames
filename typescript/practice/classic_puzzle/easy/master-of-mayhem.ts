@@ -3,19 +3,19 @@
  * the standard input according to the problem statement.
  **/
 
-const cyborgCount: number = parseInt(readline());
+const cyborgCount: number = parseInt(readline(), 10);
 const cyborgNames: string[] = [];
 for (let i = 0; i < cyborgCount; i++) {
     const cyborgName: string = readline();
     cyborgNames.push(cyborgName);
 }
-const mayhemReportCount: number = parseInt(readline());
+const mayhemReportCount: number = parseInt(readline(), 10);
 const mayhemReports: string[] = [];
 for (let i = 0; i < mayhemReportCount; i++) {
     const mayhemReport: string = readline();
     mayhemReports.push(mayhemReport);
 }
-const cyborgReportCount: number = parseInt(readline());
+const cyborgReportCount: number = parseInt(readline(), 10);
 const cyborgReports: string[] = [];
 for (let i = 0; i < cyborgReportCount; i++) {
     const cyborgReport: string = readline();

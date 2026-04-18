@@ -5,7 +5,7 @@
 
 const opBowls: string = readline();
 const myBowls: string = readline();
-const num: number = parseInt(readline());
+const num: number = parseInt(readline(), 10);
 
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
@@ -17,8 +17,8 @@ const PLAYER_INDEX_OPP: number = 0;
 const PLAYER_INDEX_MY: number = 1;
 
 const bowls: number[][] = [];
-bowls.push(opBowls.split(' ').map(b => parseInt(b)));
-bowls.push(myBowls.split(' ').map(b => parseInt(b)));
+bowls.push(opBowls.split(' ').map(b => parseInt(b, 10)));
+bowls.push(myBowls.split(' ').map(b => parseInt(b, 10)));
 
 let seeds: number = bowls[PLAYER_INDEX_MY][num];
 bowls[PLAYER_INDEX_MY][num] = 0;
@@ -45,3 +45,4 @@ console.log(`${bowls[PLAYER_INDEX_MY].slice(0, RESERVE_INDEX).join(' ')} [${bowl
 if (index % BOWLS_SIZE === 0) {
     console.log('REPLAY');
 }
+

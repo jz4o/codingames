@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const r1: number = parseInt(readline());
+const r1: number = parseInt(readline(), 10);
 
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
@@ -11,7 +11,7 @@ const r1: number = parseInt(readline());
 let isSuccess: boolean = false;
 for (let i = r1 - 1; i >= 1; i--) {
     const iSum = i.toString().split('')
-                             .map(d => parseInt(d))
+                             .map(d => parseInt(d, 10))
                              .reduce((sum, d) => sum + d, 0);
 
     if (i + iSum === r1) {
@@ -22,3 +22,4 @@ for (let i = r1 - 1; i >= 1; i--) {
 
 // console.log('YES|NO');
 console.log(isSuccess ? 'YES' : 'NO');
+

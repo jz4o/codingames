@@ -10,7 +10,7 @@ const input: string = readline();
 
 const inputElements: string[] = input.split(' ');
 const direction: string = inputElements.shift();
-const [howManyArrows, heightOfArrows, strokeThicknessOfArrows, spacingBetweenArrows, additionalIndentOfEachLine]: number[] = inputElements.map(element => parseInt(element));
+const [howManyArrows, heightOfArrows, strokeThicknessOfArrows, spacingBetweenArrows, additionalIndentOfEachLine]: number[] = inputElements.map(element => parseInt(element, 10));
 
 const results: string[] = [...Array(heightOfArrows).keys()].map(index => {
     const directionIsRight: boolean = direction === 'right';

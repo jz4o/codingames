@@ -4,15 +4,15 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const W: number = parseInt(inputs[0]);
-const H: number = parseInt(inputs[1]);
+const W: number = parseInt(inputs[0], 10);
+const H: number = parseInt(inputs[1], 10);
 const map: number[][] = [];
 for (let i = 0; i < H; i++) {
     map.push([]);
 
     const inputs: string[] = readline().split(' ');
     for (let j = 0; j < W; j++) {
-        const food: number = parseInt(inputs[j]);
+        const food: number = parseInt(inputs[j], 10);
 
         map[i].push(food);
     }

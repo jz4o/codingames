@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const M: number = parseInt(readline());
+const M: number = parseInt(readline(), 10);
 const lines: string[] = [];
 for (let i = 0; i < M; i++) {
     const LINE: string = readline();
@@ -17,7 +17,7 @@ const rangeArrayFromTo: (from: number, to: number, step?: number) => number[] = 
     return [...Array(Math.floor((to - from + step) / step)).keys()].map(i => from + i * step);
 };
 
-const grid: number[][] = lines.map(line => line.split(' ').map(s => parseInt(s)));
+const grid: number[][] = lines.map(line => line.split(' ').map(s => parseInt(s, 10)));
 
 const tcN60: number = grid.reduce((sum, row) => {
     return sum + 10 + (row.reduce((sum, value) => sum + value) - 40) / 7;

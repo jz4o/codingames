@@ -4,7 +4,7 @@
  **/
 
 const operation: string = readline();
-const pseudoRandomNumber: number = parseInt(readline());
+const pseudoRandomNumber: number = parseInt(readline(), 10);
 const rotors: string[] = [];
 for (let i = 0; i < 3; i++) {
     const rotor: string = readline();

@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const h: number = parseInt(readline());
+const h: number = parseInt(readline(), 10);
 const lines: string[] = [];
 for (let i = 0; i < h; i++) {
     const line: string = readline();
@@ -28,7 +28,7 @@ class Point {
 }
 
 const grid: (null|number)[][] = lines.map(line => {
-    return [null, ...line.split(' ').map(v => parseInt(v)), null];
+    return [null, ...line.split(' ').map(v => parseInt(v, 10)), null];
 });
 grid.unshift(grid[0].map(() => null));
 grid.push(grid[0].map(() => null));

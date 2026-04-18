@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const W: number = parseInt(readline());
-const H: number = parseInt(readline());
+const W: number = parseInt(readline(), 10);
+const H: number = parseInt(readline(), 10);
 const map: number[][] = [];
 map.push(Array(W + 2).fill(1));
 for (let i = 0; i < H; i++) {
@@ -12,7 +12,7 @@ for (let i = 0; i < H; i++) {
 
     const inputs: string[] = readline().split(' ');
     for (let j = 0; j < W; j++) {
-        const v: number = parseInt(inputs[j]);
+        const v: number = parseInt(inputs[j], 10);
 
         line.push(v);
     }

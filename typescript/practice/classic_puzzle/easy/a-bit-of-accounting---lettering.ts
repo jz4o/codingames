@@ -3,16 +3,16 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
-const M: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
+const M: number = parseInt(readline(), 10);
 const invoices: number[] = [];
 for (let i = 0; i < N; i++) {
-    const invoice: number = parseInt(readline());
+    const invoice: number = parseInt(readline(), 10);
     invoices.push(invoice);
 }
 const paymentEntries: number[] = [];
 for (let i = 0; i < M; i++) {
-    const paymentEntry: number = parseInt(readline());
+    const paymentEntry: number = parseInt(readline(), 10);
     paymentEntries.push(paymentEntry);
 }
 

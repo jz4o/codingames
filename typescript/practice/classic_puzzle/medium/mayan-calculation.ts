@@ -4,8 +4,8 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const L: number = parseInt(inputs[0]);
-const H: number = parseInt(inputs[1]);
+const L: number = parseInt(inputs[0], 10);
+const H: number = parseInt(inputs[1], 10);
 const transposeAsciiMayans: string[][] = [];
 for (let i = 0; i < H; i++) {
     const numeral: string = readline();
@@ -13,14 +13,14 @@ for (let i = 0; i < H; i++) {
     transposeAsciiMayans.push(numeral.match(new RegExp(`.{${L}}`, 'g')));
 }
 const mayans1: string[] = [];
-const S1: number = parseInt(readline());
+const S1: number = parseInt(readline(), 10);
 for (let i = 0; i < S1; i++) {
     const num1Line: string = readline();
 
     mayans1.push(num1Line);
 }
 const mayans2: string[] = [];
-const S2: number = parseInt(readline());
+const S2: number = parseInt(readline(), 10);
 for (let i = 0; i < S2; i++) {
     const num2Line: string = readline();
 

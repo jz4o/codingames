@@ -56,7 +56,6 @@ export default [
       'yoda': 'off',
 
       // temporary ignore rules.
-      'radix': 'off',
       'no-dupe-keys': 'off',
     }
   },

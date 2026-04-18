@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-const a: number = parseInt(readline());
-const b: number = parseInt(readline());
-const m: number = parseInt(readline());
+const a: number = parseInt(readline(), 10);
+const b: number = parseInt(readline(), 10);
+const m: number = parseInt(readline(), 10);
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');

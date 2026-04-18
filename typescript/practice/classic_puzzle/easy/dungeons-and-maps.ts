@@ -4,12 +4,12 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const w: number = parseInt(inputs1[0]);
-const h: number = parseInt(inputs1[1]);
+const w: number = parseInt(inputs1[0], 10);
+const h: number = parseInt(inputs1[1], 10);
 const inputs2: string[] = readline().split(' ');
-const startRow: number = parseInt(inputs2[0]);
-const startCol: number = parseInt(inputs2[1]);
-const n: number = parseInt(readline());
+const startRow: number = parseInt(inputs2[0], 10);
+const startCol: number = parseInt(inputs2[1], 10);
+const n: number = parseInt(readline(), 10);
 const mapRows: string[] = [];
 for (let i = 0; i < n; i++) {
     for (let j = 0; j < h; j++) {

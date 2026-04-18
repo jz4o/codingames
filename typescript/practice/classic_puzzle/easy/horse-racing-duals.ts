@@ -3,10 +3,10 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const pis: number[] = [];
 for (let i = 0; i < N; i++) {
-    const pi: number = parseInt(readline());
+    const pi: number = parseInt(readline(), 10);
     pis.push(pi);
 }
 

@@ -9,11 +9,11 @@ type InputRow = {
 };
 
 const rookPosition: string = readline();
-const nbPieces: number = parseInt(readline());
+const nbPieces: number = parseInt(readline(), 10);
 const inputRows: InputRow[] = [];
 for (let i = 0; i < nbPieces; i++) {
     const [colourStr, onePiece]: string[] = readline().split(' ');
-    const colour: number = parseInt(colourStr);
+    const colour: number = parseInt(colourStr, 10);
 
     inputRows.push({ colour, onePiece });
 }
@@ -30,7 +30,7 @@ const BLACK: number = 1;
 const piecePositions: { [key: string]: { [key: number]: number } } = {};
 inputRows.forEach(inputRow => {
     const [column, strRow]: string[] = inputRow.onePiece.split('');
-    const row: number = parseInt(strRow);
+    const row: number = parseInt(strRow, 10);
 
     if (!(column in piecePositions)) {
         piecePositions[column] = {};
@@ -39,7 +39,7 @@ inputRows.forEach(inputRow => {
 });
 
 const [rookColumn, strRookRow]: string[] = rookPosition.split('');
-const rookRow: number = parseInt(strRookRow);
+const rookRow: number = parseInt(strRookRow, 10);
 
 const availableMovements: string[] = [];
 

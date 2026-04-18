@@ -3,11 +3,11 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const inputRows: [number, string][] = [];
 for (let i = 0; i < N; i++) {
     const [numplayerStr, SIGNPLAYER]: string[] = readline().split(' ');
-    const NUMPLAYER: number = parseInt(numplayerStr);
+    const NUMPLAYER: number = parseInt(numplayerStr, 10);
 
     inputRows.push([NUMPLAYER, SIGNPLAYER]);
 }

@@ -4,11 +4,11 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const W: number = parseInt(inputs[0]);
-const H: number = parseInt(inputs[1]);
-const T1: number = parseInt(inputs[2]);
-const T2: number = parseInt(inputs[3]);
-const T3: number = parseInt(inputs[4]);
+const W: number = parseInt(inputs[0], 10);
+const H: number = parseInt(inputs[1], 10);
+const T1: number = parseInt(inputs[2], 10);
+const T2: number = parseInt(inputs[3], 10);
+const T3: number = parseInt(inputs[4], 10);
 const inputRows: [string, string][] = [];
 for (let i = 0; i < H; i++) {
     const [firstPictureRow, secondPictureRow]: string[] = readline().split(' ');

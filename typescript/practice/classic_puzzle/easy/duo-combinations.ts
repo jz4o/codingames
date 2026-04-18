@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const total: number = parseInt(readline());
+const total: number = parseInt(readline(), 10);
 const symbols: string[] = [];
 for (let i = 0; i < total; i++) {
     const symbol: string = readline();

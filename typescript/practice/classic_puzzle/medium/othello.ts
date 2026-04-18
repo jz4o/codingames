@@ -103,7 +103,7 @@ const grid: Position[][] = strGrid.map((row, rowIndex) => {
 
 const [moveColumnStr, moveRowStr]: string[] = move.split('');
 const moveColumn: number = 'abcdefgh'.indexOf(moveColumnStr) + 1;
-const moveRow: number = parseInt(moveRowStr);
+const moveRow: number = parseInt(moveRowStr, 10);
 
 const movePosition: Position = { y: moveRow, x: moveColumn, value: colour };
 

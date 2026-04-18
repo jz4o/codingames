@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const R: number = parseInt(readline());
-const N: number = parseInt(readline());
+const R: number = parseInt(readline(), 10);
+const N: number = parseInt(readline(), 10);
 const startPattern: string = readline();
 
 // Write an answer using console.log()
@@ -51,3 +51,4 @@ rangeArrayFromTo(1, N).reduce(temp => {
 results.forEach(result => {
     console.log(result);
 });
+

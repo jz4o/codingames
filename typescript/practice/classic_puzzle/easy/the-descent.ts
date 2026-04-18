@@ -12,7 +12,7 @@ let targetId: number;
 do {
     const mountainHs: number[] = [];
     for (let i = 0; i < 8; i++) {
-        const mountainH: number = parseInt(readline()); // represents the height of one mountain.
+        const mountainH: number = parseInt(readline(), 10); // represents the height of one mountain.
 
         mountainHs.push(mountainH);
     }

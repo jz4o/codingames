@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const games: string[] = [];
 for (let i = 0; i < N; i++) {
     const GAME: string = readline();
@@ -23,7 +23,7 @@ class Score {
     }
 
     getIntPoint: () => number = (): number => {
-        return parseInt(this.point.replace('X', '10').replace('-', '0'));
+        return parseInt(this.point.replace('X', '10').replace('-', '0'), 10);
     };
 }
 
@@ -62,7 +62,7 @@ const results: string[] = games.map(game => {
         scoreObject[score.frame] += score.getIntPoint();
     });
 
-    const maxFrame: number = Object.keys(scoreObject).reduce((max, frame) => Math.max(max, parseInt(frame)), 0);
+    const maxFrame: number = Object.keys(scoreObject).reduce((max, frame) => Math.max(max, parseInt(frame, 10)), 0);
     const frameSumPoints: number[] = [];
     [...Array(maxFrame + 1).keys()].forEach(index => {
         const lastSumPoint = frameSumPoints[frameSumPoints.length - 1] || 0;

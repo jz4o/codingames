@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const H: number = parseInt(readline());
+const H: number = parseInt(readline(), 10);
 const grid: string[][] = [];
 for (let i = 0; i < H; i++) {
     const S: string = readline();
@@ -45,3 +45,4 @@ const result: boolean = rangeArrayFromTo(0, H - 1).every(height =>{
 
 // console.log('UNSTABLE');
 console.log(result ? 'STABLE' : 'UNSTABLE');
+

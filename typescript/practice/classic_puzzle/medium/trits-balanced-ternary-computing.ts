@@ -14,7 +14,7 @@ const BASE_NUMBER: number = 3;
 
 const balanceToDecimal = (balance: string): number => {
     return balance.split('').reverse().reduce((sum, i, index) => {
-        return sum + (i === 'T' ? -1 : parseInt(i)) * (BASE_NUMBER ** index);
+        return sum + (i === 'T' ? -1 : parseInt(i, 10)) * (BASE_NUMBER ** index);
     }, 0);
 };
 

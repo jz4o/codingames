@@ -3,11 +3,11 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const inputs: string[] = readline().split(' ');
 let stones: number[] = [];
 for (let i = 0; i < N; i++) {
-    const level: number = parseInt(inputs[i]);
+    const level: number = parseInt(inputs[i], 10);
 
     stones.push(level);
 }

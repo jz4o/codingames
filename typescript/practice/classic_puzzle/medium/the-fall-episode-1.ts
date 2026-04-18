@@ -4,15 +4,15 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const _W: number = parseInt(inputs[0]); // number of columns.
-const H: number = parseInt(inputs[1]); // number of rows.
+const _W: number = parseInt(inputs[0], 10); // number of columns.
+const H: number = parseInt(inputs[1], 10); // number of rows.
 const grid: number[][] = [];
 for (let i = 0; i < H; i++) {
     const LINE: string = readline(); // represents a line in the grid and contains W integers. Each integer represents one room of a given type.
 
-    grid.push(LINE.split(' ').map(i => parseInt(i)));
+    grid.push(LINE.split(' ').map(i => parseInt(i, 10)));
 }
-const _EX: number = parseInt(readline()); // the coordinate along the X axis of the exit (not useful for this first mission, but must be read).
+const _EX: number = parseInt(readline(), 10); // the coordinate along the X axis of the exit (not useful for this first mission, but must be read).
 
 // direction
 const _TOP:   number = 0;
@@ -34,8 +34,8 @@ const PANEL_DESTINATION: {[key: string]: number[]} = {
 let loopInputs;
 while ((loopInputs = readline().split(' ')).length !== 0) {
     const [xiStr, yiStr, POS]: string[] = loopInputs;
-    const XI: number = parseInt(xiStr);
-    const YI: number = parseInt(yiStr);
+    const XI: number = parseInt(xiStr, 10);
+    const YI: number = parseInt(yiStr, 10);
 
     // Write an action using console.log()
     // To debug: console.error('Debug messages...');

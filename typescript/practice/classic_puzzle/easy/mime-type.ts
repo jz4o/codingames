@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline()); // Number of elements which make up the association table.
-const Q: number = parseInt(readline()); // Number Q of file names to be analyzed.
+const N: number = parseInt(readline(), 10); // Number of elements which make up the association table.
+const Q: number = parseInt(readline(), 10); // Number Q of file names to be analyzed.
 const extMimes: { [key: string]: string; } = {};
 for (let i = 0; i < N; i++) {
     // EXT: file extension

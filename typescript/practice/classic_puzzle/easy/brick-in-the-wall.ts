@@ -3,12 +3,12 @@
  * the standard input according to the problem statement.
  **/
 
-const X: number = parseInt(readline());
-const N: number = parseInt(readline());
+const X: number = parseInt(readline(), 10);
+const N: number = parseInt(readline(), 10);
 const inputs: string[] = readline().split(' ');
 const ms: number[] = [];
 for (let i = 0; i < N; i++) {
-    const m: number = parseInt(inputs[i]);
+    const m: number = parseInt(inputs[i], 10);
     ms.push(m);
 }
 

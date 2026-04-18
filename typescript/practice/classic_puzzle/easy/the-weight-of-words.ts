@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-const steps: number = parseInt(readline());
-const h: number = parseInt(readline());
-const w: number = parseInt(readline());
+const steps: number = parseInt(readline(), 10);
+const h: number = parseInt(readline(), 10);
+const w: number = parseInt(readline(), 10);
 const rows: string[] = [];
 for (let i = 0; i < h; i++) {
     const row: string = readline();

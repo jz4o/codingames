@@ -4,14 +4,14 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const w: number = parseInt(inputs1[0]);
-const h: number = parseInt(inputs1[1]);
-const countX: number = parseInt(inputs1[2]);
-const countY: number = parseInt(inputs1[3]);
+const w: number = parseInt(inputs1[0], 10);
+const h: number = parseInt(inputs1[1], 10);
+const countX: number = parseInt(inputs1[2], 10);
+const countY: number = parseInt(inputs1[3], 10);
 const inputs2: string[] = readline().split(' ');
 const widthMeasurements: number[] = [0];
 for (let i = 0; i < countX; i++) {
-    const x: number = parseInt(inputs2[i]);
+    const x: number = parseInt(inputs2[i], 10);
 
     widthMeasurements.push(x);
 }
@@ -19,7 +19,7 @@ widthMeasurements.push(w);
 const inputs3: string[] = readline().split(' ');
 const heightMeasurements: number[] = [0];
 for (let i = 0; i < countY; i++) {
-    const y: number = parseInt(inputs3[i]);
+    const y: number = parseInt(inputs3[i], 10);
 
     heightMeasurements.push(y);
 }

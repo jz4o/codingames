@@ -4,7 +4,7 @@
  **/
 
 const alignment: string = readline();
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const texts: string[] = [];
 for (let i = 0; i < N; i++) {
     const text: string = readline();

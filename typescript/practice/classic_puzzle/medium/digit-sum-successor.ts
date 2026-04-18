@@ -3,12 +3,12 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');
 
-const digits: number[] = [0, ...`${N}`.split('').map(i => parseInt(i))];
+const digits: number[] = [0, ...`${N}`.split('').map(i => parseInt(i, 10))];
 
 const decrementIndex: number = digits.lastIndexOf(digits.filter(i => i > 0).pop());
 digits[decrementIndex]--;
@@ -19,7 +19,8 @@ digits[incrementIndex]++;
 
 digits.push(...digits.splice(incrementIndex + 1).sort());
 
-const result: number = parseInt(digits.join(''));
+const result: number = parseInt(digits.join(''), 10);
 
 // console.log('11');
 console.log(result);
+

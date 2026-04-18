@@ -24,8 +24,8 @@ let temp: string = n1;
 while (!answers.includes(temp)) {
     answers.push(temp);
 
-    const biggest: number = parseInt(temp.split('').sort().reverse().join(''));
-    const smallest: number = parseInt(temp.split('').sort().join(''));
+    const biggest: number = parseInt(temp.split('').sort().reverse().join(''), 10);
+    const smallest: number = parseInt(temp.split('').sort().join(''), 10);
     const answer: number = biggest - smallest;
 
     temp = zeroPadLeft(`${answer}`, DIGITS_SIZE);
@@ -34,3 +34,4 @@ while (!answers.includes(temp)) {
 // console.log('1 2 3 4');
 const result: string = answers.slice(answers.indexOf(temp)).join(' ');
 console.log(result);
+

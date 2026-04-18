@@ -8,7 +8,7 @@ const N: string = readline();
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const digits: number[] = N.split('').map(c => parseInt(c));
+const digits: number[] = N.split('').map(c => parseInt(c, 10));
 const maxDigit: number = digits.reduce((max, digit) => Math.max(max, digit));
 
 let chunkSize: number = 1;

@@ -2,8 +2,8 @@
  * Don't let the machines win. You are humanity's last hope...
  **/
 
-const width: number = parseInt(readline()); // the number of cells on the X axis
-const height: number = parseInt(readline()); // the number of cells on the Y axis
+const width: number = parseInt(readline(), 10); // the number of cells on the X axis
+const height: number = parseInt(readline(), 10); // the number of cells on the Y axis
 const grid: string[][] = [];
 for (let i = 0; i < height; i++) {
     const line: string = readline(); // width characters, each either 0 or .
@@ -46,3 +46,4 @@ rangeArrayFromTo(0, height - 1).forEach(h => {
 results.forEach(result => {
     console.log(result);
 });
+

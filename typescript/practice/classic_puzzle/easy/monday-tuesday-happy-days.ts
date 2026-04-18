@@ -3,11 +3,11 @@
  * the standard input according to the problem statement.
  **/
 
-const leapYear: number = parseInt(readline());
+const leapYear: number = parseInt(readline(), 10);
 const [sourceDayOfWeek, sourceMonth, sourceDayOfMonthStr]: string[] = readline().split(' ');
-const sourceDayOfMonth: number = parseInt(sourceDayOfMonthStr);
+const sourceDayOfMonth: number = parseInt(sourceDayOfMonthStr, 10);
 const [targetMonth, targetDayOfMonthStr]: string[] = readline().split(' ');
-const targetDayOfMonth: number = parseInt(targetDayOfMonthStr);
+const targetDayOfMonth: number = parseInt(targetDayOfMonthStr, 10);
 
 // Write an action using console.log()
 // To debug: console.error('Debug messages...');

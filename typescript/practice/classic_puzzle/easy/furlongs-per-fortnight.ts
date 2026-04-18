@@ -64,7 +64,7 @@ if (fromUnitIndex < toUnitIndex) {
     unitRate = 1 / rangeArrayFromTo(toUnitIndex + 1, fromUnitIndex).reduce((mul, index) => mul * UNIT_CONVERTERS[index].rate, 1);
 }
 
-const toSpeed: string = (parseInt(speed) * distanceRate / unitRate).toFixed(1);
+const toSpeed: string = (parseInt(speed, 10) * distanceRate / unitRate).toFixed(1);
 
 const result: string = `${toSpeed} ${dist2} per ${time2}`;
 

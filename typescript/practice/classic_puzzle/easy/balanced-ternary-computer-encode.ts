@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
@@ -12,7 +12,7 @@ const BASE_NUM: number = 3;
 
 const reverseResult: number[] = [];
 Math.abs(N).toString(BASE_NUM).split('').reverse().forEach((n, index) => {
-    reverseResult[index] = (reverseResult[index] || 0) + parseInt(n);
+    reverseResult[index] = (reverseResult[index] || 0) + parseInt(n, 10);
 
     // carry up
     if (BASE_NUM - 1 <= reverseResult[index]) {
@@ -28,3 +28,4 @@ const result: string = reverseResult.reverse()
 
 // console.log('42');
 console.log(result);
+

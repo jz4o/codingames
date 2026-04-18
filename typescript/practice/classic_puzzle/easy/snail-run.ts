@@ -3,14 +3,14 @@
  * the standard input according to the problem statement.
  **/
 
-const numberSnails: number = parseInt(readline());
+const numberSnails: number = parseInt(readline(), 10);
 const speedSnails: number[] = [];
 for (let i = 0; i < numberSnails; i++) {
-    const speedSnail: number = parseInt(readline());
+    const speedSnail: number = parseInt(readline(), 10);
     speedSnails.push(speedSnail);
 }
-const mapHeight: number = parseInt(readline());
-const _mapWidth: number = parseInt(readline());
+const mapHeight: number = parseInt(readline(), 10);
+const _mapWidth: number = parseInt(readline(), 10);
 const rows: string[] = [];
 for (let i = 0; i < mapHeight; i++) {
     const ROW: string = readline();
@@ -40,7 +40,7 @@ rows.forEach((row, rowIndex) => {
         const position: Position = { y: rowIndex, x: valueIndex };
 
         if (value.match(/\d/)) {
-            const v: number = parseInt(value);
+            const v: number = parseInt(value, 10);
             const snail: Snail = {
                 num: v,
                 speed: speedSnails[v - 1],

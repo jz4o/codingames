@@ -4,7 +4,7 @@
  **/
 
 const [champion1, champion2]: string[] = readline().split(' ');
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const inputRows: [string, string][] = [];
 for (let i = 0; i < N; i++) {
     const [d, ATTACK]: string[] = readline().split(' ');

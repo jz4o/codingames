@@ -5,7 +5,7 @@
 
 const gymnasts: string = readline();
 const categories: string = readline();
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const rows: string[] = [];
 for (let i = 0; i < N; i++) {
     const row: string = readline();

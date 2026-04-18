@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const w: number = parseInt(readline());
-const h: number = parseInt(readline());
+const w: number = parseInt(readline(), 10);
+const h: number = parseInt(readline(), 10);
 const lines: string[] = [];
 for (let i = 0; i < h; i++) {
     const line: string = readline();
@@ -30,7 +30,7 @@ const grid: number[][] = lines.map(line => {
         .replace(/\./g, '0')
         .replace(/x/g, '9')
         .split('')
-        .map(s => parseInt(s));
+        .map(s => parseInt(s, 10));
 });
 
 rangeArrayFromTo(1, h).forEach(rowIndex => {

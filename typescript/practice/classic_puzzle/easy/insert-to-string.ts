@@ -4,7 +4,7 @@
  **/
 
 const s: string = readline();
-const changeCount: number = parseInt(readline());
+const changeCount: number = parseInt(readline(), 10);
 const rawChanges: string[] = [];
 for (let i = 0; i < changeCount; i++) {
     const rawChange: string = readline();
@@ -22,8 +22,8 @@ type Change = {
 
 const changes: Change[] = rawChanges.map(rawChange => {
     const [rowIndexStr, columnIndexStr, value]: string[] = rawChange.split('|');
-    const rowIndex: number = parseInt(rowIndexStr);
-    const columnIndex: number = parseInt(columnIndexStr);
+    const rowIndex: number = parseInt(rowIndexStr, 10);
+    const columnIndex: number = parseInt(columnIndexStr, 10);
 
     return { rowIndex, columnIndex, value };
 });

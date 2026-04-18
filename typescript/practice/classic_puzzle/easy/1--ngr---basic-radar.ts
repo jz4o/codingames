@@ -3,11 +3,11 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const inputRows: [string, string, number][] = [];
 for (let i = 0; i < N; i++) {
     const [plate, radarname, timestampStr]: string[] = readline().split(' ');
-    const timestamp: number = parseInt(timestampStr);
+    const timestamp: number = parseInt(timestampStr, 10);
 
     inputRows.push([plate, radarname, timestamp]);
 }
@@ -23,7 +23,7 @@ type ScanResult = {
 
 const scanResults: ScanResult[] = inputRows.map(inputRow => {
     const [plate, radarname, timestamp]: [string, string, number] = inputRow;
-    const radarpoint: number = parseInt(radarname.split('-').pop());
+    const radarpoint: number = parseInt(radarname.split('-').pop(), 10);
 
     return { plate, radarpoint, timestamp };
 });

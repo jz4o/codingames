@@ -4,8 +4,8 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const height: number = parseInt(inputs[0]);
-const _width: number = parseInt(inputs[1]);
+const height: number = parseInt(inputs[0], 10);
+const _width: number = parseInt(inputs[1], 10);
 const lines1: string[] = [];
 for (let i = 0; i < height; i++) {
     const line: string = readline();
@@ -20,7 +20,7 @@ for (let i = 0; i < height; i++) {
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const lines1Numbers: number[] = lines1.join(' ').split(' ').map(i => parseInt(i));
+const lines1Numbers: number[] = lines1.join(' ').split(' ').map(i => parseInt(i, 10));
 const lines2Marks: string[] = lines2.join(' ').split(' ');
 
 const xNumbers: number[] = [...Array(lines1Numbers.length).keys()].filter(i => lines2Marks[i] === 'X').map(i => lines1Numbers[i]);

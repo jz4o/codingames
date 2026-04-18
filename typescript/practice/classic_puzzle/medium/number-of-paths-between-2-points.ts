@@ -3,14 +3,14 @@
  * the standard input according to the problem statement.
  **/
 
-const M: number = parseInt(readline());
-const N: number = parseInt(readline());
+const M: number = parseInt(readline(), 10);
+const N: number = parseInt(readline(), 10);
 const grid: number[][] = [];
 grid.push(Array(N + 1).fill(1));
 for (let i = 0; i < M; i++) {
     const ROW: string = readline();
 
-    grid.push([1, ...ROW.split('').map(i => parseInt(i))]);
+    grid.push([1, ...ROW.split('').map(i => parseInt(i, 10))]);
 }
 
 // Write an action using console.log()

@@ -3,14 +3,14 @@
  * the standard input according to the problem statement.
  **/
 
-const W: number = parseInt(readline());
-const _H: number = parseInt(readline());
+const W: number = parseInt(readline(), 10);
+const _H: number = parseInt(readline(), 10);
 const T: string = readline();
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
 
-const wordCounts: number[] = T.split(' ').map(s => parseInt(s));
+const wordCounts: number[] = T.split(' ').map(s => parseInt(s, 10));
 const word: string = wordCounts.map((wordCount, index) => {
     return (index % 2 === 0 ? '*' : ' ').repeat(wordCount);
 }).join('');

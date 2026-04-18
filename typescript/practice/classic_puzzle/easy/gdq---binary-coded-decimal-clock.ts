@@ -16,7 +16,7 @@ const transpose: <T>(array: T[][]) => T[][] = <T>(array: T[][]): T[][] => {
     return array[0].map((_value, index) => array.map(row => row[index]));
 };
 
-const digits: number[] = input.replace(/:/g, '').slice(1).split('').map(s => parseInt(s));
+const digits: number[] = input.replace(/:/g, '').slice(1).split('').map(s => parseInt(s, 10));
 const fourBitDigits: string[] = digits.map(d => d.toString(2).padStart(4, '0'));
 const transposedFourBitDigits: string[][] = transpose(fourBitDigits.map(bits => bits.split('')));
 

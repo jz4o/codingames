@@ -4,16 +4,16 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const a: number = parseInt(inputs1[0]);
-const b: number = parseInt(inputs1[1]);
+const a: number = parseInt(inputs1[0], 10);
+const b: number = parseInt(inputs1[1], 10);
 const objectLines: string[] = [];
 for (let i = 0; i < a; i++) {
     const objectLine: string = readline();
     objectLines.push(objectLine);
 }
 const inputs2: string[] = readline().split(' ');
-const c: number = parseInt(inputs2[0]);
-const d: number = parseInt(inputs2[1]);
+const c: number = parseInt(inputs2[0], 10);
+const d: number = parseInt(inputs2[1], 10);
 const gridLines: string[] = [];
 for (let i = 0; i < c; i++) {
     const gridLine: string = readline();

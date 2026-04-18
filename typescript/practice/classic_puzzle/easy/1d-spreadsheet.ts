@@ -19,7 +19,7 @@ class SpreadSheet {
     }
 
     getArgValue(arg: string): number {
-        return arg.includes('$') ? this.getValue(parseInt(arg.slice(1))) : parseInt(arg);
+        return arg.includes('$') ? this.getValue(parseInt(arg.slice(1), 10)) : parseInt(arg, 10);
     }
 
     calcValue(cellIndex: number): number {
@@ -57,7 +57,7 @@ interface Cell {
 
 const spreadSheet: SpreadSheet = new SpreadSheet();
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 for (let i = 0; i < N; i++) {
     const [operation, arg1, arg2]: string[] = readline().split(' ');
 

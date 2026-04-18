@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const height: number = parseInt(readline());
+const height: number = parseInt(readline(), 10);
 const rows: string[] = [];
 for (let i = 0; i < height; i++) {
     const ROW: string = readline();

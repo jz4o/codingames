@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const compoundRows: string[] = [];
 for (let i = 0; i < N; i++) {
     const COMPOUND: string = readline();
@@ -32,11 +32,11 @@ class Union {
 const unitGrid: (Compound|Union)[][] = compoundRows.map(compound => {
     return compound.match(/.{3}/g).map(unit => {
         if (unit.startsWith('CH')) {
-            const innerUnion: number = parseInt(unit.charAt(2));
+            const innerUnion: number = parseInt(unit.charAt(2), 10);
 
             return new Compound(4 - innerUnion);
         } else {
-            const size: number = unit.replace(/\s/g, '').length === 0 ? 0 : parseInt(unit.replace(/\(|\)/g, ''));
+            const size: number = unit.replace(/\s/g, '').length === 0 ? 0 : parseInt(unit.replace(/\(|\)/g, ''), 10);
 
             return new Union(size);
         }

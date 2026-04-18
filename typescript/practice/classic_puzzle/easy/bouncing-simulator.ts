@@ -3,9 +3,9 @@
  * the standard input according to the problem statement.
  **/
 
-const w: number = parseInt(readline());
-const h: number = parseInt(readline());
-const n: number = parseInt(readline());
+const w: number = parseInt(readline(), 10);
+const h: number = parseInt(readline(), 10);
+const n: number = parseInt(readline(), 10);
 
 // Write an answer using console.log()
 // To debug: console.error('Debug messages...');
@@ -54,7 +54,7 @@ while (hitCount < n) {
     positionY = nextY;
     positionX = nextX;
 
-    grid[positionY][positionX] = (parseInt(grid[positionY][positionX]) + 1).toString();
+    grid[positionY][positionX] = (parseInt(grid[positionY][positionX], 10) + 1).toString();
 }
 
 const results: string[] = grid.map(row => {

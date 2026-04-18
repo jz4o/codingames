@@ -4,13 +4,13 @@
  **/
 
 const grid: number[][] = [];
-const n: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
 for (let i = 0; i < n; i++) {
     const row: number[] = [];
 
     const inputs: string[] = readline().split(' ');
     for (let j = 0; j < n; j++) {
-        const c: number = parseInt(inputs[j]);
+        const c: number = parseInt(inputs[j], 10);
 
         row.push(c);
     }

@@ -3,16 +3,16 @@
  * the standard input according to the problem statement.
  **/
 
-const n: number = parseInt(readline());
-const v: number = parseInt(readline());
+const n: number = parseInt(readline(), 10);
+const v: number = parseInt(readline(), 10);
 const speeds: number[] = [];
 for (let i = 0; i < n; i++) {
-    const speed: number = parseInt(readline());
+    const speed: number = parseInt(readline(), 10);
     speeds.push(speed);
 }
 const bends: number[] = [];
 for (let i = 0; i < v; i++) {
-    const bend: number = parseInt(readline());
+    const bend: number = parseInt(readline(), 10);
     bends.push(bend);
 }
 

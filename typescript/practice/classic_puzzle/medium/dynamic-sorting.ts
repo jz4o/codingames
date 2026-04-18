@@ -5,7 +5,7 @@
 
 const expression: string = readline();
 const types: string = readline();
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const rows: string[] = [];
 for (let i = 0; i < N; i++) {
     const ROW: string = readline();
@@ -53,7 +53,7 @@ objects.sort((a, b) => {
         }
 
         if (intExpressions.includes(column)) {
-            isAscA = isAscending ? parseInt(a[column]) > parseInt(b[column]) : parseInt(b[column]) > parseInt(a[column]);
+            isAscA = isAscending ? parseInt(a[column], 10) > parseInt(b[column], 10) : parseInt(b[column], 10) > parseInt(a[column], 10);
         } else {
             isAscA = isAscending ? a[column] > b[column] : b[column] > a[column];
         }

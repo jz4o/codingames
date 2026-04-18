@@ -4,16 +4,16 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const wallyWidth: number = parseInt(inputs1[0]);
-const wallyHeight: number = parseInt(inputs1[1]);
+const wallyWidth: number = parseInt(inputs1[0], 10);
+const wallyHeight: number = parseInt(inputs1[1], 10);
 const wallyRows: string[] = [];
 for (let i = 0; i < wallyHeight; i++) {
     const wallyRow: string = readline();
     wallyRows.push(wallyRow);
 }
 const inputs2: string[] = readline().split(' ');
-const pictureWidth: number = parseInt(inputs2[0]);
-const pictureHeight: number = parseInt(inputs2[1]);
+const pictureWidth: number = parseInt(inputs2[0], 10);
+const pictureHeight: number = parseInt(inputs2[1], 10);
 const pictureRows: string[] = [];
 for (let i = 0; i < pictureHeight; i++) {
     const pictureRow: string = readline();

@@ -4,8 +4,8 @@
  **/
 
 const t: string = readline();
-const d: number = parseInt(readline());
-const l: number = parseInt(readline());
+const d: number = parseInt(readline(), 10);
+const l: number = parseInt(readline(), 10);
 const s: string = readline();
 
 // Write an answer using console.log()

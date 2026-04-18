@@ -4,12 +4,12 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const S: number = parseInt(inputs1[0]);
-const M: number = parseInt(inputs1[1]);
+const S: number = parseInt(inputs1[0], 10);
+const M: number = parseInt(inputs1[1], 10);
 const inputs2: string[] = readline().split(' ');
 const serviceMaxclients: number[] = [];
 for (let i = 0; i < S; i++) {
-    const maxclients: number = parseInt(inputs2[i]);
+    const maxclients: number = parseInt(inputs2[i], 10);
     serviceMaxclients.push(maxclients);
 }
 const serviceClients: number[][] = [];
@@ -17,7 +17,7 @@ for (let i = 0; i < M; i++) {
     const inputs: string[] = readline().split(' ');
     const serviceClientsRow: number[] = [];
     for (let j = 0; j < S; j++) {
-        const clients: number = parseInt(inputs[j]);
+        const clients: number = parseInt(inputs[j], 10);
         serviceClientsRow.push(clients);
     }
     serviceClients.push(serviceClientsRow);

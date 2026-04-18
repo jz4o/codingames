@@ -18,12 +18,12 @@ const eachSlice: <T>(array: T[], n: number) => T[][] = <T>(array: T[], n: number
 
 const toArray: (str: string) => number[] = (str: string): number[] => {
     if (/\{.*\}/.test(str)) {
-        return str.slice(1, -1).split(';').map(d => parseInt(d));
+        return str.slice(1, -1).split(';').map(d => parseInt(d, 10));
     } else if (/(?:\[|\]).*(?:\[|\])/.test(str)) {
         const bracketRegexp: RegExp = /(?<beginBracket>\[|\])(?<beginNum>[-\d]+);(?<endNum>[-\d]+)(?<endBracket>\[|\])/;
         const { beginBracket, beginNum: beginNumStr, endNum: endNumStr, endBracket } = str.match(bracketRegexp).groups;
-        const beginNum: number = parseInt(beginNumStr) + (beginBracket === ']' ? 1 : 0);
-        const endNum: number = parseInt(endNumStr) - (endBracket === '[' ? 1 : 0);
+        const beginNum: number = parseInt(beginNumStr, 10) + (beginBracket === ']' ? 1 : 0);
+        const endNum: number = parseInt(endNumStr, 10) - (endBracket === '[' ? 1 : 0);
 
         return rangeArrayFromTo(beginNum, endNum);
     } else {

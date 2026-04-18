@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const _n: number = parseInt(readline());
+const _n: number = parseInt(readline(), 10);
 const packet: string = readline();
 
 // Write an answer using console.log()

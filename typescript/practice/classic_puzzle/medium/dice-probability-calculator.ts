@@ -28,7 +28,7 @@ const calc: (expr: string) => string = (expr: string): string => {
     while (elements.includes('*')) {
         const index: number = elements.indexOf('*');
         const [lStr, _, rStr]: string[] = elements.slice(index - 1, index + 2);
-        const [l, r]: number[] = [lStr, rStr].map(s => parseInt(s));
+        const [l, r]: number[] = [lStr, rStr].map(s => parseInt(s, 10));
 
         const result: string = (l * r).toString();
 
@@ -38,7 +38,7 @@ const calc: (expr: string) => string = (expr: string): string => {
     while (elements.includes('+') || elements.includes('-')) {
         const index: number = elements.findIndex(element => ['+', '-'].includes(element));
         const [lStr, operator, rStr]: string[] = elements.slice(index - 1, index + 2);
-        const [l, r]: number[] = [lStr, rStr].map(s => parseInt(s));
+        const [l, r]: number[] = [lStr, rStr].map(s => parseInt(s, 10));
 
         const result: string = (operator === '+' ? l + r : l - r).toString();
 
@@ -48,7 +48,7 @@ const calc: (expr: string) => string = (expr: string): string => {
     while (elements.includes('>')) {
         const index: number = elements.indexOf('>');
         const [lStr, _, rStr]: string[] = elements.slice(index - 1, index + 2);
-        const [l, r]: number[] = [lStr, rStr].map(s => parseInt(s));
+        const [l, r]: number[] = [lStr, rStr].map(s => parseInt(s, 10));
 
         const result: string = (l > r ? 1 : 0).toString();
 
@@ -69,7 +69,7 @@ while (incompleteExprs.length > 0) {
     }
 
     const [possiblyStr]: string[] = incompleteExpr.match(/d\d/g);
-    const possibly: number = parseInt(possiblyStr.replace('d', ''));
+    const possibly: number = parseInt(possiblyStr.replace('d', ''), 10);
     const [front, back]: string[] = incompleteExpr.replace(possiblyStr, ':').split(':');
 
     rangeArrayFromTo(1, possibly).forEach(i => {
@@ -77,7 +77,7 @@ while (incompleteExprs.length > 0) {
     });
 }
 
-const answers: number[] = exprs.map(e => parseInt(calc(e)));
+const answers: number[] = exprs.map(e => parseInt(calc(e), 10));
 const results: string[] = uniq(answers).sort((a, b) => a - b).map(answer => {
     const answerCount: number = answers.filter(ans => ans === answer).length;
     const percentage: number = (answerCount / answers.length) * 100;

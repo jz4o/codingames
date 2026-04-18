@@ -30,7 +30,7 @@ const beforeButtonBitStr: string = `${row1}${row2}${row3}`.replace(/\s/g, '').re
 const beforeButtonBit: number = parseInt(beforeButtonBitStr, 2);
 const afterButtonBit: number = allButtonsPressed
     .split('')
-    .reduce((buttonBit, button) => buttonBit ^ REVERSE_BITS[parseInt(button)], beforeButtonBit);
+    .reduce((buttonBit, button) => buttonBit ^ REVERSE_BITS[parseInt(button, 10)], beforeButtonBit);
 
 const result: number = REVERSE_BITS.indexOf((FULL_BIT - afterButtonBit) ^ REVERSE_CENTER_BIT);
 

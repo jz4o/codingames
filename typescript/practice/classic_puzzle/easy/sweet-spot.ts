@@ -3,7 +3,7 @@
  * the standard input according to the problem statement.
  **/
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const lines: string[] = [];
 for (let i = 0; i < N; i++) {
     const line: string = readline();
@@ -34,7 +34,7 @@ const explosionABomb: (grid: Mass[][], bombMass: Mass) => void = (grid: Mass[][]
             const value: number = 4 - maxDiff;
 
             if (!/[A-Z]/.test(grid[y][x].value)) {
-                grid[y][x].value = Math.max(parseInt(grid[y][x].value), value).toString();
+                grid[y][x].value = Math.max(parseInt(grid[y][x].value, 10), value).toString();
             }
             grid[y][x].explosion = true;
         });
@@ -47,7 +47,7 @@ const explosionHBomb: (grid: Mass[][], bombMass: Mass) => void = (grid: Mass[][]
     rangeArrayFromTo(bombMass.y - 3, bombMass.y + 3).forEach(y => {
         rangeArrayFromTo(bombMass.x - 3, bombMass.x + 3).forEach(x => {
             if (!/[A-Z]/.test(grid[y][x].value)) {
-                grid[y][x].value = Math.max(parseInt(grid[y][x].value), value).toString();
+                grid[y][x].value = Math.max(parseInt(grid[y][x].value, 10), value).toString();
             }
             grid[y][x].explosion = true;
         });
@@ -67,7 +67,7 @@ const explosionBBomb: (grid: Mass[][], bombMass: Mass) => void = (grid: Mass[][]
 
         explosionMasses.forEach(explosionMass => {
             if (!/[A-Z]/.test(explosionMass.value)) {
-                explosionMass.value = Math.max(parseInt(explosionMass.value), value).toString();
+                explosionMass.value = Math.max(parseInt(explosionMass.value, 10), value).toString();
             }
             explosionMass.explosion = true;
         });

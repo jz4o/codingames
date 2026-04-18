@@ -10,18 +10,18 @@ const MARKS: {[key: string]: string} = {
 const directions: string[] = ['N', 'E', 'S', 'W'];
 
 const inputs1: string[] = readline().split(' ');
-const _W: number = parseInt(inputs1[0]);
-const H: number = parseInt(inputs1[1]);
+const _W: number = parseInt(inputs1[0], 10);
+const H: number = parseInt(inputs1[1], 10);
 const inputs2: string[] = readline().split(' ');
-const x: number = parseInt(inputs2[0]);
-const y: number = parseInt(inputs2[1]);
+const x: number = parseInt(inputs2[0], 10);
+const y: number = parseInt(inputs2[1], 10);
 let xTmp: number = x;
 let yTmp: number = y;
 const direction: string = readline();
 while (directions[0] !== direction) {
     directions.push(directions.shift());
 }
-const T: number = parseInt(readline());
+const T: number = parseInt(readline(), 10);
 const grid: string[][] = [];
 for (let i = 0; i < H; i++) {
     const C: string = readline();

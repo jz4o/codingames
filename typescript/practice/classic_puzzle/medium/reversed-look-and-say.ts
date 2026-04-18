@@ -37,7 +37,7 @@ const encode = (str: string): string | null => {
 
     const result: string = sliceN(str.split(''), 2).reduce((result, values) => {
         const [countStr, value]: string[] = values;
-        const count: number = parseInt(countStr);
+        const count: number = parseInt(countStr, 10);
 
         return result + value.repeat(count);
     }, '');

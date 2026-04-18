@@ -4,8 +4,8 @@
  **/
 
 const inputs: string[] = readline().split(' ');
-const r: number = parseInt(inputs[0]);
-const _c: number = parseInt(inputs[1]);
+const r: number = parseInt(inputs[0], 10);
+const _c: number = parseInt(inputs[1], 10);
 const rows: string[] = [];
 for (let i = 0; i < r; i++) {
     const row: string = readline();

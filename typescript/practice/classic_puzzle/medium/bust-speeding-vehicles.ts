@@ -3,8 +3,8 @@
  * the standard input according to the problem statement.
  **/
 
-const L: number = parseInt(readline());
-const N: number = parseInt(readline());
+const L: number = parseInt(readline(), 10);
+const N: number = parseInt(readline(), 10);
 const rs: string[] = [];
 for (let i = 0; i < N; i++) {
     const R: string = readline();
@@ -22,7 +22,7 @@ type RecordObject = {
 
 const records: RecordObject[] = rs.map(r => {
     const [num, distanceStr, timestampStr]: string[] = r.split(' ');
-    const [distance, timestamp]: number[] = [distanceStr, timestampStr].map(elm => parseInt(elm));
+    const [distance, timestamp]: number[] = [distanceStr, timestampStr].map(elm => parseInt(elm, 10));
 
     return { num, distance, timestamp };
 });

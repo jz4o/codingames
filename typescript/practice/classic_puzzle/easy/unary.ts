@@ -11,7 +11,7 @@ const MESSAGE: string = readline();
 const binaries: number[] = MESSAGE.split('').reduce((binaries, char) => {
     const binary: string = char.codePointAt(0).toString(2);
     const sevenBitBinary: string = `0000000${binary}`.slice(-7);
-    const sevenBitBinaryNumberArray: number[] = sevenBitBinary.split('').map(i => parseInt(i));
+    const sevenBitBinaryNumberArray: number[] = sevenBitBinary.split('').map(i => parseInt(i, 10));
 
     binaries.push(...sevenBitBinaryNumberArray);
 

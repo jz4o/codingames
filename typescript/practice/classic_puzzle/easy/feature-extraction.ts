@@ -4,24 +4,24 @@
  **/
 
 const inputs1: string[] = readline().split(' ');
-const r: number = parseInt(inputs1[0]);
-const c: number = parseInt(inputs1[1]);
+const r: number = parseInt(inputs1[0], 10);
+const c: number = parseInt(inputs1[1], 10);
 const pixels: number[] = [];
 for (let i = 0; i < r; i++) {
     const inputs2: string[] = readline().split(' ');
     for (let j = 0; j < c; j++) {
-        const pixel: number = parseInt(inputs2[j]);
+        const pixel: number = parseInt(inputs2[j], 10);
         pixels.push(pixel);
     }
 }
 const inputs3: string[] = readline().split(' ');
-const m: number = parseInt(inputs3[0]);
-const n: number = parseInt(inputs3[1]);
+const m: number = parseInt(inputs3[0], 10);
+const n: number = parseInt(inputs3[1], 10);
 const weights: number[] = [];
 for (let i = 0; i < m; i++) {
     const inputs4: string[] = readline().split(' ');
     for (let j = 0; j < n; j++) {
-        const weight: number = parseInt(inputs4[j]);
+        const weight: number = parseInt(inputs4[j], 10);
         weights.push(weight);
     }
 }

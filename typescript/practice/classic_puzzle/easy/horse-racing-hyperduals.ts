@@ -8,12 +8,12 @@ interface Strength {
     e: number;
 }
 
-const N: number = parseInt(readline());
+const N: number = parseInt(readline(), 10);
 const strengths: Strength[] = [];
 for (let i = 0; i < N; i++) {
     const inputs: string[] = readline().split(' ');
-    const V: number = parseInt(inputs[0]);
-    const E: number = parseInt(inputs[1]);
+    const V: number = parseInt(inputs[0], 10);
+    const E: number = parseInt(inputs[1], 10);
 
     strengths.push({v: V, e: E});
 }
