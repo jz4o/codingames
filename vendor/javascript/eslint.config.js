@@ -49,14 +49,10 @@ export default [
       'no-undefined': 'off',
       'no-underscore-dangle': 'off',
       'one-var': 'off',
-      'radix': ['error', 'as-needed'],
       'require-unicode-regexp': 'off',
       'semi': ['error', 'always'],
       'sort-keys': 'off',
       'yoda': 'off',
-
-      // temporary ignore rules.
-      'no-dupe-keys': 'off',
     }
   },
   {
