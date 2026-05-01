@@ -67,6 +67,9 @@ Style/InverseMethods:
 Style/NumericPredicate:
   Enabled: false
 
+Style/OneClassPerFile:
+  Enabled: false
+
 Style/PerlBackrefs:
   Enabled: false
 
