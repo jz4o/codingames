@@ -44,7 +44,7 @@ compound_grid.each_with_index do |row, row_index|
   end
 end
 
-compound_objects = compound_grid.flatten.filter { |compound| compound.is_a? Compound }
+compound_objects = compound_grid.flatten.grep Compound
 result = compound_objects.all? { |compound| compound.can_union.zero? } ? 'VALID' : 'INVALID'
 
 # puts "answer"
