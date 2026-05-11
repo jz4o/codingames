@@ -16,7 +16,7 @@ cell_length = ss.first.split('|').first.length
 
 separate_row = '_' * line_length
 
-grid = ss.filter { |s| !s.match?(/^_+$/) }.map { |s| s.split('|').map(&:strip) }
+grid = ss.grep_v(/^_+$/).map { |s| s.split('|').map(&:strip) }
 
 operation_str = grid.first.first
 operation = operation_str == 'x' ? :* : operation_str.to_sym
