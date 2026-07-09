@@ -17,12 +17,12 @@ grid << Array.new(w + 2, 0)
     next unless grid[row_index][column_index] == 9
 
     grid[row_index - 1][column_index - 1] += 1 unless grid[row_index - 1][column_index - 1] == 9
-    grid[row_index - 1][column_index + 0] += 1 unless grid[row_index - 1][column_index + 0] == 9
+    grid[row_index - 1][column_index] += 1 unless grid[row_index - 1][column_index] == 9
     grid[row_index - 1][column_index + 1] += 1 unless grid[row_index - 1][column_index + 1] == 9
-    grid[row_index + 0][column_index - 1] += 1 unless grid[row_index + 0][column_index - 1] == 9
-    grid[row_index + 0][column_index + 1] += 1 unless grid[row_index + 0][column_index + 1] == 9
+    grid[row_index][column_index - 1] += 1 unless grid[row_index][column_index - 1] == 9
+    grid[row_index][column_index + 1] += 1 unless grid[row_index][column_index + 1] == 9
     grid[row_index + 1][column_index - 1] += 1 unless grid[row_index + 1][column_index - 1] == 9
-    grid[row_index + 1][column_index + 0] += 1 unless grid[row_index + 1][column_index + 0] == 9
+    grid[row_index + 1][column_index] += 1 unless grid[row_index + 1][column_index] == 9
     grid[row_index + 1][column_index + 1] += 1 unless grid[row_index + 1][column_index + 1] == 9
   end
 end

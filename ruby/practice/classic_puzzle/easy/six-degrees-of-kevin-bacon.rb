@@ -21,7 +21,7 @@ target_casts = [actor_name]
 bacon_number = 0
 until target_casts.include? kevin
   bacon_number += 1
-  target_casts = casts_array.filter { |casts| target_casts.any? { |target| casts.include? target } }.flatten.uniq
+  target_casts = casts_array.filter { |casts| target_casts.intersect? casts }.flatten.uniq
 end
 
 result = bacon_number
