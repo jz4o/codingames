@@ -4,6 +4,6 @@
     "@eslint/js": "10.0.1",
     "eslint": "10.7.0",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.64.0"
+    "typescript-eslint": "8.65.0"
   }
 }
