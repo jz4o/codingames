@@ -8,6 +8,7 @@ line-length = 120
 select = ['ALL']
 ignore = [
     'ANN001', 'ANN201', 'ANN202', 'ANN204', 'ANN205', 'ANN206',
+    'CPY001',
     'D100', 'D101', 'D102', 'D103', 'D105', 'D106', 'D107', 'D203', 'D212',
     'DTZ007',
     'E741',
@@ -15,7 +16,7 @@ ignore = [
     'ERA001',
     'FA102',
     'INP001',
-    'PLR0913', 'PLR2004',
+    'PLR0913', 'PLR0917', 'PLR2004',
     'RET503', 'RET504',
     'RUF012',
     'SIM114',
@@ -23,9 +24,7 @@ ignore = [
     'TRY003',
 
     # temporary ignore
-    'CPY001',
     'FURB192',
-    'PLR0917',
 ]
 
 [lint.flake8-quotes]
