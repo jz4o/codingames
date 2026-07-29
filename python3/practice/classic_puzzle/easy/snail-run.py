@@ -55,7 +55,7 @@ for snail in snails:
 
     snail.goal_time = distance / snail.speed
 
-winner = sorted([snail for snail in snails if snail.goal_time is not None], key=lambda snail: snail.goal_time)[0]
+winner = min([snail for snail in snails if snail.goal_time is not None], key=lambda snail: snail.goal_time)
 
 result = winner.number
 

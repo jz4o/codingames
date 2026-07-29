@@ -29,7 +29,7 @@ for line in lines:
         putable_stacks = [stack for stack in stacks if container <= stack.upper_most]
 
         if len(putable_stacks) > 0:
-            sorted(putable_stacks, key=lambda stack: stack.upper_most)[0].upper_most = container
+            min(putable_stacks, key=lambda stack: stack.upper_most).upper_most = container
         else:
             stacks.append(Stack(container))
 

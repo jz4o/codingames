@@ -16,7 +16,7 @@ temp_ip = ip
 
 ommit = list(itertools.chain.from_iterable(map(list, re.findall('(0000(:0000)+)', temp_ip))))
 if len(ommit) > 0:
-    ommit = sorted(ommit, key=len)[-1]
+    ommit = max(ommit, key=len)
     temp_ip = temp_ip.replace(ommit, ':', 1).replace(':::', '::')
 
 temp_ip = re.sub('^0+', '0', temp_ip)
