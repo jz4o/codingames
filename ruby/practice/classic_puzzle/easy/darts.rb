@@ -38,7 +38,7 @@ throw_datas.each do |throw_data|
   elsif in_circle
     score_board[name] += 10
   elsif in_square
-    score_board[name] +=  5
+    score_board[name] += 5
   end
 end
 
