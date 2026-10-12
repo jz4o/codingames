@@ -1,7 +1,7 @@
 # import sys
 # import math
 
-import datetime
+import datetime as dt
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -22,8 +22,8 @@ MONTHS = [None, 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 DAY_OF_WEEK = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 year = 2000 if leap_year == 1 else 1999
-target_date = datetime.date(year, MONTHS.index(target_month), target_day_of_month)
-source_date = datetime.date(year, MONTHS.index(source_month), source_day_of_month)
+target_date = dt.date(year, MONTHS.index(target_month), target_day_of_month)
+source_date = dt.date(year, MONTHS.index(source_month), source_day_of_month)
 
 days = (target_date - source_date).days
 source_day_of_week_index = DAY_OF_WEEK.index(source_day_of_week)

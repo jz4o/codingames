@@ -1,7 +1,7 @@
 # import sys
 # import math
 
-import datetime
+import datetime as dt
 import re
 
 # Auto-generated code below aims at helping you parse
@@ -39,7 +39,7 @@ for number in numbers:
 
     if result is None:
         try:
-            datetime.datetime.strptime(ddmmyy, r'%d%m%y')
+            dt.datetime.strptime(ddmmyy, r'%d%m%y')
         except ValueError:
             result = 'INVALID DATE'
 

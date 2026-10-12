@@ -1,7 +1,7 @@
 # import sys
 # import math
 
-import datetime
+import datetime as dt
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
@@ -12,8 +12,8 @@ end = input()
 # Write an answer using print
 # To debug: print("Debug messages...", file=sys.stderr, flush=True)
 
-begin_date = datetime.datetime.strptime(begin, '%d.%m.%Y')
-end_date = datetime.datetime.strptime(end, '%d.%m.%Y')
+begin_date = dt.datetime.strptime(begin, '%d.%m.%Y')
+end_date = dt.datetime.strptime(end, '%d.%m.%Y')
 
 begin_months = begin_date.year * 12 + begin_date.month
 end_months = end_date.year * 12 + end_date.month
