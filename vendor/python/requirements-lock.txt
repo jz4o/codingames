@@ -1,2 +1,2 @@
 packaging==26.3
-ruff==0.17.0
+ruff==0.17.1
